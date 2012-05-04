@@ -12,8 +12,12 @@ call pathogen#helptags()
 
 "ui appearance
 colors molokai
-set guifont=DejaVu\ Sans\ Mono\ Regular\ 14
+set guifont=DejaVu\ Sans\ Mono\ Regular\ 13
 set ts=4 softtabstop=4 shiftwidth=4 expandtab
+set guioptions-=T  "remove toolbar
+":winpos 50 50 "Open window at position x=50, y=50
+set lines=50 "Open window with a height of 50 lines
+set columns=80 "Open window with a width of 50 columns
 
 "code folding
 set foldmethod=indent
