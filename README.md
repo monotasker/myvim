@@ -32,6 +32,7 @@ This configuration includes the following scripts and plugins for vim:
 - vim-session (providing nice session management)
 - git.vim (providing syntax highlighting for git config files)
 - taglist (providing a source-code browser based on ctags)
+- less-vim (syntax highlighting for LESS css syntax)
 
 It also includes the molokai colour scheme, a port of the monokai theme
 for TextMate made by Tomas Restrepo.
