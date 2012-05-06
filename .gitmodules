@@ -61,3 +61,12 @@
 [submodule "bundle/less-syntax"]
 	path = bundle/less-syntax
 	url = https://github.com/vim-scripts/less-syntax.git
+[submodule "bundle/vim-pandoc"]
+	path = bundle/vim-pandoc
+	url = https://github.com/vim-pandoc/vim-pandoc.git
+[submodule "bundle/vim-markdownfootnotes"]
+	path = bundle/vim-markdownfootnotes
+	url = https://github.com/vim-pandoc/vim-markdownfootnotes.git
+[submodule "bundle/vim-pandoc-extras"]
+	path = bundle/vim-pandoc-extras
+	url = https://github.com/vim-pandoc/vim-pandoc-extras.git
