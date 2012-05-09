@@ -77,3 +77,15 @@
 [submodule "nerdcommenter"]
 	path = nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "svg.vim"]
+	path = svg.vim
+	url = https://github.com/vim-scripts/svg.vim.git
+[submodule "ctrlp.vim"]
+	path = ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim.git
+[submodule "bundle/ctrlp"]
+	path = bundle/ctrlp
+	url = https://github.com/kien/ctrlp.vim.git
+[submodule "bundle/svg.vim"]
+	path = bundle/svg.vim
+	url = https://github.com/vim-scripts/svg.vim.git
