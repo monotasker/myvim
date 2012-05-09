@@ -1,9 +1,9 @@
 " ~/.vim/sessions/restart.vim: Vim session script.
-" Created by session.vim 1.5 on 02 May 2012 at 20:07:17.
+" Created by session.vim 1.5 on 09 May 2012 at 12:49:21.
 " Open this file in Vim and run :source % to restore your session.
 
-set guioptions=aegimrLtT
-silent! set guifont=DejaVu\ Sans\ Mono\ Regular\ 14
+set guioptions=aegimrLt
+silent! set guifont=DejaVu\ Sans\ Mono\ Regular\ 13
 if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 1 | filetype on | endif
 if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
@@ -23,10 +23,10 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 ~/.vim/.vimrc
+badd +79 .vimrc
 silent! argdel *
-set lines=21 columns=80
-edit ~/.vim/.vimrc
+set lines=50 columns=80
+edit .vimrc
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -41,11 +41,11 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 20 - ((18 * winheight(0) + 10) / 20)
+let s:l = 81 - ((40 * winheight(0) + 24) / 49)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-20
+81
 normal! 0
 tabnext 1
 if exists('s:wipebuf')

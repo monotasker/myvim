@@ -74,3 +74,6 @@
 [submodule "bundle/vim-pandoc-extras"]
 	path = bundle/vim-pandoc-extras
 	url = https://github.com/vim-pandoc/vim-pandoc-extras.git
+[submodule "nerdcommenter"]
+	path = nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
