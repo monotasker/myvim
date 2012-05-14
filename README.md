@@ -33,9 +33,10 @@ This configuration includes the following scripts and plugins for vim:
 - git.vim (providing syntax highlighting for git config files)
 - taglist (providing a source-code browser based on ctags)
 - less-vim (syntax highlighting for LESS css syntax)
-- VimFootnotes (adding footnotes in markdown files)
+- vim-markdownfootnotes (adding footnotes in markdown files)
 - vim-pandoc (comprehensive support for pandoc markdown formatting)
 - vim-pandoc-extras (support for pandoc's extended markdown syntax options)
+- vimroom (distraction-free writing environment inside vim)
 
 It also includes the molokai colour scheme, a port of the monokai theme
 for TextMate made by Tomas Restrepo.
@@ -103,3 +104,4 @@ git submodule add https://github.com/vim-scripts/less-syntax.git bundle/less-syn
 git submodule add https://github.com/vim-pandoc/vim-markdownfootnotes.git bundle/vim-markdownfootnotes
 git submodule add https://github.com/vim-pandoc/vim-pandoc.git bundle/vim-pandoc
 git submodule add https://github.com/vim-pandoc/vim-pandoc-extras.git bundle/vim-pandoc-extras
+git submodule add https://github.com/mikewest/vimroom.git bundle/vimroom
