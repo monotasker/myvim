@@ -92,3 +92,15 @@
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "bundle/vim_web2py_syntax"]
+	path = bundle/vim_web2py_syntax
+	url = git@github.com:monotasker/vim_web2py_syntax.git
+[submodule "bundle/web2py-snippets"]
+	path = bundle/web2py-snippets
+	url = git@github.com:monotasker/web2py-snippets.git
+[submodule "bundle/vim-jquery"]
+	path = bundle/vim-jquery
+	url = https://github.com/itspriddle/vim-jquery.git
+[submodule "bundle/yankring"]
+	path = bundle/yankring
+	url = https://github.com/vim-scripts/YankRing.vim.git

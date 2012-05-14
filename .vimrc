@@ -17,7 +17,7 @@ call pathogen#helptags()
 
 "ui appearance
 colors molokai
-set guifont=DejaVu\ Sans\ Mono\ Regular\ 13
+set guifont=Inconsolata\ Regular\ 11
 set ts=4 softtabstop=4 shiftwidth=4 expandtab
 set guioptions-=T  "remove toolbar
 ":winpos 50 50 "Open window at position x=50, y=50

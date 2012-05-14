@@ -1,0 +1,1 @@
+/home/ian/.vim/bundle/svg.vim/syntax/svg.vim

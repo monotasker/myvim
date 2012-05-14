@@ -52,6 +52,9 @@ This configuration includes the following scripts and plugins for vim:
 - nerdcommenter (smart toggling of comment lines)
 - svg.vim (syntax highlighting for svg files)
 - ctrlp (fuzzy file searching, most-recently-used list)
+- YankRing (providing yank and delete history)
+- web2py-snippets (snipmate snippets for the web2py python framework)
+- web2py-syntax (syntax highlighting for the web2py python framework)
 
 It also includes the molokai colour scheme, a port of the monokai theme
 for TextMate made by Tomas Restrepo.
@@ -120,6 +123,7 @@ git submodule add https://github.com/vim-scripts/less-syntax.git bundle/less-syn
 git submodule add https://github.com/vim-pandoc/vim-markdownfootnotes.git bundle/vim-markdownfootnotes
 git submodule add https://github.com/vim-pandoc/vim-pandoc.git bundle/vim-pandoc
 git submodule add https://github.com/vim-pandoc/vim-pandoc-extras.git bundle/vim-pandoc-extras
-git submodule add https://github.com/scrooloose/nerdcommenter.git
-git submodule add https://github.com/vim-scripts/svg.vim.git
-git submodule add https://github.com/kien/ctrlp.vim.git
+git submodule add https://github.com/scrooloose/nerdcommenter.git bundle/nerdcommenter
+git submodule add https://github.com/vim-scripts/svg.vim.git bundle/svg.vim
+git submodule add https://github.com/kien/ctrlp.vim.git bundle/ctrlp
+git submodule add https://github.com/vim-scripts/YankRing.vim.git bundle/yankring
