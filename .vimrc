@@ -1,5 +1,10 @@
 "Advice and scripts gratefully drawn from the following sources:
 " http://sontek.net/turning-vim-into-a-modern-python-ide
+" http://blog.dispatched.ch/2009/05/24/vim-as-python-ide/
+" http://dancingpenguinsoflight.com/2009/02/python-and-vim-make-your-own-ide
+
+"automatically re-source .vimrc when file is changed
+:au! BufWritePost $MYVIMRC source $MYVIMRC 
 
 "add pathogen location to runtime path 
 runtime bundle/vim-pathogen/autoload/pathogen.vim
@@ -18,6 +23,12 @@ set guioptions-=T  "remove toolbar
 ":winpos 50 50 "Open window at position x=50, y=50
 set lines=50 "Open window with a height of 50 lines
 set columns=80 "Open window with a width of 50 columns
+"visual right-margin guide at 80 chars
+set colorcolumn=80
+"Turn on line numbers
+set number
+"Toggle line numbers and fold column for easy copying
+nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 
 "code folding
 set foldmethod=indent
@@ -30,7 +41,10 @@ map <c-l> <c-w>l
 map <c-h> <c-w>h
 "map shortcuts to cycle through buffers
 nnoremap <leader><Tab> :bnext<CR>
-nnoremap <leader><Shift><Tab> :bprevious<CR>
+nnoremap <leader><S-Tab> :bprevious<CR>
+"map shortcut to cut and paste with system clipboard
+nnoremap <leader>ey <Esc>"+y
+nnoremap <leader>ep <Esc>"+p
 
 "map key to activate TODO tasklist
 map <leader>td <Plug>TaskList
@@ -59,6 +73,9 @@ let g:pyflakes_use_quickfix = 0
 au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
+
+" Execute python file being edited with <Shift> + e:
+map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
 
 "function to strip trailing whitespace from all lines
 function! <SID>StripTrailingWhitespaces()

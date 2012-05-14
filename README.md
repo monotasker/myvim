@@ -1,5 +1,4 @@
-myvim
-=====
+#myvim
 
 My vim configuration, customized for developing in Python
 Created by Ian W. Scott, 2012, based on advice contained in the 
@@ -7,9 +6,23 @@ following sources:
 
 - http://sontek.net/turning-vim-into-a-modern-python-ide
 
-------------------
-Overview
-------------------
+##Overview
+
+###Settings
+
+- visual right-margin guide at 80 chars
+- autocomplete on
+- filetype detection on
+
+###Key mappings
+
+- <leader><Tab> [cycle to next buffer]
+- <leader>ep [paste from system clipboard]
+- <leader>ey [yank (copy) from system clipboard]
+
+- <c-p> [open ctrlp in fuzzy-finder mode]
+
+###Included plugins
 
 This configuration includes the following scripts and plugins for vim:
 
@@ -36,47 +49,50 @@ This configuration includes the following scripts and plugins for vim:
 - vim-markdownfootnotes (adding footnotes in markdown files)
 - vim-pandoc (comprehensive support for pandoc markdown formatting)
 - vim-pandoc-extras (support for pandoc's extended markdown syntax options)
-- vimroom (distraction-free writing environment inside vim)
+- nerdcommenter (smart toggling of comment lines)
+- svg.vim (syntax highlighting for svg files)
+- ctrlp (fuzzy file searching, most-recently-used list)
 
 It also includes the molokai colour scheme, a port of the monokai theme
 for TextMate made by Tomas Restrepo.
 
----------------
-Installation
----------------
+##Installation
 
 After cloning this repository into your .vim directory, you will
 need to run the following commands from the command line:
 
-git submodule init
-git submodule update
-git submodule foreach git submodule init
-git submodule foreach git submodule update
-ln -s {path to .vim folder}/.vim/.vimrc {path to home directory}/.vimrc
+    git submodule init
+    git submodule update
+    git submodule foreach git submodule init
+    git submodule foreach git submodule update
+    ln -s {path to .vim folder}/.vim/.vimrc {path to home directory}/.vimrc
 
 The last command creates a symbolic link in your home folder 
 to the included .vimrc configuration file (where vim will look 
 for it). 
 
 You will also need to have the following packages installed on 
-your local system. If you are using Linux these can likely be installed 
+your local system:
+
+- exuberant-ctags
+- ack!
+- pep8
+- pydoc
+
+If you are using Linux these can likely be installed 
 from your distribution's repository. In Ubuntu, for example, you can 
 run this command from the command line:
 
-sudo apt-get install ack pep8 exuberant-ctags
+`sudo apt-get install ack pep8 exuberant-ctags
 
-------------------
-Copyright
-------------------
+##Copyright
 
 This configuration is hereby released into the public domain. 
 No rights or permissions are implied concerning vim scripts and 
 plugins authored by authors (whether included in this repository 
 or pointed to through git submodules).
 
------------------
-Git repositories
------------------
+##Git repositories
 
 If for some reason the git configuration included here needs to be duplicated, 
 here are the commands to create submodules for each plugin:
@@ -104,4 +120,6 @@ git submodule add https://github.com/vim-scripts/less-syntax.git bundle/less-syn
 git submodule add https://github.com/vim-pandoc/vim-markdownfootnotes.git bundle/vim-markdownfootnotes
 git submodule add https://github.com/vim-pandoc/vim-pandoc.git bundle/vim-pandoc
 git submodule add https://github.com/vim-pandoc/vim-pandoc-extras.git bundle/vim-pandoc-extras
-git submodule add https://github.com/mikewest/vimroom.git bundle/vimroom
+git submodule add https://github.com/scrooloose/nerdcommenter.git
+git submodule add https://github.com/vim-scripts/svg.vim.git
+git submodule add https://github.com/kien/ctrlp.vim.git
