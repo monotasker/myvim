@@ -1,5 +1,5 @@
 " ~/.vim/sessions/paideia.vim: Vim session script.
-" Created by session.vim 1.5 on 12 May 2012 at 13:09:14.
+" Created by session.vim 1.5 on 15 May 2012 at 19:21:15.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -23,29 +23,29 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +1 web/web2py/applications/paideia/models/paideia.py
-badd +279 web/web2py/applications/paideia/modules/plugin_ajaxselect.py
-badd +175 web/web2py/applications/paideia/modules/paideia_exploring.py
-badd +114 web/web2py/applications/paideia/controllers/exploring.py
-badd +1 web/web2py/applications/paideia/views/exploring/walk.load
-badd +41 .vim/bundle/vim_web2py_syntax/htmlweb2py.vim
-badd +79 .vim/bundle/vim_web2py_syntax/web2py.vim
-badd +19 web/web2py/applications/paideia/views/web2py_ajax.html
-badd +55 web/web2py/applications/paideia/static/js/web2py_ajax.js
+badd +14 web/web2py/applications/paideia/models/paideia.py
+badd +1 web/web2py/applications/topoi/views/plugin_ajaxselect/set_widget.load
+badd +2 web/web2py/applications/topoi/static/plugin_ajaxselect/plugin_ajaxselect.css
+badd +0 web/web2py/applications/topoi/static/plugin_ajaxselect/plugin_ajaxselect.js
+badd +0 web/web2py/applications/topoi/modules/plugin_ajaxselect.py
 silent! argdel *
-set lines=62 columns=175
-edit web/web2py/applications/paideia/models/paideia.py
+set lines=62 columns=190
+edit web/web2py/applications/topoi/static/plugin_ajaxselect/plugin_ajaxselect.js
 set splitbelow splitright
 wincmd _ | wincmd |
 split
-1wincmd k
+wincmd _ | wincmd |
+split
+2wincmd k
+wincmd w
 wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
 exe '1resize ' . ((&lines * 1 + 31) / 62)
-exe '2resize ' . ((&lines * 58 + 31) / 62)
+exe '2resize ' . ((&lines * 28 + 31) / 62)
+exe '3resize ' . ((&lines * 29 + 31) / 62)
 argglobal
 enew
 file -MiniBufExplorer-
@@ -67,36 +67,80 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-20
+3
 silent! normal zo
-21
+9
 silent! normal zo
-20
+11
 silent! normal zo
-27
+13
 silent! normal zo
-28
+11
 silent! normal zo
-27
+3
 silent! normal zo
-53
+26
 silent! normal zo
-59
+31
 silent! normal zo
-71
+33
 silent! normal zo
-125
+35
 silent! normal zo
-let s:l = 211 - ((35 * winheight(0) + 29) / 58)
+33
+silent! normal zo
+26
+silent! normal zo
+let s:l = 1 - ((0 * winheight(0) + 14) / 28)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-211
-normal! 09l
+1
+normal! 032l
+wincmd w
+argglobal
+edit web/web2py/applications/topoi/modules/plugin_ajaxselect.py
+setlocal fdm=indent
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+7
+silent! normal zo
+83
+silent! normal zo
+83
+silent! normal zo
+262
+silent! normal zo
+286
+silent! normal zo
+299
+silent! normal zo
+303
+silent! normal zo
+303
+silent! normal zo
+299
+silent! normal zo
+286
+silent! normal zo
+7
+silent! normal zo
+let s:l = 308 - ((9 * winheight(0) + 14) / 29)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+308
+normal! 033l
 wincmd w
 2wincmd w
 exe '1resize ' . ((&lines * 1 + 31) / 62)
-exe '2resize ' . ((&lines * 58 + 31) / 62)
+exe '2resize ' . ((&lines * 28 + 31) / 62)
+exe '3resize ' . ((&lines * 29 + 31) / 62)
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

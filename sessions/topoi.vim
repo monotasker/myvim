@@ -1,9 +1,9 @@
 " ~/.vim/sessions/topoi.vim: Vim session script.
-" Created by session.vim 1.5 on 13 May 2012 at 22:29:10.
+" Created by session.vim 1.5 on 17 May 2012 at 16:12:41.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
-silent! set guifont=DejaVu\ Sans\ Mono\ Regular\ 13
+silent! set guifont=Inconsolata\ Medium\ 11
 if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 1 | filetype on | endif
 if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
@@ -24,10 +24,12 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 set shortmess=aoO
 badd +1 web/web2py/applications/topoi/views/default/index.html
-badd +0 web/web2py/applications/topoi/controllers/default.py
+badd +10 web/web2py/applications/topoi/controllers/default.py
+badd +57 web/web2py/applications/topoi/models/topoi.py
+badd +66 web/web2py/applications/topoi/controllers/plugin_listandedit.py
 silent! argdel *
-set lines=33 columns=134
-edit web/web2py/applications/topoi/controllers/default.py
+set lines=60 columns=97
+edit -MiniBufExplorer-
 set splitbelow splitright
 wincmd _ | wincmd |
 split
@@ -37,20 +39,8 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe '1resize ' . ((&lines * 1 + 16) / 33)
-exe '2resize ' . ((&lines * 29 + 16) / 33)
-argglobal
-enew
-file -MiniBufExplorer-
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=99
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-wincmd w
+exe '1resize ' . ((&lines * 1 + 30) / 60)
+exe '2resize ' . ((&lines * 56 + 30) / 60)
 argglobal
 setlocal fdm=indent
 setlocal fde=0
@@ -60,21 +50,37 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-4
-silent! normal zo
-11
-silent! normal zo
-4
-silent! normal zo
-let s:l = 10 - ((8 * winheight(0) + 14) / 29)
+let s:l = 1 - ((0 * winheight(0) + 0) / 1)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-10
-normal! 021l
+1
+normal! 028l
 wincmd w
-exe '1resize ' . ((&lines * 1 + 16) / 33)
-exe '2resize ' . ((&lines * 29 + 16) / 33)
+argglobal
+edit web/web2py/applications/topoi/models/topoi.py
+setlocal fdm=indent
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+48
+silent! normal zo
+48
+silent! normal zo
+let s:l = 60 - ((44 * winheight(0) + 28) / 56)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+60
+normal! 033l
+wincmd w
+2wincmd w
+exe '1resize ' . ((&lines * 1 + 30) / 60)
+exe '2resize ' . ((&lines * 56 + 30) / 60)
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
@@ -89,6 +95,6 @@ let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 unlet SessionLoad
 tabnext 1
-1wincmd w
+2wincmd w
 
 " vim: ft=vim ro nowrap smc=128
