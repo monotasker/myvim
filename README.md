@@ -127,3 +127,4 @@ git submodule add https://github.com/scrooloose/nerdcommenter.git bundle/nerdcom
 git submodule add https://github.com/vim-scripts/svg.vim.git bundle/svg.vim
 git submodule add https://github.com/kien/ctrlp.vim.git bundle/ctrlp
 git submodule add https://github.com/vim-scripts/YankRing.vim.git bundle/yankring
+git submodule add https://github.com/mikewest/vimroom.git bundle/vimroom
