@@ -98,3 +98,6 @@
 [submodule "bundle/vimroom"]
 	path = bundle/vimroom
 	url = https://github.com/mikewest/vimroom.git
+[submodule "gist-vim"]
+	path = gist-vim
+	url = https://github.com/mattn/gist-vim.git

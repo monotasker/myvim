@@ -55,7 +55,8 @@ This configuration includes the following scripts and plugins for vim:
 - YankRing (providing yank and delete history)
 - web2py-snippets (snipmate snippets for the web2py python framework)
 - web2py-syntax (syntax highlighting for the web2py python framework)
-
+- gist-vim (writing and reading github gists)
+- 
 It also includes the molokai colour scheme, a port of the monokai theme
 for TextMate made by Tomas Restrepo.
 
@@ -128,3 +129,4 @@ git submodule add https://github.com/vim-scripts/svg.vim.git bundle/svg.vim
 git submodule add https://github.com/kien/ctrlp.vim.git bundle/ctrlp
 git submodule add https://github.com/vim-scripts/YankRing.vim.git bundle/yankring
 git submodule add https://github.com/mikewest/vimroom.git bundle/vimroom
+git submodule add https://github.com/mattn/gist-vim.git bundle/gist-vim
