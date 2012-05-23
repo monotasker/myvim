@@ -101,3 +101,9 @@
 [submodule "gist-vim"]
 	path = gist-vim
 	url = https://github.com/mattn/gist-vim.git
+[submodule "zencoding-vim"]
+	path = zencoding-vim
+	url = https://github.com/mattn/zencoding-vim.git
+[submodule "matchit"]
+	path = matchit
+	url = https://github.com/tmhedberg/matchit.git
