@@ -1,5 +1,5 @@
-" ~/.vim/sessions/paideia.vim: Vim session script.
-" Created by session.vim 1.5 on 24 May 2012 at 14:43:15.
+" ~/.vim/sessions/vim.vim: Vim session script.
+" Created by session.vim 1.5 on 23 May 2012 at 19:47:55.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -18,25 +18,20 @@ if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/
+cd ~/.vim
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +65 web/web2py/applications/topoi/static/plugin_ajaxselect/plugin_ajaxselect.js
-badd +171 web/web2py/applications/paideia/controllers/plugin_listandedit.py
-badd +0 web/web2py/w2ptools.py
+badd +58 README.md
+badd +0 ~/web/web2py/w2ptools.py
 silent! argdel *
-set lines=41 columns=147
-edit web/web2py/w2ptools.py
+set lines=41 columns=149
+edit ~/web/web2py/w2ptools.py
 set splitbelow splitright
 wincmd _ | wincmd |
 split
 1wincmd k
-wincmd w
-wincmd _ | wincmd |
-vsplit
-1wincmd h
 wincmd w
 set nosplitbelow
 set nosplitright
@@ -44,9 +39,6 @@ wincmd t
 set winheight=1 winwidth=1
 exe '1resize ' . ((&lines * 1 + 20) / 41)
 exe '2resize ' . ((&lines * 37 + 20) / 41)
-exe 'vert 2resize ' . ((&columns * 45 + 73) / 147)
-exe '3resize ' . ((&lines * 37 + 20) / 41)
-exe 'vert 3resize ' . ((&columns * 101 + 73) / 147)
 argglobal
 enew
 file -MiniBufExplorer-
@@ -60,18 +52,6 @@ setlocal fdn=20
 setlocal fen
 wincmd w
 argglobal
-enew
-" file NERD_tree_1
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=99
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-wincmd w
-argglobal
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -82,77 +62,152 @@ setlocal fdn=20
 setlocal fen
 23
 silent! normal zo
-26
-silent! normal zo
 29
 silent! normal zo
 38
 silent! normal zo
-39
+42
 silent! normal zo
-39
+45
 silent! normal zo
-39
+46
 silent! normal zo
-39
+46
 silent! normal zo
-39
+46
 silent! normal zo
-39
-silent! normal zo
-39
-silent! normal zo
-39
-silent! normal zo
-39
-silent! normal zo
-39
-silent! normal zo
-39
+45
 silent! normal zo
 38
 silent! normal zo
 29
 silent! normal zo
-64
+63
 silent! normal zo
-78
+81
 silent! normal zo
-82
+63
 silent! normal zo
-64
+85
 silent! normal zo
-133
+85
 silent! normal zo
-142
+132
 silent! normal zo
-158
+141
 silent! normal zo
-158
+157
 silent! normal zo
-142
+159
+silent! normal zo
+159
+silent! normal zo
+159
+silent! normal zo
+159
+silent! normal zo
+159
+silent! normal zo
+159
+silent! normal zo
+159
+silent! normal zo
+159
+silent! normal zo
+159
+silent! normal zo
+159
+silent! normal zo
+159
+silent! normal zo
+159
+silent! normal zo
+159
+silent! normal zo
+159
+silent! normal zo
+159
+silent! normal zo
+159
+silent! normal zo
+159
+silent! normal zo
+161
+silent! normal zo
+164
+silent! normal zo
+164
+silent! normal zo
+164
+silent! normal zo
+161
+silent! normal zo
+157
+silent! normal zo
+141
 silent! normal zo
 178
 silent! normal zo
-214
+180
 silent! normal zo
-133
+184
+silent! normal zo
+184
+silent! normal zo
+184
+silent! normal zo
+186
+silent! normal zo
+190
+silent! normal zo
+193
+silent! normal zo
+194
+silent! normal zo
+193
+silent! normal zo
+186
+silent! normal zo
+197
+silent! normal zo
+198
+silent! normal zo
+201
+silent! normal zo
+202
+silent! normal zo
+202
+silent! normal zo
+202
+silent! normal zo
+201
+silent! normal zo
+197
+silent! normal zo
+180
+silent! normal zo
+178
+silent! normal zo
+206
+silent! normal zo
+211
+silent! normal zo
+215
+silent! normal zo
+132
 silent! normal zo
 23
 silent! normal zo
-let s:l = 216 - ((36 * winheight(0) + 18) / 37)
+let s:l = 146 - ((4 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-216
-normal! 019l
+146
+normal! 060l
 wincmd w
-3wincmd w
+2wincmd w
 exe '1resize ' . ((&lines * 1 + 20) / 41)
 exe '2resize ' . ((&lines * 37 + 20) / 41)
-exe 'vert 2resize ' . ((&columns * 45 + 73) / 147)
-exe '3resize ' . ((&lines * 37 + 20) / 41)
-exe 'vert 3resize ' . ((&columns * 101 + 73) / 147)
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
@@ -168,11 +223,5 @@ doautoall SessionLoadPost
 unlet SessionLoad
 tabnext 1
 2wincmd w
-let s:bufnr = bufnr("%")
-NERDTree ~/
-execute "bwipeout" s:bufnr
-1resize 1|vert 1resize 147|2resize 37|vert 2resize 45|3resize 37|vert 3resize 101|
-tabnext 1
-3wincmd w
 
 " vim: ft=vim ro nowrap smc=128
