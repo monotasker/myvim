@@ -8,7 +8,7 @@ following sources:
 
 ##Overview
 
-###Settings
+###My Default Settings
 
 - visual right-margin guide at 80 chars
 - autocomplete on
@@ -18,7 +18,7 @@ following sources:
 
 - <leader><Tab> [cycle to next buffer]
 - <leader>ep [paste from system clipboard]
-- <leader>ey [yank (copy) from system clipboard]
+- <leader>ey [yank (copy) to system clipboard]
 
 - <c-p> [open ctrlp in fuzzy-finder mode]
 
@@ -55,6 +55,7 @@ This configuration includes the following scripts and plugins for vim:
 - YankRing (providing yank and delete history)
 - web2py-snippets (snipmate snippets for the web2py python framework)
 - web2py-syntax (syntax highlighting for the web2py python framework)
+- project.vim (for project management)
 
 It also includes the molokai colour scheme, a port of the monokai theme
 for TextMate made by Tomas Restrepo.
@@ -127,3 +128,4 @@ git submodule add https://github.com/scrooloose/nerdcommenter.git bundle/nerdcom
 git submodule add https://github.com/vim-scripts/svg.vim.git bundle/svg.vim
 git submodule add https://github.com/kien/ctrlp.vim.git bundle/ctrlp
 git submodule add https://github.com/vim-scripts/YankRing.vim.git bundle/yankring
+git submodule add https://github.com/vim-scripts/project.vim.git bundle/project
