@@ -56,6 +56,7 @@ This configuration includes the following scripts and plugins for vim:
 - web2py-snippets (snipmate snippets for the web2py python framework)
 - web2py-syntax (syntax highlighting for the web2py python framework)
 - project.vim (for project management)
+- vimroom (distraction free text-editing settings)
 
 It also includes the molokai colour scheme, a port of the monokai theme
 for TextMate made by Tomas Restrepo.
