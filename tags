@@ -1,0 +1,51 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CommandTMatch_initialize	./bundle/command-t/ruby/command-t/match.c	/^VALUE CommandTMatch_initialize(int argc, VALUE *argv, VALUE self)$/;"	f	signature:(int argc, VALUE *argv, VALUE self)
+CommandTMatch_initialize	./bundle/command-t/ruby/command-t/match.h	/^extern VALUE CommandTMatch_initialize(int argc, VALUE *argv, VALUE self);$/;"	p	signature:(int argc, VALUE *argv, VALUE self)
+CommandTMatch_matches	./bundle/command-t/ruby/command-t/match.c	/^VALUE CommandTMatch_matches(VALUE self)$/;"	f	signature:(VALUE self)
+CommandTMatch_matches	./bundle/command-t/ruby/command-t/match.h	/^extern VALUE CommandTMatch_matches(VALUE self);$/;"	p	signature:(VALUE self)
+CommandTMatch_score	./bundle/command-t/ruby/command-t/match.h	/^extern VALUE CommandTMatch_score(VALUE self);$/;"	p	signature:(VALUE self)
+CommandTMatch_to_s	./bundle/command-t/ruby/command-t/match.c	/^VALUE CommandTMatch_to_s(VALUE self)$/;"	f	signature:(VALUE self)
+CommandTMatch_to_s	./bundle/command-t/ruby/command-t/match.h	/^extern VALUE CommandTMatch_to_s(VALUE self);$/;"	p	signature:(VALUE self)
+CommandTMatcher_initialize	./bundle/command-t/ruby/command-t/matcher.c	/^VALUE CommandTMatcher_initialize(int argc, VALUE *argv, VALUE self)$/;"	f	signature:(int argc, VALUE *argv, VALUE self)
+CommandTMatcher_initialize	./bundle/command-t/ruby/command-t/matcher.h	/^extern VALUE CommandTMatcher_initialize(int argc, VALUE *argv, VALUE self);$/;"	p	signature:(int argc, VALUE *argv, VALUE self)
+CommandTMatcher_matches_for	./bundle/command-t/ruby/command-t/matcher.c	/^VALUE CommandTMatcher_matches_for(VALUE self, VALUE abbrev)$/;"	f	signature:(VALUE self, VALUE abbrev)
+CommandTMatcher_matches_for	./bundle/command-t/ruby/command-t/matcher.h	/^extern VALUE CommandTMatcher_matches_for(VALUE self, VALUE abbrev);$/;"	p	signature:(VALUE self, VALUE abbrev)
+CommandTMatcher_sorted_matches_for	./bundle/command-t/ruby/command-t/matcher.c	/^VALUE CommandTMatcher_sorted_matches_for(VALUE self, VALUE abbrev, VALUE options)$/;"	f	signature:(VALUE self, VALUE abbrev, VALUE options)
+CommandTMatcher_sorted_matches_for	./bundle/command-t/ruby/command-t/matcher.h	/^extern VALUE CommandTMatcher_sorted_matches_for(VALUE self, VALUE abbrev, VALUE options);$/;"	p	signature:(VALUE self, VALUE abbrev, VALUE options)
+CommandT_option_from_hash	./bundle/command-t/ruby/command-t/ext.c	/^VALUE CommandT_option_from_hash(const char *option, VALUE hash)$/;"	f	signature:(const char *option, VALUE hash)
+CommandT_option_from_hash	./bundle/command-t/ruby/command-t/ext.h	/^VALUE CommandT_option_from_hash(const char *option, VALUE hash);$/;"	p	signature:(const char *option, VALUE hash)
+Init_ext	./bundle/command-t/ruby/command-t/ext.c	/^void Init_ext()$/;"	f
+RARRAY_LEN	./bundle/command-t/ruby/command-t/ruby_compat.h	43;"	d
+RARRAY_PTR	./bundle/command-t/ruby/command-t/ruby_compat.h	38;"	d
+RFLOAT_VALUE	./bundle/command-t/ruby/command-t/ruby_compat.h	48;"	d
+RSTRING_LEN	./bundle/command-t/ruby/command-t/ruby_compat.h	33;"	d
+RSTRING_PTR	./bundle/command-t/ruby/command-t/ruby_compat.h	28;"	d
+__anon1::abbrev_len	./bundle/command-t/ruby/command-t/match.c	/^    long    abbrev_len;             \/\/ length of same$/;"	m	struct:__anon1	file:	access:public
+__anon1::abbrev_p	./bundle/command-t/ruby/command-t/match.c	/^    char    *abbrev_p;              \/\/ pointer to search string (abbreviation)$/;"	m	struct:__anon1	file:	access:public
+__anon1::always_show_dot_files	./bundle/command-t/ruby/command-t/match.c	/^    int     always_show_dot_files;  \/\/ boolean$/;"	m	struct:__anon1	file:	access:public
+__anon1::dot_file	./bundle/command-t/ruby/command-t/match.c	/^    int     dot_file;               \/\/ boolean: true if str is a dot-file$/;"	m	struct:__anon1	file:	access:public
+__anon1::max_score_per_char	./bundle/command-t/ruby/command-t/match.c	/^    double  max_score_per_char;$/;"	m	struct:__anon1	file:	access:public
+__anon1::never_show_dot_files	./bundle/command-t/ruby/command-t/match.c	/^    int     never_show_dot_files;   \/\/ boolean$/;"	m	struct:__anon1	file:	access:public
+__anon1::str_len	./bundle/command-t/ruby/command-t/match.c	/^    long    str_len;                \/\/ length of same$/;"	m	struct:__anon1	file:	access:public
+__anon1::str_p	./bundle/command-t/ruby/command-t/match.c	/^    char    *str_p;                 \/\/ pointer to string to be searched$/;"	m	struct:__anon1	file:	access:public
+abbrev_len	./bundle/command-t/ruby/command-t/match.c	/^    long    abbrev_len;             \/\/ length of same$/;"	m	struct:__anon1	file:	access:public
+abbrev_p	./bundle/command-t/ruby/command-t/match.c	/^    char    *abbrev_p;              \/\/ pointer to search string (abbreviation)$/;"	m	struct:__anon1	file:	access:public
+always_show_dot_files	./bundle/command-t/ruby/command-t/match.c	/^    int     always_show_dot_files;  \/\/ boolean$/;"	m	struct:__anon1	file:	access:public
+cCommandTMatch	./bundle/command-t/ruby/command-t/ext.c	/^VALUE cCommandTMatch    = 0; \/\/ class CommandT::Match$/;"	v
+cCommandTMatcher	./bundle/command-t/ruby/command-t/ext.c	/^VALUE cCommandTMatcher  = 0; \/\/ class CommandT::Matcher$/;"	v
+comp_alpha	./bundle/command-t/ruby/command-t/matcher.c	/^int comp_alpha(const void *a, const void *b)$/;"	f	signature:(const void *a, const void *b)
+comp_score	./bundle/command-t/ruby/command-t/matcher.c	/^int comp_score(const void *a, const void *b)$/;"	f	signature:(const void *a, const void *b)
+dot_file	./bundle/command-t/ruby/command-t/match.c	/^    int     dot_file;               \/\/ boolean: true if str is a dot-file$/;"	m	struct:__anon1	file:	access:public
+mCommandT	./bundle/command-t/ruby/command-t/ext.c	/^VALUE mCommandT         = 0; \/\/ module CommandT$/;"	v
+matchinfo_t	./bundle/command-t/ruby/command-t/match.c	/^} matchinfo_t;$/;"	t	typeref:struct:__anon1	file:
+max_score_per_char	./bundle/command-t/ruby/command-t/match.c	/^    double  max_score_per_char;$/;"	m	struct:__anon1	file:	access:public
+never_show_dot_files	./bundle/command-t/ruby/command-t/match.c	/^    int     never_show_dot_files;   \/\/ boolean$/;"	m	struct:__anon1	file:	access:public
+recursive_match	./bundle/command-t/ruby/command-t/match.c	/^double recursive_match(matchinfo_t *m,  \/\/ sharable meta-data$/;"	f	signature:(matchinfo_t *m, long str_idx, long abbrev_idx, long last_idx, double score)
+ruby_inspect	./bundle/command-t/ruby/command-t/ext.h	36;"	d
+str_len	./bundle/command-t/ruby/command-t/match.c	/^    long    str_len;                \/\/ length of same$/;"	m	struct:__anon1	file:	access:public
+str_p	./bundle/command-t/ruby/command-t/match.c	/^    char    *str_p;                 \/\/ pointer to string to be searched$/;"	m	struct:__anon1	file:	access:public

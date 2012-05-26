@@ -98,12 +98,15 @@
 [submodule "bundle/vimroom"]
 	path = bundle/vimroom
 	url = https://github.com/mikewest/vimroom.git
-[submodule "gist-vim"]
-	path = gist-vim
+[submodule "bundle/gist-vim"]
+	path = bundle/gist-vim
 	url = https://github.com/mattn/gist-vim.git
-[submodule "zencoding-vim"]
-	path = zencoding-vim
+[submodule "bundle/zencoding-vim"]
+	path = bundle/zencoding-vim
 	url = https://github.com/mattn/zencoding-vim.git
-[submodule "matchit"]
-	path = matchit
+[submodule "bundle/matchit"]
+	path = bundle/matchit
 	url = https://github.com/tmhedberg/matchit.git
+[submodule "bundle/project"]
+	path = bundle/project
+	url = https://github.com/vim-scripts/project.vim.git

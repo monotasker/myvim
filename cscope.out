@@ -1,0 +1,1852 @@
+cscope 15 $HOME/.vim -q 0000000127 0000010329
+	@bundle/command-t/ruby/command-t/ext.c
+
+24 
+	~"m©ch.h
+"
+
+25 
+	~"m©ch”.h
+"
+
+27 
+VALUE
+ 
+	gmCommªdT
+ = 0;
+
+28 
+VALUE
+ 
+	gcCommªdTM©ch
+ = 0;
+
+29 
+VALUE
+ 
+	gcCommªdTM©ch”
+ = 0;
+
+31 
+VALUE
+ 
+	$CommªdT_ÝtiÚ_äom_hash
+(cÚ¡ *
+ÝtiÚ
+, 
+VALUE
+ 
+hash
+)
+
+33 ià(
+	`NIL_P
+(
+hash
+))
+
+34  
+Qnž
+;
+
+35 
+VALUE
+ 
+key
+ = 
+	`ID2SYM
+(
+	`rb_š‹º
+(
+ÝtiÚ
+));
+
+36 ià(
+	`rb_funÿÎ
+(
+hash
+, 
+	`rb_š‹º
+("has_key?"), 1, 
+key
+è=ð
+QŒue
+)
+
+37  
+	`rb_hash_¬ef
+(
+hash
+, 
+key
+);
+
+39  
+Qnž
+;
+
+40 
+	}
+}
+
+42 
+	$In™_ext
+()
+
+45 
+mCommªdT
+ = 
+	`rb_defše_moduË
+("CommandT");
+
+48 
+cCommªdTM©ch
+ = 
+	`rb_defše_þass_und”
+(
+mCommªdT
+, "M©ch", 
+rb_cObjeù
+);
+
+51 
+	`rb_defše_m‘hod
+(
+cCommªdTM©ch
+, "š™Ÿlize", 
+CommªdTM©ch_š™Ÿlize
+, -1);
+
+52 
+	`rb_defše_m‘hod
+(
+cCommªdTM©ch
+, "m©ches?", 
+CommªdTM©ch_m©ches
+, 0);
+
+53 
+	`rb_defše_m‘hod
+(
+cCommªdTM©ch
+, "to_s", 
+CommªdTM©ch_to_s
+, 0);
+
+56 
+	`rb_defše_©Œ
+(
+cCommªdTM©ch
+, "scÜe", 
+QŒue
+, 
+Qçl£
+);
+
+59 
+cCommªdTM©ch”
+ = 
+	`rb_defše_þass_und”
+(
+mCommªdT
+, "M©ch”", 
+rb_cObjeù
+);
+
+62 
+	`rb_defše_m‘hod
+(
+cCommªdTM©ch”
+, "š™Ÿlize", 
+CommªdTM©ch”_š™Ÿlize
+, -1);
+
+63 
+	`rb_defše_m‘hod
+(
+cCommªdTM©ch”
+, "sÜ‹d_m©ches_fÜ", 
+CommªdTM©ch”_sÜ‹d_m©ches_fÜ
+, 2);
+
+64 
+	`rb_defše_m‘hod
+(
+cCommªdTM©ch”
+, "m©ches_fÜ", 
+CommªdTM©ch”_m©ches_fÜ
+, 1);
+
+65 
+	}
+}
+
+	@bundle/command-t/ruby/command-t/ext.h
+
+24 
+	~<ruby.h
+>
+
+26 
+VALUE
+ 
+mCommªdT
+;
+
+27 
+VALUE
+ 
+cCommªdTM©ch
+;
+
+28 
+VALUE
+ 
+cCommªdTM©ch”
+;
+
+33 
+VALUE
+ 
+CommªdT_ÝtiÚ_äom_hash
+(cÚ¡ *
+ÝtiÚ
+, VALUE 
+hash
+);
+
+36 
+	#ruby_š¥eù
+(
+obj
+è
+	`rb_funÿÎ
+(
+rb_mK”Ãl
+, 
+	`rb_š‹º
+("p"), 1, obj)
+
+	)
+
+	@bundle/command-t/ruby/command-t/match.c
+
+24 
+	~"m©ch.h
+"
+
+25 
+	~"ext.h
+"
+
+26 
+	~"ruby_com·t.h
+"
+
+31 *
+	m¡r_p
+;
+
+32 
+	m¡r_Ën
+;
+
+33 *
+	mabb»v_p
+;
+
+34 
+	mabb»v_Ën
+;
+
+35 
+	mmax_scÜe_³r_ch¬
+;
+
+36 
+	mdÙ_fže
+;
+
+37 
+	m®ways_show_dÙ_fžes
+;
+
+38 
+	mÃv”_show_dÙ_fžes
+;
+
+39 } 
+	tm©chšfo_t
+;
+
+41 
+	$»cursive_m©ch
+(
+m©chšfo_t
+ *
+m
+,
+
+42 
+¡r_idx
+,
+
+43 
+abb»v_idx
+,
+
+44 
+Ï¡_idx
+,
+
+45 
+scÜe
+)
+
+47 
+£’_scÜe
+ = 0;
+
+48 
+dÙ_fže_m©ch
+ = 0;
+
+49 
+dÙ_£¬ch
+ = 0;
+
+51 
+i
+ = 
+abb»v_idx
+; i < 
+m
+->
+abb»v_Ën
+; i++)
+
+53 
+c
+ = 
+m
+->
+abb»v_p
+[
+i
+];
+
+54 ià(
+c
+ == '.')
+
+55 
+dÙ_£¬ch
+ = 1;
+
+56 
+found
+ = 0;
+
+57 
+j
+ = 
+¡r_idx
+; j < 
+m
+->
+¡r_Ën
+; j++, str_idx++)
+
+59 
+d
+ = 
+m
+->
+¡r_p
+[
+j
+];
+
+60 ià(
+d
+ == '.')
+
+62 ià(
+j
+ =ð0 || 
+m
+->
+¡r_p
+[j - 1] == '/')
+
+64 
+m
+->
+dÙ_fže
+ = 1;
+
+65 ià(
+dÙ_£¬ch
+)
+
+66 
+dÙ_fže_m©ch
+ = 1;
+
+69 ià(
+d
+ >= 'A' && d <= 'Z')
+
+70 
+d
+ += 'a' - 'A';
+
+71 ià(
+c
+ =ð
+d
+)
+
+73 
+found
+ = 1;
+
+74 
+dÙ_£¬ch
+ = 0;
+
+77 
+scÜe_fÜ_ch¬
+ = 
+m
+->
+max_scÜe_³r_ch¬
+;
+
+78 
+di¡ªû
+ = 
+j
+ - 
+Ï¡_idx
+;
+
+79 ià(
+di¡ªû
+ > 1)
+
+81 
+çùÜ
+ = 1.0;
+
+82 
+Ï¡
+ = 
+m
+->
+¡r_p
+[
+j
+ - 1];
+
+83 
+cu¼
+ = 
+m
+->
+¡r_p
+[
+j
+];
+
+84 ià(
+Ï¡
+ == '/')
+
+85 
+çùÜ
+ = 0.9;
+
+86 ià(
+Ï¡
+ == '-' ||
+
+87 
+Ï¡
+ == '_' ||
+
+88 
+Ï¡
+ == ' ' ||
+
+89 (
+Ï¡
+ >= '0' &&†ast <= '9'))
+
+90 
+çùÜ
+ = 0.8;
+
+91 ià(
+Ï¡
+ >= 'a' &&†ast <= 'z' &&
+
+92 
+cu¼
+ >= 'A' && curr <= 'Z')
+
+93 
+çùÜ
+ = 0.8;
+
+94 ià(
+Ï¡
+ == '.')
+
+95 
+çùÜ
+ = 0.7;
+
+99 
+çùÜ
+ = (1.0 / 
+di¡ªû
+) * 0.75;
+
+100 
+scÜe_fÜ_ch¬
+ *ð
+çùÜ
+;
+
+103 ià(++
+j
+ < 
+m
+->
+¡r_Ën
+)
+
+107 
+sub_scÜe
+ = 
+	`»cursive_m©ch
+(
+m
+, 
+j
+, 
+i
+, 
+Ï¡_idx
+, 
+scÜe
+);
+
+108 ià(
+sub_scÜe
+ > 
+£’_scÜe
+)
+
+109 
+£’_scÜe
+ = 
+sub_scÜe
+;
+
+112 
+scÜe
+ +ð
+scÜe_fÜ_ch¬
+;
+
+113 
+Ï¡_idx
+ = 
+¡r_idx
+++;
+
+117 ià(!
+found
+)
+
+120 ià(
+m
+->
+dÙ_fže
+)
+
+122 ià(
+m
+->
+Ãv”_show_dÙ_fžes
+ ||
+
+123 (!
+dÙ_fže_m©ch
+ && !
+m
+->
+®ways_show_dÙ_fžes
+))
+
+126  (
+scÜe
+ > 
+£’_scÜe
+) ? score : seen_score;
+
+127 
+	}
+}
+
+130 
+VALUE
+ 
+	$CommªdTM©ch_š™Ÿlize
+(
+¬gc
+, 
+VALUE
+ *
+¬gv
+, VALUE 
+£lf
+)
+
+133 
+VALUE
+ 
+¡r
+, 
+abb»v
+, 
+ÝtiÚs
+;
+
+134 ià(
+	`rb_sÿn_¬gs
+(
+¬gc
+, 
+¬gv
+, "21", &
+¡r
+, &
+abb»v
+, &
+ÝtiÚs
+) == 2)
+
+135 
+ÝtiÚs
+ = 
+Qnž
+;
+
+136 
+¡r
+ = 
+	`SŒšgV®ue
+(str);
+
+137 
+abb»v
+ = 
+	`SŒšgV®ue
+(abbrev);
+
+140 
+VALUE
+ 
+®ways_show_dÙ_fžes
+ = 
+	`CommªdT_ÝtiÚ_äom_hash
+("®ways_show_dÙ_fžes", 
+ÝtiÚs
+);
+
+141 
+VALUE
+ 
+Ãv”_show_dÙ_fžes
+ = 
+	`CommªdT_ÝtiÚ_äom_hash
+("Ãv”_show_dÙ_fžes", 
+ÝtiÚs
+);
+
+143 
+m©chšfo_t
+ 
+m
+;
+
+144 
+m
+.
+¡r_p
+ = 
+	`RSTRING_PTR
+(
+¡r
+);
+
+145 
+m
+.
+¡r_Ën
+ = 
+	`RSTRING_LEN
+(
+¡r
+);
+
+146 
+m
+.
+abb»v_p
+ = 
+	`RSTRING_PTR
+(
+abb»v
+);
+
+147 
+m
+.
+abb»v_Ën
+ = 
+	`RSTRING_LEN
+(
+abb»v
+);
+
+148 
+m
+.
+max_scÜe_³r_ch¬
+ = (1.0 / m.
+¡r_Ën
+ + 1.0 / m.
+abb»v_Ën
+) / 2;
+
+149 
+m
+.
+dÙ_fže
+ = 0;
+
+150 
+m
+.
+®ways_show_dÙ_fžes
+ =‡lways_show_dÙ_fže =ð
+QŒue
+;
+
+151 
+m
+.
+Ãv”_show_dÙ_fžes
+ =‚ev”_show_dÙ_fže =ð
+QŒue
+;
+
+154 
+scÜe
+ = 1.0;
+
+155 ià(
+m
+.
+abb»v_Ën
+ == 0)
+
+158 ià(!
+m
+.
+®ways_show_dÙ_fžes
+)
+
+160 
+i
+ = 0; i < 
+m
+.
+¡r_Ën
+; i++)
+
+162 
+c
+ = 
+m
+.
+¡r_p
+[
+i
+];
+
+163 ià(
+c
+ =ð'.' && (
+i
+ =ð0 || 
+m
+.
+¡r_p
+[i - 1] == '/'))
+
+165 
+scÜe
+ = 0.0;
+
+172 
+scÜe
+ = 
+	`»cursive_m©ch
+(&
+m
+, 0, 0, 0, 0.0);
+
+175 
+	`rb_iv_£t
+(
+£lf
+, "@scÜe", 
+	`rb_æßt_Ãw
+(
+scÜe
+));
+
+176 
+	`rb_iv_£t
+(
+£lf
+, "@¡r", 
+¡r
+);
+
+177  
+Qnž
+;
+
+178 
+	}
+}
+
+180 
+VALUE
+ 
+	$CommªdTM©ch_m©ches
+(
+VALUE
+ 
+£lf
+)
+
+182 
+scÜe
+ = 
+	`NUM2DBL
+(
+	`rb_iv_g‘
+(
+£lf
+, "@score"));
+
+183  
+scÜe
+ > 0 ? 
+QŒue
+ : 
+Qçl£
+;
+
+184 
+	}
+}
+
+186 
+VALUE
+ 
+	$CommªdTM©ch_to_s
+(
+VALUE
+ 
+£lf
+)
+
+188  
+	`rb_iv_g‘
+(
+£lf
+, "@str");
+
+189 
+	}
+}
+
+	@bundle/command-t/ruby/command-t/match.h
+
+24 
+	~<ruby.h
+>
+
+26 
+VALUE
+ 
+CommªdTM©ch_š™Ÿlize
+(
+¬gc
+, VALUE *
+¬gv
+, VALUE 
+£lf
+);
+
+27 
+VALUE
+ 
+CommªdTM©ch_m©ches
+(VALUE 
+£lf
+);
+
+28 
+VALUE
+ 
+CommªdTM©ch_scÜe
+(VALUE 
+£lf
+);
+
+29 
+VALUE
+ 
+CommªdTM©ch_to_s
+(VALUE 
+£lf
+);
+
+	@bundle/command-t/ruby/command-t/matcher.c
+
+24 
+	~<¡dlib.h
+>
+
+25 
+	~<¡ršg.h
+>
+
+26 
+	~"m©ch”.h
+"
+
+27 
+	~"ext.h
+"
+
+28 
+	~"ruby_com·t.h
+"
+
+31 
+	$comp_®pha
+(cÚ¡ *
+a
+, cÚ¡ *
+b
+)
+
+33 
+VALUE
+ 
+a_v®
+ = *(VALUE *)
+a
+;
+
+34 
+VALUE
+ 
+b_v®
+ = *(VALUE *)
+b
+;
+
+35 
+ID
+ 
+to_s
+ = 
+	`rb_š‹º
+("to_s");
+
+37 
+VALUE
+ 
+a_¡r
+ = 
+	`rb_funÿÎ
+(
+a_v®
+, 
+to_s
+, 0);
+
+38 
+VALUE
+ 
+b_¡r
+ = 
+	`rb_funÿÎ
+(
+b_v®
+, 
+to_s
+, 0);
+
+39 *
+a_p
+ = 
+	`RSTRING_PTR
+(
+a_¡r
+);
+
+40 
+a_Ën
+ = 
+	`RSTRING_LEN
+(
+a_¡r
+);
+
+41 *
+b_p
+ = 
+	`RSTRING_PTR
+(
+b_¡r
+);
+
+42 
+b_Ën
+ = 
+	`RSTRING_LEN
+(
+b_¡r
+);
+
+43 
+Üd”
+ = 0;
+
+44 ià(
+a_Ën
+ > 
+b_Ën
+)
+
+46 
+Üd”
+ = 
+	`¡ºcmp
+(
+a_p
+, 
+b_p
+, 
+b_Ën
+);
+
+47 ià(
+Üd”
+ == 0)
+
+48 
+Üd”
+ = 1;
+
+50 ià(
+a_Ën
+ < 
+b_Ën
+)
+
+52 
+Üd”
+ = 
+	`¡ºcmp
+(
+a_p
+, 
+b_p
+, 
+a_Ën
+);
+
+53 ià(
+Üd”
+ == 0)
+
+54 
+Üd”
+ = -1;
+
+57 
+Üd”
+ = 
+	`¡ºcmp
+(
+a_p
+, 
+b_p
+, 
+a_Ën
+);
+
+58  
+Üd”
+;
+
+59 
+	}
+}
+
+62 
+	$comp_scÜe
+(cÚ¡ *
+a
+, cÚ¡ *
+b
+)
+
+64 
+VALUE
+ 
+a_v®
+ = *(VALUE *)
+a
+;
+
+65 
+VALUE
+ 
+b_v®
+ = *(VALUE *)
+b
+;
+
+66 
+ID
+ 
+scÜe
+ = 
+	`rb_š‹º
+("score");
+
+67 
+a_scÜe
+ = 
+	`RFLOAT_VALUE
+(
+	`rb_funÿÎ
+(
+a_v®
+, 
+scÜe
+, 0));
+
+68 
+b_scÜe
+ = 
+	`RFLOAT_VALUE
+(
+	`rb_funÿÎ
+(
+b_v®
+, 
+scÜe
+, 0));
+
+69 ià(
+a_scÜe
+ > 
+b_scÜe
+)
+
+71 ià(
+a_scÜe
+ < 
+b_scÜe
+)
+
+74  
+	`comp_®pha
+(
+a
+, 
+b
+);
+
+75 
+	}
+}
+
+77 
+VALUE
+ 
+	$CommªdTM©ch”_š™Ÿlize
+(
+¬gc
+, 
+VALUE
+ *
+¬gv
+, VALUE 
+£lf
+)
+
+80 
+VALUE
+ 
+sÿÂ”
+, 
+ÝtiÚs
+;
+
+81 ià(
+	`rb_sÿn_¬gs
+(
+¬gc
+, 
+¬gv
+, "11", &
+sÿÂ”
+, &
+ÝtiÚs
+) == 1)
+
+82 
+ÝtiÚs
+ = 
+Qnž
+;
+
+83 ià(
+	`NIL_P
+(
+sÿÂ”
+))
+
+84 
+	`rb_¿i£
+(
+rb_eArgE¼Ü
+, "nil scanner");
+
+85 
+	`rb_iv_£t
+(
+£lf
+, "@sÿÂ”", 
+sÿÂ”
+);
+
+88 
+VALUE
+ 
+®ways_show_dÙ_fžes
+ = 
+	`CommªdT_ÝtiÚ_äom_hash
+("®ways_show_dÙ_fžes", 
+ÝtiÚs
+);
+
+89 ià(
+®ways_show_dÙ_fžes
+ !ð
+QŒue
+)
+
+90 
+®ways_show_dÙ_fžes
+ = 
+Qçl£
+;
+
+91 
+VALUE
+ 
+Ãv”_show_dÙ_fžes
+ = 
+	`CommªdT_ÝtiÚ_äom_hash
+("Ãv”_show_dÙ_fžes", 
+ÝtiÚs
+);
+
+92 ià(
+Ãv”_show_dÙ_fžes
+ !ð
+QŒue
+)
+
+93 
+Ãv”_show_dÙ_fžes
+ = 
+Qçl£
+;
+
+94 
+	`rb_iv_£t
+(
+£lf
+, "@®ways_show_dÙ_fžes", 
+®ways_show_dÙ_fžes
+);
+
+95 
+	`rb_iv_£t
+(
+£lf
+, "@Ãv”_show_dÙ_fžes", 
+Ãv”_show_dÙ_fžes
+);
+
+96  
+Qnž
+;
+
+97 
+	}
+}
+
+99 
+VALUE
+ 
+	$CommªdTM©ch”_sÜ‹d_m©ches_fÜ
+(
+VALUE
+ 
+£lf
+, VALUE 
+abb»v
+, VALUE 
+ÝtiÚs
+)
+
+102 
+VALUE
+ 
+lim™_ÝtiÚ
+ = 
+	`CommªdT_ÝtiÚ_äom_hash
+("lim™", 
+ÝtiÚs
+);
+
+105 
+VALUE
+ 
+m©ches
+ = 
+	`CommªdTM©ch”_m©ches_fÜ
+(
+£lf
+, 
+abb»v
+);
+
+107 
+abb»v
+ = 
+	`SŒšgV®ue
+(abbrev);
+
+108 ià(
+	`RSTRING_LEN
+(
+abb»v
+) == 0 ||
+
+109 (
+	`RSTRING_LEN
+(
+abb»v
+è=ð1 && 
+	`RSTRING_PTR
+(abbrev)[0] == '.'))
+
+111 
+	`qsÜt
+(
+	`RARRAY_PTR
+(
+m©ches
+), 
+	`RARRAY_LEN
+(m©ches), (
+VALUE
+), 
+comp_®pha
+);
+
+114 
+	`qsÜt
+(
+	`RARRAY_PTR
+(
+m©ches
+), 
+	`RARRAY_LEN
+(m©ches), (
+VALUE
+), 
+comp_scÜe
+);
+
+117 
+lim™
+ = 
+	`NIL_P
+(
+lim™_ÝtiÚ
+è? 0 : 
+	`NUM2LONG
+(limit_option);
+
+118 ià(
+lim™
+ =ð0 || 
+	`RARRAY_LEN
+(
+m©ches
+) <†imit)
+
+119 
+lim™
+ = 
+	`RARRAY_LEN
+(
+m©ches
+);
+
+122 
+i
+ = 0; i < 
+lim™
+; i++)
+
+124 
+VALUE
+ 
+¡r
+ = 
+	`rb_funÿÎ
+(
+	`RARRAY_PTR
+(
+m©ches
+)[
+i
+], 
+	`rb_š‹º
+("to_s"), 0);
+
+125 
+	`RARRAY_PTR
+(
+m©ches
+)[
+i
+] = 
+¡r
+;
+
+129 ià(
+lim™
+ < 
+	`RARRAY_LEN
+(
+m©ches
+))
+
+130 ()
+	`rb_funÿÎ
+(
+m©ches
+, 
+	`rb_š‹º
+("¦iû!"), 2, 
+	`LONG2NUM
+(
+lim™
+),
+
+131 
+	`LONG2NUM
+(
+	`RARRAY_LEN
+(
+m©ches
+è- 
+lim™
+));
+
+132  
+m©ches
+;
+
+133 
+	}
+}
+
+135 
+VALUE
+ 
+	$CommªdTM©ch”_m©ches_fÜ
+(
+VALUE
+ 
+£lf
+, VALUE 
+abb»v
+)
+
+137 ià(
+	`NIL_P
+(
+abb»v
+))
+
+138 
+	`rb_¿i£
+(
+rb_eArgE¼Ü
+, "nil‡bbrev");
+
+139 
+VALUE
+ 
+m©ches
+ = 
+	`rb_¬y_Ãw
+();
+
+140 
+VALUE
+ 
+sÿÂ”
+ = 
+	`rb_iv_g‘
+(
+£lf
+, "@scanner");
+
+141 
+VALUE
+ 
+®ways_show_dÙ_fžes
+ = 
+	`rb_iv_g‘
+(
+£lf
+, "@always_show_dot_files");
+
+142 
+VALUE
+ 
+Ãv”_show_dÙ_fžes
+ = 
+	`rb_iv_g‘
+(
+£lf
+, "@never_show_dot_files");
+
+143 
+VALUE
+ 
+ÝtiÚs
+ = 
+Qnž
+;
+
+144 ià(
+®ways_show_dÙ_fžes
+ =ð
+QŒue
+)
+
+146 
+ÝtiÚs
+ = 
+	`rb_hash_Ãw
+();
+
+147 
+	`rb_hash_a£t
+(
+ÝtiÚs
+, 
+	`ID2SYM
+(
+	`rb_š‹º
+("®ways_show_dÙ_fžes")), 
+®ways_show_dÙ_fžes
+);
+
+149 ià(
+Ãv”_show_dÙ_fžes
+ =ð
+QŒue
+)
+
+151 
+ÝtiÚs
+ = 
+	`rb_hash_Ãw
+();
+
+152 
+	`rb_hash_a£t
+(
+ÝtiÚs
+, 
+	`ID2SYM
+(
+	`rb_š‹º
+("Ãv”_show_dÙ_fžes")), 
+Ãv”_show_dÙ_fžes
+);
+
+154 
+abb»v
+ = 
+	`rb_funÿÎ
+×bb»v, 
+	`rb_š‹º
+("downcase"), 0);
+
+155 
+VALUE
+ 
+·ths
+ = 
+	`rb_funÿÎ
+(
+sÿÂ”
+, 
+	`rb_š‹º
+("paths"), 0);
+
+156 
+i
+ = 0, 
+max
+ = 
+	`RARRAY_LEN
+(
+·ths
+); i < max; i++)
+
+158 
+VALUE
+ 
+·th
+ = 
+	`RARRAY_PTR
+(
+·ths
+)[
+i
+];
+
+159 
+VALUE
+ 
+m©ch
+ = 
+	`rb_funÿÎ
+(
+cCommªdTM©ch
+, 
+	`rb_š‹º
+("Ãw"), 3, 
+·th
+, 
+abb»v
+, 
+ÝtiÚs
+);
+
+160 ià(
+	`rb_funÿÎ
+(
+m©ch
+, 
+	`rb_š‹º
+("m©ches?"), 0è=ð
+QŒue
+)
+
+161 
+	`rb_funÿÎ
+(
+m©ches
+, 
+	`rb_š‹º
+("push"), 1, 
+m©ch
+);
+
+163  
+m©ches
+;
+
+164 
+	}
+}
+
+	@bundle/command-t/ruby/command-t/matcher.h
+
+24 
+	~<ruby.h
+>
+
+26 
+VALUE
+ 
+CommªdTM©ch”_š™Ÿlize
+(
+¬gc
+, VALUE *
+¬gv
+, VALUE 
+£lf
+);
+
+27 
+VALUE
+ 
+CommªdTM©ch”_sÜ‹d_m©ches_fÜ
+(VALUE 
+£lf
+, VALUE 
+abb»v
+, VALUE 
+ÝtiÚs
+);
+
+30 
+VALUE
+ 
+CommªdTM©ch”_m©ches_fÜ
+(VALUE 
+£lf
+, VALUE 
+abb»v
+);
+
+	@bundle/command-t/ruby/command-t/ruby_compat.h
+
+24 
+	~<ruby.h
+>
+
+27 #iâdeà
+RSTRING_PTR
+
+
+28 
+	#RSTRING_PTR
+(
+s
+è(
+	`RSTRING
+(s)->
+±r
+)
+
+	)
+
+32 #iâdeà
+RSTRING_LEN
+
+
+33 
+	#RSTRING_LEN
+(
+s
+è(
+	`RSTRING
+(s)->
+Ën
+)
+
+	)
+
+37 #iâdeà
+RARRAY_PTR
+
+
+38 
+	#RARRAY_PTR
+(
+a
+è(
+	`RARRAY
+×)->
+±r
+)
+
+	)
+
+42 #iâdeà
+RARRAY_LEN
+
+
+43 
+	#RARRAY_LEN
+(
+a
+è(
+	`RARRAY
+×)->
+Ën
+)
+
+	)
+
+47 #iâdeà
+RFLOAT_VALUE
+
+
+48 
+	#RFLOAT_VALUE
+(
+f
+è(
+	`RFLOAT
+(f)->
+v®ue
+)
+
+	)
+
+	@
+1
+.
+0
+7
+286
+bundle/command-t/ruby/command-t/ext.c
+bundle/command-t/ruby/command-t/ext.h
+bundle/command-t/ruby/command-t/match.c
+bundle/command-t/ruby/command-t/match.h
+bundle/command-t/ruby/command-t/matcher.c
+bundle/command-t/ruby/command-t/matcher.h
+bundle/command-t/ruby/command-t/ruby_compat.h

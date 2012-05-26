@@ -8,7 +8,7 @@ following sources:
 
 ##Overview
 
-###Settings
+###My Default Settings
 
 - visual right-margin guide at 80 chars
 - autocomplete on
@@ -18,7 +18,7 @@ following sources:
 
 - <leader><Tab> [cycle to next buffer]
 - <leader>ep [paste from system clipboard]
-- <leader>ey [yank (copy) from system clipboard]
+- <leader>ey [yank (copy) to system clipboard]
 
 - <c-p> [open ctrlp in fuzzy-finder mode]
 
@@ -58,6 +58,9 @@ This configuration includes the following scripts and plugins for vim:
 - gist-vim (writing and reading github gists)
 - matchit (expanded % movement between opening and closing members of matched pairs)
 - zencoding-vim (implementing the zen coding shortcuts for html and css)
+- project.vim (for project management)
+- vimroom (distraction free text-editing settings)
+
 It also includes the molokai colour scheme, a port of the monokai theme
 for TextMate made by Tomas Restrepo.
 
@@ -129,6 +132,7 @@ git submodule add https://github.com/scrooloose/nerdcommenter.git bundle/nerdcom
 git submodule add https://github.com/vim-scripts/svg.vim.git bundle/svg.vim
 git submodule add https://github.com/kien/ctrlp.vim.git bundle/ctrlp
 git submodule add https://github.com/vim-scripts/YankRing.vim.git bundle/yankring
+git submodule add https://github.com/vim-scripts/project.vim.git bundle/project
 git submodule add https://github.com/mikewest/vimroom.git bundle/vimroom
 git submodule add https://github.com/mattn/gist-vim.git bundle/gist-vim
 git submodule add https://github.com/mattn/zencoding-vim.git bundle/zencoding-vim

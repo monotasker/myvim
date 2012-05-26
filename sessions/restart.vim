@@ -1,9 +1,9 @@
 " ~/.vim/sessions/restart.vim: Vim session script.
-" Created by session.vim 1.5 on 09 May 2012 at 13:01:32.
+" Created by session.vim 1.5 on 25 May 2012 at 14:16:36.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
-silent! set guifont=DejaVu\ Sans\ Mono\ Regular\ 13
+silent! set guifont=Inconsolata\ Regular\ 11
 if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 1 | filetype on | endif
 if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
@@ -23,63 +23,30 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +35 web/web2py/applications/paideia/static/images/town_map.svg
-badd +107 .vim/README.md
+badd +0 .vim/README.md
 silent! argdel *
-set lines=45 columns=80
-edit web/web2py/applications/paideia/static/images/town_map.svg
+set lines=50 columns=117
+edit .vim/README.md
 set splitbelow splitright
-wincmd _ | wincmd |
-split
-1wincmd k
-wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe '1resize ' . ((&lines * 1 + 22) / 45)
-exe '2resize ' . ((&lines * 41 + 22) / 45)
 argglobal
-enew
-file -MiniBufExplorer-
-setlocal fdm=indent
-setlocal fde=0
+setlocal fdm=expr
+setlocal fde=pandoc#MarkdownLevel()
 setlocal fmr={{{,}}}
 setlocal fdi=#
 setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-wincmd w
-argglobal
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=99
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-30
-silent! normal zo
-35
-silent! normal zo
-35
-silent! normal zo
-35
-silent! normal zo
-30
-silent! normal zo
-let s:l = 35 - ((2 * winheight(0) + 20) / 41)
+let s:l = 59 - ((27 * winheight(0) + 24) / 49)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-35
-normal! 0
-wincmd w
-2wincmd w
-exe '1resize ' . ((&lines * 1 + 22) / 45)
-exe '2resize ' . ((&lines * 41 + 22) / 45)
+59
+normal! 049l
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
@@ -94,6 +61,6 @@ let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 unlet SessionLoad
 tabnext 1
-2wincmd w
+1wincmd w
 
 " vim: ft=vim ro nowrap smc=128
