@@ -1,5 +1,5 @@
 " ~/.vim/sessions/vim.vim: Vim session script.
-" Created by session.vim 1.5 on 23 May 2012 at 19:47:55.
+" Created by session.vim 1.5 on 25 May 2012 at 20:17:42.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -11,7 +11,7 @@ if exists('g:did_indent_on') != 1 | filetype indent on | endif
 if &background != 'dark'
 	set background=dark
 endif
-if !exists('g:colors_name') || g:colors_name != 'molokai' | colorscheme molokai | endif
+if !exists('g:colors_name') || g:colors_name != 'desert' | colorscheme desert | endif
 call setqflist([])
 let SessionLoad = 1
 if &cp | set nocp | endif
@@ -24,10 +24,12 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 set shortmess=aoO
 badd +58 README.md
-badd +0 ~/web/web2py/w2ptools.py
+badd +15 .vimrc
+badd +1 .gitmodules
+badd +0 .git/config
 silent! argdel *
 set lines=41 columns=149
-edit ~/web/web2py/w2ptools.py
+edit .git/config
 set splitbelow splitright
 wincmd _ | wincmd |
 split
@@ -60,150 +62,12 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-23
-silent! normal zo
-29
-silent! normal zo
-38
-silent! normal zo
-42
-silent! normal zo
-45
-silent! normal zo
-46
-silent! normal zo
-46
-silent! normal zo
-46
-silent! normal zo
-45
-silent! normal zo
-38
-silent! normal zo
-29
-silent! normal zo
-63
-silent! normal zo
-81
-silent! normal zo
-63
-silent! normal zo
-85
-silent! normal zo
-85
-silent! normal zo
-132
-silent! normal zo
-141
-silent! normal zo
-157
-silent! normal zo
-159
-silent! normal zo
-159
-silent! normal zo
-159
-silent! normal zo
-159
-silent! normal zo
-159
-silent! normal zo
-159
-silent! normal zo
-159
-silent! normal zo
-159
-silent! normal zo
-159
-silent! normal zo
-159
-silent! normal zo
-159
-silent! normal zo
-159
-silent! normal zo
-159
-silent! normal zo
-159
-silent! normal zo
-159
-silent! normal zo
-159
-silent! normal zo
-159
-silent! normal zo
-161
-silent! normal zo
-164
-silent! normal zo
-164
-silent! normal zo
-164
-silent! normal zo
-161
-silent! normal zo
-157
-silent! normal zo
-141
-silent! normal zo
-178
-silent! normal zo
-180
-silent! normal zo
-184
-silent! normal zo
-184
-silent! normal zo
-184
-silent! normal zo
-186
-silent! normal zo
-190
-silent! normal zo
-193
-silent! normal zo
-194
-silent! normal zo
-193
-silent! normal zo
-186
-silent! normal zo
-197
-silent! normal zo
-198
-silent! normal zo
-201
-silent! normal zo
-202
-silent! normal zo
-202
-silent! normal zo
-202
-silent! normal zo
-201
-silent! normal zo
-197
-silent! normal zo
-180
-silent! normal zo
-178
-silent! normal zo
-206
-silent! normal zo
-211
-silent! normal zo
-215
-silent! normal zo
-132
-silent! normal zo
-23
-silent! normal zo
-let s:l = 146 - ((4 * winheight(0) + 18) / 37)
+let s:l = 83 - ((36 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-146
-normal! 060l
+83
+normal! 015l
 wincmd w
 2wincmd w
 exe '1resize ' . ((&lines * 1 + 20) / 41)
