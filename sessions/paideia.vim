@@ -1,5 +1,5 @@
 " ~/.vim/sessions/paideia.vim: Vim session script.
-" Created by session.vim 1.5 on 24 May 2012 at 14:43:15.
+" Created by session.vim 1.5 on 29 May 2012 at 17:30:37.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -18,50 +18,30 @@ if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/
+cd ~/web/web2py/applications/paideia/views/reporting
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +65 web/web2py/applications/topoi/static/plugin_ajaxselect/plugin_ajaxselect.js
-badd +171 web/web2py/applications/paideia/controllers/plugin_listandedit.py
-badd +0 web/web2py/w2ptools.py
+badd +11 ~/web/web2py/applications/paideia/controllers/reporting.py
+badd +7 ~/web/web2py/applications/paideia/views/reporting/paths_by_tag.html
 silent! argdel *
-set lines=41 columns=147
-edit web/web2py/w2ptools.py
+set lines=62 columns=193
+edit ~/web/web2py/applications/paideia/views/reporting/paths_by_tag.html
 set splitbelow splitright
 wincmd _ | wincmd |
 split
 1wincmd k
 wincmd w
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe '1resize ' . ((&lines * 1 + 20) / 41)
-exe '2resize ' . ((&lines * 37 + 20) / 41)
-exe 'vert 2resize ' . ((&columns * 45 + 73) / 147)
-exe '3resize ' . ((&lines * 37 + 20) / 41)
-exe 'vert 3resize ' . ((&columns * 101 + 73) / 147)
+exe '1resize ' . ((&lines * 1 + 31) / 62)
+exe '2resize ' . ((&lines * 58 + 31) / 62)
 argglobal
 enew
-file -MiniBufExplorer-
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=99
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-wincmd w
-argglobal
-enew
-" file NERD_tree_1
+file ~/web/web2py/applications/paideia/views/reporting/-MiniBufExplorer-
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -80,79 +60,18 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-23
+8
 silent! normal zo
-26
-silent! normal zo
-29
-silent! normal zo
-38
-silent! normal zo
-39
-silent! normal zo
-39
-silent! normal zo
-39
-silent! normal zo
-39
-silent! normal zo
-39
-silent! normal zo
-39
-silent! normal zo
-39
-silent! normal zo
-39
-silent! normal zo
-39
-silent! normal zo
-39
-silent! normal zo
-39
-silent! normal zo
-38
-silent! normal zo
-29
-silent! normal zo
-64
-silent! normal zo
-78
-silent! normal zo
-82
-silent! normal zo
-64
-silent! normal zo
-133
-silent! normal zo
-142
-silent! normal zo
-158
-silent! normal zo
-158
-silent! normal zo
-142
-silent! normal zo
-178
-silent! normal zo
-214
-silent! normal zo
-133
-silent! normal zo
-23
-silent! normal zo
-let s:l = 216 - ((36 * winheight(0) + 18) / 37)
+let s:l = 14 - ((13 * winheight(0) + 29) / 58)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-216
-normal! 019l
+14
+normal! 07l
 wincmd w
-3wincmd w
-exe '1resize ' . ((&lines * 1 + 20) / 41)
-exe '2resize ' . ((&lines * 37 + 20) / 41)
-exe 'vert 2resize ' . ((&columns * 45 + 73) / 147)
-exe '3resize ' . ((&lines * 37 + 20) / 41)
-exe 'vert 3resize ' . ((&columns * 101 + 73) / 147)
+2wincmd w
+exe '1resize ' . ((&lines * 1 + 31) / 62)
+exe '2resize ' . ((&lines * 58 + 31) / 62)
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
@@ -168,11 +87,5 @@ doautoall SessionLoadPost
 unlet SessionLoad
 tabnext 1
 2wincmd w
-let s:bufnr = bufnr("%")
-NERDTree ~/
-execute "bwipeout" s:bufnr
-1resize 1|vert 1resize 147|2resize 37|vert 2resize 45|3resize 37|vert 3resize 101|
-tabnext 1
-3wincmd w
 
 " vim: ft=vim ro nowrap smc=128
