@@ -55,6 +55,9 @@ This configuration includes the following scripts and plugins for vim:
 - YankRing (providing yank and delete history)
 - web2py-snippets (snipmate snippets for the web2py python framework)
 - web2py-syntax (syntax highlighting for the web2py python framework)
+- gist-vim (writing and reading github gists)
+- matchit (expanded % movement between opening and closing members of matched pairs)
+- zencoding-vim (implementing the zen coding shortcuts for html and css)
 - project.vim (for project management)
 - vimroom (distraction free text-editing settings)
 
@@ -131,3 +134,6 @@ git submodule add https://github.com/kien/ctrlp.vim.git bundle/ctrlp
 git submodule add https://github.com/vim-scripts/YankRing.vim.git bundle/yankring
 git submodule add https://github.com/vim-scripts/project.vim.git bundle/project
 git submodule add https://github.com/mikewest/vimroom.git bundle/vimroom
+git submodule add https://github.com/mattn/gist-vim.git bundle/gist-vim
+git submodule add https://github.com/mattn/zencoding-vim.git bundle/zencoding-vim
+git submodule add https://github.com/tmhedberg/matchit.git bundle/matchit
