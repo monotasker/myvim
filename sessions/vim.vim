@@ -1,5 +1,5 @@
 " ~/.vim/sessions/vim.vim: Vim session script.
-" Created by session.vim 1.5 on 25 May 2012 at 20:17:42.
+" Created by session.vim 1.5 on 28 May 2012 at 13:22:05.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -11,7 +11,7 @@ if exists('g:did_indent_on') != 1 | filetype indent on | endif
 if &background != 'dark'
 	set background=dark
 endif
-if !exists('g:colors_name') || g:colors_name != 'desert' | colorscheme desert | endif
+if !exists('g:colors_name') || g:colors_name != 'molokai' | colorscheme molokai | endif
 call setqflist([])
 let SessionLoad = 1
 if &cp | set nocp | endif
@@ -23,13 +23,13 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +58 README.md
-badd +15 .vimrc
+badd +59 .git/config
 badd +1 .gitmodules
-badd +0 .git/config
+badd +3 README.md
+badd +1 .vimrc
 silent! argdel *
 set lines=41 columns=149
-edit .git/config
+edit -MiniBufExplorer-
 set splitbelow splitright
 wincmd _ | wincmd |
 split
@@ -42,8 +42,6 @@ set winheight=1 winwidth=1
 exe '1resize ' . ((&lines * 1 + 20) / 41)
 exe '2resize ' . ((&lines * 37 + 20) / 41)
 argglobal
-enew
-file -MiniBufExplorer-
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -52,24 +50,30 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-wincmd w
-argglobal
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=99
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-let s:l = 83 - ((36 * winheight(0) + 18) / 37)
+let s:l = 1 - ((0 * winheight(0) + 0) / 1)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-83
-normal! 015l
+1
+normal! 0
 wincmd w
-2wincmd w
+argglobal
+edit .vimrc
+setlocal fdm=indent
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 56 - ((20 * winheight(0) + 18) / 37)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+56
+normal! 031l
+wincmd w
 exe '1resize ' . ((&lines * 1 + 20) / 41)
 exe '2resize ' . ((&lines * 37 + 20) / 41)
 tabnext 1
@@ -86,6 +90,6 @@ let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 unlet SessionLoad
 tabnext 1
-2wincmd w
+1wincmd w
 
 " vim: ft=vim ro nowrap smc=128

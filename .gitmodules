@@ -107,6 +107,3 @@
 [submodule "bundle/matchit"]
 	path = bundle/matchit
 	url = https://github.com/tmhedberg/matchit.git
-[submodule "bundle/project"]
-	path = bundle/project
-	url = https://github.com/vim-scripts/project.vim.git
