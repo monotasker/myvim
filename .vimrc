@@ -2,6 +2,8 @@
 " http://sontek.net/turning-vim-into-a-modern-python-ide
 " http://blog.dispatched.ch/2009/05/24/vim-as-python-ide/
 " http://dancingpenguinsoflight.com/2009/02/python-and-vim-make-your-own-ide
+" http://www.jfroche.be/blogging/archive/2007/04/28/write-nicer-python-code
+" http://dancingpenguinsoflight.com/2009/02/code-navigation-completion-snippets-in-vim/
 
 "automatically re-source .vimrc when file is changed
 :au! BufWritePost $MYVIMRC source $MYVIMRC 
@@ -62,6 +64,9 @@ nmap <leader>a <Esc>:Ack!
 "set pep8 to hotkey
 let g:pep8_map='<leader>8'
 
+" Execute file being edited with <Shift> + e:
+map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
+
 syntax on "use syntax highlighting
 filetype on "autodetect filetypes
 filetype plugin indent on "use specified indenting for filetype
@@ -77,6 +82,33 @@ set completeopt=menuone,longest,preview
 " Execute python file being edited with <Shift> + e:
 map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
 
+" Taglist variables
+" Display function name in status bar:
+let g:ctags_statusline=1
+" Automatically start script
+let generate_tags=1
+" Displays taglist results in a vertical window:
+let Tlist_Use_Horiz_Window=0
+" Shorter commands to toggle Taglist display
+nnoremap TT :TlistToggle<CR>
+map <F4> :TlistToggle<CR>
+" Various Taglist diplay config:
+let Tlist_Use_Right_Window = 1
+let Tlist_Compact_Format = 1
+let Tlist_Exit_OnlyWindow = 1
+let Tlist_GainFocus_On_ToggleOpen = 1
+let Tlist_File_Fold_Auto_Close = 1
+
+"function to run pyflakes on the current buffer
+command Pyflakes :call Pyflakes()
+function! Pyflakes()
+    let tmpfile = tempname()
+    execute "w" tmpfile
+    execute "set makeprg=(pyflakes\\ " . tmpfile . "\\\\\\|sed\\ s@" . tmpfile ."@%@)"
+    make
+    cw
+endfunction
+
 "function to strip trailing whitespace from all lines
 function! <SID>StripTrailingWhitespaces()
     " Preparation: save last search, and cursor position.
@@ -90,9 +122,20 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 
+"function to run pylint on current buffer
+command Pylint :call Pylint()
+function! Pylint()
+    setlocal makeprg=(echo\ '[%]';\ pylint\ %)
+    setlocal efm=%+P[%f],%t:\ %#%l:%m
+    silent make
+    cwindow
+    endfunction
+
 "automatically strip trailing spaces from python and javascript
 "files when saving buffer
 autocmd BufWritePre *.py,*.js :call <SID>StripTrailingWhitespaces()
+" automatically run pyflakes on Python files when saving buffer
+autocmd BufWrite *.{py} :call Pyflakes()
 
 "Add name of current Git branch to vim statusline
 " %{fugitive#statusline()}

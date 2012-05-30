@@ -5,6 +5,10 @@ Created by Ian W. Scott, 2012, based on advice contained in the
 following sources:
 
 - http://sontek.net/turning-vim-into-a-modern-python-ide
+- http://blog.dispatched.ch/2009/05/24/vim-as-python-ide/
+- http://dancingpenguinsoflight.com/2009/02/python-and-vim-make-your-own-ide/
+- http://www.jfroche.be/blogging/archive/2007/04/28/write-nicer-python-code
+- http://dancingpenguinsoflight.com/2009/02/code-navigation-completion-snippets-in-vim/
 
 ##Overview
 
@@ -137,3 +141,4 @@ git submodule add https://github.com/mikewest/vimroom.git bundle/vimroom
 git submodule add https://github.com/mattn/gist-vim.git bundle/gist-vim
 git submodule add https://github.com/mattn/zencoding-vim.git bundle/zencoding-vim
 git submodule add https://github.com/tmhedberg/matchit.git bundle/matchit
+git submodule add https://github.com/vim-scripts/taglist.vim.git bundle/taglist
