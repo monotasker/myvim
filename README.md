@@ -9,6 +9,8 @@ following sources:
 - http://dancingpenguinsoflight.com/2009/02/python-and-vim-make-your-own-ide/
 - http://www.jfroche.be/blogging/archive/2007/04/28/write-nicer-python-code
 - http://dancingpenguinsoflight.com/2009/02/code-navigation-completion-snippets-in-vim/
+- https://code.djangoproject.com/wiki/UsingVimWithDjango
+- http://vim.wikia.com/wiki/Use_Vim_like_an_IDE
 
 ##Overview
 
