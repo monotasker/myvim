@@ -1,0 +1,60 @@
+project_entry ::=
+ Grammateus3=~/web/web2py/applications/grammateus3 CD=. {
+ ABOUT
+ LICENSE
+ README
+ __init__.py
+ __init__.pyc
+ grammateus3.sublime-project
+ grammateus3.sublime-workspace
+ controllers=controllers {
+  appadmin.py
+  default.py
+  docs.py
+  default.py.bak
+  docs.py.bak
+  }
+ models=models{
+  db.py
+  grammateus.py
+  menu.py
+  plugin_framework.py
+  grammateus.py.bak
+  }
+ modules=modules{
+  __init__.py
+  __init__.pyc
+  parse.py
+  parse.pyc
+  test.py
+ }
+ static=static filter='*.py *.js *.svg *.txt *.less *.css' {
+  favicon.ico
+  favicon.png
+  favicon.svg
+  favicon_128.png
+  favicon_16.png
+  favicon_24.png
+  favicon_32.png
+  favicon_48.png
+  favicon_57.png
+  favicon_64.png
+  favicon_72.png
+  favicon_precomposed_57.png
+  favicon_precomposed_72.png
+  robots.txt
+ }
+ views=views {
+  __init__.py
+  appadmin.html
+  generic.html
+  generic.json
+  generic.jsonp
+  generic.load
+  generic.pdf
+  generic.rss
+  generic.xml
+  layout.html
+  web2py_ajax.html
+ }
+}
