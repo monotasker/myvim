@@ -63,7 +63,10 @@ map <leader>r :RopeRename<CR>
 nmap <leader>a <Esc>:Ack!
 "set pep8 to hotkey
 let g:pep8_map='<leader>8'
-
+"configure vimroom settings
+let g:vimroom_background='#efefef'
+let g:vimroom_min_sidebar_width='5'
+let g:vimroom_width='80'
 " Execute file being edited with <Shift> + e:
 map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
 
