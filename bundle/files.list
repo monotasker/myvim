@@ -1,7 +1,0 @@
-./command-t/ruby/command-t/ext.c
-./command-t/ruby/command-t/ext.h
-./command-t/ruby/command-t/match.c
-./command-t/ruby/command-t/match.h
-./command-t/ruby/command-t/matcher.c
-./command-t/ruby/command-t/matcher.h
-./command-t/ruby/command-t/ruby_compat.h
