@@ -19,7 +19,7 @@ call pathogen#helptags()
 
 "ui appearance
 colors molokai
-set guifont=Inconsolata\ Regular\ 11
+set guifont=Dejavu\ Sans\ Mono\ 10
 set ts=4 softtabstop=4 shiftwidth=4 expandtab
 set guioptions-=T  "remove toolbar
 ":winpos 50 50 "Open window at position x=50, y=50
@@ -73,15 +73,23 @@ map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
 syntax on "use syntax highlighting
 filetype on "autodetect filetypes
 filetype plugin indent on "use specified indenting for filetype
+au BufNewFile,BufRead *.less set filetype=less
 
+"working with text files
+"=======================
+"au BufNewFile,BufRead *.txt set filetype=pandoc
+au FileType text,markdown,pandoc set colorcolumn=0
+au FileType text,markdown,pandoc set foldcolumn=6 
+au FileType text,markdown,pandoc set number=False 
+
+"working with python files
+"=========================
 "set pyflakes to skip using quickfix window
 let g:pyflakes_use_quickfix = 0
-
 "enable python autocompletion
 au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
-
 " Execute python file being edited with <Shift> + e:
 map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
 
@@ -103,14 +111,14 @@ let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_File_Fold_Auto_Close = 1
 
 "function to run pyflakes on the current buffer
-command Pyflakes :call Pyflakes()
-function! Pyflakes()
-    let tmpfile = tempname()
-    execute "w" tmpfile
-    execute "set makeprg=(pyflakes\\ " . tmpfile . "\\\\\\|sed\\ s@" . tmpfile ."@%@)"
-    make
-    cw
-endfunction
+"command Pyflakes :call Pyflakes()
+"function! Pyflakes()
+    "let tmpfile = tempname()
+    "execute "w" tmpfile
+    "execute "set makeprg=(pyflakes\\ " . tmpfile . "\\\\\\|sed\\ s@" . tmpfile ."@%@)"
+    "make
+    "cw
+"endfunction
 
 "function to strip trailing whitespace from all lines
 function! <SID>StripTrailingWhitespaces()
@@ -126,13 +134,13 @@ function! <SID>StripTrailingWhitespaces()
 endfunction
 
 "function to run pylint on current buffer
-command Pylint :call Pylint()
-function! Pylint()
-    setlocal makeprg=(echo\ '[%]';\ pylint\ %)
-    setlocal efm=%+P[%f],%t:\ %#%l:%m
-    silent make
-    cwindow
-    endfunction
+"command Pylint :call Pylint()
+"function! Pylint()
+    "setlocal makeprg=(echo\ '[%]';\ pylint\ %)
+    "setlocal efm=%+P[%f],%t:\ %#%l:%m
+    "silent make
+    "cwindow
+    "endfunction
 
 "automatically strip trailing spaces from python and javascript
 "files when saving buffer

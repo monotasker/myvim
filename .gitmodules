@@ -116,3 +116,6 @@
 [submodule "bundle/project.tar.gz"]
 	path = bundle/project.tar.gz
 	url = https://github.com/vim-scripts/project.tar.gz.git
+[submodule "bundle/voom"]
+	path = bundle/voom
+	url = https://github.com/vim-scripts/VOoM.git
