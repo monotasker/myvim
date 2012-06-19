@@ -8,9 +8,10 @@
 "automatically re-source .vimrc when file is changed
 :au! BufWritePost $MYVIMRC source $MYVIMRC 
 
+"pathogen
+"===============================
 "add pathogen location to runtime path 
 runtime bundle/vim-pathogen/autoload/pathogen.vim
-
 "invoke pathogen to handle paths and helptags
 filetype off "must be off to run commands?
 call pathogen#infect()
@@ -18,6 +19,7 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
 "ui appearance
+"===============================
 colors molokai
 set guifont=Dejavu\ Sans\ Mono\ 10
 set ts=4 softtabstop=4 shiftwidth=4 expandtab
@@ -36,6 +38,8 @@ nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 set foldmethod=indent
 set foldlevel=99
 
+"navigation shortcuts
+"=================================
 "remap keys to move between windows
 map <c-j> <c-w>j
 map <c-k> <c-w>k
@@ -44,16 +48,23 @@ map <c-h> <c-w>h
 "map shortcuts to cycle through buffers
 nnoremap <leader><Tab> :bnext<CR>
 nnoremap <leader><S-Tab> :bprevious<CR>
+
+"utility shortcuts
+"=================================
 "map shortcut to cut and paste with system clipboard
 nnoremap <leader>ey <Esc>"+y
 nnoremap <leader>ep <Esc>"+p
+"map key to strip trailing spaces
+nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
+" Execute file being edited with <Shift> + e:
+map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
 
+"plugin shortcuts
+"=================================
 "map key to activate TODO tasklist
 map <leader>td <Plug>TaskList
 "map key to open Gundo revision history
 map <leader>g :GundoToggle<CR>
-"map key to strip trailing spaces
-nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 "bind shortcut for nerdtree
 map <leader>n :NERDTreeToggle<CR>
 "bind shortcuts for rope redefinition and renaming
@@ -61,18 +72,23 @@ map <leader>j :RopeGotoDefinition<CR>
 map <leader>r :RopeRename<CR>
 "bind shortcut for ack fuzzy filesearch
 nmap <leader>a <Esc>:Ack!
+"bind shortcut to yankring
+nnoremap <leader>y :YRShow<CR>
 "set pep8 to hotkey
 let g:pep8_map='<leader>8'
 "configure vimroom settings
 let g:vimroom_background='#efefef'
 let g:vimroom_min_sidebar_width='5'
 let g:vimroom_width='80'
-" Execute file being edited with <Shift> + e:
-map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
 
+"filetype settings
+"=================================
 syntax on "use syntax highlighting
 filetype on "autodetect filetypes
 filetype plugin indent on "use specified indenting for filetype
+
+"working with less css files
+"===========================
 au BufNewFile,BufRead *.less set filetype=less
 
 "working with text files
@@ -80,7 +96,7 @@ au BufNewFile,BufRead *.less set filetype=less
 "au BufNewFile,BufRead *.txt set filetype=pandoc
 au FileType text,markdown,pandoc set colorcolumn=0
 au FileType text,markdown,pandoc set foldcolumn=6 
-au FileType text,markdown,pandoc set number=False 
+au FileType text,markdown,pandoc set nonumber
 
 "working with python files
 "=========================
