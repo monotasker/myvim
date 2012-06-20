@@ -38,6 +38,10 @@ nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 set foldmethod=indent
 set foldlevel=99
 
+"smart case sensitivity in searching
+set ignorecase
+set smartcase
+
 "navigation shortcuts
 "=================================
 "remap keys to move between windows
@@ -86,6 +90,10 @@ let g:vimroom_width='80'
 syntax on "use syntax highlighting
 filetype on "autodetect filetypes
 filetype plugin indent on "use specified indenting for filetype
+
+hi Folded guibg=#1B1D1E guifg=#666 gui=italic
+hi Foldcolumn guibg=#1B1D1E guifg=#666 gui=italic
+hi Linenr guibg=#1B1D1E guifg=#666 gui=none
 
 "working with less css files
 "===========================
