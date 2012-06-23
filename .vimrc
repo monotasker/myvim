@@ -19,7 +19,7 @@ call pathogen#helptags()
 
 "ui appearance
 colors molokai
-set guifont=Dejavu\ Sans\ Mono\ 10
+set guifont=Dejavu\ Sans\ Mono\ 13
 set ts=4 softtabstop=4 shiftwidth=4 expandtab
 set guioptions-=T  "remove toolbar
 ":winpos 50 50 "Open window at position x=50, y=50
@@ -80,7 +80,7 @@ au BufNewFile,BufRead *.less set filetype=less
 "au BufNewFile,BufRead *.txt set filetype=pandoc
 au FileType text,markdown,pandoc set colorcolumn=0
 au FileType text,markdown,pandoc set foldcolumn=6 
-au FileType text,markdown,pandoc set number=False 
+au FileType text,markdown,pandoc set nonumber
 
 "working with python files
 "=========================
