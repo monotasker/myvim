@@ -21,7 +21,7 @@ call pathogen#helptags()
 "ui appearance
 "===============================
 colors molokai
-set guifont=Dejavu\ Sans\ Mono\ 13
+set guifont=Dejavu\ Sans\ Mono\ 12
 set ts=4 softtabstop=4 shiftwidth=4 expandtab
 set guioptions-=T  "remove toolbar
 ":winpos 50 50 "Open window at position x=50, y=50
@@ -33,10 +33,6 @@ set colorcolumn=80
 set number
 "Toggle line numbers and fold column for easy copying
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
-
-"code folding
-set foldmethod=indent
-set foldlevel=99
 
 "smart case sensitivity in searching
 set ignorecase
@@ -105,9 +101,15 @@ au BufNewFile,BufRead *.less set filetype=less
 au FileType text,markdown,pandoc set colorcolumn=0
 au FileType text,markdown,pandoc set foldcolumn=6 
 au FileType text,markdown,pandoc set nonumber
+au FileType text,markdown,pandoc set foldmethod=marker
+au FileType text,markdown,pandoc set foldlevel=99
 
 "working with python files
 "=========================
+
+"code folding
+set foldmethod=indent
+set foldlevel=99
 "set pyflakes to skip using quickfix window
 let g:pyflakes_use_quickfix = 0
 "enable python autocompletion
