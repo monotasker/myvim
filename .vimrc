@@ -80,6 +80,8 @@ let g:pep8_map='<leader>8'
 let g:vimroom_background='#efefef'
 let g:vimroom_min_sidebar_width='5'
 let g:vimroom_width='80'
+"configure NERDTree settings
+let NERDTreeShowBookmarks=1
 
 "filetype settings
 "=================================
@@ -93,16 +95,14 @@ hi Linenr guibg=#1B1D1E guifg=#666 gui=none
 
 "working with less css files
 "===========================
-au BufNewFile,BufRead *.less set filetype=less
+au BufNewFile,BufRead *.less setlocal filetype=less
 
 "working with text files
 "=======================
-"au BufNewFile,BufRead *.txt set filetype=pandoc
-au FileType text,markdown,pandoc set colorcolumn=0
-au FileType text,markdown,pandoc set foldcolumn=6 
-au FileType text,markdown,pandoc set nonumber
-au FileType text,markdown,pandoc set foldmethod=marker
-au FileType text,markdown,pandoc set foldlevel=99
+au BufNewFile,BufRead *.txt setlocal filetype=pandoc
+au FileType text,markdown,pandoc setlocal colorcolumn=0|foldcolumn=6|nonumber
+au FileType text,markdown,pandoc setlocal foldmethod=marker|foldmarker=#,#
+au FileType text,markdown,pandoc setlocal foldlevel=99
 
 "working with python files
 "=========================
