@@ -116,3 +116,6 @@
 [submodule "bundle/voom"]
 	path = bundle/voom
 	url = https://github.com/vim-scripts/VOoM.git
+[submodule "bundle/solarized"]
+	path = bundle/solarized
+	url = https://github.com/vim-scripts/Solarized.git

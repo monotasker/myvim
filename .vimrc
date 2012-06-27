@@ -20,8 +20,8 @@ call pathogen#helptags()
 
 "ui appearance
 "===============================
-colors molokai
-set guifont=Dejavu\ Sans\ Mono\ 12
+colors SolarizedLight "molokai
+set guifont=Dejavu\ Sans\ Mono\ 10
 set ts=4 softtabstop=4 shiftwidth=4 expandtab
 set guioptions-=T  "remove toolbar
 ":winpos 50 50 "Open window at position x=50, y=50
@@ -76,12 +76,18 @@ nmap <leader>a <Esc>:Ack!
 nnoremap <leader>y :YRShow<CR>
 "set pep8 to hotkey
 let g:pep8_map='<leader>8'
+
+"plugin settings
+"=================================
 "configure vimroom settings
 let g:vimroom_background='#efefef'
 let g:vimroom_min_sidebar_width='5'
 let g:vimroom_width='80'
+
 "configure NERDTree settings
 let NERDTreeShowBookmarks=1
+autocmd VimEnter * NERDTree
+"autocmd BufEnter * NERDTreeMirror
 
 "filetype settings
 "=================================
@@ -99,10 +105,13 @@ au BufNewFile,BufRead *.less setlocal filetype=less
 
 "working with text files
 "=======================
-au BufNewFile,BufRead *.txt setlocal filetype=pandoc
-au FileType text,markdown,pandoc setlocal colorcolumn=0|foldcolumn=6|nonumber
-au FileType text,markdown,pandoc setlocal foldmethod=marker|foldmarker=#,#
-au FileType text,markdown,pandoc setlocal foldlevel=99
+au BufNewFile,BufRead *.txt set filetype=pandoc
+au FileType text,markdown,pandoc set colorcolumn=0
+au FileType text,markdown,pandoc set foldcolumn=6
+au FileType text,markdown,pandoc set nonumber
+au FileType text,markdown,pandoc set foldmethod=marker
+au FileType text,markdown,pandoc set foldmarker=#,#
+au FileType text,markdown,pandoc set foldlevel=99
 
 "working with python files
 "=========================
@@ -110,14 +119,16 @@ au FileType text,markdown,pandoc setlocal foldlevel=99
 "code folding
 set foldmethod=indent
 set foldlevel=99
-"set pyflakes to skip using quickfix window
-let g:pyflakes_use_quickfix = 0
+""set pyflakes to skip using quickfix window
+"let g:pyflakes_use_quickfix = 0
 "enable python autocompletion
 au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
 " Execute python file being edited with <Shift> + e:
 map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
+" automatically run pylint on Python files when saving buffer
+autocmd BufWrite *.{py} :call Pylint()
 
 " Taglist variables
 " Display function name in status bar:
@@ -136,16 +147,6 @@ let Tlist_Exit_OnlyWindow = 1
 let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_File_Fold_Auto_Close = 1
 
-"function to run pyflakes on the current buffer
-"command Pyflakes :call Pyflakes()
-"function! Pyflakes()
-    "let tmpfile = tempname()
-    "execute "w" tmpfile
-    "execute "set makeprg=(pyflakes\\ " . tmpfile . "\\\\\\|sed\\ s@" . tmpfile ."@%@)"
-    "make
-    "cw
-"endfunction
-
 "function to strip trailing whitespace from all lines
 function! <SID>StripTrailingWhitespaces()
     " Preparation: save last search, and cursor position.
@@ -161,18 +162,16 @@ endfunction
 
 "function to run pylint on current buffer
 "command Pylint :call Pylint()
-"function! Pylint()
-    "setlocal makeprg=(echo\ '[%]';\ pylint\ %)
-    "setlocal efm=%+P[%f],%t:\ %#%l:%m
-    "silent make
-    "cwindow
-    "endfunction
+function! Pylint()
+    setlocal makeprg=(echo\ '[%]';\ pylint\ %)
+    setlocal efm=%+P[%f],%t:\ %#%l:%m
+    silent make
+    cwindow
+    endfunction
 
 "automatically strip trailing spaces from python and javascript
 "files when saving buffer
 autocmd BufWritePre *.py,*.js :call <SID>StripTrailingWhitespaces()
-" automatically run pyflakes on Python files when saving buffer
-autocmd BufWrite *.{py} :call Pyflakes()
 
 "Add name of current Git branch to vim statusline
 " %{fugitive#statusline()}
