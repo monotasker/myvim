@@ -20,11 +20,11 @@ call pathogen#helptags()
 
 "ui appearance
 "===============================
-colors SolarizedLight "molokai
+set background=dark
+colors solarized "molokai 
 set guifont=Dejavu\ Sans\ Mono\ 10
 set ts=4 softtabstop=4 shiftwidth=4 expandtab
 set guioptions-=T  "remove toolbar
-":winpos 50 50 "Open window at position x=50, y=50
 set lines=50 "Open window with a height of 50 lines
 set columns=160 "Open window with a width of 50 columns
 "visual right-margin guide at 80 chars
@@ -95,9 +95,9 @@ syntax on "use syntax highlighting
 filetype on "autodetect filetypes
 filetype plugin indent on "use specified indenting for filetype
 
-hi Folded guibg=#1B1D1E guifg=#666 gui=italic
-hi Foldcolumn guibg=#1B1D1E guifg=#666 gui=italic
-hi Linenr guibg=#1B1D1E guifg=#666 gui=none
+"hi Folded guibg=#1B1D1E guifg=#666 gui=italic
+"hi Foldcolumn guibg=#1B1D1E guifg=#666 gui=italic
+"hi Linenr guibg=#1B1D1E guifg=#666 gui=none
 
 "working with less css files
 "===========================
