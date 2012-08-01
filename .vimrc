@@ -22,7 +22,7 @@ call pathogen#helptags()
 "===============================
 set background=dark
 colors solarized "molokai 
-set guifont=Dejavu\ Sans\ Mono\ 10
+set guifont=Dejavu\ Sans\ Mono\ 12
 set ts=4 softtabstop=4 shiftwidth=4 expandtab
 set guioptions-=T  "remove toolbar
 set lines=50 "Open window with a height of 50 lines
@@ -74,6 +74,8 @@ map <leader>r :RopeRename<CR>
 nmap <leader>a <Esc>:Ack!
 "bind shortcut to yankring
 nnoremap <leader>y :YRShow<CR>
+"bind shortcut for bclose
+nmap <leader>bd <Plug>Kwbd
 "set pep8 to hotkey
 let g:pep8_map='<leader>8'
 
