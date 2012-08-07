@@ -111,9 +111,6 @@ au BufNewFile,BufRead *.txt set filetype=pandoc
 au FileType text,markdown,pandoc set colorcolumn=0
 au FileType text,markdown,pandoc set foldcolumn=6
 au FileType text,markdown,pandoc set nonumber
-au FileType text,markdown,pandoc set foldmethod=marker
-au FileType text,markdown,pandoc set foldmarker=#,#
-au FileType text,markdown,pandoc set foldlevel=99
 
 "working with python files
 "=========================
