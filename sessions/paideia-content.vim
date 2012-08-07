@@ -1,5 +1,5 @@
-" ~/.vim/sessions/paideia.vim: Vim session script.
-" Created by session.vim 1.5 on 07 August 2012 at 16:16:25.
+" ~/.vim/sessions/paideia-content.vim: Vim session script.
+" Created by session.vim 1.5 on 07 August 2012 at 16:57:09.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -23,11 +23,12 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 Dropbox/Simplenote/\#paideia\ tag\ progression.txt
+badd +103 Dropbox/Simplenote/\#paideia\ tag\ progression.txt
 badd +1 Dropbox/Simplenote/\#Paideia\ topic\ outline.txt
-badd +0 Dropbox/Simplenote/\#Paideia\ vocab.txt
+badd +213 Dropbox/Simplenote/\#Paideia\ vocab.txt
+badd +42 ~/.vimrc
 silent! argdel *
-set lines=49 columns=125
+set lines=50 columns=158
 edit Dropbox/Simplenote/\#Paideia\ vocab.txt
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -42,11 +43,11 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe '1resize ' . ((&lines * 1 + 24) / 49)
-exe '2resize ' . ((&lines * 45 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 58 + 62) / 125)
-exe '3resize ' . ((&lines * 45 + 24) / 49)
-exe 'vert 3resize ' . ((&columns * 66 + 62) / 125)
+exe '1resize ' . ((&lines * 1 + 25) / 50)
+exe '2resize ' . ((&lines * 46 + 25) / 50)
+exe 'vert 2resize ' . ((&columns * 79 + 79) / 158)
+exe '3resize ' . ((&lines * 46 + 25) / 50)
+exe 'vert 3resize ' . ((&columns * 78 + 79) / 158)
 argglobal
 enew
 file -MiniBufExplorer-
@@ -72,38 +73,82 @@ setlocal fen
 silent! normal zo
 3
 normal zc
+7
+silent! normal zo
+17
+normal zc
+46
+normal zc
 3
 silent! normal zo
-let s:l = 7 - ((6 * winheight(0) + 22) / 45)
+71
+silent! normal zo
+72
+normal zc
+77
+normal zc
+85
+normal zc
+100
+normal zc
+71
+silent! normal zo
+114
+silent! normal zo
+116
+normal zc
+120
+normal zc
+140
+normal zc
+114
+silent! normal zo
+143
+silent! normal zo
+145
+normal zc
+164
+normal zc
+143
+silent! normal zo
+185
+silent! normal zo
+187
+normal zc
+206
+silent! normal zo
+185
+silent! normal zo
+let s:l = 213 - ((201 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-7
-normal! 010l
+213
+normal! 08l
 wincmd w
 argglobal
-edit Dropbox/Simplenote/\#paideia\ tag\ progression.txt
-setlocal fdm=expr
-setlocal fde=pandoc#MarkdownLevel()
+edit ~/.vimrc
+setlocal fdm=indent
+setlocal fde=0
 setlocal fmr={{{,}}}
 setlocal fdi=#
 setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 84 - ((27 * winheight(0) + 22) / 45)
+let s:l = 46 - ((28 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-84
+46
 normal! 0
 wincmd w
-2wincmd w
-exe '1resize ' . ((&lines * 1 + 24) / 49)
-exe '2resize ' . ((&lines * 45 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 58 + 62) / 125)
-exe '3resize ' . ((&lines * 45 + 24) / 49)
-exe 'vert 3resize ' . ((&columns * 66 + 62) / 125)
+3wincmd w
+exe '1resize ' . ((&lines * 1 + 25) / 50)
+exe '2resize ' . ((&lines * 46 + 25) / 50)
+exe 'vert 2resize ' . ((&columns * 79 + 79) / 158)
+exe '3resize ' . ((&lines * 46 + 25) / 50)
+exe 'vert 3resize ' . ((&columns * 78 + 79) / 158)
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
@@ -118,6 +163,6 @@ let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 unlet SessionLoad
 tabnext 1
-2wincmd w
+3wincmd w
 
 " vim: ft=vim ro nowrap smc=128
