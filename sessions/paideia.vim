@@ -1,9 +1,9 @@
 " ~/.vim/sessions/paideia.vim: Vim session script.
-" Created by session.vim 1.5 on 26 June 2012 at 21:12:25.
+" Created by session.vim 1.5 on 06 August 2012 at 14:06:39.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
-silent! set guifont=Dejavu\ Sans\ Mono\ 10
+silent! set guifont=Dejavu\ Sans\ Mono\ 12
 if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 1 | filetype on | endif
 if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
@@ -11,8 +11,8 @@ if exists('g:did_indent_on') != 1 | filetype indent on | endif
 if &background != 'dark'
 	set background=dark
 endif
-if !exists('g:colors_name') || g:colors_name != 'molokai' | colorscheme molokai | endif
-call setqflist([{'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '[web/web2py/applications/paideia/modules/plugin_ajaxselect.py]'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'No config file found, using default configuration'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '************* Module plugin_ajaxselect'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'C:440,0: Line too long (82/80)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'C:469,0: Line too long (81/80)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'C:473,0: Line too long (90/80)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'W:  4,0: TODO: add ListWidget as another option?'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'W: 80,0: TODO: allow for restrictor argument to take list and filter multiple'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'W:394,0: TODO: Create filtered multiple options widget class'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'C:  1,0: Missing docstring'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'F:  1,0: Unable to import ''gluon'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'F:  2,0: Unable to import ''gluon.html'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'F:  3,0: Unable to import ''gluon.sqlhtml'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'W: 81,-1:AjaxSelect: String statement has no effect'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'R: 88,4:AjaxSelect.widget: Too many arguments (11/5)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'R: 88,4:AjaxSelect.widget: Too many local variables (22/15)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'W: 95,8:AjaxSelect.widget: Unused variable ''session'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'W: 95,17:AjaxSelect.widget: Unused variable ''request'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'R:144,4:AjaxSelect.wrappername: Method could be a function'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'R:152,4:AjaxSelect.linktable: Method could be a function'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'C:193,31:AjaxSelect.choose_val: Invalid name "e" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'C:198,41:AjaxSelect.choose_val: More than one statement on a single line'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'C:199,31:AjaxSelect.choose_val: Invalid name "e" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'R:166,4:AjaxSelect.choose_val: Method could be a function'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'C:204,4:AjaxSelect.clean: Missing docstring'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'W:210,29:AjaxSelect.clean: Used builtin function ''map'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'R:204,4:AjaxSelect.clean: Method could be a function'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'W:217,25:AjaxSelect.restricted: Unused argument ''restricted'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'R:217,4:AjaxSelect.restricted: Method could be a function'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'R:223,4:AjaxSelect.create_widget: Too many arguments (8/5)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'C:233,12:AjaxSelect.create_widget: Invalid name "w" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'C:235,12:AjaxSelect.create_widget: Invalid name "w" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'W:224,12:AjaxSelect.create_widget: Unused argument ''sortable'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'W:223,60:AjaxSelect.create_widget: Unused argument ''restricted'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'W:223,72:AjaxSelect.create_widget: Unused argument ''rval'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'W:223,42:AjaxSelect.create_widget: Unused argument ''clean_val'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'R:223,4:AjaxSelect.create_widget: Method could be a function'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'R:239,4:AjaxSelect.hidden_ajax_field: Method could be a function'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'R:271,4:AjaxSelect.adder: Too many arguments (6/5)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'W:271,20:AjaxSelect.adder: Unused argument ''wrappername'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'R:271,4:AjaxSelect.adder: Method could be a function'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'E:293,18:AjaxSelect.taglist: Instance of ''AjaxSelect'' has no ''value'' member'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'C:295,8:AjaxSelect.taglist: Invalid name "db" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'C:300,8:AjaxSelect.taglist: Invalid name "tl" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'C:302,12:AjaxSelect.taglist: Invalid name "v" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'C:304,12:AjaxSelect.taglist: Invalid name "f" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'W:304,16:AjaxSelect.taglist: Access to a protected member _format of a client class'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'C:305,12:AjaxSelect.taglist: Invalid name "ln" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'R:311,4:AjaxSelect.linklist: Too many arguments (6/5)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'R:311,4:AjaxSelect.linklist: Too many local variables (17/15)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'C:321,8:AjaxSelect.linklist: Invalid name "db" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'C:328,8:AjaxSelect.linklist: Invalid name "ll" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'C:335,16:AjaxSelect.linklist: Invalid name "v" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'W:338,28:AjaxSelect.linklist: Access to a protected member _format of a client class'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'C:342,16:AjaxSelect.linklist: Invalid name "ln" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'R:311,4:AjaxSelect.linklist: Method could be a function'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'C:361,8:AjaxSelect.classes: Invalid name "c" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'C:363,12:AjaxSelect.classes: Invalid name "c" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'C:365,12:AjaxSelect.classes: Invalid name "c" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'C:367,12:AjaxSelect.classes: Invalid name "c" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'C:369,12:AjaxSelect.classes: Invalid name "c" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'R:356,4:AjaxSelect.classes: Method could be a function'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'R:387,4:FilteredAjaxSelect.create_widget: Too many arguments (7/5)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'W:387,4:FilteredAjaxSelect.create_widget: Arguments number differs from overridden method'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'C:393,12:FilteredAjaxSelect.create_widget: Invalid name "w" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'C:397,16:FilteredAjaxSelect.create_widget: Invalid name "w" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'C:399,16:FilteredAjaxSelect.create_widget: Invalid name "w" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'W:403,0:FilteredOptionsWidget: Class has no __init__ method'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'R:413,4:FilteredOptionsWidget.widget: Too many local variables (26/15)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'C:425,8:FilteredOptionsWidget.widget: Invalid name "db" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'E:428,15:FilteredOptionsWidget.widget: Class ''FilteredOptionsWidget'' has no ''_attributes'' member'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'C:469,8:FilteredOptionsWidget.widget: Invalid name "cf" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'W:478,15:FilteredOptionsWidget.widget: Used * or ** magic'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'R:403,0:FilteredOptionsWidget: Too few public methods (1/2)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'Report'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '======'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '218 statements analysed.'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'Statistics by type'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '------------------'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+---------+-------+-----------+-----------+------------+---------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '|type     |number |old number |difference |%documented |%badname |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+=========+=======+===========+===========+============+=========+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '|module   |1      |1          |=          |0.00        |0.00     |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+---------+-------+-----------+-----------+------------+---------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '|class    |3      |3          |=          |100.00      |0.00     |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+---------+-------+-----------+-----------+------------+---------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '|method   |17     |17         |=          |94.12       |0.00     |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+---------+-------+-----------+-----------+------------+---------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '|function |0      |0          |=          |0           |0        |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+---------+-------+-----------+-----------+------------+---------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'Duplication'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '-----------'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+-------------------------+------+---------+-----------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '|                         |now   |previous |difference |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+=========================+======+=========+===========+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '|nb duplicated lines      |0     |0        |=          |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+-------------------------+------+---------+-----------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '|percent duplicated lines |0.000 |0.000    |=          |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+-------------------------+------+---------+-----------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'Messages by category'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '--------------------'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+-----------+-------+---------+-----------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '|type       |number |previous |difference |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+===========+=======+=========+===========+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '|convention |29     |29       |=          |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+-----------+-------+---------+-----------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '|refactor   |19     |19       |=          |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+-----------+-------+---------+-----------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '|warning    |18     |18       |=          |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+-----------+-------+---------+-----------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '|error      |2      |2        |=          |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+-----------+-------+---------+-----------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'Messages'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '--------'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '|message id |occurrences |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+===========+============+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '|C0103      |23          |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '|R0201      |10          |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '|W0613      |6           |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '|R0913      |5           |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '|W0511      |3           |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '|R0914      |3           |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '|F0401      |3           |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '|C0301      |3           |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '|W0612      |2           |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '|W0212      |2           |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '|E1101      |2           |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '|C0111      |2           |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '|W0232      |1           |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '|W0221      |1           |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '|W0142      |1           |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '|W0141      |1           |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '|W0105      |1           |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '|R0903      |1           |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '|C0321      |1           |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'Global evaluation'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '-----------------'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'Your code has been rated at 6.51/10 (previous run: 6.51/10)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': 'Raw metrics'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '-----------'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+----------+-------+------+---------+-----------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '|type      |number |%     |previous |difference |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+==========+=======+======+=========+===========+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '|code      |237    |53.62 |237      |=          |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+----------+-------+------+---------+-----------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '|docstring |154    |34.84 |154      |=          |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+----------+-------+------+---------+-----------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '|comment   |11     |2.49  |11       |=          |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+----------+-------+------+---------+-----------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '|empty     |40     |9.05  |40       |=          |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': '+----------+-------+------+---------+-----------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'web/web2py/applications/paideia/modules/plugin_ajaxselect.py', 'text': ''}])
+if !exists('g:colors_name') || g:colors_name != 'solarized' | colorscheme solarized | endif
+call setqflist([])
 let SessionLoad = 1
 if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
@@ -23,55 +23,15 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +286 web/web2py/applications/paideia/modules/plugin_ajaxselect.py
-badd +3 web/web2py/applications/paideia/static/plugin_ajaxselect/plugin_ajaxselect.js
-badd +83 web/web2py/applications/paideia/controllers/plugin_ajaxselect.py
-badd +7 web/web2py/applications/paideia/views/plugin_ajaxselect/set_widget.load
+badd +0 web/web2py/applications/paideia/modules/paideia_exploring.py
 silent! argdel *
-set lines=50 columns=169
-edit web/web2py/applications/paideia/static/plugin_ajaxselect/plugin_ajaxselect.js
+set lines=38 columns=134
+edit web/web2py/applications/paideia/modules/paideia_exploring.py
 set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-wincmd _ | wincmd |
-split
-1wincmd k
-wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 31 + 84) / 169)
-exe '2resize ' . ((&lines * 1 + 25) / 50)
-exe 'vert 2resize ' . ((&columns * 137 + 84) / 169)
-exe '3resize ' . ((&lines * 46 + 25) / 50)
-exe 'vert 3resize ' . ((&columns * 137 + 84) / 169)
-argglobal
-enew
-" file NERD_tree_1
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=99
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-wincmd w
-argglobal
-enew
-file -MiniBufExplorer-
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=99
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-wincmd w
 argglobal
 setlocal fdm=indent
 setlocal fde=0
@@ -81,69 +41,126 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-3
+15
 silent! normal zo
-3
+15
 normal zc
-26
+64
 silent! normal zo
-26
+73
+silent! normal zo
+73
+silent! normal zo
+89
+silent! normal zo
+89
 normal zc
-49
+120
 silent! normal zo
-86
+120
+normal zc
+148
 silent! normal zo
-98
+148
+normal zc
+180
 silent! normal zo
-108
+204
 silent! normal zo
-108
+204
+normal zc
+180
+normal zc
+232
 silent! normal zo
-108
+232
+normal zc
+256
 silent! normal zo
-108
+256
+normal zc
+296
 silent! normal zo
-108
+296
+normal zc
+313
 silent! normal zo
-108
+313
+normal zc
+326
 silent! normal zo
-108
+340
 silent! normal zo
-108
+342
 silent! normal zo
-108
+342
+normal zc
+340
 silent! normal zo
-108
+326
+normal zc
+371
 silent! normal zo
-108
+371
 silent! normal zo
-108
+64
 silent! normal zo
-108
+408
 silent! normal zo
-108
+408
+normal zc
+444
 silent! normal zo
-108
+446
 silent! normal zo
-108
+446
+normal zc
+458
 silent! normal zo
-108
+458
+normal zc
+474
 silent! normal zo
-49
+474
+normal zc
+491
+normal zc
+507
 silent! normal zo
-let s:l = 154 - ((30 * winheight(0) + 23) / 46)
+520
+normal zc
+507
+normal zc
+536
+silent! normal zo
+536
+normal zc
+589
+silent! normal zo
+589
+normal zc
+677
+normal zc
+690
+silent! normal zo
+690
+normal zc
+444
+normal zc
+820
+silent! normal zo
+854
+silent! normal zo
+854
+normal zc
+820
+silent! normal zo
+let s:l = 86 - ((23 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-154
-normal! 0
-wincmd w
-3wincmd w
-exe 'vert 1resize ' . ((&columns * 31 + 84) / 169)
-exe '2resize ' . ((&lines * 1 + 25) / 50)
-exe 'vert 2resize ' . ((&columns * 137 + 84) / 169)
-exe '3resize ' . ((&lines * 46 + 25) / 50)
-exe 'vert 3resize ' . ((&columns * 137 + 84) / 169)
+86
+normal! 020l
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
@@ -159,11 +176,5 @@ doautoall SessionLoadPost
 unlet SessionLoad
 tabnext 1
 1wincmd w
-let s:bufnr = bufnr("%")
-NERDTree ~/web/web2py/applications/paideia
-execute "bwipeout" s:bufnr
-1resize 48|vert 1resize 31|2resize 1|vert 2resize 137|3resize 46|vert 3resize 137|
-tabnext 1
-3wincmd w
 
 " vim: ft=vim ro nowrap smc=128
