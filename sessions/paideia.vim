@@ -1,5 +1,5 @@
 " ~/.vim/sessions/paideia.vim: Vim session script.
-" Created by session.vim 1.5 on 06 August 2012 at 14:06:39.
+" Created by session.vim 1.5 on 07 August 2012 at 11:50:59.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -18,149 +18,108 @@ if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/
+cd ~/Dropbox/Simplenote
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 web/web2py/applications/paideia/modules/paideia_exploring.py
+badd +1 \#paideia\ tag\ progression.txt
+badd +1 \#Paideia\ topic\ outline.txt
+badd +1 \#Paideia\ vocab.txt
+badd +1 Paideia\ design\ principles.txt
+badd +1 Paideia\ outline\ supplement.txt
+badd +16 Paideia\ questions.txt
 silent! argdel *
 set lines=38 columns=134
-edit web/web2py/applications/paideia/modules/paideia_exploring.py
+edit \#Paideia\ topic\ outline.txt
 set splitbelow splitright
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
+exe '1resize ' . ((&lines * 2 + 19) / 38)
+exe '2resize ' . ((&lines * 33 + 19) / 38)
 argglobal
-setlocal fdm=indent
+enew
+file -MiniBufExplorer-
+setlocal fdm=marker
 setlocal fde=0
-setlocal fmr={{{,}}}
+setlocal fmr=#,#
 setlocal fdi=#
 setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-15
+wincmd w
+argglobal
+setlocal fdm=marker
+setlocal fde=pandoc#MarkdownLevel()
+setlocal fmr=#,#
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+1
 silent! normal zo
-15
-normal zc
-64
+12
 silent! normal zo
-73
+14
 silent! normal zo
-73
+14
 silent! normal zo
-89
+16
 silent! normal zo
-89
-normal zc
-120
+16
 silent! normal zo
-120
-normal zc
-148
+16
 silent! normal zo
-148
-normal zc
-180
+17
 silent! normal zo
-204
+17
 silent! normal zo
-204
-normal zc
-180
-normal zc
-232
+17
 silent! normal zo
-232
-normal zc
-256
+17
 silent! normal zo
-256
-normal zc
-296
+17
 silent! normal zo
-296
-normal zc
-313
+17
 silent! normal zo
-313
-normal zc
-326
+17
 silent! normal zo
-340
+17
 silent! normal zo
-342
+17
 silent! normal zo
-342
-normal zc
-340
+16
 silent! normal zo
-326
-normal zc
-371
+16
 silent! normal zo
-371
+16
 silent! normal zo
-64
+14
 silent! normal zo
-408
+14
 silent! normal zo
-408
-normal zc
-444
+12
 silent! normal zo
-446
+1
 silent! normal zo
-446
-normal zc
-458
-silent! normal zo
-458
-normal zc
-474
-silent! normal zo
-474
-normal zc
-491
-normal zc
-507
-silent! normal zo
-520
-normal zc
-507
-normal zc
-536
-silent! normal zo
-536
-normal zc
-589
-silent! normal zo
-589
-normal zc
-677
-normal zc
-690
-silent! normal zo
-690
-normal zc
-444
-normal zc
-820
-silent! normal zo
-854
-silent! normal zo
-854
-normal zc
-820
-silent! normal zo
-let s:l = 86 - ((23 * winheight(0) + 18) / 37)
+let s:l = 22 - ((8 * winheight(0) + 16) / 33)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-86
-normal! 020l
+22
+normal! 08l
+wincmd w
+2wincmd w
+exe '1resize ' . ((&lines * 2 + 19) / 38)
+exe '2resize ' . ((&lines * 33 + 19) / 38)
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
@@ -175,6 +134,6 @@ let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 unlet SessionLoad
 tabnext 1
-1wincmd w
+2wincmd w
 
 " vim: ft=vim ro nowrap smc=128
