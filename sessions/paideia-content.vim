@@ -1,5 +1,5 @@
 " ~/.vim/sessions/paideia-content.vim: Vim session script.
-" Created by session.vim 1.5 on 07 August 2012 at 16:57:09.
+" Created by session.vim 1.5 on 08 August 2012 at 09:43:12.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -23,31 +23,27 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +103 Dropbox/Simplenote/\#paideia\ tag\ progression.txt
-badd +1 Dropbox/Simplenote/\#Paideia\ topic\ outline.txt
-badd +213 Dropbox/Simplenote/\#Paideia\ vocab.txt
-badd +42 ~/.vimrc
+badd +8 Dropbox/Simplenote/\#paideia\ tag\ progression.txt
+badd +100 Dropbox/Simplenote/\#Paideia\ topic\ outline.txt
+badd +70 Dropbox/Simplenote/\#Paideia\ vocab.txt
 silent! argdel *
-set lines=50 columns=158
-edit Dropbox/Simplenote/\#Paideia\ vocab.txt
+set lines=38 columns=134
+edit Dropbox/Simplenote/\#Paideia\ topic\ outline.txt
 set splitbelow splitright
 wincmd _ | wincmd |
 split
-1wincmd k
-wincmd w
 wincmd _ | wincmd |
-vsplit
-1wincmd h
+split
+2wincmd k
+wincmd w
 wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe '1resize ' . ((&lines * 1 + 25) / 50)
-exe '2resize ' . ((&lines * 46 + 25) / 50)
-exe 'vert 2resize ' . ((&columns * 79 + 79) / 158)
-exe '3resize ' . ((&lines * 46 + 25) / 50)
-exe 'vert 3resize ' . ((&columns * 78 + 79) / 158)
+exe '1resize ' . ((&lines * 1 + 19) / 38)
+exe '2resize ' . ((&lines * 16 + 19) / 38)
+exe '3resize ' . ((&lines * 17 + 19) / 38)
 argglobal
 enew
 file -MiniBufExplorer-
@@ -69,86 +65,124 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-3
+12
 silent! normal zo
-3
-normal zc
-7
+14
 silent! normal zo
-17
+16
 normal zc
-46
+51
 normal zc
-3
+56
+normal zc
+101
+normal zc
+14
 silent! normal zo
-71
+164
 silent! normal zo
-72
+166
 normal zc
-77
+174
 normal zc
-85
-normal zc
-100
-normal zc
-71
-silent! normal zo
-114
-silent! normal zo
-116
-normal zc
-120
-normal zc
-140
-normal zc
-114
-silent! normal zo
-143
-silent! normal zo
-145
+277
 normal zc
 164
+silent! normal zo
+285
+silent! normal zo
+287
 normal zc
-143
-silent! normal zo
-185
-silent! normal zo
-187
+319
 normal zc
-206
+285
 silent! normal zo
-185
+325
 silent! normal zo
-let s:l = 213 - ((201 * winheight(0) + 23) / 46)
+12
+silent! normal zo
+let s:l = 326 - ((7 * winheight(0) + 8) / 16)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-213
-normal! 08l
+326
+normal! 0
 wincmd w
 argglobal
-edit ~/.vimrc
-setlocal fdm=indent
-setlocal fde=0
+edit Dropbox/Simplenote/\#Paideia\ vocab.txt
+setlocal fdm=expr
+setlocal fde=pandoc#MarkdownLevel()
 setlocal fmr={{{,}}}
 setlocal fdi=#
 setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 46 - ((28 * winheight(0) + 23) / 46)
+3
+silent! normal zo
+3
+normal zc
+7
+normal zc
+17
+normal zc
+46
+normal zc
+3
+silent! normal zo
+68
+silent! normal zo
+69
+normal zc
+78
+normal zc
+86
+normal zc
+101
+normal zc
+68
+silent! normal zo
+111
+silent! normal zo
+113
+normal zc
+117
+normal zc
+137
+normal zc
+111
+silent! normal zo
+140
+silent! normal zo
+142
+silent! normal zo
+163
+silent! normal zo
+142
+normal zc
+163
+normal zc
+140
+silent! normal zo
+186
+silent! normal zo
+188
+silent! normal zo
+207
+silent! normal zo
+186
+silent! normal zo
+let s:l = 187 - ((45 * winheight(0) + 8) / 17)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-46
+187
 normal! 0
 wincmd w
-3wincmd w
-exe '1resize ' . ((&lines * 1 + 25) / 50)
-exe '2resize ' . ((&lines * 46 + 25) / 50)
-exe 'vert 2resize ' . ((&columns * 79 + 79) / 158)
-exe '3resize ' . ((&lines * 46 + 25) / 50)
-exe 'vert 3resize ' . ((&columns * 78 + 79) / 158)
+2wincmd w
+exe '1resize ' . ((&lines * 1 + 19) / 38)
+exe '2resize ' . ((&lines * 16 + 19) / 38)
+exe '3resize ' . ((&lines * 17 + 19) / 38)
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
@@ -163,6 +197,6 @@ let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 unlet SessionLoad
 tabnext 1
-3wincmd w
+2wincmd w
 
 " vim: ft=vim ro nowrap smc=128
