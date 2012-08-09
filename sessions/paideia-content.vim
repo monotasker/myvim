@@ -1,5 +1,5 @@
 " ~/.vim/sessions/paideia-content.vim: Vim session script.
-" Created by session.vim 1.5 on 07 August 2012 at 16:57:09.
+" Created by session.vim 1.5 on 07 August 2012 at 18:06:39.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -23,13 +23,12 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +103 Dropbox/Simplenote/\#paideia\ tag\ progression.txt
+badd +105 Dropbox/Simplenote/\#paideia\ tag\ progression.txt
 badd +1 Dropbox/Simplenote/\#Paideia\ topic\ outline.txt
-badd +213 Dropbox/Simplenote/\#Paideia\ vocab.txt
-badd +42 ~/.vimrc
+badd +262 Dropbox/Simplenote/\#Paideia\ vocab.txt
 silent! argdel *
 set lines=50 columns=158
-edit Dropbox/Simplenote/\#Paideia\ vocab.txt
+edit -MiniBufExplorer-
 set splitbelow splitright
 wincmd _ | wincmd |
 split
@@ -49,8 +48,6 @@ exe 'vert 2resize ' . ((&columns * 79 + 79) / 158)
 exe '3resize ' . ((&lines * 46 + 25) / 50)
 exe 'vert 3resize ' . ((&columns * 78 + 79) / 158)
 argglobal
-enew
-file -MiniBufExplorer-
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -59,8 +56,15 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
+let s:l = 1 - ((0 * winheight(0) + 0) / 1)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
 wincmd w
 argglobal
+edit Dropbox/Simplenote/\#Paideia\ vocab.txt
 setlocal fdm=expr
 setlocal fde=pandoc#MarkdownLevel()
 setlocal fmr={{{,}}}
@@ -69,81 +73,78 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-3
+222
 silent! normal zo
-3
+224
 normal zc
-7
+246
 silent! normal zo
-17
-normal zc
-46
-normal zc
-3
+222
 silent! normal zo
-71
+255
 silent! normal zo
-72
-normal zc
-77
-normal zc
-85
-normal zc
-100
-normal zc
-71
+257
 silent! normal zo
-114
+255
 silent! normal zo
-116
-normal zc
-120
-normal zc
-140
-normal zc
-114
+297
 silent! normal zo
-143
+299
 silent! normal zo
-145
-normal zc
-164
-normal zc
-143
+308
 silent! normal zo
-185
+297
 silent! normal zo
-187
-normal zc
-206
-silent! normal zo
-185
-silent! normal zo
-let s:l = 213 - ((201 * winheight(0) + 23) / 46)
+let s:l = 315 - ((24 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-213
-normal! 08l
+315
+normal! 0
 wincmd w
 argglobal
-edit ~/.vimrc
-setlocal fdm=indent
-setlocal fde=0
+edit Dropbox/Simplenote/\#paideia\ tag\ progression.txt
+setlocal fdm=expr
+setlocal fde=pandoc#MarkdownLevel()
 setlocal fmr={{{,}}}
 setlocal fdi=#
 setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 46 - ((28 * winheight(0) + 23) / 46)
+73
+silent! normal zo
+75
+silent! normal zo
+80
+silent! normal zo
+73
+silent! normal zo
+84
+silent! normal zo
+86
+silent! normal zo
+89
+silent! normal zo
+84
+silent! normal zo
+93
+silent! normal zo
+96
+silent! normal zo
+98
+silent! normal zo
+105
+silent! normal zo
+96
+silent! normal zo
+let s:l = 107 - ((29 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-46
+107
 normal! 0
 wincmd w
-3wincmd w
 exe '1resize ' . ((&lines * 1 + 25) / 50)
 exe '2resize ' . ((&lines * 46 + 25) / 50)
 exe 'vert 2resize ' . ((&columns * 79 + 79) / 158)
@@ -163,6 +164,6 @@ let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 unlet SessionLoad
 tabnext 1
-3wincmd w
+1wincmd w
 
 " vim: ft=vim ro nowrap smc=128

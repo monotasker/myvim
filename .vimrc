@@ -81,7 +81,7 @@ nmap <leader>a <Esc>:Ack!
 "bind shortcut to yankring
 nnoremap <leader>y :YRShow<CR>
 "bind shortcut for bclose
-nmap <leader>bd <Plug>Kwbd
+nmap <leader>bd :Kwbd<CR>
 "set pep8 to hotkey
 let g:pep8_map='<leader>8'
 
