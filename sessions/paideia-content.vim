@@ -1,5 +1,5 @@
 " ~/.vim/sessions/paideia-content.vim: Vim session script.
-" Created by session.vim 1.5 on 07 August 2012 at 18:06:39.
+" Created by session.vim 1.5 on 08 August 2012 at 09:43:12.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -23,31 +23,30 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +105 Dropbox/Simplenote/\#paideia\ tag\ progression.txt
-badd +1 Dropbox/Simplenote/\#Paideia\ topic\ outline.txt
-badd +262 Dropbox/Simplenote/\#Paideia\ vocab.txt
+badd +8 Dropbox/Simplenote/\#paideia\ tag\ progression.txt
+badd +100 Dropbox/Simplenote/\#Paideia\ topic\ outline.txt
+badd +70 Dropbox/Simplenote/\#Paideia\ vocab.txt
 silent! argdel *
-set lines=50 columns=158
-edit -MiniBufExplorer-
+set lines=38 columns=134
+edit Dropbox/Simplenote/\#Paideia\ topic\ outline.txt
 set splitbelow splitright
 wincmd _ | wincmd |
 split
-1wincmd k
-wincmd w
 wincmd _ | wincmd |
-vsplit
-1wincmd h
+split
+2wincmd k
+wincmd w
 wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe '1resize ' . ((&lines * 1 + 25) / 50)
-exe '2resize ' . ((&lines * 46 + 25) / 50)
-exe 'vert 2resize ' . ((&columns * 79 + 79) / 158)
-exe '3resize ' . ((&lines * 46 + 25) / 50)
-exe 'vert 3resize ' . ((&columns * 78 + 79) / 158)
+exe '1resize ' . ((&lines * 1 + 19) / 38)
+exe '2resize ' . ((&lines * 16 + 19) / 38)
+exe '3resize ' . ((&lines * 17 + 19) / 38)
 argglobal
+enew
+file -MiniBufExplorer-
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -56,11 +55,57 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 0) / 1)
+wincmd w
+argglobal
+setlocal fdm=expr
+setlocal fde=pandoc#MarkdownLevel()
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+12
+silent! normal zo
+14
+silent! normal zo
+16
+normal zc
+51
+normal zc
+56
+normal zc
+101
+normal zc
+14
+silent! normal zo
+164
+silent! normal zo
+166
+normal zc
+174
+normal zc
+277
+normal zc
+164
+silent! normal zo
+285
+silent! normal zo
+287
+normal zc
+319
+normal zc
+285
+silent! normal zo
+325
+silent! normal zo
+12
+silent! normal zo
+let s:l = 326 - ((7 * winheight(0) + 8) / 16)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+326
 normal! 0
 wincmd w
 argglobal
@@ -73,83 +118,71 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-222
+3
 silent! normal zo
-224
+3
 normal zc
-246
+7
+normal zc
+17
+normal zc
+46
+normal zc
+3
 silent! normal zo
-222
+68
 silent! normal zo
-255
-silent! normal zo
-257
-silent! normal zo
-255
-silent! normal zo
-297
-silent! normal zo
-299
-silent! normal zo
-308
-silent! normal zo
-297
-silent! normal zo
-let s:l = 315 - ((24 * winheight(0) + 23) / 46)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-315
-normal! 0
-wincmd w
-argglobal
-edit Dropbox/Simplenote/\#paideia\ tag\ progression.txt
-setlocal fdm=expr
-setlocal fde=pandoc#MarkdownLevel()
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=99
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-73
-silent! normal zo
-75
-silent! normal zo
-80
-silent! normal zo
-73
-silent! normal zo
-84
-silent! normal zo
+69
+normal zc
+78
+normal zc
 86
+normal zc
+101
+normal zc
+68
 silent! normal zo
-89
+111
 silent! normal zo
-84
+113
+normal zc
+117
+normal zc
+137
+normal zc
+111
 silent! normal zo
-93
+140
 silent! normal zo
-96
+142
 silent! normal zo
-98
+163
 silent! normal zo
-105
+142
+normal zc
+163
+normal zc
+140
 silent! normal zo
-96
+186
 silent! normal zo
-let s:l = 107 - ((29 * winheight(0) + 23) / 46)
+188
+silent! normal zo
+207
+silent! normal zo
+186
+silent! normal zo
+let s:l = 187 - ((45 * winheight(0) + 8) / 17)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-107
+187
 normal! 0
 wincmd w
-exe '1resize ' . ((&lines * 1 + 25) / 50)
-exe '2resize ' . ((&lines * 46 + 25) / 50)
-exe 'vert 2resize ' . ((&columns * 79 + 79) / 158)
-exe '3resize ' . ((&lines * 46 + 25) / 50)
-exe 'vert 3resize ' . ((&columns * 78 + 79) / 158)
+2wincmd w
+exe '1resize ' . ((&lines * 1 + 19) / 38)
+exe '2resize ' . ((&lines * 16 + 19) / 38)
+exe '3resize ' . ((&lines * 17 + 19) / 38)
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
@@ -164,6 +197,6 @@ let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 unlet SessionLoad
 tabnext 1
-1wincmd w
+2wincmd w
 
 " vim: ft=vim ro nowrap smc=128
