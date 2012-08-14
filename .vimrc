@@ -22,7 +22,7 @@ call pathogen#helptags()
 "===============================
 set background=dark
 colors solarized "molokai 
-set guifont=Dejavu\ Sans\ Mono\ 12
+set guifont=Inconsolata\ Regular\ 14 "Dejavu\ Sans\ Mono\ 12
 set ts=4 softtabstop=4 shiftwidth=4 expandtab
 set guioptions-=T  "remove toolbar
 set lines=50 "Open window with a height of 50 lines
@@ -39,10 +39,10 @@ set ignorecase
 set smartcase
 
 "enable Greek keyboard, switch with <c-^> in insert or command mode
-set keymap=greek_polytonic
-set encoding=utf-8
-set inputenc=utf-8
-set fenc=utf-8
+"set keymap=greek_polytonic
+"set encoding=utf-8
+"set inputenc=utf-8
+"set fenc=utf-8
 
 "navigation shortcuts
 "=================================
