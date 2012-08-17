@@ -20,9 +20,12 @@ call pathogen#helptags()
 
 "ui appearance
 "===============================
-set background=dark
-colors solarized "molokai 
-set guifont=Inconsolata\ Regular\ 14 "Dejavu\ Sans\ Mono\ 12
+set t_Co=256 "use 256 colours in terminal
+"set t_AB=^[[48;5;%dm "fix terminal colors
+"set t_AF=^[[38;5;%dm "fix terminal colors
+set background=light
+colors SolarizedLight"molokai 
+set guifont=Inconsolata\ Regular\ 13 "Dejavu\ Sans\ Mono\ 12
 set ts=4 softtabstop=4 shiftwidth=4 expandtab
 set guioptions-=T  "remove toolbar
 set lines=50 "Open window with a height of 50 lines
