@@ -24,7 +24,7 @@ set t_Co=256 "use 256 colours in terminal
 "set t_AB=^[[48;5;%dm "fix terminal colors
 "set t_AF=^[[38;5;%dm "fix terminal colors
 set background=light
-colors SolarizedLight"molokai 
+colors solarized "molokai 
 set guifont=Inconsolata\ Regular\ 13 "Dejavu\ Sans\ Mono\ 12
 set ts=4 softtabstop=4 shiftwidth=4 expandtab
 set guioptions-=T  "remove toolbar
@@ -137,6 +137,10 @@ set completeopt=menuone,longest,preview
 map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
 " automatically run pylint on Python files when saving buffer
 autocmd BufWrite *.{py} :call Pylint()
+
+"working with web2py files
+"==========================
+au BufNewFile,BufRead *.load set filetype=html
 
 " Taglist variables
 " Display function name in status bar:
