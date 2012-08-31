@@ -57,6 +57,14 @@ map <c-h> <c-w>h
 "map shortcuts to cycle through buffers
 nnoremap <leader><Tab> :bnext<CR>
 nnoremap <leader><S-Tab> :bprevious<CR>
+"map shortcuts to adjust split window height
+if bufwinnr(1)
+  map + <C-W>+
+  map = <C-W>+
+  map - <C-W>-
+  map 8 <C-W><
+  map 9 <C-W>>
+endif
 
 "utility shortcuts
 "=================================
