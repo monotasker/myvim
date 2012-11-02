@@ -18,6 +18,8 @@ call pathogen#infect()
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+set nocompatible "necessary for project plugin
+
 "ui appearance
 "===============================
 set t_Co=256 "use 256 colours in terminal
@@ -35,7 +37,7 @@ set colorcolumn=80
 "Turn on line numbers
 set number
 "Toggle line numbers and fold column for easy copying
-nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
+nnoremap <F2> :set nonumber!<CR>:set foldcolumn=2<CR>
 
 "smart case sensitivity in searching
 set ignorecase
@@ -91,7 +93,7 @@ map <leader>r :RopeRename<CR>
 nmap <leader>a <Esc>:Ack!
 "bind shortcut to yankring
 nnoremap <leader>y :YRShow<CR>
-"bind shortcut for bclose
+"bind shortcut to close buffer without closing window
 nmap <leader>bd :Kwbd<CR>
 "set pep8 to hotkey
 let g:pep8_map='<leader>8'
@@ -121,6 +123,8 @@ filetype plugin indent on "use specified indenting for filetype
 "working with less css files
 "===========================
 au BufNewFile,BufRead *.less setlocal filetype=less
+"automatically compile to css using lessc
+autocmd BufWritePost,FileWritePost *.less :silent !lessc <afile> <afile>:p:r.css
 
 "working with text files
 "=======================
