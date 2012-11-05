@@ -185,7 +185,7 @@ function! <SID>StripTrailingWhitespaces()
 endfunction
 
 "function to run pylint on current buffer
-"command Pylint :call Pylint()
+command Pylint :call Pylint()
 function! Pylint()
     setlocal makeprg=(echo\ '[%]';\ pylint\ %)
     setlocal efm=%+P[%f],%t:\ %#%l:%m
