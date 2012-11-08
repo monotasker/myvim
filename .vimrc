@@ -95,6 +95,7 @@ nmap <leader>a <Esc>:Ack!
 nnoremap <leader>y :YRShow<CR>
 "bind shortcut to close buffer without closing window
 nmap <leader>bd :Kwbd<CR>
+nmap <leader>p :CtrlP<CR>
 "set pep8 to hotkey
 let g:pep8_map='<leader>8'
 
@@ -109,6 +110,9 @@ let g:vimroom_width='80'
 let NERDTreeShowBookmarks=1
 autocmd VimEnter * NERDTree
 "autocmd BufEnter * NERDTreeMirror
+
+"configure ctrl-p
+let g:ctrlp_working_path_mode = 2
 
 "filetype settings
 "=================================
@@ -135,7 +139,6 @@ au FileType text,markdown,pandoc set nonumber
 
 "working with python files
 "=========================
-
 "code folding
 set foldmethod=indent
 set foldlevel=99
