@@ -25,9 +25,9 @@ set nocompatible "necessary for project plugin
 set t_Co=256 "use 256 colours in terminal
 "set t_AB=^[[48;5;%dm "fix terminal colors
 "set t_AF=^[[38;5;%dm "fix terminal colors
-set background=light
+set background=dark
 colors solarized "molokai 
-set guifont=Inconsolata\ Regular\ 13 "Dejavu\ Sans\ Mono\ 12
+set guifont=Droid\ Sans\ Mono\ 12
 set ts=4 softtabstop=4 shiftwidth=4 expandtab
 set guioptions-=T  "remove toolbar
 set lines=50 "Open window with a height of 50 lines
@@ -188,7 +188,7 @@ function! <SID>StripTrailingWhitespaces()
 endfunction
 
 "function to run pylint on current buffer
-"command Pylint :call Pylint()
+command Pylint :call Pylint()
 function! Pylint()
     setlocal makeprg=(echo\ '[%]';\ pylint\ %)
     setlocal efm=%+P[%f],%t:\ %#%l:%m
