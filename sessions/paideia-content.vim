@@ -1,9 +1,9 @@
 " ~/.vim/sessions/paideia-content.vim: Vim session script.
-" Created by session.vim 1.5 on 08 August 2012 at 09:43:12.
+" Created by session.vim 1.5 on 10 November 2012 at 18:56:15.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
-silent! set guifont=Dejavu\ Sans\ Mono\ 12
+silent! set guifont=Droid\ Sans\ Mono\ 12
 if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 1 | filetype on | endif
 if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
@@ -18,17 +18,21 @@ if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/
+cd ~/Dropbox/Simplenote
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +8 Dropbox/Simplenote/\#paideia\ tag\ progression.txt
-badd +100 Dropbox/Simplenote/\#Paideia\ topic\ outline.txt
-badd +70 Dropbox/Simplenote/\#Paideia\ vocab.txt
+badd +1 \#\ Paideia\ badges.txt
+badd +23 \#\ Paideia\ basic\ tag\ sequence.txt
+badd +1 \#paideia\ tag\ progression.txt
+badd +129 \#Paideia\ topic\ outline.txt
+badd +1 \#Paideia\ vocab.txt
+badd +1 ~/.vimrc
+badd +54 ~/.vim/bundle/vim-pandoc/syntax/pandoc.vim
 silent! argdel *
-set lines=38 columns=134
-edit Dropbox/Simplenote/\#Paideia\ topic\ outline.txt
+set lines=50 columns=160
+edit -MiniBufExplorer-
 set splitbelow splitright
 wincmd _ | wincmd |
 split
@@ -41,12 +45,10 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe '1resize ' . ((&lines * 1 + 19) / 38)
-exe '2resize ' . ((&lines * 16 + 19) / 38)
-exe '3resize ' . ((&lines * 17 + 19) / 38)
+exe '1resize ' . ((&lines * 2 + 25) / 50)
+exe '2resize ' . ((&lines * 10 + 25) / 50)
+exe '3resize ' . ((&lines * 34 + 25) / 50)
 argglobal
-enew
-file -MiniBufExplorer-
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -55,61 +57,15 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-wincmd w
-argglobal
-setlocal fdm=expr
-setlocal fde=pandoc#MarkdownLevel()
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=99
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-12
-silent! normal zo
-14
-silent! normal zo
-16
-normal zc
-51
-normal zc
-56
-normal zc
-101
-normal zc
-14
-silent! normal zo
-164
-silent! normal zo
-166
-normal zc
-174
-normal zc
-277
-normal zc
-164
-silent! normal zo
-285
-silent! normal zo
-287
-normal zc
-319
-normal zc
-285
-silent! normal zo
-325
-silent! normal zo
-12
-silent! normal zo
-let s:l = 326 - ((7 * winheight(0) + 8) / 16)
+let s:l = 1 - ((0 * winheight(0) + 1) / 2)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-326
-normal! 0
+1
+normal! 0122l
 wincmd w
 argglobal
-edit Dropbox/Simplenote/\#Paideia\ vocab.txt
+edit \#Paideia\ vocab.txt
 setlocal fdm=expr
 setlocal fde=pandoc#MarkdownLevel()
 setlocal fmr={{{,}}}
@@ -128,61 +84,48 @@ normal zc
 normal zc
 46
 normal zc
-3
-silent! normal zo
 68
 silent! normal zo
-69
-normal zc
-78
-normal zc
-86
-normal zc
-101
-normal zc
 68
-silent! normal zo
-111
-silent! normal zo
-113
 normal zc
-117
+112
+silent! normal zo
+112
 normal zc
-137
+141
+silent! normal zo
+141
 normal zc
-111
+187
 silent! normal zo
-140
-silent! normal zo
-142
-silent! normal zo
-163
-silent! normal zo
-142
-normal zc
-163
-normal zc
-140
-silent! normal zo
-186
-silent! normal zo
-188
-silent! normal zo
-207
-silent! normal zo
-186
-silent! normal zo
-let s:l = 187 - ((45 * winheight(0) + 8) / 17)
+let s:l = 141 - ((95 * winheight(0) + 5) / 10)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-187
+141
+normal! 07l
+wincmd w
+argglobal
+edit ~/.vimrc
+setlocal fdm=indent
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 115 - ((9 * winheight(0) + 17) / 34)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+115
 normal! 0
 wincmd w
 2wincmd w
-exe '1resize ' . ((&lines * 1 + 19) / 38)
-exe '2resize ' . ((&lines * 16 + 19) / 38)
-exe '3resize ' . ((&lines * 17 + 19) / 38)
+exe '1resize ' . ((&lines * 2 + 25) / 50)
+exe '2resize ' . ((&lines * 10 + 25) / 50)
+exe '3resize ' . ((&lines * 34 + 25) / 50)
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

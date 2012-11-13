@@ -1,9 +1,9 @@
 " ~/.vim/sessions/simplenote.vim: Vim session script.
-" Created by session.vim 1.5 on 14 July 2012 at 12:14:04.
+" Created by session.vim 1.5 on 11 November 2012 at 17:43:11.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
-silent! set guifont=Dejavu\ Sans\ Mono\ 10
+silent! set guifont=DejaVu/
 if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 1 | filetype on | endif
 if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
@@ -24,21 +24,15 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 set shortmess=aoO
 silent! argdel *
-set lines=41 columns=157
+set lines=41 columns=98
 set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 31 + 78) / 157)
-exe 'vert 2resize ' . ((&columns * 125 + 78) / 157)
 argglobal
 enew
-" file NERD_tree_1
+" file NERD_tree_3
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -47,20 +41,6 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-wincmd w
-argglobal
-enew
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=99
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-wincmd w
-exe 'vert 1resize ' . ((&columns * 31 + 78) / 157)
-exe 'vert 2resize ' . ((&columns * 125 + 78) / 157)
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
@@ -79,7 +59,6 @@ tabnext 1
 let s:bufnr = bufnr("%")
 NERDTree ~/Dropbox/Simplenote
 execute "bwipeout" s:bufnr
-1resize 39|vert 1resize 31|2resize 39|vert 2resize 125|
 tabnext 1
 1wincmd w
 

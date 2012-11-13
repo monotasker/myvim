@@ -51,6 +51,8 @@ set smartcase
 
 "navigation shortcuts
 "=================================
+"home row mapping to leave insert mode
+:inoremap jk <esc>
 "remap keys to move between windows
 map <c-j> <c-w>j
 map <c-k> <c-w>k
@@ -97,6 +99,9 @@ nnoremap <leader>y :YRShow<CR>
 nmap <leader>bd :Kwbd<CR>
 "set pep8 to hotkey
 let g:pep8_map='<leader>8'
+nmap <leader>p :CtrlP<CR>
+nmap <leader>so :OpenSession<CR>
+nmap <leader>ss :SaveSession<CR>
 
 "plugin settings
 "=================================
@@ -116,7 +121,7 @@ syntax on "use syntax highlighting
 filetype on "autodetect filetypes
 filetype plugin indent on "use specified indenting for filetype
 
-"hi Folded guibg=#1B1D1E guifg=#666 gui=italic
+"hi Folded guibg= guifg= 
 "hi Foldcolumn guibg=#1B1D1E guifg=#666 gui=italic
 "hi Linenr guibg=#1B1D1E guifg=#666 gui=none
 
@@ -132,6 +137,7 @@ au BufNewFile,BufRead *.txt set filetype=pandoc
 au FileType text,markdown,pandoc set colorcolumn=0
 au FileType text,markdown,pandoc set foldcolumn=6
 au FileType text,markdown,pandoc set nonumber
+au FileType text,markdown,pandoc set foldtext=CustomFoldText()
 
 "working with python files
 "=========================
@@ -182,6 +188,30 @@ function! <SID>StripTrailingWhitespaces()
     " Clean up: restore previous search history, and cursor position
     let @/=_s
     call cursor(l, c)
+endfunction
+
+"Replace regular fold text with different style
+"based on http://www.gregsexton.org/2011/03/improving-the-text-displayed-in-a-fold/
+fu! CustomFoldText()
+    "get first non-blank line
+    let fs = v:foldstart
+    while getline(fs) =~ '^\s*$' | let fs = nextnonblank(fs + 1)
+    endwhile
+    if fs > v:foldend
+        let line = getline(v:foldstart)
+    else
+        let line = substitute(getline(fs), '\t', repeat(' ', &tabstop), 'g')
+    endif
+ 
+    let w = winwidth(0) - &foldcolumn - (&number ? 8 : 0)
+    let foldSize = 1 + v:foldend - v:foldstart
+    let foldSizeStr = " " . foldSize . " lines "
+    let foldLevelStr = repeat("+--", v:foldlevel)
+    let lineCount = line("$")
+    let foldPercentage = printf("[%.1f", (foldSize*1.0)/lineCount*100) . "%] "
+    let expansionString = repeat(".", 70 - strwidth(foldSizeStr.line.foldLevelStr.foldPercentage))
+    return line . expansionString . foldSizeStr . foldPercentage . foldLevelStr
+endif
 endfunction
 
 "function to run pylint on current buffer
