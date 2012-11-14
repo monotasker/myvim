@@ -1,9 +1,9 @@
 " ~/.vim/sessions/simplenote.vim: Vim session script.
-" Created by session.vim 1.5 on 11 November 2012 at 17:43:11.
+" Created by session.vim 1.5 on 14 November 2012 at 12:10:34.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
-silent! set guifont=DejaVu/
+silent! set guifont=Droid\ Sans\ Mono\ 12
 if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 1 | filetype on | endif
 if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
@@ -23,24 +23,34 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
+badd +1 \#\ vim\ function\ to\ renumber\ footnotes.txt
 silent! argdel *
-set lines=41 columns=98
+set lines=38 columns=129
+edit \#\ vim\ function\ to\ renumber\ footnotes.txt
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
 argglobal
-enew
-" file NERD_tree_3
-setlocal fdm=indent
-setlocal fde=0
+setlocal fdm=expr
+setlocal fde=pandoc#MarkdownLevel()
 setlocal fmr={{{,}}}
 setlocal fdi=#
 setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
+1
+silent! normal zo
+18
+silent! normal zo
+let s:l = 1 - ((0 * winheight(0) + 18) / 37)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 029l
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
@@ -54,11 +64,6 @@ endif
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 unlet SessionLoad
-tabnext 1
-1wincmd w
-let s:bufnr = bufnr("%")
-NERDTree ~/Dropbox/Simplenote
-execute "bwipeout" s:bufnr
 tabnext 1
 1wincmd w
 
