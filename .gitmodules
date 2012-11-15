@@ -122,3 +122,6 @@
 [submodule "bundle/greek_polytonic"]
 	path = bundle/greek_polytonic
 	url = https://github.com/vim-scripts/greek_polytonic.vim.git
+[submodule "bundle/vim-sparkup"]
+	path = bundle/vim-sparkup
+	url = git://github.com/tristen/vim-sparkup.git
