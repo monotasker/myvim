@@ -1,5 +1,5 @@
 " ~/.vim/sessions/paideia-content.vim: Vim session script.
-" Created by session.vim 1.5 on 10 November 2012 at 18:56:15.
+" Created by session.vim 1.5 on 13 November 2012 at 17:10:41.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -23,16 +23,13 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +1 \#\ Paideia\ badges.txt
 badd +23 \#\ Paideia\ basic\ tag\ sequence.txt
 badd +1 \#paideia\ tag\ progression.txt
 badd +129 \#Paideia\ topic\ outline.txt
 badd +1 \#Paideia\ vocab.txt
-badd +1 ~/.vimrc
-badd +54 ~/.vim/bundle/vim-pandoc/syntax/pandoc.vim
 silent! argdel *
-set lines=50 columns=160
-edit -MiniBufExplorer-
+set lines=45 columns=136
+edit \#Paideia\ topic\ outline.txt
 set splitbelow splitright
 wincmd _ | wincmd |
 split
@@ -45,10 +42,12 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe '1resize ' . ((&lines * 2 + 25) / 50)
-exe '2resize ' . ((&lines * 10 + 25) / 50)
-exe '3resize ' . ((&lines * 34 + 25) / 50)
+exe '1resize ' . ((&lines * 1 + 22) / 45)
+exe '2resize ' . ((&lines * 22 + 22) / 45)
+exe '3resize ' . ((&lines * 18 + 22) / 45)
 argglobal
+enew
+file -MiniBufExplorer-
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -57,12 +56,54 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 1) / 2)
+wincmd w
+argglobal
+setlocal fdm=expr
+setlocal fde=pandoc#MarkdownLevel()
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+13
+silent! normal zo
+17
+silent! normal zo
+19
+normal zc
+36
+silent! normal zo
+36
+normal zc
+17
+normal zc
+62
+silent! normal zo
+63
+normal zc
+101
+normal zc
+62
+normal zc
+112
+silent! normal zo
+112
+normal zc
+137
+silent! normal zo
+140
+normal zc
+162
+normal zc
+137
+normal zc
+let s:l = 14 - ((1 * winheight(0) + 11) / 22)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0122l
+14
+normal! 0
 wincmd w
 argglobal
 edit \#Paideia\ vocab.txt
@@ -98,34 +139,17 @@ silent! normal zo
 normal zc
 187
 silent! normal zo
-let s:l = 141 - ((95 * winheight(0) + 5) / 10)
+let s:l = 141 - ((0 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 141
 normal! 07l
 wincmd w
-argglobal
-edit ~/.vimrc
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=99
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-let s:l = 115 - ((9 * winheight(0) + 17) / 34)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-115
-normal! 0
-wincmd w
 2wincmd w
-exe '1resize ' . ((&lines * 2 + 25) / 50)
-exe '2resize ' . ((&lines * 10 + 25) / 50)
-exe '3resize ' . ((&lines * 34 + 25) / 50)
+exe '1resize ' . ((&lines * 1 + 22) / 45)
+exe '2resize ' . ((&lines * 22 + 22) / 45)
+exe '3resize ' . ((&lines * 18 + 22) / 45)
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
