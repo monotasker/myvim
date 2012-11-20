@@ -1,5 +1,5 @@
-" ~/.vim/sessions/simplenote.vim: Vim session script.
-" Created by session.vim 1.5 on 14 November 2012 at 12:10:34.
+" ~/.vim/sessions/default.vim: Vim session script.
+" Created by session.vim 1.5 on 15 November 2012 at 14:05:13.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -18,39 +18,60 @@ if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Dropbox/Simplenote
+cd ~/web/web2py/applications/blog
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +1 \#\ vim\ function\ to\ renumber\ footnotes.txt
+badd +1 controllers/plugin_blog.py
+badd +1 models/plugin_blog.py
+badd +1 views/plugin_blog/index.html
+badd +0 views/plugin_blog/left_sidebar.html
 silent! argdel *
 set lines=38 columns=129
-edit \#\ vim\ function\ to\ renumber\ footnotes.txt
+edit views/plugin_blog/left_sidebar.html
 set splitbelow splitright
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
+exe '1resize ' . ((&lines * 1 + 19) / 38)
+exe '2resize ' . ((&lines * 34 + 19) / 38)
 argglobal
-setlocal fdm=expr
-setlocal fde=pandoc#MarkdownLevel()
+enew
+file -MiniBufExplorer-
+setlocal fdm=indent
+setlocal fde=0
 setlocal fmr={{{,}}}
 setlocal fdi=#
 setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-1
-silent! normal zo
-18
-silent! normal zo
-let s:l = 1 - ((0 * winheight(0) + 18) / 37)
+wincmd w
+argglobal
+setlocal fdm=indent
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 5 - ((2 * winheight(0) + 17) / 34)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 029l
+5
+normal! 0
+wincmd w
+2wincmd w
+exe '1resize ' . ((&lines * 1 + 19) / 38)
+exe '2resize ' . ((&lines * 34 + 19) / 38)
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
@@ -65,6 +86,6 @@ let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 unlet SessionLoad
 tabnext 1
-1wincmd w
+2wincmd w
 
 " vim: ft=vim ro nowrap smc=128
