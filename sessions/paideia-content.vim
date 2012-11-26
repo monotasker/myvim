@@ -1,9 +1,9 @@
 " ~/.vim/sessions/paideia-content.vim: Vim session script.
-" Created by session.vim 1.5 on 08 August 2012 at 09:43:12.
+" Created by session.vim 1.5 on 13 November 2012 at 17:10:41.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
-silent! set guifont=Dejavu\ Sans\ Mono\ 12
+silent! set guifont=Droid\ Sans\ Mono\ 12
 if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 1 | filetype on | endif
 if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
@@ -18,17 +18,18 @@ if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/
+cd ~/Dropbox/Simplenote
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +8 Dropbox/Simplenote/\#paideia\ tag\ progression.txt
-badd +100 Dropbox/Simplenote/\#Paideia\ topic\ outline.txt
-badd +70 Dropbox/Simplenote/\#Paideia\ vocab.txt
+badd +23 \#\ Paideia\ basic\ tag\ sequence.txt
+badd +1 \#paideia\ tag\ progression.txt
+badd +129 \#Paideia\ topic\ outline.txt
+badd +1 \#Paideia\ vocab.txt
 silent! argdel *
-set lines=38 columns=134
-edit Dropbox/Simplenote/\#Paideia\ topic\ outline.txt
+set lines=45 columns=136
+edit \#Paideia\ topic\ outline.txt
 set splitbelow splitright
 wincmd _ | wincmd |
 split
@@ -41,9 +42,9 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe '1resize ' . ((&lines * 1 + 19) / 38)
-exe '2resize ' . ((&lines * 16 + 19) / 38)
-exe '3resize ' . ((&lines * 17 + 19) / 38)
+exe '1resize ' . ((&lines * 1 + 22) / 45)
+exe '2resize ' . ((&lines * 22 + 22) / 45)
+exe '3resize ' . ((&lines * 18 + 22) / 45)
 argglobal
 enew
 file -MiniBufExplorer-
@@ -65,51 +66,47 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-12
+13
 silent! normal zo
-14
+17
 silent! normal zo
-16
+19
 normal zc
-51
+36
+silent! normal zo
+36
 normal zc
-56
+17
+normal zc
+62
+silent! normal zo
+63
 normal zc
 101
 normal zc
-14
-silent! normal zo
-164
-silent! normal zo
-166
+62
 normal zc
-174
+112
+silent! normal zo
+112
 normal zc
-277
+137
+silent! normal zo
+140
 normal zc
-164
-silent! normal zo
-285
-silent! normal zo
-287
+162
 normal zc
-319
+137
 normal zc
-285
-silent! normal zo
-325
-silent! normal zo
-12
-silent! normal zo
-let s:l = 326 - ((7 * winheight(0) + 8) / 16)
+let s:l = 14 - ((1 * winheight(0) + 11) / 22)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-326
+14
 normal! 0
 wincmd w
 argglobal
-edit Dropbox/Simplenote/\#Paideia\ vocab.txt
+edit \#Paideia\ vocab.txt
 setlocal fdm=expr
 setlocal fde=pandoc#MarkdownLevel()
 setlocal fmr={{{,}}}
@@ -128,61 +125,31 @@ normal zc
 normal zc
 46
 normal zc
-3
-silent! normal zo
 68
 silent! normal zo
-69
-normal zc
-78
-normal zc
-86
-normal zc
-101
-normal zc
 68
-silent! normal zo
-111
-silent! normal zo
-113
 normal zc
-117
+112
+silent! normal zo
+112
 normal zc
-137
+141
+silent! normal zo
+141
 normal zc
-111
+187
 silent! normal zo
-140
-silent! normal zo
-142
-silent! normal zo
-163
-silent! normal zo
-142
-normal zc
-163
-normal zc
-140
-silent! normal zo
-186
-silent! normal zo
-188
-silent! normal zo
-207
-silent! normal zo
-186
-silent! normal zo
-let s:l = 187 - ((45 * winheight(0) + 8) / 17)
+let s:l = 141 - ((0 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-187
-normal! 0
+141
+normal! 07l
 wincmd w
 2wincmd w
-exe '1resize ' . ((&lines * 1 + 19) / 38)
-exe '2resize ' . ((&lines * 16 + 19) / 38)
-exe '3resize ' . ((&lines * 17 + 19) / 38)
+exe '1resize ' . ((&lines * 1 + 22) / 45)
+exe '2resize ' . ((&lines * 22 + 22) / 45)
+exe '3resize ' . ((&lines * 18 + 22) / 45)
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
