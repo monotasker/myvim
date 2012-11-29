@@ -27,17 +27,17 @@ set t_Co=256 "use 256 colours in terminal
 "set t_AF=^[[38;5;%dm "fix terminal colors
 set background=dark
 colors solarized "molokai 
-set guifont=Droid\ Sans\ Mono\ 12
+set guifont=Ubuntu\ Mono\ 13
 set ts=4 softtabstop=4 shiftwidth=4 expandtab
 set guioptions-=T  "remove toolbar
-set lines=50 "Open window with a height of 50 lines
-set columns=160 "Open window with a width of 50 columns
+set lines=50 "Open window with a height of X lines
+set columns=160 "Open window with a width of X columns
 "visual right-margin guide at 80 chars
 set colorcolumn=80
 "Turn on line numbers
 set number
 "Toggle line numbers and fold column for easy copying
-nnoremap <F2> :set nonumber!<CR>:set foldcolumn=2<CR>
+nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 
 "smart case sensitivity in searching
 set ignorecase
@@ -52,7 +52,7 @@ set smartcase
 "navigation shortcuts
 "=================================
 "home row mapping to leave insert mode
-:inoremap jk <esc>
+:inoremap jk<esc>
 "remap keys to move between windows
 map <c-j> <c-w>j
 map <c-k> <c-w>k
