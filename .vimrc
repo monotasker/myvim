@@ -45,14 +45,14 @@ set smartcase
 
 "enable Greek keyboard, switch with <c-^> in insert or command mode
 "set keymap=greek_polytonic
-"set encoding=utf-8
+set encoding=utf-8
 "set inputenc=utf-8
-"set fenc=utf-8
+set fenc=utf-8
 
 "navigation shortcuts
 "=================================
 "home row mapping to leave insert mode
-:inoremap jk<esc>
+:inoremap jk <esc>
 "remap keys to move between windows
 map <c-j> <c-w>j
 map <c-k> <c-w>k
