@@ -37,7 +37,7 @@ set colorcolumn=80
 "Turn on line numbers
 set number
 "Toggle line numbers and fold column for easy copying
-nnoremap <F2> :set nonumber!<CR>:set foldcolumn=2<CR>
+nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 
 "smart case sensitivity in searching
 set ignorecase
@@ -79,13 +79,14 @@ nnoremap <leader>ep <Esc>"+p
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 " Execute file being edited with <Shift> + e:
 map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
+nnoremap <S-i> <Esc>>>
 
 "plugin shortcuts
 "=================================
 "map key to activate TODO tasklist
 map <leader>td <Plug>TaskList
 "map key to open Gundo revision history
-map <leader>g :GundoToggle<CR>
+map <leader>gt :GundoToggle<CR>
 "bind shortcut for nerdtree
 map <leader>n :NERDTreeToggle<CR>
 "bind shortcuts for rope redefinition and renaming
@@ -121,16 +122,11 @@ syntax on "use syntax highlighting
 filetype on "autodetect filetypes
 filetype plugin indent on "use specified indenting for filetype
 
-"hi Folded guibg= guifg= 
-"hi Foldcolumn guibg=#1B1D1E guifg=#666 gui=italic
-"hi Linenr guibg=#1B1D1E guifg=#666 gui=none
-
 "working with less css files
 "===========================
 au BufNewFile,BufRead *.less setlocal filetype=less
 "automatically compile to css using lessc
-autocmd BufWritePost,FileWritePost *.less :silent !lessc <afile> <afile>:p:r.css
-
+autocmd BufWritePost,FileWritePost *.less :call BuildLess()
 "working with text files
 "=======================
 au BufNewFile,BufRead *.txt set filetype=pandoc
@@ -241,3 +237,13 @@ if 'VIRTUAL_ENV' in os.environ:
     activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
     execfile(activate_this, dict(__file__=activate_this))
 EOF
+
+function! BuildLess()
+  redir => lessout
+  silent execute ":silent !lessc <afile> <afile>:p:r.css"
+  redir END
+  silent split
+  silent enew
+  silent call append(0, lessout)
+  set nomodified
+endfunction
