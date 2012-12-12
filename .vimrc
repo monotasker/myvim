@@ -27,11 +27,11 @@ set t_Co=256 "use 256 colours in terminal
 "set t_AF=^[[38;5;%dm "fix terminal colors
 set background=dark
 colors solarized "molokai 
-set guifont=Droid\ Sans\ Mono\ 12
+set guifont=Ubuntu\ Mono\ 13
 set ts=4 softtabstop=4 shiftwidth=4 expandtab
 set guioptions-=T  "remove toolbar
-set lines=50 "Open window with a height of 50 lines
-set columns=160 "Open window with a width of 50 columns
+set lines=50 "Open window with a height of X lines
+set columns=160 "Open window with a width of X columns
 "visual right-margin guide at 80 chars
 set colorcolumn=80
 "Turn on line numbers
@@ -45,9 +45,9 @@ set smartcase
 
 "enable Greek keyboard, switch with <c-^> in insert or command mode
 "set keymap=greek_polytonic
-"set encoding=utf-8
+set encoding=utf-8
 "set inputenc=utf-8
-"set fenc=utf-8
+set fenc=utf-8
 
 "navigation shortcuts
 "=================================
@@ -98,6 +98,7 @@ nmap <leader>a <Esc>:Ack!
 nnoremap <leader>y :YRShow<CR>
 "bind shortcut to close buffer without closing window
 nmap <leader>bd :Kwbd<CR>
+nmap <leader>p :CtrlP<CR>
 "set pep8 to hotkey
 let g:pep8_map='<leader>8'
 nmap <leader>p :CtrlP<CR>
@@ -115,6 +116,9 @@ let g:vimroom_width='80'
 let NERDTreeShowBookmarks=1
 autocmd VimEnter * NERDTree
 "autocmd BufEnter * NERDTreeMirror
+
+"configure ctrl-p
+let g:ctrlp_working_path_mode = 2
 
 "filetype settings
 "=================================
@@ -137,7 +141,6 @@ au FileType text,markdown,pandoc set foldtext=CustomFoldText()
 
 "working with python files
 "=========================
-
 "code folding
 set foldmethod=indent
 set foldlevel=99

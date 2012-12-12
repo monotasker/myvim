@@ -1,5 +1,5 @@
-" ~/.vim/sessions/default.vim: Vim session script.
-" Created by session.vim 1.5 on 28 November 2012 at 16:43:39.
+" ~/.vim/sessions/notes.vim: Vim session script.
+" Created by session.vim 1.5 on 28 November 2012 at 17:10:01.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -23,7 +23,7 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 \#\ Paul\ on\ women\ -\ 1\ Tim\ 2.txt
+badd +1 \#\ Paul\ on\ women\ -\ 1\ Tim\ 2.txt
 silent! argdel *
 set lines=45 columns=135
 edit \#\ Paul\ on\ women\ -\ 1\ Tim\ 2.txt
@@ -40,7 +40,7 @@ exe 'vert 1resize ' . ((&columns * 31 + 67) / 135)
 exe 'vert 2resize ' . ((&columns * 103 + 67) / 135)
 argglobal
 enew
-" file NERD_tree_1
+" file NERD_tree_2
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -61,12 +61,12 @@ setlocal fdn=20
 setlocal fen
 1
 silent! normal zo
-let s:l = 10 - ((9 * winheight(0) + 21) / 43)
+let s:l = 43 - ((36 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-10
-normal! 07l
+43
+normal! 05l
 wincmd w
 2wincmd w
 exe 'vert 1resize ' . ((&columns * 31 + 67) / 135)
