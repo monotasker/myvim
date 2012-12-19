@@ -106,6 +106,9 @@ nmap <leader>ss :SaveSession<CR>
 
 "plugin settings
 "=================================
+
+"configure session settings
+
 "configure vimroom settings
 let g:vimroom_background='#efefef'
 let g:vimroom_min_sidebar_width='5'
@@ -113,7 +116,7 @@ let g:vimroom_width='80'
 
 "configure NERDTree settings
 let NERDTreeShowBookmarks=1
-autocmd VimEnter * NERDTree
+"autocmd VimEnter * NERDTree
 "autocmd BufEnter * NERDTreeMirror
 
 "configure ctrl-p

@@ -32,40 +32,40 @@ following sources:
 
 This configuration includes the following scripts and plugins for vim:
 
-- fugitive (git integration)
-- snipmate (snippet control)
-- surround (for surrounding a selection with arbitrary text snippets)
-- supertab (augmenting vim's autocompletion)
-- minibufexpl (for visually managing buffers)
-- command-t (for fast file-navigation)
-- pyflakes-pathogen (integrating pyflakes for python syntax checking)
 - ack (for multi-file text searches)
-- gundo (providing revision history)
-- pydoc (integrating python documentation)
-- pep8 (for python style consistency)
-- pytest (integrating python testing)
-- makegreen (providing visual confirmation of test pass/fail)
-- tasklist (integrated TODO management)
-- nerdtree (integrated filebrowser)
-- ropevim (integrating the rope for refactoring and definitions)
-- vim-session (providing nice session management)
+- command-t (for fast file-navigation)
+- ctrlp (fuzzy file searching, most-recently-used list)
+- fugitive (git integration)
+- gist-vim (writing and reading github gists)
 - git.vim (providing syntax highlighting for git config files)
-- taglist (providing a source-code browser based on ctags)
+- gundo (providing revision history)
 - less-vim (syntax highlighting for LESS css syntax)
+- makegreen (providing visual confirmation of test pass/fail)
+- matchit (expanded % movement between opening and closing members of matched pairs)
+- minibufexpl (for visually managing buffers)
+- nerdcommenter (smart toggling of comment lines)
+- nerdtree (integrated filebrowser)
+- pep8 (for python style consistency)
+- project.vim (for project management)
+- pydoc (integrating python documentation)
+- pyflakes-pathogen (integrating pyflakes for python syntax checking)
+- pytest (integrating python testing)
+- ropevim (integrating the rope for refactoring and definitions)
+- snipmate (snippet control)
+- supertab (augmenting vim's autocompletion)
+- surround (for surrounding a selection with arbitrary text snippets)
+- svg.vim (syntax highlighting for svg files)
+- taglist (providing a source-code browser based on ctags)
+- tasklist (integrated TODO management)
+- vim-session (providing nice session management)
 - vim-markdownfootnotes (adding footnotes in markdown files)
 - vim-pandoc (comprehensive support for pandoc markdown formatting)
 - vim-pandoc-extras (support for pandoc's extended markdown syntax options)
-- nerdcommenter (smart toggling of comment lines)
-- svg.vim (syntax highlighting for svg files)
-- ctrlp (fuzzy file searching, most-recently-used list)
-- YankRing (providing yank and delete history)
+- vimroom (distraction free text-editing settings)
 - web2py-snippets (snipmate snippets for the web2py python framework)
 - web2py-syntax (syntax highlighting for the web2py python framework)
-- gist-vim (writing and reading github gists)
-- matchit (expanded % movement between opening and closing members of matched pairs)
+- YankRing (providing yank and delete history)
 - zencoding-vim (implementing the zen coding shortcuts for html and css)
-- project.vim (for project management)
-- vimroom (distraction free text-editing settings)
 
 It also includes the molokai colour scheme, a port of the monokai theme
 for TextMate made by Tomas Restrepo.
@@ -89,9 +89,10 @@ You will also need to have the following packages installed on
 your local system:
 
 - exuberant-ctags
-- ack!
+- ack-grep (for ack! file search)
 - pep8
 - pydoc
+- node-less (for lessc less processor)
 
 If you are using Linux these can likely be installed 
 from your distribution's repository. In Ubuntu, for example, you can 

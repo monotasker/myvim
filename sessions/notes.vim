@@ -1,5 +1,5 @@
 " ~/.vim/sessions/notes.vim: Vim session script.
-" Created by session.vim 1.5 on 28 November 2012 at 17:10:01.
+" Created by session.vim 1.5 on 11 December 2012 at 14:40:53.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -24,23 +24,23 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 set shortmess=aoO
 badd +1 \#\ Paul\ on\ women\ -\ 1\ Tim\ 2.txt
+badd +39 NTTH\ Final\ Lecture.txt
+badd +0 Romans\ 12-13\ Notes.txt
 silent! argdel *
-set lines=45 columns=135
-edit \#\ Paul\ on\ women\ -\ 1\ Tim\ 2.txt
+set lines=45 columns=136
+edit -MiniBufExplorer-
 set splitbelow splitright
 wincmd _ | wincmd |
-vsplit
-1wincmd h
+split
+1wincmd k
 wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 31 + 67) / 135)
-exe 'vert 2resize ' . ((&columns * 103 + 67) / 135)
+exe '1resize ' . ((&lines * 1 + 22) / 45)
+exe '2resize ' . ((&lines * 41 + 22) / 45)
 argglobal
-enew
-" file NERD_tree_2
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -49,8 +49,15 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
+let s:l = 1 - ((0 * winheight(0) + 0) / 1)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 059l
 wincmd w
 argglobal
+edit Romans\ 12-13\ Notes.txt
 setlocal fdm=expr
 setlocal fde=pandoc#MarkdownLevel()
 setlocal fmr={{{,}}}
@@ -61,16 +68,18 @@ setlocal fdn=20
 setlocal fen
 1
 silent! normal zo
-let s:l = 43 - ((36 * winheight(0) + 21) / 43)
+99
+silent! normal zo
+let s:l = 123 - ((20 * winheight(0) + 20) / 41)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-43
-normal! 05l
+123
+normal! 045l
 wincmd w
 2wincmd w
-exe 'vert 1resize ' . ((&columns * 31 + 67) / 135)
-exe 'vert 2resize ' . ((&columns * 103 + 67) / 135)
+exe '1resize ' . ((&lines * 1 + 22) / 45)
+exe '2resize ' . ((&lines * 41 + 22) / 45)
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
@@ -84,12 +93,6 @@ endif
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 unlet SessionLoad
-tabnext 1
-1wincmd w
-let s:bufnr = bufnr("%")
-NERDTree ~/
-execute "bwipeout" s:bufnr
-1resize 43|vert 1resize 31|2resize 43|vert 2resize 103|
 tabnext 1
 2wincmd w
 

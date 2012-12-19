@@ -1,5 +1,5 @@
 " ~/.vim/sessions/paideia-content.vim: Vim session script.
-" Created by session.vim 1.5 on 22 November 2012 at 19:21:56.
+" Created by session.vim 1.5 on 06 December 2012 at 17:42:14.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -8,10 +8,10 @@ if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 1 | filetype on | endif
 if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
 if exists('g:did_indent_on') != 1 | filetype indent on | endif
-if &background != 'dark'
-	set background=dark
+if &background != 'light'
+	set background=light
 endif
-if !exists('g:colors_name') || g:colors_name != 'solarized' | colorscheme solarized | endif
+if !exists('g:colors_name') || g:colors_name != 'SolarizedLight' | colorscheme SolarizedLight | endif
 call setqflist([])
 let SessionLoad = 1
 if &cp | set nocp | endif
@@ -29,13 +29,16 @@ badd +348 \#Paideia\ topic\ outline.txt
 badd +1 \#Paideia\ vocab.txt
 silent! argdel *
 set lines=45 columns=136
-edit -MiniBufExplorer-
+edit \#\ Paideia\ basic\ tag\ sequence.txt
 set splitbelow splitright
 wincmd _ | wincmd |
 split
 wincmd _ | wincmd |
 split
-2wincmd k
+wincmd _ | wincmd |
+split
+3wincmd k
+wincmd w
 wincmd w
 wincmd w
 set nosplitbelow
@@ -43,8 +46,21 @@ set nosplitright
 wincmd t
 set winheight=1 winwidth=1
 exe '1resize ' . ((&lines * 1 + 22) / 45)
-exe '2resize ' . ((&lines * 20 + 22) / 45)
-exe '3resize ' . ((&lines * 20 + 22) / 45)
+exe '2resize ' . ((&lines * 18 + 22) / 45)
+exe '3resize ' . ((&lines * 19 + 22) / 45)
+exe '4resize ' . ((&lines * 2 + 22) / 45)
+argglobal
+enew
+file -MiniBufExplorer-
+setlocal fdm=indent
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+wincmd w
 argglobal
 setlocal fdm=indent
 setlocal fde=0
@@ -54,12 +70,12 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 0) / 1)
+let s:l = 1 - ((0 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 1
-normal! 099l
+normal! 027l
 wincmd w
 argglobal
 edit \#Paideia\ topic\ outline.txt
@@ -71,48 +87,44 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
+1
+silent! normal zo
+3
+silent! normal zo
 13
-silent! normal zo
-17
-silent! normal zo
-17
 normal zc
-62
+60
 silent! normal zo
 62
 normal zc
-112
+106
 silent! normal zo
-112
+107
 normal zc
-137
-silent! normal zo
-137
-normal zc
-183
+181
 silent! normal zo
 183
 normal zc
-214
+206
+normal zc
+259
 silent! normal zo
-215
+262
+normal zc
+259
+normal zc
+363
 silent! normal zo
-218
+364
 normal zc
-306
+367
 normal zc
-321
-normal zc
-338
-normal zc
-319
-silent! normal zo
-let s:l = 322 - ((6 * winheight(0) + 10) / 20)
+let s:l = 546 - ((18 * winheight(0) + 9) / 19)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-322
-normal! 07l
+546
+normal! 037l
 wincmd w
 argglobal
 edit \#Paideia\ vocab.txt
@@ -124,31 +136,20 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-68
+1
 silent! normal zo
-68
-normal zc
-112
-silent! normal zo
-112
-normal zc
-141
-silent! normal zo
-141
-normal zc
-187
-silent! normal zo
-let s:l = 141 - ((0 * winheight(0) + 10) / 20)
+let s:l = 88 - ((0 * winheight(0) + 1) / 2)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-141
+88
 normal! 07l
 wincmd w
-2wincmd w
+3wincmd w
 exe '1resize ' . ((&lines * 1 + 22) / 45)
-exe '2resize ' . ((&lines * 20 + 22) / 45)
-exe '3resize ' . ((&lines * 20 + 22) / 45)
+exe '2resize ' . ((&lines * 18 + 22) / 45)
+exe '3resize ' . ((&lines * 19 + 22) / 45)
+exe '4resize ' . ((&lines * 2 + 22) / 45)
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
@@ -163,6 +164,6 @@ let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 unlet SessionLoad
 tabnext 1
-2wincmd w
+3wincmd w
 
 " vim: ft=vim ro nowrap smc=128
