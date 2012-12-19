@@ -1,5 +1,5 @@
 " ~/.vim/sessions/marking.vim: Vim session script.
-" Created by session.vim 1.5 on 10 December 2012 at 18:27:58.
+" Created by session.vim 1.5 on 17 December 2012 at 18:49:42.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -23,22 +23,26 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +3 scratch.txt
-badd +0 Romans\ 12-13\ Notes.txt
+badd +16 scratch.txt
+badd +161 Essay\ grading\ comments.txt
 silent! argdel *
-set lines=36 columns=81
-edit Romans\ 12-13\ Notes.txt
+set lines=38 columns=129
+edit scratch.txt
 set splitbelow splitright
 wincmd _ | wincmd |
 split
-1wincmd k
+wincmd _ | wincmd |
+split
+2wincmd k
+wincmd w
 wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe '1resize ' . ((&lines * 1 + 18) / 36)
-exe '2resize ' . ((&lines * 32 + 18) / 36)
+exe '1resize ' . ((&lines * 1 + 19) / 38)
+exe '2resize ' . ((&lines * 17 + 19) / 38)
+exe '3resize ' . ((&lines * 16 + 19) / 38)
 argglobal
 enew
 file -MiniBufExplorer-
@@ -60,20 +64,94 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-1
-silent! normal zo
-42
-silent! normal zo
-let s:l = 112 - ((10 * winheight(0) + 16) / 32)
+let s:l = 5 - ((4 * winheight(0) + 8) / 17)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-112
-normal! 021l
+5
+normal! 0126l
 wincmd w
-2wincmd w
-exe '1resize ' . ((&lines * 1 + 18) / 36)
-exe '2resize ' . ((&lines * 32 + 18) / 36)
+argglobal
+edit Essay\ grading\ comments.txt
+setlocal fdm=expr
+setlocal fde=pandoc#MarkdownLevel()
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+1
+silent! normal zo
+3
+normal zc
+14
+normal zc
+17
+normal zc
+23
+silent! normal zo
+24
+normal zc
+33
+normal zc
+55
+normal zc
+66
+normal zc
+99
+silent! normal zo
+152
+normal zc
+170
+normal zc
+173
+silent! normal zo
+174
+normal zc
+179
+normal zc
+186
+normal zc
+194
+normal zc
+202
+normal zc
+207
+normal zc
+210
+normal zc
+223
+silent! normal zo
+224
+normal zc
+238
+normal zc
+241
+normal zc
+248
+normal zc
+251
+normal zc
+281
+silent! normal zo
+282
+normal zc
+287
+normal zc
+281
+normal zc
+let s:l = 277 - ((10 * winheight(0) + 8) / 16)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+277
+normal! 0
+wincmd w
+3wincmd w
+exe '1resize ' . ((&lines * 1 + 19) / 38)
+exe '2resize ' . ((&lines * 17 + 19) / 38)
+exe '3resize ' . ((&lines * 16 + 19) / 38)
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
@@ -88,6 +166,6 @@ let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 unlet SessionLoad
 tabnext 1
-2wincmd w
+3wincmd w
 
 " vim: ft=vim ro nowrap smc=128
