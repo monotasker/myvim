@@ -1,5 +1,5 @@
 " ~/.vim/sessions/paideia-testing.vim: Vim session script.
-" Created by session.vim 1.5 on 05 December 2012 at 15:13:36.
+" Created by session.vim 1.5 on 18 December 2012 at 21:16:34.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -8,11 +8,11 @@ if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 1 | filetype on | endif
 if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
 if exists('g:did_indent_on') != 1 | filetype indent on | endif
-if &background != 'dark'
-	set background=dark
+if &background != 'light'
+	set background=light
 endif
-if !exists('g:colors_name') || g:colors_name != 'solarized' | colorscheme solarized | endif
-call setqflist([{'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'bin/test_runner.py', 'text': '[tests/modules/test_paideia.py]'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'bin/test_runner.py', 'text': '/bin/bash: pylint: command not found'}])
+if !exists('g:colors_name') || g:colors_name != 'SolarizedLight' | colorscheme SolarizedLight | endif
+call setqflist([{'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'modules/paideia_exploring.py', 'text': '[modules/paideia.py]'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'modules/paideia_exploring.py', 'text': 'No config file found, using default configuration'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'modules/paideia_exploring.py', 'text': '************* Module modules.paideia'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'modules/paideia_exploring.py', 'text': 'E:190,0: invalid syntax'}])
 let SessionLoad = 1
 if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
@@ -23,52 +23,31 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +22 modules/paideia.py
-badd +90 bin/test_runner.py
-badd +36 bin/runtest.py
-badd +6 tests/modules/test_paideia.py
+badd +42 modules/paideia.py
+badd +23 bin/runtest.py
+badd +2314 modules/paideia_exploring.py
+badd +88 tests/modules/test_paideia.py
 silent! argdel *
-set lines=48 columns=150
+set lines=55 columns=171
 edit -MiniBufExplorer-
 set splitbelow splitright
 wincmd _ | wincmd |
-vsplit
-wincmd _ | wincmd |
-vsplit
-2wincmd h
-wincmd w
-wincmd _ | wincmd |
 split
+1wincmd k
+wincmd w
 wincmd _ | wincmd |
-split
-2wincmd k
-wincmd w
-wincmd w
+vsplit
+1wincmd h
 wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 31 + 75) / 150)
-exe '2resize ' . ((&lines * 1 + 24) / 48)
-exe 'vert 2resize ' . ((&columns * 116 + 75) / 150)
-exe '3resize ' . ((&lines * 21 + 24) / 48)
-exe 'vert 3resize ' . ((&columns * 116 + 75) / 150)
-exe '4resize ' . ((&lines * 22 + 24) / 48)
-exe 'vert 4resize ' . ((&columns * 116 + 75) / 150)
-exe 'vert 5resize ' . ((&columns * 1 + 75) / 150)
-argglobal
-enew
-" file NERD_tree_1
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=99
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-wincmd w
+exe '1resize ' . ((&lines * 1 + 27) / 55)
+exe '2resize ' . ((&lines * 51 + 27) / 55)
+exe 'vert 2resize ' . ((&columns * 85 + 85) / 171)
+exe '3resize ' . ((&lines * 51 + 27) / 55)
+exe 'vert 3resize ' . ((&columns * 85 + 85) / 171)
 argglobal
 setlocal fdm=indent
 setlocal fde=0
@@ -83,10 +62,10 @@ if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 1
-normal! 040l
+normal! 0
 wincmd w
 argglobal
-edit bin/runtest.py
+edit modules/paideia.py
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -95,28 +74,48 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-12
+7
 silent! normal zo
-18
-silent! normal zo
-28
-silent! normal zo
-28
+7
+normal zc
+23
 silent! normal zo
 28
 silent! normal zo
-28
+23
+normal zc
+67
 silent! normal zo
-28
+72
 silent! normal zo
-28
+109
 silent! normal zo
-let s:l = 15 - ((4 * winheight(0) + 10) / 21)
+119
+silent! normal zo
+120
+silent! normal zo
+120
+silent! normal zo
+120
+silent! normal zo
+67
+normal zc
+131
+silent! normal zo
+132
+silent! normal zo
+183
+silent! normal zo
+188
+silent! normal zo
+194
+silent! normal zo
+let s:l = 179 - ((19 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-15
-normal! 031l
+179
+normal! 0
 wincmd w
 argglobal
 edit tests/modules/test_paideia.py
@@ -128,36 +127,33 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-9
+11
 silent! normal zo
-let s:l = 5 - ((4 * winheight(0) + 11) / 22)
+15
+silent! normal zo
+31
+silent! normal zo
+31
+normal zc
+63
+silent! normal zo
+63
+normal zc
+88
+silent! normal zo
+let s:l = 105 - ((81 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-5
-normal! 0
-wincmd w
-argglobal
-enew
-file __Tag_List__
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=9999
-setlocal fml=0
-setlocal fdn=20
-setlocal fen
+105
+normal! 03l
 wincmd w
 3wincmd w
-exe 'vert 1resize ' . ((&columns * 31 + 75) / 150)
-exe '2resize ' . ((&lines * 1 + 24) / 48)
-exe 'vert 2resize ' . ((&columns * 116 + 75) / 150)
-exe '3resize ' . ((&lines * 21 + 24) / 48)
-exe 'vert 3resize ' . ((&columns * 116 + 75) / 150)
-exe '4resize ' . ((&lines * 22 + 24) / 48)
-exe 'vert 4resize ' . ((&columns * 116 + 75) / 150)
-exe 'vert 5resize ' . ((&columns * 1 + 75) / 150)
+exe '1resize ' . ((&lines * 1 + 27) / 55)
+exe '2resize ' . ((&lines * 51 + 27) / 55)
+exe 'vert 2resize ' . ((&columns * 85 + 85) / 171)
+exe '3resize ' . ((&lines * 51 + 27) / 55)
+exe 'vert 3resize ' . ((&columns * 85 + 85) / 171)
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
@@ -171,12 +167,6 @@ endif
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 unlet SessionLoad
-tabnext 1
-1wincmd w
-let s:bufnr = bufnr("%")
-NERDTree ~/
-execute "bwipeout" s:bufnr
-1resize 46|vert 1resize 31|2resize 1|vert 2resize 116|3resize 21|vert 3resize 116|4resize 22|vert 4resize 116|5resize 46|vert 5resize 1|
 tabnext 1
 3wincmd w
 
