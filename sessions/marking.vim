@@ -1,5 +1,5 @@
 " ~/.vim/sessions/marking.vim: Vim session script.
-" Created by session.vim 1.5 on 17 December 2012 at 18:49:42.
+" Created by session.vim 1.5 on 19 December 2012 at 12:16:46.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -23,11 +23,11 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +16 scratch.txt
+badd +12 scratch.txt
 badd +161 Essay\ grading\ comments.txt
 silent! argdel *
 set lines=38 columns=129
-edit scratch.txt
+edit -MiniBufExplorer-
 set splitbelow splitright
 wincmd _ | wincmd |
 split
@@ -41,11 +41,9 @@ set nosplitright
 wincmd t
 set winheight=1 winwidth=1
 exe '1resize ' . ((&lines * 1 + 19) / 38)
-exe '2resize ' . ((&lines * 17 + 19) / 38)
-exe '3resize ' . ((&lines * 16 + 19) / 38)
+exe '2resize ' . ((&lines * 15 + 19) / 38)
+exe '3resize ' . ((&lines * 18 + 19) / 38)
 argglobal
-enew
-file -MiniBufExplorer-
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -54,8 +52,15 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
+let s:l = 1 - ((0 * winheight(0) + 0) / 1)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 016l
 wincmd w
 argglobal
+edit scratch.txt
 setlocal fdm=expr
 setlocal fde=pandoc#MarkdownLevel()
 setlocal fmr={{{,}}}
@@ -64,12 +69,12 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 5 - ((4 * winheight(0) + 8) / 17)
+let s:l = 11 - ((8 * winheight(0) + 7) / 15)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-5
-normal! 0126l
+11
+normal! 0
 wincmd w
 argglobal
 edit Essay\ grading\ comments.txt
@@ -99,59 +104,65 @@ normal zc
 normal zc
 66
 normal zc
-99
+101
 silent! normal zo
-152
+102
 normal zc
-170
+109
 normal zc
-173
-silent! normal zo
+116
+normal zc
+140
+normal zc
+144
+normal zc
+154
+normal zc
 174
 normal zc
-179
+177
+silent! normal zo
+178
 normal zc
-186
+183
 normal zc
-194
+190
 normal zc
-202
-normal zc
-207
-normal zc
-210
+218
 normal zc
 223
+normal zc
+226
+normal zc
+239
 silent! normal zo
-224
+240
 normal zc
-238
+262
 normal zc
-241
+267
 normal zc
-248
+274
 normal zc
-251
+277
 normal zc
-281
+294
+normal zc
+309
 silent! normal zo
-282
+310
 normal zc
-287
-normal zc
-281
-normal zc
-let s:l = 277 - ((10 * winheight(0) + 8) / 16)
+let s:l = 139 - ((23 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-277
+139
 normal! 0
 wincmd w
 3wincmd w
 exe '1resize ' . ((&lines * 1 + 19) / 38)
-exe '2resize ' . ((&lines * 17 + 19) / 38)
-exe '3resize ' . ((&lines * 16 + 19) / 38)
+exe '2resize ' . ((&lines * 15 + 19) / 38)
+exe '3resize ' . ((&lines * 18 + 19) / 38)
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
