@@ -1,5 +1,5 @@
 " ~/.vim/sessions/marking.vim: Vim session script.
-" Created by session.vim 1.5 on 19 December 2012 at 12:16:46.
+" Created by session.vim 1.5 on 19 December 2012 at 19:39:21.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -24,25 +24,28 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 set shortmess=aoO
 badd +12 scratch.txt
-badd +161 Essay\ grading\ comments.txt
+badd +139 Essay\ grading\ comments.txt
 silent! argdel *
-set lines=38 columns=129
+set lines=45 columns=135
 edit -MiniBufExplorer-
 set splitbelow splitright
 wincmd _ | wincmd |
 split
-wincmd _ | wincmd |
-split
-2wincmd k
+1wincmd k
 wincmd w
+wincmd _ | wincmd |
+vsplit
+1wincmd h
 wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe '1resize ' . ((&lines * 1 + 19) / 38)
-exe '2resize ' . ((&lines * 15 + 19) / 38)
-exe '3resize ' . ((&lines * 18 + 19) / 38)
+exe '1resize ' . ((&lines * 1 + 22) / 45)
+exe '2resize ' . ((&lines * 41 + 22) / 45)
+exe 'vert 2resize ' . ((&columns * 70 + 67) / 135)
+exe '3resize ' . ((&lines * 41 + 22) / 45)
+exe 'vert 3resize ' . ((&columns * 64 + 67) / 135)
 argglobal
 setlocal fdm=indent
 setlocal fde=0
@@ -58,23 +61,6 @@ exe s:l
 normal! zt
 1
 normal! 016l
-wincmd w
-argglobal
-edit scratch.txt
-setlocal fdm=expr
-setlocal fde=pandoc#MarkdownLevel()
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=99
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-let s:l = 11 - ((8 * winheight(0) + 7) / 15)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-11
-normal! 0
 wincmd w
 argglobal
 edit Essay\ grading\ comments.txt
@@ -112,57 +98,76 @@ normal zc
 normal zc
 116
 normal zc
-140
+141
 normal zc
-144
+145
 normal zc
-154
+155
 normal zc
-174
-normal zc
-177
-silent! normal zo
 178
 normal zc
-183
-normal zc
-190
-normal zc
-218
-normal zc
-223
-normal zc
-226
-normal zc
-239
+181
 silent! normal zo
-240
+182
 normal zc
-262
+188
 normal zc
-267
+195
+normal zc
+225
+normal zc
+230
+normal zc
+233
+normal zc
+248
+normal zc
+253
+silent! normal zo
+254
 normal zc
 274
 normal zc
-277
+279
 normal zc
-294
+286
 normal zc
-309
+289
+normal zc
+323
 silent! normal zo
-310
+324
 normal zc
-let s:l = 139 - ((23 * winheight(0) + 9) / 18)
+let s:l = 311 - ((195 * winheight(0) + 20) / 41)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-139
-normal! 0
+311
+normal! 021l
 wincmd w
-3wincmd w
-exe '1resize ' . ((&lines * 1 + 19) / 38)
-exe '2resize ' . ((&lines * 15 + 19) / 38)
-exe '3resize ' . ((&lines * 18 + 19) / 38)
+argglobal
+edit scratch.txt
+setlocal fdm=expr
+setlocal fde=pandoc#MarkdownLevel()
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 8 - ((7 * winheight(0) + 20) / 41)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+8
+normal! 0177l
+wincmd w
+2wincmd w
+exe '1resize ' . ((&lines * 1 + 22) / 45)
+exe '2resize ' . ((&lines * 41 + 22) / 45)
+exe 'vert 2resize ' . ((&columns * 70 + 67) / 135)
+exe '3resize ' . ((&lines * 41 + 22) / 45)
+exe 'vert 3resize ' . ((&columns * 64 + 67) / 135)
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
@@ -177,6 +182,6 @@ let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 unlet SessionLoad
 tabnext 1
-3wincmd w
+2wincmd w
 
 " vim: ft=vim ro nowrap smc=128
