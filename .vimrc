@@ -25,8 +25,8 @@ set nocompatible "necessary for project plugin
 set t_Co=256 "use 256 colours in terminal
 "set t_AB=^[[48;5;%dm "fix terminal colors
 "set t_AF=^[[38;5;%dm "fix terminal colors
-set background=dark
-colors solarized "molokai 
+"set background=dark
+colors SolarizedLight "molokai 
 set guifont=Ubuntu\ Mono\ 13
 set ts=4 softtabstop=4 shiftwidth=4 expandtab
 set guioptions-=T  "remove toolbar
