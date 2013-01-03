@@ -1,9 +1,9 @@
 " ~/.vim/sessions/marking.vim: Vim session script.
-" Created by session.vim 1.5 on 19 December 2012 at 19:39:21.
+" Created by session.vim 1.5 on 03 January 2013 at 12:18:52.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
-silent! set guifont=Droid\ Sans\ Mono\ 12
+silent! set guifont=Ubuntu\ Mono\ 13
 if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 1 | filetype on | endif
 if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
@@ -23,10 +23,10 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +12 scratch.txt
-badd +139 Essay\ grading\ comments.txt
+badd +5 scratch.txt
+badd +23 Essay\ grading\ comments.txt
 silent! argdel *
-set lines=45 columns=135
+set lines=50 columns=158
 edit -MiniBufExplorer-
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -41,11 +41,11 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe '1resize ' . ((&lines * 1 + 22) / 45)
-exe '2resize ' . ((&lines * 41 + 22) / 45)
-exe 'vert 2resize ' . ((&columns * 70 + 67) / 135)
-exe '3resize ' . ((&lines * 41 + 22) / 45)
-exe 'vert 3resize ' . ((&columns * 64 + 67) / 135)
+exe '1resize ' . ((&lines * 1 + 25) / 50)
+exe '2resize ' . ((&lines * 46 + 25) / 50)
+exe 'vert 2resize ' . ((&columns * 86 + 79) / 158)
+exe '3resize ' . ((&lines * 46 + 25) / 50)
+exe 'vert 3resize ' . ((&columns * 71 + 79) / 158)
 argglobal
 setlocal fdm=indent
 setlocal fde=0
@@ -61,6 +61,23 @@ exe s:l
 normal! zt
 1
 normal! 016l
+wincmd w
+argglobal
+edit scratch.txt
+setlocal fdm=expr
+setlocal fde=pandoc#MarkdownLevel()
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 12 - ((11 * winheight(0) + 23) / 46)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+12
+normal! 0
 wincmd w
 argglobal
 edit Essay\ grading\ comments.txt
@@ -80,94 +97,81 @@ normal zc
 normal zc
 17
 normal zc
-23
+25
 silent! normal zo
-24
+26
 normal zc
-33
+35
 normal zc
-55
+58
 normal zc
-66
+72
 normal zc
-101
+108
 silent! normal zo
-102
-normal zc
 109
 normal zc
 116
 normal zc
-141
+130
 normal zc
-145
+137
 normal zc
-155
+168
 normal zc
-178
+180
 normal zc
-181
-silent! normal zo
-182
+184
 normal zc
-188
-normal zc
-195
+194
 normal zc
 225
 normal zc
-230
-normal zc
+232
+silent! normal zo
 233
 normal zc
-248
+255
 normal zc
-253
-silent! normal zo
-254
+263
 normal zc
-274
+268
 normal zc
-279
+275
 normal zc
 286
 normal zc
-289
+299
+silent! normal zo
+300
+normal zc
+318
 normal zc
 323
-silent! normal zo
-324
 normal zc
-let s:l = 311 - ((195 * winheight(0) + 20) / 41)
+342
+normal zc
+345
+normal zc
+373
+silent! normal zo
+374
+normal zc
+388
+silent! normal zo
+let s:l = 336 - ((322 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-311
-normal! 021l
-wincmd w
-argglobal
-edit scratch.txt
-setlocal fdm=expr
-setlocal fde=pandoc#MarkdownLevel()
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=99
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-let s:l = 8 - ((7 * winheight(0) + 20) / 41)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-8
-normal! 0177l
+336
+normal! 0
 wincmd w
 2wincmd w
-exe '1resize ' . ((&lines * 1 + 22) / 45)
-exe '2resize ' . ((&lines * 41 + 22) / 45)
-exe 'vert 2resize ' . ((&columns * 70 + 67) / 135)
-exe '3resize ' . ((&lines * 41 + 22) / 45)
-exe 'vert 3resize ' . ((&columns * 64 + 67) / 135)
+exe '1resize ' . ((&lines * 1 + 25) / 50)
+exe '2resize ' . ((&lines * 46 + 25) / 50)
+exe 'vert 2resize ' . ((&columns * 86 + 79) / 158)
+exe '3resize ' . ((&lines * 46 + 25) / 50)
+exe 'vert 3resize ' . ((&columns * 71 + 79) / 158)
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
