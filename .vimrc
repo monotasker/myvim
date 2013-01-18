@@ -131,7 +131,7 @@ filetype plugin indent on "use specified indenting for filetype
 
 "working with less css files
 "===========================
-au BufNewFile,BufRead *.less setlocal filetype=less
+au BufNewFile,BufRead *.less setlocal filetype=css
 "automatically compile to css using lessc
 autocmd BufWritePost,FileWritePost *.less :call BuildLess()
 "working with text files
