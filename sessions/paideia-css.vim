@@ -1,5 +1,5 @@
 " ~/.vim/sessions/paideia-css.vim: Vim session script.
-" Created by session.vim 1.5 on 12 January 2013 at 13:59:13.
+" Created by session.vim 1.5 on 17 January 2013 at 22:15:14.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -23,23 +23,18 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +11 views/exploring/walk.load
-badd +592 plugins/plugin_framework/static/plugin_framework/framework.less
-badd +454 plugins/plugin_framework/static/plugin_framework/theme_paideia.less
+badd +438 plugins/plugin_framework/static/plugin_framework/framework.less
+badd +641 plugins/plugin_framework/static/plugin_framework/theme_paideia.less
 badd +1 static/css/theme.less
-badd +0 plugins/plugin_slider/static/plugin_slider/plugin_slider.less
 silent! argdel *
 set lines=38 columns=143
-edit plugins/plugin_slider/static/plugin_slider/plugin_slider.less
+edit -MiniBufExplorer-
 set splitbelow splitright
 wincmd _ | wincmd |
 split
 wincmd _ | wincmd |
 split
-wincmd _ | wincmd |
-split
-3wincmd k
-wincmd w
+2wincmd k
 wincmd w
 wincmd w
 set nosplitbelow
@@ -47,78 +42,9 @@ set nosplitright
 wincmd t
 set winheight=1 winwidth=1
 exe '1resize ' . ((&lines * 1 + 19) / 38)
-exe '2resize ' . ((&lines * 20 + 19) / 38)
-exe '3resize ' . ((&lines * 11 + 19) / 38)
-exe '4resize ' . ((&lines * 1 + 19) / 38)
+exe '2resize ' . ((&lines * 29 + 19) / 38)
+exe '3resize ' . ((&lines * 4 + 19) / 38)
 argglobal
-enew
-file -MiniBufExplorer-
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=99
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-wincmd w
-argglobal
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=99
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-87
-silent! normal zo
-108
-silent! normal zo
-116
-silent! normal zo
-116
-silent! normal zo
-116
-silent! normal zo
-116
-silent! normal zo
-116
-silent! normal zo
-116
-silent! normal zo
-116
-silent! normal zo
-132
-silent! normal zo
-140
-silent! normal zo
-let s:l = 167 - ((7 * winheight(0) + 10) / 20)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-167
-normal! 010l
-wincmd w
-argglobal
-edit plugins/plugin_framework/static/plugin_framework/theme_paideia.less
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=99
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-let s:l = 454 - ((5 * winheight(0) + 5) / 11)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-454
-normal! 0
-wincmd w
-argglobal
-edit static/css/theme.less
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -132,13 +58,92 @@ if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 1
+normal! 018l
+wincmd w
+argglobal
+edit plugins/plugin_framework/static/plugin_framework/theme_paideia.less
+setlocal fdm=indent
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+66
+silent! normal zo
+72
+silent! normal zo
+73
+silent! normal zo
+80
+silent! normal zo
+135
+silent! normal zo
+257
+silent! normal zo
+367
+silent! normal zo
+385
+silent! normal zo
+391
+silent! normal zo
+428
+silent! normal zo
+428
+silent! normal zo
+428
+silent! normal zo
+428
+silent! normal zo
+463
+silent! normal zo
+487
+silent! normal zo
+633
+silent! normal zo
+635
+silent! normal zo
+635
+silent! normal zo
+635
+silent! normal zo
+635
+silent! normal zo
+638
+silent! normal zo
+638
+silent! normal zo
+638
+silent! normal zo
+let s:l = 641 - ((16 * winheight(0) + 14) / 29)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+641
+normal! 061l
+wincmd w
+argglobal
+edit static/css/theme.less
+setlocal fdm=indent
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 1 - ((0 * winheight(0) + 2) / 4)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
 normal! 0
 wincmd w
 2wincmd w
 exe '1resize ' . ((&lines * 1 + 19) / 38)
-exe '2resize ' . ((&lines * 20 + 19) / 38)
-exe '3resize ' . ((&lines * 11 + 19) / 38)
-exe '4resize ' . ((&lines * 1 + 19) / 38)
+exe '2resize ' . ((&lines * 29 + 19) / 38)
+exe '3resize ' . ((&lines * 4 + 19) / 38)
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
