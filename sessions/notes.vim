@@ -1,5 +1,5 @@
 " ~/.vim/sessions/notes.vim: Vim session script.
-" Created by session.vim 1.5 on 11 December 2012 at 14:40:53.
+" Created by session.vim 1.5 on 12 January 2013 at 17:14:52.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -23,12 +23,13 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +1 \#\ Paul\ on\ women\ -\ 1\ Tim\ 2.txt
-badd +39 NTTH\ Final\ Lecture.txt
-badd +0 Romans\ 12-13\ Notes.txt
+badd +19 Reference\ Letter\ for\ Mari\ Leesment.txt
+badd +2 Reference\ Letter\ Snippets.txt
+badd +23 Reference\ Letter\ for\ Mari\ Leesment\ -\ MacDiv.txt
+badd +0 \#Paideia\ topic\ outline.txt
 silent! argdel *
-set lines=45 columns=136
-edit -MiniBufExplorer-
+set lines=38 columns=129
+edit \#Paideia\ topic\ outline.txt
 set splitbelow splitright
 wincmd _ | wincmd |
 split
@@ -38,9 +39,11 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe '1resize ' . ((&lines * 1 + 22) / 45)
-exe '2resize ' . ((&lines * 41 + 22) / 45)
+exe '1resize ' . ((&lines * 2 + 19) / 38)
+exe '2resize ' . ((&lines * 33 + 19) / 38)
 argglobal
+enew
+file -MiniBufExplorer-
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -49,15 +52,8 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 0) / 1)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
-normal! 059l
 wincmd w
 argglobal
-edit Romans\ 12-13\ Notes.txt
 setlocal fdm=expr
 setlocal fde=pandoc#MarkdownLevel()
 setlocal fmr={{{,}}}
@@ -68,18 +64,68 @@ setlocal fdn=20
 setlocal fen
 1
 silent! normal zo
-99
+3
 silent! normal zo
-let s:l = 123 - ((20 * winheight(0) + 20) / 41)
+4
+normal zc
+10
+normal zc
+13
+normal zc
+24
+normal zc
+3
+normal zc
+61
+silent! normal zo
+61
+normal zc
+107
+silent! normal zo
+107
+normal zc
+157
+silent! normal zo
+157
+normal zc
+179
+silent! normal zo
+179
+normal zc
+224
+silent! normal zo
+224
+normal zc
+245
+silent! normal zo
+245
+normal zc
+257
+silent! normal zo
+257
+normal zc
+361
+silent! normal zo
+362
+normal zc
+365
+normal zc
+371
+normal zc
+564
+normal zc
+611
+normal zc
+let s:l = 601 - ((46 * winheight(0) + 16) / 33)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-123
-normal! 045l
+601
+normal! 01l
 wincmd w
 2wincmd w
-exe '1resize ' . ((&lines * 1 + 22) / 45)
-exe '2resize ' . ((&lines * 41 + 22) / 45)
+exe '1resize ' . ((&lines * 2 + 19) / 38)
+exe '2resize ' . ((&lines * 33 + 19) / 38)
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
