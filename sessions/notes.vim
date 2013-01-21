@@ -1,5 +1,5 @@
 " ~/.vim/sessions/notes.vim: Vim session script.
-" Created by session.vim 1.5 on 12 January 2013 at 17:14:52.
+" Created by session.vim 1.5 on 20 January 2013 at 18:53:02.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -23,27 +23,27 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +19 Reference\ Letter\ for\ Mari\ Leesment.txt
-badd +2 Reference\ Letter\ Snippets.txt
-badd +23 Reference\ Letter\ for\ Mari\ Leesment\ -\ MacDiv.txt
-badd +0 \#Paideia\ topic\ outline.txt
+badd +601 \#Paideia\ topic\ outline.txt
+badd +0 scratch.txt
 silent! argdel *
 set lines=38 columns=129
-edit \#Paideia\ topic\ outline.txt
+edit -MiniBufExplorer-
 set splitbelow splitright
 wincmd _ | wincmd |
 split
-1wincmd k
+wincmd _ | wincmd |
+split
+2wincmd k
+wincmd w
 wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe '1resize ' . ((&lines * 2 + 19) / 38)
-exe '2resize ' . ((&lines * 33 + 19) / 38)
+exe '1resize ' . ((&lines * 1 + 19) / 38)
+exe '2resize ' . ((&lines * 32 + 19) / 38)
+exe '3resize ' . ((&lines * 1 + 19) / 38)
 argglobal
-enew
-file -MiniBufExplorer-
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -52,8 +52,15 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
+let s:l = 1 - ((0 * winheight(0) + 0) / 1)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 031l
 wincmd w
 argglobal
+edit scratch.txt
 setlocal fdm=expr
 setlocal fde=pandoc#MarkdownLevel()
 setlocal fmr={{{,}}}
@@ -62,70 +69,34 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-1
-silent! normal zo
-3
-silent! normal zo
-4
-normal zc
-10
-normal zc
-13
-normal zc
-24
-normal zc
-3
-normal zc
-61
-silent! normal zo
-61
-normal zc
-107
-silent! normal zo
-107
-normal zc
-157
-silent! normal zo
-157
-normal zc
-179
-silent! normal zo
-179
-normal zc
-224
-silent! normal zo
-224
-normal zc
-245
-silent! normal zo
-245
-normal zc
-257
-silent! normal zo
-257
-normal zc
-361
-silent! normal zo
-362
-normal zc
-365
-normal zc
-371
-normal zc
-564
-normal zc
-611
-normal zc
-let s:l = 601 - ((46 * winheight(0) + 16) / 33)
+let s:l = 3 - ((2 * winheight(0) + 16) / 32)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-601
-normal! 01l
+3
+normal! 030l
+wincmd w
+argglobal
+edit \#Paideia\ topic\ outline.txt
+setlocal fdm=expr
+setlocal fde=pandoc#MarkdownLevel()
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 1 - ((0 * winheight(0) + 0) / 1)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
 wincmd w
 2wincmd w
-exe '1resize ' . ((&lines * 2 + 19) / 38)
-exe '2resize ' . ((&lines * 33 + 19) / 38)
+exe '1resize ' . ((&lines * 1 + 19) / 38)
+exe '2resize ' . ((&lines * 32 + 19) / 38)
+exe '3resize ' . ((&lines * 1 + 19) / 38)
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
