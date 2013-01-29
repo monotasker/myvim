@@ -1,17 +1,17 @@
 " ~/.vim/sessions/default.vim: Vim session script.
-" Created by session.vim 1.5 on 28 November 2012 at 16:43:39.
+" Created by session.vim 1.5 on 28 January 2013 at 17:51:37.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
-silent! set guifont=Droid\ Sans\ Mono\ 12
+silent! set guifont=Ubuntu\ Mono\ 13
 if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 1 | filetype on | endif
 if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
 if exists('g:did_indent_on') != 1 | filetype indent on | endif
-if &background != 'dark'
-	set background=dark
+if &background != 'light'
+	set background=light
 endif
-if !exists('g:colors_name') || g:colors_name != 'solarized' | colorscheme solarized | endif
+if !exists('g:colors_name') || g:colors_name != 'SolarizedLight' | colorscheme SolarizedLight | endif
 call setqflist([])
 let SessionLoad = 1
 if &cp | set nocp | endif
@@ -23,24 +23,30 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 \#\ Paul\ on\ women\ -\ 1\ Tim\ 2.txt
+badd +281 \#\ John\ 1-2\ Notes.txt
+badd +1 \#\ John\ 1.1-2.12.txt
+badd +10 \"\#\ John\ 2.13-4.54.txt
 silent! argdel *
-set lines=45 columns=135
-edit \#\ Paul\ on\ women\ -\ 1\ Tim\ 2.txt
+set lines=50 columns=80
+edit \#\ John\ 1.1-2.12.txt
 set splitbelow splitright
 wincmd _ | wincmd |
-vsplit
-1wincmd h
+split
+wincmd _ | wincmd |
+split
+2wincmd k
+wincmd w
 wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 31 + 67) / 135)
-exe 'vert 2resize ' . ((&columns * 103 + 67) / 135)
+exe '1resize ' . ((&lines * 1 + 25) / 50)
+exe '2resize ' . ((&lines * 22 + 25) / 50)
+exe '3resize ' . ((&lines * 23 + 25) / 50)
 argglobal
 enew
-" file NERD_tree_1
+file -MiniBufExplorer-
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -59,18 +65,78 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-1
+2
 silent! normal zo
-let s:l = 10 - ((9 * winheight(0) + 21) / 43)
+4
+silent! normal zo
+10
+silent! normal zo
+12
+normal zc
+17
+silent! normal zo
+18
+normal zc
+24
+normal zc
+27
+normal zc
+17
+normal zc
+44
+normal zc
+50
+silent! normal zo
+50
+normal zc
+54
+silent! normal zo
+55
+normal zc
+54
+normal zc
+69
+normal zc
+let s:l = 80 - ((73 * winheight(0) + 11) / 22)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-10
-normal! 07l
+80
+normal! 032l
+wincmd w
+argglobal
+edit \"\#\ John\ 2.13-4.54.txt
+setlocal fdm=expr
+setlocal fde=pandoc#MarkdownLevel()
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+2
+silent! normal zo
+4
+silent! normal zo
+22
+silent! normal zo
+29
+silent! normal zo
+33
+silent! normal zo
+48
+silent! normal zo
+let s:l = 48 - ((15 * winheight(0) + 11) / 23)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+48
+normal! 038l
 wincmd w
 2wincmd w
-exe 'vert 1resize ' . ((&columns * 31 + 67) / 135)
-exe 'vert 2resize ' . ((&columns * 103 + 67) / 135)
+exe '1resize ' . ((&lines * 1 + 25) / 50)
+exe '2resize ' . ((&lines * 22 + 25) / 50)
+exe '3resize ' . ((&lines * 23 + 25) / 50)
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
@@ -84,12 +150,6 @@ endif
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 unlet SessionLoad
-tabnext 1
-1wincmd w
-let s:bufnr = bufnr("%")
-NERDTree ~/
-execute "bwipeout" s:bufnr
-1resize 43|vert 1resize 31|2resize 43|vert 2resize 103|
 tabnext 1
 2wincmd w
 

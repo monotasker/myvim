@@ -19,6 +19,7 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
 set nocompatible "necessary for project plugin
+set clipboard+=unnamed "use x clipboard (Linux) instead of buffer
 
 "ui appearance
 "===============================
@@ -42,6 +43,8 @@ nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 "smart case sensitivity in searching
 set ignorecase
 set smartcase
+
+"
 
 "enable Greek keyboard, switch with <c-^> in insert or command mode
 "set keymap=greek_polytonic
@@ -69,6 +72,29 @@ if bufwinnr(1)
   map 8 <C-W><
   map 9 <C-W>>
 endif
+
+"navigation using Greek keyboard under Linux
+"=================================
+nnoremap ξ j
+nnoremap η h
+nnoremap κ k
+nnoremap λ l
+nnoremap ι i
+map ξκ <esc>
+nnoremap ς w
+nnoremap Σ W
+nnoremap δ d
+nnoremap Δ D
+nnoremap ρ r
+nnoremap υ y
+nnoremap δδ dd
+nnoremap υυ yy
+nnoremap π p
+nnoremap α a
+nnoremap Α A
+nnoremap χ x
+
+
 
 "utility shortcuts
 "=================================
