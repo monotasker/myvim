@@ -19,10 +19,18 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 let g:pathogen_disabled = []
 
-"misc setup settings
+"misc settings
 "===============================
 set nocompatible "necessary for project plugin
 set clipboard+=unnamed "use x clipboard (Linux) instead of buffer
+"smart case sensitivity in searching
+set ignorecase
+set smartcase
+"enable Greek keyboard, switch with <c-^> in insert or command mode
+"set keymap=greek_polytonic
+set encoding=utf-8
+"set inputenc=utf-8
+set fenc=utf-8
 
 "ui appearance
 "===============================
@@ -42,18 +50,6 @@ set colorcolumn=80
 set number
 "Toggle line numbers and fold column for easy copying
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
-
-"smart case sensitivity in searching
-set ignorecase
-set smartcase
-
-"
-
-"enable Greek keyboard, switch with <c-^> in insert or command mode
-"set keymap=greek_polytonic
-set encoding=utf-8
-"set inputenc=utf-8
-set fenc=utf-8
 
 "navigation shortcuts
 "=================================
