@@ -17,7 +17,10 @@ filetype off "must be off to run commands?
 call pathogen#infect()
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
+let g:pathogen_disabled = []
 
+"misc setup settings
+"===============================
 set nocompatible "necessary for project plugin
 set clipboard+=unnamed "use x clipboard (Linux) instead of buffer
 
@@ -87,14 +90,10 @@ nnoremap δ d
 nnoremap Δ D
 nnoremap ρ r
 nnoremap υ y
-nnoremap δδ dd
-nnoremap υυ yy
 nnoremap π p
 nnoremap α a
 nnoremap Α A
 nnoremap χ x
-
-
 
 "utility shortcuts
 "=================================
@@ -106,48 +105,64 @@ nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 " Execute file being edited with <Shift> + e:
 map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
 nnoremap <S-i> <Esc>>>
-
-"plugin shortcuts
-"=================================
-"map key to activate TODO tasklist
-map <leader>td <Plug>TaskList
-"map key to open Gundo revision history
-map <leader>gt :GundoToggle<CR>
-"bind shortcut for nerdtree
-map <leader>n :NERDTreeToggle<CR>
-"bind shortcuts for rope redefinition and renaming
-map <leader>j :RopeGotoDefinition<CR>
-map <leader>r :RopeRename<CR>
-"bind shortcut for ack fuzzy filesearch
-nmap <leader>a <Esc>:Ack!
-"bind shortcut to yankring
-nnoremap <leader>y :YRShow<CR>
 "bind shortcut to close buffer without closing window
 nmap <leader>bd :Kwbd<CR>
+
+"plugin settings and shortcuts
+"=================================
+
+"ack fuzzy filesearch
+nmap <leader>a <Esc>:Ack!
+
+"ctrl-p
+let g:ctrlp_working_path_mode = 2
 nmap <leader>p :CtrlP<CR>
-"set pep8 to hotkey
+
+"Gundo revision history
+map <leader>gt :GundoToggle<CR>
+
+"NERDTree
+call add(g:pathogen_disabled, 'NERDTree')
+let NERDTreeShowBookmarks=1
+"autocmd VimEnter * NERDTree
+"autocmd BufEnter * NERDTreeMirror
+map <leader>n :NERDTreeToggle<CR>
+
+"pep8 
 let g:pep8_map='<leader>8'
-nmap <leader>p :CtrlP<CR>
+
+"rope 
+map <leader>j :RopeGotoDefinition<CR>
+map <leader>r :RopeRename<CR>
+
+"session
+let g:session_autosave='yes'
+let g:session_autoload='no'
 nmap <leader>so :OpenSession<CR>
 nmap <leader>ss :SaveSession<CR>
 
-"plugin settings
-"=================================
+"Taglist 
+let g:ctags_statusline=1 "function name in status bar
+let generate_tags=1
+let Tlist_Use_Horiz_Window=0 "vertical taglist results 
+nnoremap TT :TlistToggle<CR>
+map <F4> :TlistToggle<CR>
+let Tlist_Use_Right_Window = 1
+let Tlist_Compact_Format = 1
+let Tlist_Exit_OnlyWindow = 1
+let Tlist_GainFocus_On_ToggleOpen = 1
+let Tlist_File_Fold_Auto_Close = 1
 
-"configure session settings
+"tasklist
+map <leader>td <Plug>TaskList
 
-"configure vimroom settings
+"vimroom
 let g:vimroom_background='#efefef'
 let g:vimroom_min_sidebar_width='5'
 let g:vimroom_width='80'
 
-"configure NERDTree settings
-let NERDTreeShowBookmarks=1
-"autocmd VimEnter * NERDTree
-"autocmd BufEnter * NERDTreeMirror
-
-"configure ctrl-p
-let g:ctrlp_working_path_mode = 2
+"yankring 
+nnoremap <leader>y :YRShow<CR>
 
 "filetype settings
 "=================================
@@ -187,23 +202,6 @@ autocmd BufWrite *.{py} :call Pylint()
 "working with web2py files
 "==========================
 au BufNewFile,BufRead *.load set filetype=html
-
-" Taglist variables
-" Display function name in status bar:
-let g:ctags_statusline=1
-" Automatically start script
-let generate_tags=1
-" Displays taglist results in a vertical window:
-let Tlist_Use_Horiz_Window=0
-" Shorter commands to toggle Taglist display
-nnoremap TT :TlistToggle<CR>
-map <F4> :TlistToggle<CR>
-" Various Taglist diplay config:
-let Tlist_Use_Right_Window = 1
-let Tlist_Compact_Format = 1
-let Tlist_Exit_OnlyWindow = 1
-let Tlist_GainFocus_On_ToggleOpen = 1
-let Tlist_File_Fold_Auto_Close = 1
 
 "function to strip trailing whitespace from all lines
 function! <SID>StripTrailingWhitespaces()
