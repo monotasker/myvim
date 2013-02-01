@@ -1,5 +1,5 @@
 " ~/.vim/sessions/paideia-testing.vim: Vim session script.
-" Created by session.vim 1.5 on 29 January 2013 at 21:56:54.
+" Created by session.vim 1.5 on 01 February 2013 at 15:12:23.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -12,7 +12,7 @@ if &background != 'light'
 	set background=light
 endif
 if !exists('g:colors_name') || g:colors_name != 'SolarizedLight' | colorscheme SolarizedLight | endif
-call setqflist([{'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '[modules/paideia.py]'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'No config file found, using default configuration'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '************* Module modules.paideia'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C:540,0: Line too long (85/80)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'W:187,0: TODO: step.get_npcs returns ids or Npc objects?'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'W:245,0: TODO: This feels like it''s reversing the execution flow in an awkward'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'W:343,0: TODO: no code'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'W:365,0: TODO: find a way to set this value to another location with an'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'W:495,0: TODO: Get this score value from the db instead of hard'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'W:498,0: TODO: Vary the replies'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'W:500,0: TODO: Get this score value from the db instead of hard'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'W:521,0: TODO: customize tips for specific errors'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'W:548,0: TODO: unfinished'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'W:654,0: TODO: Could this be done by a cron job or separate background process?'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C:  1,0: Missing docstring'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'F:  2,0: Unable to import ''gluon'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'F:  3,0: Unable to import ''gluon'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'F:  4,0: Unable to import ''gluon'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'E: 19,31:Walk.__init__: Undefined variable ''response_string'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C: 31,8:Walk.ask: Invalid name "p" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C: 32,8:Walk.ask: Invalid name "s" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'E: 35,8:Walk.ask: Instance of ''Walk'' has no ''store_user'' member'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C: 42,8:Walk.reply: Invalid name "p" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C: 45,8:Walk.reply: Invalid name "s" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'E: 54,20:Walk.reply: Too many positional arguments for function call'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'W: 62,12:Walk.reply: Access to a protected member _complete_path of a client class'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'E: 64,8:Walk.reply: Instance of ''Walk'' has no ''_store_user'' member'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C: 68,4:Walk._record_step: Missing docstring'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C: 71,4:Walk._complete_path: Missing docstring'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C: 75,0:PathChooser: Missing docstring'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'R: 75,0:PathChooser: Too few public methods (0/2)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C: 88,8:Location.__init__: Invalid name "db" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C: 84,4:Location.__init__: Invalid name "db" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C: 84,31:Location.__init__: Invalid name "db" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C: 87,12:Location.__init__: Invalid name "db" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C:112,8:Location.get_bg: Invalid name "bg" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C:135,8:Npc.__init__: Invalid name "db" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C:128,4:Npc.__init__: Invalid name "db" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C:128,31:Npc.__init__: Invalid name "db" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C:134,12:Npc.__init__: Invalid name "db" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'E:186,20:NpcChooser.choose: Undefined variable ''step'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'E:189,13:NpcChooser.choose: Undefined variable ''location'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'E:189,40:NpcChooser.choose: Undefined variable ''prev_loc'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'E:190,13:NpcChooser.choose: Undefined variable ''prev_npc'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'E:191,19:NpcChooser.choose: Undefined variable ''prev_npc'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'E:194,45:NpcChooser.choose: Undefined variable ''prev_npc'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'E:195,32:NpcChooser.choose: Undefined variable ''location'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C:197,16:NpcChooser.choose: Comma not followed by a space'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '                return available2[randint(0,len(available2) - 1)]'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '                                           ^^'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'R:180,4:NpcChooser.choose: Method could be a function'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'R:169,0:NpcChooser: Too few public methods (1/2)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'E:207,4:BugReporter.__init__: Method should have "self" as first argument'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'W:209,4:BugReporter: Unnecessary pass statement'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'R:202,0:BugReporter: Too few public methods (0/2)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'R:212,0:Step: Too many instance attributes (9/7)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C:225,8:Step.__init__: Invalid name "db" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'R:218,4:Step.__init__: Too many arguments (8/5)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C:218,4:Step.__init__: Invalid name "db" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C:221,20:Step.__init__: Invalid name "db" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'W:224,12:Step.__init__: Statement seems to have no effect'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'W:271,8:Step.get_prompt: Unused variable ''npc'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C:292,15:Step._make_replacements: Invalid name "v" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'W:285,12:Step._make_replacements: Unused variable ''uname'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'R:278,4:Step._make_replacements: Method could be a function'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'R:297,4:Step.get_responder: Method could be a function'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C:320,16:Step.get_npc: Comma not followed by a space'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '                pick = npc_list[randint(0,len(npc_list) - 1)]'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '                                         ^^'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'W:333,12:Step._get_instructions: Redefining built-in ''list'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'W:353,4:StepRedirect._make_replacements: Arguments number differs from overridden method'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C:353,4:StepRedirect._make_replacements: Invalid name "db" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C:354,52:StepRedirect._make_replacements: Invalid name "db" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C:361,12:StepRedirect._make_replacements: Invalid name "db" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'W:359,8:StepRedirect._make_replacements: Unused variable ''session'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'W:371,12:StepRedirect._make_replacements: Unused variable ''next_locs'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'E:414,31:StepText.get_reply: Undefined variable ''response'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C:418,8:StepText.get_reply: Invalid name "tr" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C:419,8:StepText.get_reply: Invalid name "tw" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C:420,8:StepText.get_reply: Invalid name "ur" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'E:429,32:StepText.get_reply: Undefined variable ''bug_reporter'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'W:421,8:StepText.get_reply: Unused variable ''tags'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'W:418,8:StepText.get_reply: Unused variable ''tr'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'W:417,8:StepText.get_reply: Unused variable ''score'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'W:419,8:StepText.get_reply: Unused variable ''tw'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'W:422,8:StepText.get_reply: Unused variable ''sid'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'W:420,8:StepText.get_reply: Unused variable ''ur'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'W:423,8:StepText.get_reply: Unused variable ''pid'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'E:434,4:StepText._get_readable: Method should have "self" as first argument'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'E:440,24:StepText._get_readable: Undefined variable ''self'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'E:442,19:StepText._get_readable: Undefined variable ''self'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C:445,22:StepText._get_readable: More than one statement on a single line'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'E:516,12:StepEvaluator.get_eval: Undefined variable ''redirect'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'W:518,12:StepEvaluator.get_eval: Unused variable ''readable_short'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'W:519,12:StepEvaluator.get_eval: Unused variable ''readable_long'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'R:466,0:StepEvaluator: Too few public methods (1/2)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'R:540,4:StepRecorder._record: Too many arguments (9/5)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C:540,4:StepRecorder._record: Invalid name "tr" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C:540,4:StepRecorder._record: Invalid name "tw" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C:540,4:StepRecorder._record: Invalid name "db" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C:540,53:StepRecorder._record: Invalid name "tr" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C:540,57:StepRecorder._record: Invalid name "tw" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C:540,76:StepRecorder._record: Invalid name "db" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'E:546,16:StepRecorder._record: Instance of ''StepRecorder'' has no ''score'' member'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'W:540,40:StepRecorder._record: Unused argument ''tags'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'W:540,57:StepRecorder._record: Unused argument ''tw'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'W:540,53:StepRecorder._record: Unused argument ''tr'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'W:540,31:StepRecorder._record: Unused argument ''path_id'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'W:540,61:StepRecorder._record: Unused argument ''user_response'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'W:540,22:StepRecorder._record: Unused argument ''step_id'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'W:540,76:StepRecorder._record: Unused argument ''db'''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'R:530,0:StepRecorder: Too few public methods (0/2)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C:553,0:Path: Missing docstring'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C:559,4:Path.get_next_step: Invalid name "db" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C:559,28:Path.get_next_step: Invalid name "db" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'R:553,0:Path: Too few public methods (1/2)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'E:563,0:PathChooser: class already defined line 75'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C:563,0:PathChooser: Missing docstring'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'R:563,0:PathChooser: Too few public methods (0/2)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'R:568,0:User: Too many instance attributes (9/7)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C:586,8:User.__init__: Invalid name "db" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C:574,4:User.__init__: Invalid name "db" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C:574,57:User.__init__: Invalid name "db" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C:577,12:User.__init__: Invalid name "Auth" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'C:583,12:User.__init__: Invalid name "db" (should match [a-z_][a-z0-9_]{2,30}$)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'E:615,4:User._get_categories: method already defined line 598'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'R:636,4:Categorizer.categorize: Method could be a function'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'R:631,0:Categorizer: Too few public methods (1/2)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'R:707,0:Block: Too few public methods (0/2)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'W:  3,0: Unused import FORM'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'W:  3,0: Unused import INPUT'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'W:  3,0: Unused import SPAN'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'Report'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '======'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '326 statements analysed.'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'Raw metrics'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '-----------'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+----------+-------+------+---------+-----------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|type      |number |%     |previous |difference |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+==========+=======+======+=========+===========+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|code      |352    |52.85 |352      |=          |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+----------+-------+------+---------+-----------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|docstring |191    |28.68 |191      |=          |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+----------+-------+------+---------+-----------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|comment   |26     |3.90  |26       |=          |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+----------+-------+------+---------+-----------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|empty     |97     |14.56 |97       |=          |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+----------+-------+------+---------+-----------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'Duplication'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '-----------'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+-------------------------+------+---------+-----------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|                         |now   |previous |difference |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+=========================+======+=========+===========+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|nb duplicated lines      |0     |0        |=          |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+-------------------------+------+---------+-----------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|percent duplicated lines |0.000 |0.000    |=          |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+-------------------------+------+---------+-----------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'Messages by category'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '--------------------'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+-----------+-------+---------+-----------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|type       |number |previous |difference |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+===========+=======+=========+===========+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|convention |46     |46       |=          |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+-----------+-------+---------+-----------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|refactor   |17     |17       |=          |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+-----------+-------+---------+-----------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|warning    |38     |38       |=          |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+-----------+-------+---------+-----------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|error      |21     |21       |=          |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+-----------+-------+---------+-----------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'Messages'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '--------'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|message id |occurrences |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+===========+============+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|C0103      |36          |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|W0612      |13          |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|E0602      |13          |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|W0511      |10          |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|R0903      |9           |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|W0613      |7           |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|C0111      |6           |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|R0201      |4           |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|W0611      |3           |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|F0401      |3           |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|E1101      |3           |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|R0913      |2           |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|R0902      |2           |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|E0213      |2           |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|E0102      |2           |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|C0324      |2           |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|W0622      |1           |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|W0221      |1           |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|W0212      |1           |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|W0107      |1           |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|W0104      |1           |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|E1121      |1           |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|C0321      |1           |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|C0301      |1           |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+-----------+------------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'Global evaluation'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '-----------------'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'Your code has been rated at 3.68/10 (previous run: 3.68/10)'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': 'Statistics by type'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '------------------'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+---------+-------+-----------+-----------+------------+---------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|type     |number |old number |difference |%documented |%badname |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+=========+=======+===========+===========+============+=========+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|module   |1      |1          |=          |0.00        |0.00     |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+---------+-------+-----------+-----------+------------+---------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|class    |17     |17         |=          |82.35       |0.00     |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+---------+-------+-----------+-----------+------------+---------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|method   |53     |53         |=          |96.23       |0.00     |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+---------+-------+-----------+-----------+------------+---------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '|function |0      |0          |=          |0           |0        |'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': '+---------+-------+-----------+-----------+------------+---------+'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': ''}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'tests/modules/test_paideia.py', 'text': ''}])
+call setqflist([{'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': '', 'text': '[modules/paideia.py]'}, {'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': '', 'text': '/bin/bash: pylint: command not found'}])
 let SessionLoad = 1
 if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
@@ -23,13 +23,13 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +633 modules/paideia.py
-badd +23 bin/runtest.py
-badd +388 modules/paideia_exploring.py
-badd +19 tests/modules/test_paideia.py
+badd +786 modules/paideia.py
+badd +201 modules/paideia_exploring.py
+badd +367 tests/modules/test_paideia.py
+badd +247 models/paideia.py
 silent! argdel *
-set lines=50 columns=158
-edit modules/paideia.py
+set lines=48 columns=150
+edit -MiniBufExplorer-
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -46,25 +46,13 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe '1resize ' . ((&lines * 1 + 25) / 50)
-exe 'vert 1resize ' . ((&columns * 109 + 79) / 158)
-exe '2resize ' . ((&lines * 23 + 25) / 50)
-exe 'vert 2resize ' . ((&columns * 109 + 79) / 158)
-exe '3resize ' . ((&lines * 22 + 25) / 50)
-exe 'vert 3resize ' . ((&columns * 109 + 79) / 158)
-exe 'vert 4resize ' . ((&columns * 48 + 79) / 158)
-argglobal
-enew
-file -MiniBufExplorer-
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=99
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-wincmd w
+exe '1resize ' . ((&lines * 1 + 24) / 48)
+exe 'vert 1resize ' . ((&columns * 104 + 75) / 150)
+exe '2resize ' . ((&lines * 22 + 24) / 48)
+exe 'vert 2resize ' . ((&columns * 104 + 75) / 150)
+exe '3resize ' . ((&lines * 21 + 24) / 48)
+exe 'vert 3resize ' . ((&columns * 104 + 75) / 150)
+exe 'vert 4resize ' . ((&columns * 45 + 75) / 150)
 argglobal
 setlocal fdm=indent
 setlocal fde=0
@@ -74,79 +62,118 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-11
-silent! normal zo
-40
-silent! normal zo
-80
-silent! normal zo
-80
-normal zc
-124
-silent! normal zo
-124
-normal zc
-170
-silent! normal zo
-170
-normal zc
-203
-silent! normal zo
-203
-normal zc
-213
-silent! normal zo
-213
-normal zc
-348
-silent! normal zo
-348
-normal zc
-389
-silent! normal zo
-389
-normal zc
-459
-normal zc
-467
-silent! normal zo
-467
-normal zc
-531
-silent! normal zo
-531
-normal zc
-554
-silent! normal zo
-554
-normal zc
-564
-silent! normal zo
-564
-normal zc
-569
-silent! normal zo
-632
-silent! normal zo
-637
-silent! normal zo
-657
-silent! normal zo
-657
-silent! normal zo
-663
-silent! normal zo
-672
-silent! normal zo
-688
-silent! normal zo
-691
-silent! normal zo
-let s:l = 702 - ((13 * winheight(0) + 11) / 23)
+let s:l = 1 - ((0 * winheight(0) + 0) / 1)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-702
+1
+normal! 0
+wincmd w
+argglobal
+edit modules/paideia.py
+setlocal fdm=indent
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+727
+silent! normal zo
+737
+normal zc
+743
+silent! normal zo
+743
+silent! normal zo
+743
+silent! normal zo
+743
+silent! normal zo
+743
+silent! normal zo
+761
+silent! normal zo
+787
+silent! normal zo
+792
+silent! normal zo
+792
+normal zc
+868
+silent! normal zo
+868
+normal zc
+889
+silent! normal zo
+889
+normal zc
+906
+silent! normal zo
+908
+silent! normal zo
+912
+silent! normal zo
+914
+silent! normal zo
+922
+silent! normal zo
+922
+silent! normal zo
+922
+silent! normal zo
+922
+silent! normal zo
+922
+silent! normal zo
+926
+silent! normal zo
+934
+silent! normal zo
+934
+silent! normal zo
+934
+silent! normal zo
+934
+silent! normal zo
+941
+silent! normal zo
+941
+silent! normal zo
+941
+silent! normal zo
+941
+silent! normal zo
+941
+silent! normal zo
+944
+silent! normal zo
+944
+silent! normal zo
+944
+silent! normal zo
+944
+silent! normal zo
+944
+silent! normal zo
+949
+silent! normal zo
+949
+silent! normal zo
+949
+silent! normal zo
+957
+silent! normal zo
+961
+silent! normal zo
+962
+silent! normal zo
+let s:l = 956 - ((16 * winheight(0) + 11) / 22)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+956
 normal! 012l
 wincmd w
 argglobal
@@ -159,36 +186,68 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-210
+20
 silent! normal zo
-231
-normal zc
-239
-normal zc
-248
+49
 silent! normal zo
-248
-normal zc
-255
-normal zc
-264
+353
 silent! normal zo
-268
-normal zc
-289
+356
 silent! normal zo
-306
+362
 silent! normal zo
-312
+362
 silent! normal zo
-316
+362
 silent! normal zo
-let s:l = 333 - ((21 * winheight(0) + 11) / 22)
+368
+silent! normal zo
+368
+silent! normal zo
+368
+silent! normal zo
+368
+silent! normal zo
+368
+silent! normal zo
+368
+silent! normal zo
+368
+silent! normal zo
+368
+silent! normal zo
+368
+silent! normal zo
+372
+silent! normal zo
+374
+silent! normal zo
+374
+silent! normal zo
+374
+silent! normal zo
+382
+silent! normal zo
+384
+silent! normal zo
+384
+silent! normal zo
+384
+silent! normal zo
+386
+silent! normal zo
+386
+silent! normal zo
+386
+silent! normal zo
+390
+silent! normal zo
+let s:l = 360 - ((3 * winheight(0) + 10) / 21)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-333
-normal! 013l
+360
+normal! 08l
 wincmd w
 argglobal
 enew
@@ -203,13 +262,13 @@ setlocal fdn=20
 setlocal fen
 wincmd w
 2wincmd w
-exe '1resize ' . ((&lines * 1 + 25) / 50)
-exe 'vert 1resize ' . ((&columns * 109 + 79) / 158)
-exe '2resize ' . ((&lines * 23 + 25) / 50)
-exe 'vert 2resize ' . ((&columns * 109 + 79) / 158)
-exe '3resize ' . ((&lines * 22 + 25) / 50)
-exe 'vert 3resize ' . ((&columns * 109 + 79) / 158)
-exe 'vert 4resize ' . ((&columns * 48 + 79) / 158)
+exe '1resize ' . ((&lines * 1 + 24) / 48)
+exe 'vert 1resize ' . ((&columns * 104 + 75) / 150)
+exe '2resize ' . ((&lines * 22 + 24) / 48)
+exe 'vert 2resize ' . ((&columns * 104 + 75) / 150)
+exe '3resize ' . ((&lines * 21 + 24) / 48)
+exe 'vert 3resize ' . ((&columns * 104 + 75) / 150)
+exe 'vert 4resize ' . ((&columns * 45 + 75) / 150)
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
