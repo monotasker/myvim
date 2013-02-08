@@ -1,6 +1,10 @@
 *.py[co]
 *.swp
 *.swo
+
+# Session files
+sessions/*
+
 # Packages
 *.egg
 *.egg-info
