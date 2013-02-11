@@ -4,8 +4,6 @@
 
 # Session files
 sessions
-sessions/*
-session.vim
 
 # Packages
 *.egg
