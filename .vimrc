@@ -31,25 +31,30 @@ set smartcase
 set encoding=utf-8
 "set inputenc=utf-8
 set fenc=utf-8
+ 
+set statusline=%f\%m\ %h%r%w%q\%{fugitive#statusline()}\ %y%=%l,%c\ 
+"%= makes following right-aligned 
+"%P perceent of file at curr pos
 
 "ui appearance
 "===============================
 set t_Co=256 "use 256 colours in terminal
 "set t_AB=^[[48;5;%dm "fix terminal colors
 "set t_AF=^[[38;5;%dm "fix terminal colors
-"set background=dark
-colors SolarizedLight "molokai 
-set guifont=Ubuntu\ Mono\ 13
+set background=dark
+colors base16-default "SolarizedLight molokai 
+set guifont=Ubuntu\ Mono\ 15
 set ts=4 softtabstop=4 shiftwidth=4 expandtab
-set guioptions-=T  "remove toolbar
-set lines=50 "Open window with a height of X lines
-set columns=160 "Open window with a width of X columns
+set guioptions-=T
+"set guioptions-=R-=L  "remove toolbar
+"set lines=999 "Open window with a height of X lines
+"set columns=999 "Open window with a width of X columns
 "visual right-margin guide at 80 chars
 set colorcolumn=80
 "Turn on line numbers
 set number
 "Toggle line numbers and fold column for easy copying
-nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
+nnoremap <F6> :set nonumber!<CR>:set foldcolumn=0<CR>
 
 "navigation shortcuts
 "=================================
@@ -241,13 +246,13 @@ endif
 endfunction
 
 "function to run pylint on current buffer
-command Pylint :call Pylint()
-function! Pylint()
-    setlocal makeprg=(echo\ '[%]';\ pylint\ %)
-    setlocal efm=%+P[%f],%t:\ %#%l:%m
-    silent make
-    cwindow
-    endfunction
+"command Pylint :call Pylint()
+"function! Pylint()
+    "setlocal makeprg=(echo\ '[%]';\ pylint\ %)
+    "setlocal efm=%+P[%f],%t:\ %#%l:%m
+    "silent make
+    "cwindow
+    "endfunction
 
 "automatically strip trailing spaces from python and javascript
 "files when saving buffer
