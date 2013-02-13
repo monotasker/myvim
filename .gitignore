@@ -15,6 +15,9 @@ sdist
 develop-eggs
 .installed.cfg
 
+# Session files
+sessions/*
+
 # Installer logs
 pip-log.txt
 
