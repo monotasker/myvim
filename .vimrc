@@ -137,6 +137,10 @@ let g:session_autoload='no'
 nmap <leader>so :OpenSession<CR>
 nmap <leader>ss :SaveSession<CR>
 
+"supertab
+let g:SuperTabMappingForward='<S-Tab>'  
+let g:SuperTabMappingBackward='<C-Tab>' 
+
 "Taglist 
 let g:ctags_statusline=1 "function name in status bar
 let generate_tags=1
