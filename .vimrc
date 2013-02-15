@@ -32,7 +32,7 @@ set encoding=utf-8
 "set inputenc=utf-8
 set fenc=utf-8
  
-set statusline=%f\%m\ %h%r%w%q\%{fugitive#statusline()}\ %y%=%l,%c\ 
+set statusline=%f\%m\ %h%r%w%q\%{fugitive#statusline()}\ %=%l,%c\ 
 "%= makes following right-aligned 
 "%P perceent of file at curr pos
 
@@ -147,6 +147,10 @@ let g:SuperTabMappingForward='<S-Tab>'
 let g:SuperTabMappingBackward='<C-Tab>' 
 
 "Taglist 
+set tags=./tags,tags,$HOME
+"rebuild tags in file directory
+nmap ,t :!(cd %:p:h;ctags *)&
+au BufWritePost,FileWritePost :!(cd %:p:h;ctags *)& 
 let g:ctags_statusline=1 "function name in status bar
 let generate_tags=1
 let Tlist_Use_Horiz_Window=0 "vertical taglist results 
@@ -179,7 +183,7 @@ filetype plugin indent on "use specified indenting for filetype
 "===========================
 au BufNewFile,BufRead *.less setlocal filetype=css
 "automatically compile to css using lessc
-autocmd BufWritePost,FileWritePost *.less :call BuildLess()
+au BufWritePost,FileWritePost *.less :call BuildLess()
 "working with text files
 "=======================
 au BufNewFile,BufRead *.txt set filetype=pandoc
@@ -202,7 +206,7 @@ set completeopt=menuone,longest,preview
 " Execute python file being edited with <Shift> + e:
 map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
 " automatically run pylint on Python files when saving buffer
-autocmd BufWrite *.{py} :call Pylint()
+"autocmd BufWrite *.{py} :call Pylint()
 
 "working with web2py files
 "==========================
