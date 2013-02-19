@@ -147,6 +147,7 @@ let g:SuperTabMappingForward='<S-Tab>'
 let g:SuperTabMappingBackward='<C-Tab>' 
 
 "Taglist 
+set tags=./tags,tags;$HOME
 let g:ctags_statusline=1 "function name in status bar
 let generate_tags=1
 let Tlist_Use_Horiz_Window=0 "vertical taglist results 
@@ -202,7 +203,7 @@ set completeopt=menuone,longest,preview
 " Execute python file being edited with <Shift> + e:
 map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
 " automatically run pylint on Python files when saving buffer
-autocmd BufWrite *.{py} :call Pylint()
+"autocmd BufWrite *.{py} :call Pylint()
 
 "working with web2py files
 "==========================
