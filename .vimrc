@@ -96,6 +96,11 @@ nnoremap α a
 nnoremap Α A
 nnoremap χ x
 
+"general autocommands
+"=================================
+"autosave document when leaving window
+autocmd FocusLost * :call Autosave()
+
 "utility shortcuts
 "=================================
 "map shortcut to cut and paste with system clipboard
@@ -139,8 +144,10 @@ map <leader>r :RopeRename<CR>
 "session
 let g:session_autosave='yes'
 let g:session_autoload='no'
+let g:session_command_aliases = 1
 nmap <leader>so :OpenSession<CR>
 nmap <leader>ss :SaveSession<CR>
+au :SaveSession * :echo 'Session saved!'
 
 "supertab
 let g:SuperTabMappingForward='<S-Tab>'  
@@ -286,3 +293,11 @@ function! BuildLess()
   silent call append(0, lessout)
   set nomodified
 endfunction
+
+function! Autosave()
+    if &modified && g:autosave_on_focus_change
+        write
+        echo "Autosaved file while you were absent" 
+    endif
+endfunction
+
