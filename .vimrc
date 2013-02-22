@@ -286,3 +286,10 @@ function! BuildLess()
   silent call append(0, lessout)
   set nomodified
 endfunction
+
+"allow writing to filename that includes spaces using :W
+command! -bang -nargs=* W :call W(<q-bang>, <q-args>)
+
+function! W(bang, filename)
+    :exe "w".a:bang." ". substitute(a:filename, ' ', '\\ ', 'g')
+endfu 
