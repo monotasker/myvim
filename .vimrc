@@ -111,11 +111,6 @@ nnoremap α a
 nnoremap Α A
 nnoremap χ x
 
-"general autocommands
-"=================================
-"autosave document when leaving window
-autocmd FocusLost * :call Autosave()
-
 "utility shortcuts
 "=================================
 "map shortcut to cut and paste with system clipboard
@@ -159,7 +154,6 @@ map <leader>r :RopeRename<CR>
 "session
 let g:session_autosave='yes'
 let g:session_autoload='no'
-let g:session_command_aliases = 1
 nmap <leader>so :OpenSession<CR>
 nmap <leader>ss :SaveSession<CR>
 
@@ -328,3 +322,8 @@ function! s:ExecuteInShell(command)
 endfunction
 command! -complete=shellcmd -nargs=+ Shell call s:ExecuteInShell(<q-args>)
 
+"allow writing to filename that includes spaces using :W
+command! -bang -nargs=* W :call W(<q-bang>, <q-args>)
+function! W(bang, filename)
+    :exe "w".a:bang." ". substitute(a:filename, ' ', '\\ ', 'g')
+endfu 
