@@ -4,13 +4,14 @@
 " http://dancingpenguinsoflight.com/2009/02/python-and-vim-make-your-own-ide
 " http://www.jfroche.be/blogging/archive/2007/04/28/write-nicer-python-code
 " http://dancingpenguinsoflight.com/2009/02/code-navigation-completion-snippets-in-vim/
+" and more Stackoverflow answers than I can count
 
-"automatically re-source .vimrc when file is changed
-:au! BufWritePost $MYVIMRC source $MYVIMRC 
+"automatically re-source this .vimrc file when it is changed
+:au! BufWritePost $MYVIMRC source $MYVIMRC
 
 "pathogen
 "===============================
-"add pathogen location to runtime path 
+"add pathogen location to runtime path
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 "invoke pathogen to handle paths and helptags
 filetype off "must be off to run commands?
@@ -21,6 +22,7 @@ let g:pathogen_disabled = []
 
 "misc settings
 "===============================
+let g:autosave_on_focus_change=1
 set nocompatible "necessary for project plugin
 set clipboard+=unnamed "use x clipboard (Linux) instead of buffer
 "smart case sensitivity in searching
@@ -29,24 +31,35 @@ set smartcase
 "enable Greek keyboard, switch with <c-^> in insert or command mode
 "set keymap=greek_polytonic
 set encoding=utf-8
-"set inputenc=utf-8
 set fenc=utf-8
- 
-set statusline=%f\%m\ %h%r%w%q\%{fugitive#statusline()}\ %=%l,%c\ 
-"%= makes following right-aligned 
-"%P perceent of file at curr pos
+"redefine what is displayed in status line
+set statusline=%f\%m\ %h%r%w%q\%{fugitive#statusline()}\ %=%l,%c\
+"%= makes following right-aligned
+"%P percent of file at curr pos
 
 "ui appearance
 "===============================
 set t_Co=256 "use 256 colours in terminal
-"set t_AB=^[[48;5;%dm "fix terminal colors
-"set t_AF=^[[38;5;%dm "fix terminal colors
+set t_AB=^[[48;5;%dm "fix terminal colors
+set t_AF=^[[38;5;%dm "fix terminal colors
 set background=dark
-colors base16-default "SolarizedLight molokai 
-set guifont=Ubuntu\ Mono\ 15
+colors base16-monokai "my favorites: SolarizedLight molokai base16-mocha
+"base16-tomorrow base16-monokai base16-chalk base16-default
+
+function! FontChangeOnResize()
+    if &columns > 100
+        set guifont=Ubuntu\ Mono\ 13
+    else
+        set guifont=Ubuntu\ Mono\ 14
+    endif
+endfunction
+autocmd VimResized * call FontChangeOnResize()
+autocmd VimEnter * call FontChangeOnResize()
+
 set ts=4 softtabstop=4 shiftwidth=4 expandtab
-set guioptions-=T
-"set guioptions-=R-=L  "remove toolbar
+set guioptions-=T  "remove toolbar
+set guioptions-=R  "remove right scrollbar
+set guioptions-=L  "remove left scrollbar
 "set lines=999 "Open window with a height of X lines
 "set columns=999 "Open window with a width of X columns
 "visual right-margin guide at 80 chars
@@ -55,6 +68,8 @@ set colorcolumn=80
 set number
 "Toggle line numbers and fold column for easy copying
 nnoremap <F6> :set nonumber!<CR>:set foldcolumn=0<CR>
+"height of command line
+set cmdheight=2
 
 "navigation shortcuts
 "=================================
@@ -134,10 +149,10 @@ let NERDTreeShowBookmarks=1
 "autocmd BufEnter * NERDTreeMirror
 map <leader>n :NERDTreeToggle<CR>
 
-"pep8 
+"pep8
 let g:pep8_map='<leader>8'
 
-"rope 
+"rope
 map <leader>j :RopeGotoDefinition<CR>
 map <leader>r :RopeRename<CR>
 
@@ -147,20 +162,19 @@ let g:session_autoload='no'
 let g:session_command_aliases = 1
 nmap <leader>so :OpenSession<CR>
 nmap <leader>ss :SaveSession<CR>
-au :SaveSession * :echo 'Session saved!'
 
 "supertab
-let g:SuperTabMappingForward='<S-Tab>'  
-let g:SuperTabMappingBackward='<C-Tab>' 
+let g:SuperTabMappingForward='<S-Tab>'
+let g:SuperTabMappingBackward='<C-Tab>'
 
-"Taglist 
+"Taglist
 set tags=./tags,tags,$HOME
 "rebuild tags in file directory
 nmap ,t :!(cd %:p:h;ctags *)&
-au BufWritePost,FileWritePost :!(cd %:p:h;ctags *)& 
+au BufWritePost,FileWritePost :!(cd %:p:h;ctags *)&
 let g:ctags_statusline=1 "function name in status bar
 let generate_tags=1
-let Tlist_Use_Horiz_Window=0 "vertical taglist results 
+let Tlist_Use_Horiz_Window=0 "vertical taglist results
 nnoremap TT :TlistToggle<CR>
 map <F4> :TlistToggle<CR>
 let Tlist_Use_Right_Window = 1
@@ -177,7 +191,7 @@ let g:vimroom_background='#efefef'
 let g:vimroom_min_sidebar_width='5'
 let g:vimroom_width='80'
 
-"yankring 
+"yankring
 nnoremap <leader>y :YRShow<CR>
 
 "filetype settings
@@ -211,7 +225,7 @@ au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
 " Execute python file being edited with <Shift> + e:
-map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
+map <leader><S-e> :w<CR>:!python ./% <CR>
 " automatically run pylint on Python files when saving buffer
 "autocmd BufWrite *.{py} :call Pylint()
 
@@ -244,7 +258,7 @@ fu! CustomFoldText()
     else
         let line = substitute(getline(fs), '\t', repeat(' ', &tabstop), 'g')
     endif
- 
+
     let w = winwidth(0) - &foldcolumn - (&number ? 8 : 0)
     let foldSize = 1 + v:foldend - v:foldstart
     let foldSizeStr = " " . foldSize . " lines "
@@ -268,9 +282,6 @@ endfunction
 "automatically strip trailing spaces from python and javascript
 "files when saving buffer
 autocmd BufWritePre *.py,*.js :call <SID>StripTrailingWhitespaces()
-
-"Add name of current Git branch to vim statusline
-" %{fugitive#statusline()}
 
 " Add the virtualenv's site-packages to vim path
 py << EOF
@@ -297,7 +308,23 @@ endfunction
 function! Autosave()
     if &modified && g:autosave_on_focus_change
         write
-        echo "Autosaved file while you were absent" 
+        echo "Autosaved file while you were absent"
     endif
 endfunction
+
+"output result of any shell command to scratch buffer
+function! s:ExecuteInShell(command)
+  let command = join(map(split(a:command), 'expand(v:val)'))
+  let winnr = bufwinnr('^' . command . '$')
+  silent! execute  winnr < 0 ? 'botright new ' . fnameescape(command) : winnr . 'wincmd w'
+  setlocal buftype=nowrite bufhidden=wipe nobuflisted noswapfile nowrap number
+  echo 'Execute ' . command . '...'
+  silent! execute 'silent %!'. command
+  silent! execute 'resize ' . line('$')
+  silent! redraw
+  silent! execute 'au BufUnload <buffer> execute bufwinnr(' . bufnr('#') . ') . ''wincmd w'''
+  silent! execute 'nnoremap <silent> <buffer> <LocalLeader>r :call <SID>ExecuteInShell(''' . command . ''')<CR>'
+  echo 'Shell command ' . command . ' executed.'
+endfunction
+command! -complete=shellcmd -nargs=+ Shell call s:ExecuteInShell(<q-args>)
 
