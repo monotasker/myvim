@@ -18,7 +18,8 @@ filetype off "must be off to run commands?
 call pathogen#infect()
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
-let g:pathogen_disabled = []
+"disabled plugins
+"set runtimepath-=~/.vim/bundle/ansi_esc
 
 "misc settings
 "===============================
@@ -142,7 +143,6 @@ nmap <leader>p :CtrlP<CR>
 map <leader>gt :GundoToggle<CR>
 
 "NERDTree
-call add(g:pathogen_disabled, 'NERDTree')
 let NERDTreeShowBookmarks=1
 "autocmd VimEnter * NERDTree
 "autocmd BufEnter * NERDTreeMirror
@@ -206,6 +206,7 @@ au BufWritePost,FileWritePost *.less :call BuildLess()
 "working with text files
 "=======================
 au BufNewFile,BufRead *.txt set filetype=pandoc
+au FileType text set filetype=pandoc
 au FileType text,markdown,pandoc set colorcolumn=0
 au FileType text,markdown,pandoc set foldcolumn=6
 au FileType text,markdown,pandoc set nonumber
