@@ -211,6 +211,7 @@ au FileType text,markdown,pandoc set colorcolumn=0
 au FileType text,markdown,pandoc set foldcolumn=6
 au FileType text,markdown,pandoc set nonumber
 au FileType text,markdown,pandoc set foldtext=CustomFoldText()
+au FileType text,markdown,pandoc set statusline=%f\%m\ %h%r%w%q\%{fugitive#statusline()}\ %=%l,%c\
 
 "working with python files
 "=========================
