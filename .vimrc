@@ -36,12 +36,16 @@ set fenc=utf-8
 set statusline=%f\%m\ %h%r%w%q\%{fugitive#statusline()}\ %=%l,%c\
 "%= makes following right-aligned
 "%P percent of file at curr pos
+set synmaxcol=128 "don't highlight very long lines past 128 chars
+set ttyfast " u got a fast terminal
+set ttyscroll=3 " redraw instead of scrolling when moving more than 3 lines
+set lazyredraw " to avoid scrolling problems, don't redraw during macros etc
 
 "ui appearance
 "===============================
 set t_Co=256 "use 256 colours in terminal
-set t_AB=^[[48;5;%dm "fix terminal colors
-set t_AF=^[[38;5;%dm "fix terminal colors
+"set t_AB=^[[48;5;%dm "fix terminal colors
+"set t_AF=^[[38;5;%dm "fix terminal colors
 set background=dark
 colors base16-monokai "my favorites: SolarizedLight molokai base16-mocha
 "base16-tomorrow base16-monokai base16-chalk base16-default
