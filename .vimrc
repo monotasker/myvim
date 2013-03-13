@@ -55,7 +55,7 @@ function! FontChangeOnResize()
     if &columns > 100
         set guifont=Ubuntu\ Mono\ 13
     else
-        set guifont=Ubuntu\ Mono\ 14
+        set guifont=Ubuntu\ Mono\ 15
     endif
 endfunction
 autocmd VimResized * call FontChangeOnResize()
