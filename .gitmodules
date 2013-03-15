@@ -134,3 +134,6 @@
 [submodule "bundle/ansi_esc"]
 	path = bundle/ansi_esc
 	url = git://github.com/vim-scripts/AnsiEsc.vim.git
+[submodule "bundle/python-mode"]
+	path = bundle/python-mode
+	url = git://github.com/klen/python-mode.git
