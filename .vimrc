@@ -44,18 +44,19 @@ set lazyredraw " to avoid scrolling problems, don't redraw during macros etc
 
 "ui appearance
 "===============================
-set t_Co=256 "use 256 colours in terminal
-"set t_AB=^[[48;5;%dm "fix terminal colors
-"set t_AF=^[[38;5;%dm "fix terminal colors
-set background=dark
+"use 256 colours in gnome terminal
+if $COLORTERM == 'gnome-terminal'
+  set t_Co=256
+endif
+set background=dark "necessary for themes
 colors base16-monokai "my favorites: SolarizedLight molokai base16-mocha
 "base16-tomorrow base16-monokai base16-chalk base16-default
 
 function! FontChangeOnResize()
-    if &columns > 100
+    if &columns > 170
         set guifont=Ubuntu\ Mono\ 13
     else
-        set guifont=Ubuntu\ Mono\ 14
+        set guifont=Ubuntu\ Mono\ 15
     endif
 endfunction
 autocmd VimResized * call FontChangeOnResize()
@@ -216,18 +217,62 @@ au FileType text,markdown,pandoc set statusline=%f\%m\ %h%r%w%q\%{fugitive#statu
 "working with python files
 "=========================
 "code folding
-set foldmethod=indent
+set foldmethod=syntax
 set foldlevel=99
-""set pyflakes to skip using quickfix window
-"let g:pyflakes_use_quickfix = 0
+let g:pymode_folding=1
 "enable python autocompletion
 au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
-" Execute python file being edited with <Shift> + e:
-map <leader><S-e> :w<CR>:!python ./% <CR>
-" automatically run pylint on Python files when saving buffer
-"autocmd BufWrite *.{py} :call Pylint()
+" enable highlighting of all optional syntax features
+let python_highlight_all = 1
+" Python-mode: Disable pylint checking every save
+let g:pymode_lint_write = 0
+" Key to run python code in current buffer
+let g:pymode_run_key = '<leader>r'
+" Key for show python documentation
+let g:pymode_doc_key = 'K'
+" Load pylint code plugin
+let g:pymode_lint = 1
+" Switch pylint, pyflakes, pep8, mccabe code-checkers
+" Can have multiply values "pep8,pyflakes,mcccabe"
+let g:pymode_lint_checker = "pyflakes,pep8,mccabe"
+" Skip errors and warnings
+" E.g. "E501,W002", "E2,W" (Skip all Warnings and Errors startswith E2) and etc
+let g:pymode_lint_ignore = "E501, E126"
+" Select errors and warnings
+"let g:pymode_lint_select = ""
+" Run linter on the fly
+let g:pymode_lint_onfly = 0
+" Pylint configuration file (defaults to 'pylintrc' in python-mode plugin directory
+let g:pymode_lint_config = "$HOME/.pylintrc"
+" Check code every save
+let g:pymode_lint_write = 1
+" Auto open cwindow if errors
+let g:pymode_lint_cwindow = 1
+" Show error message if cursor placed at the error line
+let g:pymode_lint_message = 1
+" Auto jump on first error
+let g:pymode_lint_jump = 0
+" Hold cursor in current window when quickfix is open
+let g:pymode_lint_hold = 0
+" Place error signs
+let g:pymode_lint_signs = 1
+" Maximum allowed mccabe complexity
+let g:pymode_lint_mccabe_complexity = 8
+" Minimal height of pylint error window
+let g:pymode_lint_minheight = 3
+" Maximal height of pylint error window
+let g:pymode_lint_maxheight = 6
+" Python_mode Rope settings
+let g:pymode_rope_autoimport_modules = ["os","shutil","datetime"]
+let g:pymode_rope_confirm_saving = 1
+let g:pymode_rope_global_prefix = "<C-x>p"
+let g:pymode_rope_local_prefix = "<C-c>r"
+let g:pymode_rope_vim_completion = 1
+let g:pymode_rope_guess_project = 1
+let g:pymode_rope_goto_def_newwin = ""
+let g:pymode_rope_always_show_complete_menu = 0
 
 "working with web2py files
 "==========================
