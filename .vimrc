@@ -217,7 +217,7 @@ au FileType text,markdown,pandoc set statusline=%f\%m\ %h%r%w%q\%{fugitive#statu
 "working with python files
 "=========================
 "code folding
-set foldmethod=syntax
+set foldmethod=indent
 set foldlevel=99
 let g:pymode_folding=1
 "enable python autocompletion
@@ -227,7 +227,7 @@ set completeopt=menuone,longest,preview
 " enable highlighting of all optional syntax features
 let python_highlight_all = 1
 " Python-mode: Disable pylint checking every save
-let g:pymode_lint_write = 0
+let g:pymode_lint_write = 1
 " Key to run python code in current buffer
 let g:pymode_run_key = '<leader>r'
 " Key for show python documentation
