@@ -217,7 +217,7 @@ au FileType text,markdown,pandoc set statusline=%f\%m\ %h%r%w%q\%{fugitive#statu
 "working with python files
 "=========================
 "code folding
-set foldmethod=syntax
+set foldmethod=indent
 set foldlevel=99
 let g:pymode_folding=1
 "enable python autocompletion
