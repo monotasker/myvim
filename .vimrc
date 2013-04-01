@@ -198,6 +198,7 @@ nnoremap <leader>y :YRShow<CR>
 syntax on "use syntax highlighting
 filetype on "autodetect filetypes
 filetype plugin indent on "use specified indenting for filetype
+set foldlevel=99
 
 "working with less css files
 "===========================
@@ -207,7 +208,7 @@ au BufWritePost,FileWritePost *.less :call BuildLess()
 "working with text files
 "=======================
 au BufNewFile,BufRead *.txt set filetype=pandoc
-au FileType text set filetype=pandoc
+au FileType text,markdown set filetype=pandoc
 au FileType text,markdown,pandoc set colorcolumn=0
 au FileType text,markdown,pandoc set foldcolumn=6
 au FileType text,markdown,pandoc set nonumber
@@ -217,8 +218,7 @@ au FileType text,markdown,pandoc set statusline=%f\%m\ %h%r%w%q\%{fugitive#statu
 "working with python files
 "=========================
 "code folding
-set foldmethod=indent
-set foldlevel=99
+au FileType python set foldmethod=indent
 let g:pymode_folding=1
 "enable python autocompletion
 au FileType python set omnifunc=pythoncomplete#Complete
@@ -226,8 +226,6 @@ let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
 " enable highlighting of all optional syntax features
 let python_highlight_all = 1
-" Python-mode: Disable pylint checking every save
-let g:pymode_lint_write = 1
 " Key to run python code in current buffer
 let g:pymode_run_key = '<leader>r'
 " Key for show python documentation
@@ -239,7 +237,7 @@ let g:pymode_lint = 1
 let g:pymode_lint_checker = "pyflakes,pep8,mccabe"
 " Skip errors and warnings
 " E.g. "E501,W002", "E2,W" (Skip all Warnings and Errors startswith E2) and etc
-let g:pymode_lint_ignore = "E501, E126"
+let g:pymode_lint_ignore = "E501, E126, E701"
 " Select errors and warnings
 "let g:pymode_lint_select = ""
 " Run linter on the fly
