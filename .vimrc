@@ -237,7 +237,7 @@ let g:pymode_lint = 1
 let g:pymode_lint_checker = "pyflakes,pep8,mccabe"
 " Skip errors and warnings
 " E.g. "E501,W002", "E2,W" (Skip all Warnings and Errors startswith E2) and etc
-let g:pymode_lint_ignore = "E501, E126, E701"
+let g:pymode_lint_ignore = "E501,E126,E701,E128"
 " Select errors and warnings
 "let g:pymode_lint_select = ""
 " Run linter on the fly
