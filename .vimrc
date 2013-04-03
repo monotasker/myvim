@@ -37,7 +37,7 @@ set fenc=utf-8
 set statusline=%f\%m\ %h%r%w%q\%{fugitive#statusline()}\ %=%l,%c\
 "%= makes following right-aligned
 "%P percent of file at curr pos
-set synmaxcol=128 "don't highlight very long lines past 128 chars
+set synmaxcol=228 "don't highlight very long lines past 128 chars
 set ttyfast " u got a fast terminal
 set ttyscroll=3 " redraw instead of scrolling when moving more than 3 lines
 set lazyredraw " to avoid scrolling problems, don't redraw during macros etc
