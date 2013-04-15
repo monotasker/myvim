@@ -219,7 +219,7 @@ au FileType text,markdown,pandoc set statusline=%f\%m\ %h%r%w%q\%{fugitive#statu
 "=========================
 "code folding
 au FileType python set foldmethod=indent
-let g:pymode_folding=1
+let g:pymode_folding=0
 "enable python autocompletion
 au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
@@ -251,7 +251,7 @@ let g:pymode_lint_cwindow = 1
 " Show error message if cursor placed at the error line
 let g:pymode_lint_message = 1
 " Auto jump on first error
-let g:pymode_lint_jump = 0
+let g:pymode_lint_jump = 1
 " Hold cursor in current window when quickfix is open
 let g:pymode_lint_hold = 0
 " Place error signs
@@ -259,15 +259,15 @@ let g:pymode_lint_signs = 1
 " Maximum allowed mccabe complexity
 let g:pymode_lint_mccabe_complexity = 8
 " Minimal height of pylint error window
-let g:pymode_lint_minheight = 3
+let g:pymode_lint_minheight = 2
 " Maximal height of pylint error window
-let g:pymode_lint_maxheight = 6
+let g:pymode_lint_maxheight = 8
 " Python_mode Rope settings
-let g:pymode_rope_autoimport_modules = ["os","shutil","datetime"]
+let g:pymode_rope_autoimport_modules = ["os","shutil","datetime", "pprint", "re", "random"]
 let g:pymode_rope_confirm_saving = 1
 let g:pymode_rope_global_prefix = "<C-x>p"
 let g:pymode_rope_local_prefix = "<C-c>r"
-let g:pymode_rope_vim_completion = 1
+let g:pymode_rope_vim_completion = 0
 let g:pymode_rope_guess_project = 1
 let g:pymode_rope_goto_def_newwin = ""
 let g:pymode_rope_always_show_complete_menu = 0
