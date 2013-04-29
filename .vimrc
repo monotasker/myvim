@@ -49,7 +49,7 @@ if $COLORTERM == 'gnome-terminal'
   set t_Co=256
 endif
 set background=dark "necessary for themes
-colors base16-monokai "my favorites: SolarizedLight molokai base16-mocha
+colors SolarizedLight "my favorites: base16-monokai molokai base16-mocha
 "base16-tomorrow base16-monokai base16-chalk base16-default
 
 function! FontChangeOnResize()
