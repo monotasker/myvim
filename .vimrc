@@ -16,7 +16,7 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 "invoke pathogen to handle paths and helptags
 filetype off "must be off to run commands?
 call pathogen#infect()
-call pathogen#runtime_append_all_bundles()
+call pathogen#incubate()
 call pathogen#helptags()
 "disabled plugins
 "set runtimepath-=~/.vim/bundle/ansi_esc
