@@ -4,41 +4,24 @@
 [submodule "bundle/snipmate"]
 	path = bundle/snipmate
 	url = https://github.com/msanders/snipmate.vim.git
-    ignore = untracked
 [submodule "bundle/surround"]
 	path = bundle/surround
 	url = https://github.com/tpope/vim-surround.git
 [submodule "bundle/git"]
 	path = bundle/git
 	url = https://github.com/tpope/vim-git.git
-    ignore = untracked
 [submodule "bundle/supertab"]
 	path = bundle/supertab
 	url = https://github.com/ervandew/supertab.git
 [submodule "bundle/minibufexpl"]
 	path = bundle/minibufexpl
 	url = https://github.com/sontek/minibufexpl.vim.git
-[submodule "bundle/command-t"]
-	path = bundle/command-t
-	url = https://github.com/wincent/Command-T.git
-[submodule "pyflakes-pathogen"]
-	path = pyflakes-pathogen
-	url = https://github.com/mitechie/pyflakes-pathogen.git
 [submodule "bundle/ack"]
 	path = bundle/ack
 	url = https://github.com/mileszs/ack.vim.git
 [submodule "bundle/gundo"]
 	path = bundle/gundo
 	url = https://github.com/sjl/gundo.vim.git
-[submodule "bundle/pydoc"]
-	path = bundle/pydoc
-	url = https://github.com/fs111/pydoc.vim.git
-[submodule "bundle/pep8"]
-	path = bundle/pep8
-	url = https://github.com/vim-scripts/pep8.git
-[submodule "bundle/py.test"]
-	path = bundle/py.test
-	url = https://github.com/alfredodeza/pytest.vim.git
 [submodule "bundle/makegreen"]
 	path = bundle/makegreen
 	url = https://github.com/reinh/vim-makegreen
@@ -49,9 +32,6 @@
 	path = bundle/nerdtree
     url = https://github.com/vim-scripts/The-NERD-tree.git
     ignore = untracked
-[submodule "bundle/ropevim"]
-	path = bundle/ropevim
-	url = https://github.com/sontek/rope-vim.git
 [submodule "bundle/vim-pathogen"]
 	path = bundle/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen.git
@@ -59,18 +39,15 @@
 	path = bundle/vim-session
 	url = https://github.com/xolox/vim-session.git
     ignore = untracked
-[submodule "bundle/molokai"]
-	path = bundle/molokai
-	url = https://github.com/tomasr/molokai.git
 [submodule "bundle/less-syntax"]
 	path = bundle/less-syntax
 	url = https://github.com/vim-scripts/less-syntax.git
-[submodule "bundle/vim-pandoc"]
-	path = bundle/vim-pandoc
-	url = https://github.com/monotasker/vim-pandoc.git
 [submodule "bundle/vim-markdownfootnotes"]
 	path = bundle/vim-markdownfootnotes
 	url = https://github.com/vim-pandoc/vim-markdownfootnotes.git
+[submodule "bundle/vim-pandoc"]
+	path = bundle/vim-pandoc
+	url = https://github.com/monotasker/vim-pandoc.git
 [submodule "bundle/vim-pandoc-extras"]
 	path = bundle/vim-pandoc-extras
 	url = https://github.com/vim-pandoc/vim-pandoc-extras.git
@@ -80,7 +57,7 @@
 [submodule "bundle/svg.vim"]
 	path = bundle/svg.vim
 	url = https://github.com/vim-scripts/svg.vim.git
-[submodule "bundle/nerdcommented"]
+[submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
 [submodule "bundle/vim_web2py_syntax"]
@@ -95,42 +72,21 @@
 [submodule "bundle/yankring"]
 	path = bundle/yankring
 	url = https://github.com/vim-scripts/YankRing.vim.git
-[submodule "bundle/vimroom"]
-	path = bundle/vimroom
-	url = https://github.com/mikewest/vimroom.git
-[submodule "bundle/gist-vim"]
-	path = bundle/gist-vim
-	url = https://github.com/mattn/gist-vim.git
-[submodule "bundle/zencoding-vim"]
-	path = bundle/zencoding-vim
-	url = https://github.com/mattn/zencoding-vim.git
-[submodule "bundle/matchit"]
-	path = bundle/matchit
-	url = https://github.com/tmhedberg/matchit.git
 [submodule "bundle/taglist"]
 	path = bundle/taglist
 	url = https://github.com/vim-scripts/taglist.vim.git
-[submodule "bundle/project.tar.gz"]
-	path = bundle/project.tar.gz
-	url = https://github.com/vim-scripts/project.tar.gz.git
-[submodule "bundle/voom"]
-	path = bundle/voom
-	url = https://github.com/vim-scripts/VOoM.git
 [submodule "bundle/solarized"]
 	path = bundle/solarized
 	url = https://github.com/vim-scripts/Solarized.git
-[submodule "bundle/greek_polytonic"]
-	path = bundle/greek_polytonic
-	url = https://github.com/vim-scripts/greek_polytonic.vim.git
 [submodule "bundle/vim-sparkup"]
 	path = bundle/vim-sparkup
 	url = git://github.com/tristen/vim-sparkup.git
-[submodule "bundle/vim-css-color"]
-	path = bundle/vim-css-color
-	url = git://github.com/skammer/vim-css-color.git
 [submodule "bundle/base16"]
 	path = bundle/base16
 	url = git://github.com/chriskempson/base16-vim.git
+[submodule "bundle/vim-css-color"]
+	path = bundle/vim-css-color
+	url = git://github.com/skammer/vim-css-color.git
 [submodule "bundle/ansi_esc"]
 	path = bundle/ansi_esc
 	url = git://github.com/vim-scripts/AnsiEsc.vim.git

@@ -48,13 +48,14 @@ set lazyredraw " to avoid scrolling problems, don't redraw during macros etc
 if $COLORTERM == 'gnome-terminal'
   set t_Co=256
 endif
-set background=dark "necessary for themes
-colors SolarizedLight "my favorites: base16-monokai molokai base16-mocha
+set background=light "necessary for themes
+colors solarized "my favorites: SolarizedLight base16-monokai molokai base16-mocha
 "base16-tomorrow base16-monokai base16-chalk base16-default
 
+set guifont=Ubuntu\ Mono\ 12
 function! FontChangeOnResize()
-    if &columns > 170
-        set guifont=Ubuntu\ Mono\ 13
+    if &columns > 10
+        set guifont=Ubuntu\ Mono\ 12
     else
         set guifont=Ubuntu\ Mono\ 15
     endif
@@ -234,7 +235,7 @@ let g:pymode_doc_key = 'K'
 let g:pymode_lint = 1
 " Switch pylint, pyflakes, pep8, mccabe code-checkers
 " Can have multiply values "pep8,pyflakes,mcccabe"
-let g:pymode_lint_checker = "pyflakes,pep8,mccabe"
+let g:pymode_lint_checker = "pyflakes,pep8"
 " Skip errors and warnings
 " E.g. "E501,W002", "E2,W" (Skip all Warnings and Errors startswith E2) and etc
 let g:pymode_lint_ignore = "E501,E126,E701,E128"
