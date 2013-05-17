@@ -52,9 +52,9 @@ set background=light "necessary for themes
 colors solarized "my favorites: SolarizedLight base16-monokai molokai base16-mocha
 "base16-tomorrow base16-monokai base16-chalk base16-default
 
-set guifont=Ubuntu\ Mono\ 12
+set guifont=Ubuntu\ Mono\ 14
 function! FontChangeOnResize()
-    if &columns > 10
+    if &columns > 200 
         set guifont=Ubuntu\ Mono\ 12
     else
         set guifont=Ubuntu\ Mono\ 15
