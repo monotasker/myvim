@@ -52,11 +52,9 @@ set background=light "necessary for themes
 colors solarized "my favorites: SolarizedLight base16-monokai molokai base16-mocha
 "base16-tomorrow base16-monokai base16-chalk base16-default
 
-set guifont=Ubuntu\ Mono\ 14
+set guifont=Ubuntu\ Mono\ 13
 function! FontChangeOnResize()
-    if &columns > 200 
-        set guifont=Ubuntu\ Mono\ 12
-    else
+    if &columns < 70 
         set guifont=Ubuntu\ Mono\ 15
     endif
 endfunction
@@ -205,7 +203,8 @@ set foldlevel=99
 "===========================
 au BufNewFile,BufRead *.less setlocal filetype=css
 "automatically compile to css using lessc
-au BufWritePost,FileWritePost *.less :call BuildLess()
+au BufWritePost *.less :call BuildLess()
+
 "working with text files
 "=======================
 au BufNewFile,BufRead *.txt set filetype=pandoc
@@ -343,12 +342,15 @@ EOF
 
 function! BuildLess()
   redir => lessout
-  silent execute ":silent !lessc <afile> <afile>:p:r.css"
+      silent execute ":silent !lessc <afile> <afile>:p:r.css"
+      let stat = fnamemodify(finddir('static', ';'), ':p')
+      let tless = fnamemodify(findfile('css/theme.less', stat), ":p") 
+      let troot = fnamemodify(tless, ':r')
+      silent execute ":silent !lessc " . tless . " " . troot . ".css"
   redir END
-  silent split
-  silent enew
-  silent call append(0, lessout)
-  set nomodified
+  echo lessout
+  "echo tless
+  unlet lessout
 endfunction
 
 function! Autosave()
