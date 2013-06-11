@@ -45,11 +45,12 @@ set lazyredraw " to avoid scrolling problems, don't redraw during macros etc
 "ui appearance
 "===============================
 "use 256 colours in gnome terminal
-if $COLORTERM == 'gnome-terminal'
-  set t_Co=256
-endif
+"if $COLORTERM == 'gnome-terminal'
+  "set t_Co=256
+"endif
 set background=light "necessary for themes
-colors solarized "my favorites: SolarizedLight base16-monokai molokai base16-mocha
+let g:solarized_termcolors=256
+colors SolarizedLight "my favorites: solarized base16-monokai molokai base16-mocha
 "base16-tomorrow base16-monokai base16-chalk base16-default
 
 set guifont=Ubuntu\ Mono\ 13
