@@ -44,14 +44,21 @@ set lazyredraw " to avoid scrolling problems, don't redraw during macros etc
 
 "ui appearance
 "===============================
-"use 256 colours in gnome terminal
+"use 256 colours in gnome terminal ----------------------------------
 if $COLORTERM == 'gnome-terminal'
   set t_Co=256
 endif
-set background=light "necessary for themes
-colors solarized "my favorites: SolarizedLight base16-monokai molokai base16-mocha
-"base16-tomorrow base16-monokai base16-chalk base16-default
-
+"set different themes depending on time of day ----------------------
+if strftime('%H') > 19
+    set background=dark
+    colors base16-default
+else
+    set background=light
+    colors solarized
+endif
+"base16-tomorrow base16-monokai base16-chalk base16-default base16-mocha
+"my favorites: SolarizedLight base16-monokai molokai 
+"set font face and size ---------------------------------------------
 set guifont=Ubuntu\ Mono\ 13
 function! FontChangeOnResize()
     if &columns < 70 
@@ -67,14 +74,26 @@ set guioptions-=R  "remove right scrollbar
 set guioptions-=L  "remove left scrollbar
 "set lines=999 "Open window with a height of X lines
 "set columns=999 "Open window with a width of X columns
-"visual right-margin guide at 80 chars
+"visual right-margin guide at 80 chars -------------------------------
 set colorcolumn=80
-"Turn on line numbers
+"Turn on line numbers ------------------------------------------------
 set number
-"Toggle line numbers and fold column for easy copying
+"Toggle line numbers and fold column for easy copying ----------------
 nnoremap <F6> :set nonumber!<CR>:set foldcolumn=0<CR>
-"height of command line
+"height of command line ----------------------------------------------
 set cmdheight=2
+"resize window when it receives focus --------------------------------
+function! SetMinWindowSize()
+    if bufwinnr(1)
+        if winwidth(0) < 85
+            silent! execute ':vertical resize 85'
+        endif
+        if winheight(0) < 26 
+            resize 26
+        endif
+    endif
+endfunction
+au BufEnter .vimrc,*.py,*.js,*.txt,*.md,*.css,*.less,*.load,*.html :call SetMinWindowSize()
 
 "navigation shortcuts
 "=================================
@@ -85,10 +104,10 @@ map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
-"map shortcuts to cycle through buffers
+"cycle through buffers
 nnoremap <leader><Tab> :bnext<CR>
 nnoremap <leader><S-Tab> :bprevious<CR>
-"map shortcuts to adjust split window height
+"adjust split window height
 if bufwinnr(1)
   map + <C-W>+
   map = <C-W>+
@@ -97,7 +116,25 @@ if bufwinnr(1)
   map 9 <C-W>>
 endif
 
-"navigation using Greek keyboard under Linux
+"resize current window to 82 columns
+
+function! SwitchNMax(direction)
+    if bufwinnr(1)
+        if a:direction == 'left'
+            let move = '<c-W>h'
+        else
+            let move = '<c-W>l'
+        endif
+
+        if bufwinnr(1) && winwidth(0) < 82
+            silent move
+            silent! execute         else
+            silent move
+        endif
+    endif
+endfu
+
+"navigation using Greek keyboard under Linux                                   
 "=================================
 nnoremap ξ j
 nnoremap η h
@@ -183,11 +220,6 @@ let Tlist_File_Fold_Auto_Close = 1
 
 "tasklist
 map <leader>td <Plug>TaskList
-
-"vimroom
-let g:vimroom_background='#efefef'
-let g:vimroom_min_sidebar_width='5'
-let g:vimroom_width='80'
 
 "yankring
 nnoremap <leader>y :YRShow<CR>
