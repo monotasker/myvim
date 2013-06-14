@@ -102,3 +102,6 @@
 [submodule "bundle/guicolorscheme"]
 	path = bundle/guicolorscheme
 	url = git://github.com/vim-scripts/guicolorscheme.vim.git
+[submodule "bundle/vim-misc"]
+	path = bundle/vim-misc
+	url = git://github.com/xolox/vim-misc.git
