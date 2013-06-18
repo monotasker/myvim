@@ -5,6 +5,7 @@
 " http://www.jfroche.be/blogging/archive/2007/04/28/write-nicer-python-code
 " http://dancingpenguinsoflight.com/2009/02/code-navigation-completion-snippets-in-vim/
 " and more Stackoverflow answers than I can count
+" **** checkout: repeat, pastie, lustyjuggler, abolish, ninja, easytags
 
 "automatically re-source this .vimrc file when it is changed
 :au! BufWritePost $MYVIMRC source $MYVIMRC
@@ -14,32 +15,49 @@
 "ADD PATHOGEN TO RUNTIME PATH----------------------------------------------
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 "PATHOGEN TO HANDLE PATHS AND HELPTAGS-------------------------------------
-filetype off "must be off to run commands?
+filetype off "must be off to run pathogen commands
 call pathogen#infect()
 call pathogen#incubate()
 call pathogen#helptags()
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+filetype plugin indent on
 "DISABLED PLUGINS----------------------------------------------------------
 "set runtimepath-=~/.vim/bundle/ansi_esc
 
 "MISC SETTINGS
 "==========================================================================
+set modelines=0 "prevents security exploits
+set nocompatible "necessary for several plugins
+set showmode
+set showcmd
+set hidden
+"COMMAND-LINE COMPLETION---------------------------------------------------
+set wildmenu
+set wildmode=list:longest
+"SAVING--------------------------------------------------------------------
 let g:autosave_on_focus_change=1
-"set nocompatible "necessary for project plugin
+"au! FocusLost * :wa<cr>
+set undofile "preserves undo history in temp files after recovery
+nnoremap ; :
 "USE X CLIPBOARD (lINUX) INSTEAD OF BUFFER---------------------------------
 set clipboard+=unnamed
-"SMART CASE SENSITIVITY IN SEARCHING---------------------------------------
-set ignorecase
+"SEARCHING---------------------------------------
+set ignorecase 
 set smartcase
+set gdefault
+set incsearch
+set showmatch
+set hlsearch
+nnoremap <leader><space> :noh<CR>
 "GREEK KEYBOARD------------------------------------------------------------
 "switch with <c-^> in insert or command mode
 "set keymap=greek_polytonic
+"UNICODE-------------------------------------------------------------------
 set encoding=utf-8
 set fenc=utf-8
 "STATUS LINE---------------------------------------------------------------
-set statusline=%f\%m\ %h%r%w%q\%{fugitive#statusline()}\ %=%l,%c\
-"%= makes following right-aligned
-"%P percent of file at curr pos
+"set statusline=%f\%m\ %h%r%w%q\%{fugitive#statusline()}\ %=%l,%c\
+"set ruler
 "AVOID SLOWDOWNS-----------------------------------------------------------
 set synmaxcol=228 "don't highlight very long lines past 128 chars
 set ttyfast " u got a fast terminal
@@ -48,10 +66,12 @@ set lazyredraw " to avoid scrolling problems, don't redraw during macros etc
 
 "UI APPEARANCE
 "=========================================================================
+"CURSOR----------------------------------------
+set cursorline
 "COLOUR THEMES ----------------------
-let hour = strftime('%H') 
+let hour = strftime('%H')
 if (g:hour > 19 || g:hour < 6)
-    if !has('gui_running') 
+    if !has('gui_running')
       set t_Co=256
       "runtime! bundle/guicolorscheme/plugin/guicolorscheme.vim
       set background=dark
@@ -62,76 +82,76 @@ if (g:hour > 19 || g:hour < 6)
       colorscheme base16-default
     endif
 else
-    if !has('gui_running') 
+    if !has('gui_running')
       set t_Co=256
       "runtime! bundle/guicolorscheme/plugin/guicolorscheme.vim
       set background=light
       "GuiColorScheme SolarizedLight
-      colorscheme SolarizedLight 
+      colorscheme SolarizedLight
     else
       set background=light
       colorscheme solarized
     endif
 endif
 "base16-tomorrow base16-monokai base16-chalk base16-default base16-mocha
-"my favorites: SolarizedLight base16-monokai molokai 
+"my favorites: SolarizedLight base16-monokai molokai
 
 "FONT FACE AND SIZE ---------------------------------------------
 "using Powerline patched fonts
 set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 13
 "also nice: Menlo for Powerline 11, Liberation Mono for Powerline 11,
 "Inconsolata for Powerline 12, Inconsolata DZ for Powerline,
-
 function! FontChangeOnResize()
-    if &columns < 70 
+    if &columns < 70
         set guifont=Ubuntu\ Mono\ 15
     endif
 endfunction
 autocmd VimResized * call FontChangeOnResize()
 autocmd VimEnter * call FontChangeOnResize()
-
+"DEFAULT TAB SIZE-----------------------------------------------------
 set ts=4 softtabstop=4 shiftwidth=4 expandtab
 "TOOLBARS AND SCROLLBARS----------------------------------------------
 set guioptions-=T  "remove toolbar
 set guioptions-=R  "remove right scrollbar
 set guioptions-=L  "remove left scrollbar
 "SIZE OF INITIAL WINDOW-----------------------------------------------
-"set lines=999 
-"set columns=999 
+"set lines=999
+"set columns=999
 "VISUAL RIGHT-MARGIN GUIDE--------------------------------------------
 set colorcolumn=80
 "LINE NUMBERS---------------------------------------------------------
-set number
-"tOGGLE LINE NUMBERS AND FOLD COLUMN----------------------------------
+set number "turn on line numbers
+set relativenumber "line numbers show distance from cursor line
+"TOGGLE LINE NUMBERS AND FOLD COLUMN----------------------------------
 nnoremap <F6> :set nonumber!<CR>:set foldcolumn=0<CR>
-"height of command line ----------------------------------------------
+"HEIGHT OF COMMAND LINE ----------------------------------------------
 set cmdheight=2
-"resize window when it receives focus --------------------------------
+"RESIZE WINDOW WHEN IT RECEIVES FOCUS --------------------------------
 function! SetMinWindowSize()
     if bufwinnr(1)
         if winwidth(0) < 85
             silent! execute ':vertical resize 85'
         endif
-        if winheight(0) < 26 
+        if winheight(0) < 26
             resize 26
         endif
     endif
 endfunction
-au BufEnter .vimrc,*.py,*.js,*.txt,*.md,*.css,*.less,*.load,*.html call SetMinWindowSize()
+au BufEnter *.json,*.xml,.vimrc,*.py,*.js,*.txt,*.md,*.css,*.less,*.load,*.html call SetMinWindowSize()
 
-"navigation shortcuts
-"=================================
-"home row mapping to leave insert mode
+"NAVIGATION SHORTCUTS
+"=====================================================================
+"HOME ROW MAPPING TO LEAVE INSERT MODE--------------------------------
 :inoremap jk <esc>
-"remap keys to move between windows
+"MOVE BETWEEN WINDOWS-------------------------------------------------
 map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
-"cycle through buffers
+"CYCLE THROUGH BUFFERS------------------------------------------------
 nnoremap <leader><Tab> :bnext<CR>
 nnoremap <leader><S-Tab> :bprevious<CR>
-"adjust split window height
+"ADJUST SPLIT WINDOW HEIGHT-------------------------------------------
 if bufwinnr(1)
   map + <C-W>+
   map = <C-W>+
@@ -139,9 +159,7 @@ if bufwinnr(1)
   map 8 <C-W><
   map 9 <C-W>>
 endif
-
-"resize current window to 82 columns
-
+"RESIZE WINDOW ON SWITCH----------------------------------------------
 function! SwitchNMax(direction)
     if bufwinnr(1)
         if a:direction == 'left'
@@ -149,7 +167,6 @@ function! SwitchNMax(direction)
         else
             let move = '<c-W>l'
         endif
-
         if bufwinnr(1) && winwidth(0) < 82
             silent move
             silent! execute         else
@@ -157,9 +174,7 @@ function! SwitchNMax(direction)
         endif
     endif
 endfu
-
-"navigation using Greek keyboard under Linux                                   
-"=================================
+"NAVIGATION USING GREEK KEYBOARD---------------------------------------
 nnoremap ξ j
 nnoremap η h
 nnoremap κ k
@@ -177,59 +192,46 @@ nnoremap α a
 nnoremap Α A
 nnoremap χ x
 
-"utility shortcuts
-"=================================
-"map shortcut to cut and paste with system clipboard
+"UTILITY SHORTCUTS
+"========================================================================
+"CUT AND PASTE WITH SYSTEM CLIPBOARD-------------------------------------
 nnoremap <leader>ey "+y
 nnoremap <leader>ep "+p
-"map key to strip trailing spaces
+"STRIP TRAILING SPACES---------------------------------------------------
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
-" Execute file being edited with <Shift> + e:
+"rUN CURRENT FILE
 map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
 nnoremap <S-i> <Esc>>>
-"bind shortcut to close buffer without closing window
+"CLOSE BUFFER WITHOUT CLOSING WINDOW-------------------------------------
 nmap <leader>bd :Kwbd<CR>
 
-"plugin settings and shortcuts
-"=================================
-
-"ack fuzzy filesearch
+"PLUGIN SETTINGS AND SHORTCUTS
+"========================================================================
+"ACK FUZZY TEXT SEARCH---------------------------------------------------
 nmap <leader>a <Esc>:Ack!
-
-"ctrl-p
+"CTRL-P FUZZY FILE OPENING (BY TITLE)------------------------------------
 let g:ctrlp_working_path_mode = 2
 nmap <leader>p :CtrlP<CR>
-
-"Gundo revision history
-map <leader>gt :GundoToggle<CR>
-
-"NERDTree
+"GUNDO REVISION HISTORY--------------------------------------------------
+map <leader>g :GundoToggle<CR>
+"NERDTree----------------------------------------------------------------
 let NERDTreeShowBookmarks=1
-"autocmd VimEnter * NERDTree
-"autocmd BufEnter * NERDTreeMirror
 map <leader>n :NERDTreeToggle<CR>
-
-"pep8
-let g:pep8_map='<leader>8'
-
 "rope
-map <leader>j :RopeGotoDefinition<CR>
-map <leader>r :RopeRename<CR>
-
-"session
+"map <leader>j :RopeGotoDefinition<CR>
+"map <leader>r :RopeRename<CR>
+"SESSIONS----------------------------------------------------------------
 let g:session_autosave='yes'
 let g:session_autoload='no'
 nmap <leader>so :OpenSession<CR>
 nmap <leader>ss :SaveSession<CR>
-
-"supertab
+"SUPERTAB----------------------------------------------------------------
 let g:SuperTabMappingForward='<S-Tab>'
 let g:SuperTabMappingBackward='<C-Tab>'
-
-"Taglist
+"TAGLISt-----------------------------------------------------------------
 set tags=./tags,tags,$HOME
-"rebuild tags in file directory
-nmap ,t :!(cd %:p:h;ctags *)&
+"REBUILD TAGS IN LOCAL DIRECTORY------------------------------------------
+nmap <leader>t :!(cd %:p:h;ctags *)&
 au BufWritePost,FileWritePost :!(cd %:p:h;ctags *)&
 let g:ctags_statusline=1 "function name in status bar
 let generate_tags=1
@@ -241,64 +243,72 @@ let Tlist_Compact_Format = 1
 let Tlist_Exit_OnlyWindow = 1
 let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_File_Fold_Auto_Close = 1
-
-"tasklist
-map <leader>td <Plug>TaskList
-
-"yankring
+"TASKLIST----------------------------------------------------------------
+nnoremap <leader>tl <Plug>TaskList
+"YANKRING----------------------------------------------------------------
 nnoremap <leader>y :YRShow<CR>
 
-"filetype settings
-"=================================
+"FILETYPE SETTINGS
+"========================================================================
 syntax on "use syntax highlighting
-filetype on "autodetect filetypes
-filetype plugin indent on "use specified indenting for filetype
 set foldlevel=99
+"strip trailing spaces from py and js on save
+autocmd BufWritePre *.py,*.js :call <SID>StripTrailingWhitespaces()
 
-"working with less css files
-"===========================
+"VIMRC
+"========================================================================
+au FileType .vimrc set tabstop=2
+au FileType .vimrc set shiftwidth=2
+au FileType .vimrc set softtabstop=2
+au FileType .vimrc set expandtab
+
+"LESS CSS
+"========================================================================
 au BufNewFile,BufRead *.less setlocal filetype=css
 "automatically compile to css using lessc
 au BufWritePost *.less :call BuildLess()
 
-"working with text files
-"=======================
+"PLAIN TEXT & MARKDOWN
+"=============================
 au BufNewFile,BufRead *.txt set filetype=pandoc
 au FileType text,markdown set filetype=pandoc
-au FileType text,markdown,pandoc set colorcolumn=0
-au FileType text,markdown,pandoc set foldcolumn=6
-au FileType text,markdown,pandoc set nonumber
-au FileType text,markdown,pandoc set foldtext=CustomFoldText()
-au FileType text,markdown,pandoc set statusline=%f\%m\ %h%r%w%q\%{fugitive#statusline()}\ %=%l,%c\
+"GUTTER-----------------------------------
+au FileType pandoc set colorcolumn=0
+au FileType pandoc set foldcolumn=6
+au FileType pandoc set nonumber
+au FileType pandoc set foldtext=CustomFoldText()
+"SAVING NOTES-----------------------------
+au FileType pandoc nnoremap <leader>sn <esc>ggwv$hy:W<c-r>".txt<enter>
+"MARKDOWN HEADINGS------------------------
+au FileType pandoc nnoremap <silent> <leader>hh <esc>0i#<esc>:.s/[^\s]{2}$/<space>{2}/<CR>
+au FileType pandoc nnoremap <silent> <leader>HH <esc>:.s/^#//<CR>
 
-"working with python files
-"=========================
-"code folding
+"PYTHON 
+"=======================================================================
+"CODE FOLDING-----------------------------------------------------------
 au FileType python set foldmethod=indent
 let g:pymode_folding=1
 let g:pymode_indent=1
-"enable python autocompletion
+"ENABLE PYTHON AUTOCOMPLETION-------------------------------------------
 au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
-" enable highlighting of all optional syntax features
+"HIGHLIGHT ALL OPTIONAL SYNTAX FEATURES---------------------------------
 let g:pymode_syntax=1
 let g:python_highlight_all=1
-" Key to run python code in current buffer
+"RUN PYTHON CODE IN CURRENT BUFFER--------------------------------------
 let g:pymode_run_key='<leader>r'
-" Key for show python documentation
+"SHOW PYTHON DOCUMENTATION----------------------------------------------
 let g:pymode_doc_key = 'K'
-" Load pylint code plugin
+"LOAD PYLINT CODE PLUGIN-----------------------------------------------
 let g:pymode_lint = 1
-" Switch pylint, pyflakes, pep8, mccabe code-checkers
-" Can have multiply values "pep8,pyflakes,mcccabe"
+"SWITCH CODE-CHECKERS---------------------------------------------------
 let g:pymode_lint_checker = "pyflakes,pep8"
-" Skip errors and warnings
-" E.g. "E501,W002", "E2,W" (Skip all Warnings and Errors startswith E2) and etc
+"SKIP ERRORS AND WARNINGS----------------------------------------------
 let g:pymode_lint_ignore = "E501,E126,E701,E128"
-" Select errors and warnings
-"let g:pymode_lint_select = ""
-" Run linter on the fly
+"SELECT ERRORS AND WARNINGS--------------------------------------------
+let g:pymode_lint_select = ""
+"RUN LINTER ON THE FLY-------------------------------------------------
 let g:pymode_lint_onfly = 0
 " Pylint configuration file (defaults to 'pylintrc' in python-mode plugin directory
 let g:pymode_lint_config = "$HOME/.pylintrc"
@@ -330,11 +340,12 @@ let g:pymode_rope_guess_project = 1
 let g:pymode_rope_goto_def_newwin = ""
 let g:pymode_rope_always_show_complete_menu = 0
 
-"working with web2py files
-"==========================
+"WEB2PY FILES
+"====================================================================
 au BufNewFile,BufRead *.load set filetype=html
 
-"function to strip trailing whitespace from all lines
+" FUNCTIONS
+"=====================================================================
 function! <SID>StripTrailingWhitespaces()
     " Preparation: save last search, and cursor position.
     let _s=@/
@@ -347,7 +358,6 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 
-"Replace regular fold text with different style
 "based on http://www.gregsexton.org/2011/03/improving-the-text-displayed-in-a-fold/
 fu! CustomFoldText()
     "get first non-blank line
@@ -368,21 +378,7 @@ fu! CustomFoldText()
     let foldPercentage = printf("[%.1f", (foldSize*1.0)/lineCount*100) . "%] "
     let expansionString = repeat(".", 70 - strwidth(foldSizeStr.line.foldLevelStr.foldPercentage))
     return line . expansionString . foldSizeStr . foldPercentage . foldLevelStr
-endif
 endfunction
-
-"function to run pylint on current buffer
-"command Pylint :call Pylint()
-"function! Pylint()
-    "setlocal makeprg=(echo\ '[%]';\ pylint\ %)
-    "setlocal efm=%+P[%f],%t:\ %#%l:%m
-    "silent make
-    "cwindow
-    "endfunction
-
-"automatically strip trailing spaces from python and javascript
-"files when saving buffer
-autocmd BufWritePre *.py,*.js :call <SID>StripTrailingWhitespaces()
 
 " Add the virtualenv's site-packages to vim path
 py << EOF
@@ -400,7 +396,7 @@ function! BuildLess()
   redir => lessout
       silent execute ":silent !lessc <afile> <afile>:p:r.css"
       let stat = fnamemodify(finddir('static', ';'), ':p')
-      let tless = fnamemodify(findfile('css/theme.less', stat), ":p") 
+      let tless = fnamemodify(findfile('css/theme.less', stat), ":p")
       let troot = fnamemodify(tless, ':r')
       silent execute ":silent !lessc " . tless . " " . troot . ".css"
   redir END
@@ -436,4 +432,4 @@ command! -complete=shellcmd -nargs=+ Shell call s:ExecuteInShell(<q-args>)
 command! -bang -nargs=* W :call W(<q-bang>, <q-args>)
 function! W(bang, filename)
     :exe "w".a:bang." ". substitute(a:filename, ' ', '\\ ', 'g')
-endfu 
+endfu
