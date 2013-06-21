@@ -34,6 +34,9 @@ set hidden
 "COMMAND-LINE COMPLETION---------------------------------------------------
 set wildmenu
 set wildmode=list:longest
+"SANE SEARCH REGEX---------------------------------------------------------
+nnoremap / /\v
+vnoremap / /\v
 "SAVING--------------------------------------------------------------------
 let g:autosave_on_focus_change=1
 "au! FocusLost * :wa<cr>

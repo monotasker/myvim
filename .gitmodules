@@ -105,3 +105,12 @@
 [submodule "bundle/vim-misc"]
 	path = bundle/vim-misc
 	url = git://github.com/xolox/vim-misc.git
+[submodule "bundle/repeat"]
+	path = bundle/repeat
+	url = https://github.com/tpope/vim-repeat.git
+[submodule "bundle/abolish"]
+	path = bundle/abolish
+	url = https://github.com/tpope/vim-abolish.git
+[submodule "bundle/scratch-vim"]
+	path = bundle/scratch-vim
+	url = https://github.com/vim-scripts/scratch.vim.git
