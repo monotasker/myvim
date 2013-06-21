@@ -271,7 +271,7 @@ au FileType .vimrc set expandtab
 
 "LESS CSS
 "========================================================================
-au BufNewFile,BufRead *.less setlocal filetype=css
+au BufNewFile,BufRead *.less set filetype=css
 "automatically compile to css using lessc
 au BufWritePost *.less :call BuildLess()
 
@@ -293,11 +293,11 @@ au FileType pandoc nnoremap <silent> <leader>HH <esc>:.s/^#//<CR>
 "PYTHON 
 "=======================================================================
 "CODE FOLDING-----------------------------------------------------------
-au FileType python setlocal foldmethod=indent
+au FileType python set foldmethod=indent
 let g:pymode_folding=1
 let g:pymode_indent=1
 "ENABLE PYTHON AUTOCOMPLETION-------------------------------------------
-au FileType python setlocal omnifunc=pythoncomplete#Complete
+au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
 "HIGHLIGHT ALL OPTIONAL SYNTAX FEATURES---------------------------------
@@ -343,11 +343,11 @@ let g:pymode_rope_guess_project = 1
 let g:pymode_rope_goto_def_newwin = ""
 let g:pymode_rope_always_show_complete_menu = 0
 "USE RELATIVE LINE NUMBERING IN PYTHON FILES TOO--------------------
-au FileType python setlocal relativenumber
+au FileType python set relativenumber
 
 "WEB2PY FILES
 "====================================================================
-au BufNewFile,BufRead *.load setlocal filetype=html
+au BufNewFile,BufRead *.load set filetype=html
 
 " FUNCTIONS
 "=====================================================================
