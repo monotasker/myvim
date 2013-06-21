@@ -6,6 +6,8 @@
 " http://dancingpenguinsoflight.com/2009/02/code-navigation-completion-snippets-in-vim/
 " and more Stackoverflow answers than I can count
 " **** checkout: repeat, pastie, lustyjuggler, abolish, ninja, easytags
+" **** :Gwrite each file on save
+" **** prompt for :Gstatus and :Git push before program exit
 
 "automatically re-source this .vimrc file when it is changed
 :au! BufWritePost $MYVIMRC source $MYVIMRC
@@ -39,9 +41,10 @@ nnoremap / /\v
 vnoremap / /\v
 "SAVING--------------------------------------------------------------------
 let g:autosave_on_focus_change=1
-"au! FocusLost * :wa<cr>
 set undofile "preserves undo history in temp files after recovery
 nnoremap ; :
+"VERSION CONTROL-----------------------------------------------------------
+au BufWrite :Gwrite<CR>
 "USE X CLIPBOARD (lINUX) INSTEAD OF BUFFER---------------------------------
 set clipboard+=unnamed
 "SEARCHING---------------------------------------
@@ -70,7 +73,9 @@ set lazyredraw " to avoid scrolling problems, don't redraw during macros etc
 "UI APPEARANCE
 "=========================================================================
 "CURSOR----------------------------------------
-set cursorline
+if has("gui_running")
+    set cursorline
+endif
 "COLOUR THEMES ----------------------
 let hour = strftime('%H')
 if (g:hour > 19 || g:hour < 6)
@@ -199,7 +204,9 @@ nnoremap χ x
 "========================================================================
 "CUT AND PASTE WITH SYSTEM CLIPBOARD-------------------------------------
 nnoremap <leader>ey "+y
+vnoremap <leader>ey "+y
 nnoremap <leader>ep "+p
+vnoremap <leader>ep "+p
 "STRIP TRAILING SPACES---------------------------------------------------
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 "rUN CURRENT FILE
@@ -267,7 +274,7 @@ au FileType .vimrc set expandtab
 
 "LESS CSS
 "========================================================================
-au BufNewFile,BufRead *.less setlocal filetype=css
+au BufNewFile,BufRead *.less set filetype=css
 "automatically compile to css using lessc
 au BufWritePost *.less :call BuildLess()
 
@@ -309,31 +316,27 @@ let g:pymode_lint = 1
 let g:pymode_lint_checker = "pyflakes,pep8"
 "SKIP ERRORS AND WARNINGS----------------------------------------------
 let g:pymode_lint_ignore = "E501,E126,E701,E128"
-"SELECT ERRORS AND WARNINGS--------------------------------------------
-let g:pymode_lint_select = ""
 "RUN LINTER ON THE FLY-------------------------------------------------
 let g:pymode_lint_onfly = 0
-" Pylint configuration file (defaults to 'pylintrc' in python-mode plugin directory
+"PYLINT CONFIGURATION FILE (DEFAULTS TO 'PYLINTRC' IN PYTHON-MODE PLUGIN DIRECTORY
 let g:pymode_lint_config = "$HOME/.pylintrc"
-" Check code every save
+"CHECK CODE EVERY SAVE--------------------------------------------------
 let g:pymode_lint_write = 1
-" Auto open cwindow if errors
+"AUTO OPEN CWINDOW IF ERRORS---------------------------------------------
 let g:pymode_lint_cwindow = 1
-" Show error message if cursor placed at the error line
+"SHOW ERROR MESSAGE IF CURSOR PLACED AT THE ERROR LINE------------------   
 let g:pymode_lint_message = 1
-" Auto jump on first error
+"AUTO JUMP ON FIRST ERROR-----------------------------------------------
 let g:pymode_lint_jump = 1
-" Hold cursor in current window when quickfix is open
-let g:pymode_lint_hold = 0
-" Place error signs
+"PLACE ERROR SIGNS
 let g:pymode_lint_signs = 1
-" Maximum allowed mccabe complexity
+"MAXIMUM ALLOWED MCCABE COMPLEXITY
 let g:pymode_lint_mccabe_complexity = 8
-" Minimal height of pylint error window
+"MINIMAL HEIGHT OF PYLINT ERROR WINDOW
 let g:pymode_lint_minheight = 2
-" Maximal height of pylint error window
+"MAXIMAL HEIGHT OF PYLINT ERROR WINDOW
 let g:pymode_lint_maxheight = 8
-" Python_mode Rope settings
+"PYTHON_MODE ROPE SETTINGS------------------------------------------
 let g:pymode_rope_autoimport_modules = ["os","shutil","datetime", "pprint", "re", "random"]
 let g:pymode_rope_confirm_saving = 1
 let g:pymode_rope_global_prefix = "<C-x>p"
@@ -342,6 +345,8 @@ let g:pymode_rope_vim_completion = 0
 let g:pymode_rope_guess_project = 1
 let g:pymode_rope_goto_def_newwin = ""
 let g:pymode_rope_always_show_complete_menu = 0
+"USE RELATIVE LINE NUMBERING IN PYTHON FILES TOO--------------------
+au FileType python set relativenumber
 
 "WEB2PY FILES
 "====================================================================
