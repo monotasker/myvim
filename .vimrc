@@ -269,31 +269,32 @@ autocmd BufWritePre *.py,*.js :call <SID>StripTrailingWhitespaces()
 
 "VIMRC
 "========================================================================
-au FileType .vimrc set tabstop=2
-au FileType .vimrc set shiftwidth=2
-au FileType .vimrc set softtabstop=2
-au FileType .vimrc set expandtab
+au BufNewFile .vimrc set tabstop=2
+au BufRead .vimrc set shiftwidth=2
+au BufRead .vimrc set softtabstop=2
+au BufRead .vimrc set expandtab
 
 "LESS CSS
 "========================================================================
-au BufNewFile,BufRead *.less set filetype=css
+au BufNewFile,BufRead *.less set filetype=less
 "automatically compile to css using lessc
 au BufWritePost *.less :call BuildLess()
 
 "PLAIN TEXT & MARKDOWN
 "=============================
 au BufNewFile,BufRead *.txt set filetype=pandoc
-au FileType text,markdown set filetype=pandoc
+au BufNewFile,BufRead text,markdown set filetype=pandoc
 "GUTTER-----------------------------------
 au FileType pandoc set colorcolumn=0
 au FileType pandoc set foldcolumn=6
 au FileType pandoc set nonumber
 au FileType pandoc set foldtext=CustomFoldText()
 "SAVING NOTES-----------------------------
-au FileType pandoc nnoremap <leader>sn <esc>ggwv$hy:W<c-r>".txt<enter>
+au FileType pandoc nnoremap <leader>sn<space><esc>ggwv$hy<esc>:W<c-r>".txt
 "MARKDOWN HEADINGS------------------------
 au FileType pandoc nnoremap <silent> <leader>hh <esc>0i#<esc>:.s/[^\s]{2}$/<space>{2}/<CR>
 au FileType pandoc nnoremap <silent> <leader>HH <esc>:.s/^#//<CR>
+au FileType pandoc set dictionary+=~/Dropbox/Simplenote/note_tags.txt
 
 "PYTHON 
 "=======================================================================
@@ -302,7 +303,7 @@ au FileType python set foldmethod=indent
 let g:pymode_folding=1
 let g:pymode_indent=1
 "ENABLE PYTHON AUTOCOMPLETION-------------------------------------------
-au FileType python set omnifunc=pythoncomplete#Complete
+autocmd BufRead *.py set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
 "HIGHLIGHT ALL OPTIONAL SYNTAX FEATURES---------------------------------
@@ -348,7 +349,7 @@ let g:pymode_rope_guess_project = 1
 let g:pymode_rope_goto_def_newwin = ""
 let g:pymode_rope_always_show_complete_menu = 0
 "USE RELATIVE LINE NUMBERING IN PYTHON FILES TOO--------------------
-au FileType python set relativenumber
+au BufNewFile,BufRead *.py set relativenumber
 
 "WEB2PY FILES
 "====================================================================
