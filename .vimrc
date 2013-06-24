@@ -12,7 +12,7 @@
 " **** in notes
 
 "automatically re-source this .vimrc file when it is changed
-:au! BufWritePost $MYVIMRC source $MYVIMRC
+:au! BufWritePost $MYVIMRC nested source $MYVIMRC
 
 "PATHOGEN
 "==========================================================================
@@ -34,7 +34,8 @@ set modelines=0 "prevents security exploits
 set nocompatible "necessary for several plugins
 set showmode
 set showcmd
-set hidden
+set hidden "hide active buffers instead of closing them
+set laststatus=2 "show status line even when only one window open
 "COMMAND-LINE COMPLETION---------------------------------------------------
 set wildmenu
 set wildmode=list:longest
