@@ -12,7 +12,9 @@
 " **** in notes
 
 "automatically re-source this .vimrc file when it is changed
+"nested keeps theme from overriding powerline's colouring
 :au! BufWritePost $MYVIMRC nested source $MYVIMRC
+
 
 "PATHOGEN
 "==========================================================================
@@ -32,7 +34,7 @@ filetype plugin indent on
 "==========================================================================
 set modelines=0 "prevents security exploits
 set nocompatible "necessary for several plugins
-set showmode
+set noshowmode
 set showcmd
 set hidden "hide active buffers instead of closing them
 set laststatus=2 "show status line even when only one window open
