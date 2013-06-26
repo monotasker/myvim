@@ -121,6 +121,8 @@ function! FontChangeOnResize()
 endfunction
 autocmd VimResized * call FontChangeOnResize()
 autocmd VimEnter * call FontChangeOnResize()
+"use powerline symbols
+let g:Powerline_symbols = 'fancy'
 "DEFAULT TAB SIZE-----------------------------------------------------
 set ts=4 softtabstop=4 shiftwidth=4 expandtab
 "TOOLBARS AND SCROLLBARS----------------------------------------------
