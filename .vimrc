@@ -30,6 +30,12 @@ filetype plugin indent on
 "DISABLED PLUGINS----------------------------------------------------------
 "set runtimepath-=~/.vim/bundle/ansi_esc
 
+
+"AUTO SUBSTITUTIONS
+"==========================================================================
+inoremap -- –
+inoremap --- —
+
 "MISC SETTINGS
 "==========================================================================
 set modelines=0 "prevents security exploits
