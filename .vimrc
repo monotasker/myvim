@@ -25,10 +25,11 @@ filetype off "must be off to run pathogen commands
 call pathogen#infect()
 call pathogen#incubate()
 call pathogen#helptags()
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+"set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 filetype plugin indent on
 "DISABLED PLUGINS----------------------------------------------------------
 "set runtimepath-=~/.vim/bundle/ansi_esc
+set runtimepath-=~/.vim/bundle/powerline
 
 
 "AUTO SUBSTITUTIONS
