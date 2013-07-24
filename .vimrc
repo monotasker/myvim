@@ -294,8 +294,8 @@ au BufWritePost *.less :call BuildLess()
 
 "PLAIN TEXT & MARKDOWN
 "=============================
-au BufNewFile,BufRead *.txt set filetype=pandoc
-au BufNewFile,BufRead text,markdown set filetype=pandoc
+au BufNewFile,BufRead,BufWrite *.txt set filetype=pandoc
+au BufNewFile,BufRead,BufWrite text,markdown set filetype=pandoc
 "GUTTER-----------------------------------
 au FileType pandoc set colorcolumn=0
 au FileType pandoc set foldcolumn=6
