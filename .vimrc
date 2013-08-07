@@ -77,17 +77,18 @@ set fenc=utf-8
 "set statusline=%f\%m\ %h%r%w%q\%{fugitive#statusline()}\ %=%l,%c\
 "set ruler
 "AVOID SLOWDOWNS-----------------------------------------------------------
-set synmaxcol=228 "don't highlight very long lines past 128 chars
+"set synmaxcol=228 "don't highlight very long lines past 128 chars
 set ttyfast " u got a fast terminal
 set ttyscroll=3 " redraw instead of scrolling when moving more than 3 lines
-set lazyredraw " to avoid scrolling problems, don't redraw during macros etc
+"set lazyredraw " to avoid scrolling problems, don't redraw during macros etc
 
 "UI APPEARANCE
 "=========================================================================
 "CURSOR----------------------------------------
-if has("gui_running")
-    set cursorline
-endif
+"if has("gui_running")
+    "set cursorline
+"endif
+"
 "COLOUR THEMES ----------------------
 let hour = strftime('%H')
 if (g:hour > 19 || g:hour < 6)
@@ -223,8 +224,7 @@ nnoremap <leader>ep "+p
 vnoremap <leader>ep "+p
 "STRIP TRAILING SPACES---------------------------------------------------
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
-"rUN CURRENT FILE
-map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
+"ALTERNATE INDENT MAPPING
 nnoremap <S-i> <Esc>>>
 "CLOSE BUFFER WITHOUT CLOSING WINDOW-------------------------------------
 nmap <leader>bd :Kwbd<CR>
@@ -241,9 +241,6 @@ map <leader>g :GundoToggle<CR>
 "NERDTree----------------------------------------------------------------
 let NERDTreeShowBookmarks=1
 map <leader>n :NERDTreeToggle<CR>
-"rope
-"map <leader>j :RopeGotoDefinition<CR>
-"map <leader>r :RopeRename<CR>
 "SESSIONS----------------------------------------------------------------
 let g:session_autosave='yes'
 let g:session_autoload='no'
@@ -252,7 +249,7 @@ nmap <leader>ss :SaveSession<CR>
 "SUPERTAB----------------------------------------------------------------
 let g:SuperTabMappingForward='<S-Tab>'
 let g:SuperTabMappingBackward='<C-Tab>'
-"TAGLISt-----------------------------------------------------------------
+"TAGLIST-----------------------------------------------------------------
 set tags=./tags,tags,$HOME
 "REBUILD TAGS IN LOCAL DIRECTORY------------------------------------------
 nmap <leader>t :!(cd %:p:h;ctags *)&
@@ -277,7 +274,7 @@ nnoremap <leader>y :YRShow<CR>
 syntax on "use syntax highlighting
 set foldlevel=99
 "strip trailing spaces from py and js on save
-autocmd BufWritePre *.py,*.js :call <SID>StripTrailingWhitespaces()
+au BufWritePre *.py,*.js :call <SID>StripTrailingWhitespaces()
 
 "VIMRC
 "========================================================================
@@ -302,11 +299,13 @@ au FileType pandoc set foldcolumn=6
 au FileType pandoc set nonumber
 au FileType pandoc set foldtext=CustomFoldText()
 "SAVING NOTES-----------------------------
-au FileType pandoc nnoremap <leader>sn<space><esc>ggwv$hy<esc>:W<c-r>".txt
+"au FileType pandoc nnoremap <leader>m <space><esc>ggwv$hy<esc>:W<c-r>".txt
 "MARKDOWN HEADINGS------------------------
 au FileType pandoc nnoremap <silent> <leader>hh <esc>0i#<esc>:.s/[^\s]{2}$/<space>{2}/<CR>
 au FileType pandoc nnoremap <silent> <leader>HH <esc>:.s/^#//<CR>
 au FileType pandoc set dictionary+=~/Dropbox/Simplenote/note_tags.txt
+" PANDOC CONVERSION
+":PandocRegisterExecutor PdcPdf <Leader>pdf pdf markdown2pdf %%
 
 "PYTHON 
 "=======================================================================
@@ -314,6 +313,9 @@ au FileType pandoc set dictionary+=~/Dropbox/Simplenote/note_tags.txt
 au FileType python set foldmethod=indent
 let g:pymode_folding=1
 let g:pymode_indent=1
+"ROPE MAPPINGS----------------------------------------------------------
+map <leader>rd :RopeGotoDefinition<CR>
+map <leader>rr :RopeRename<CR>
 "ENABLE PYTHON AUTOCOMPLETION-------------------------------------------
 autocmd BufRead *.py set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
