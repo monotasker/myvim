@@ -34,8 +34,8 @@ set runtimepath-=~/.vim/bundle/powerline
 
 "AUTO SUBSTITUTIONS
 "==========================================================================
-inoremap -- –
-inoremap --- —
+inoremap --* –
+inoremap ---* —
 
 "MISC SETTINGS
 "==========================================================================
