@@ -1,15 +1,15 @@
 "Advice and scripts gratefully drawn from the following sources:
-" http://sontek.net/turning-vim-into-a-modern-python-ide
-" http://blog.dispatched.ch/2009/05/24/vim-as-python-ide/
-" http://dancingpenguinsoflight.com/2009/02/python-and-vim-make-your-own-ide
-" http://www.jfroche.be/blogging/archive/2007/04/28/write-nicer-python-code
-" http://dancingpenguinsoflight.com/2009/02/code-navigation-completion-snippets-in-vim/
-" http://stevelosh.com/blog/2010/09/coming-home-to-vim/#important-vimrc-lines
-" and more Stackoverflow answers than I can count
-" **** checkout: repeat, pastie, lustyjuggler, abolish, ninja, easytags
-" **** :Gwrite each file on save
-" **** prompt for :Gstatus and :Git push before program exit
-" **** in notes
+"http://sontek.net/turning-vim-into-a-modern-python-ide
+"http://blog.dispatched.ch/2009/05/24/vim-as-python-ide/
+"http://dancingpenguinsoflight.com/2009/02/python-and-vim-make-your-own-ide
+"http://www.jfroche.be/blogging/archive/2007/04/28/write-nicer-python-code
+"http://dancingpenguinsoflight.com/2009/02/code-navigation-completion-snippets-in-vim/
+"http://stevelosh.com/blog/2010/09/coming-home-to-vim/#important-vimrc-lines
+"and more Stackoverflow answers than I can count
+"**** checkout: repeat, pastie, lustyjuggler, abolish, ninja, easytags
+"**** :Gwrite each file on save
+"**** prompt for :Gstatus and :Git push before program exit
+"**** in notes
 
 "automatically re-source this .vimrc file when it is changed
 "nested keeps theme from overriding powerline's colouring
@@ -25,11 +25,11 @@ filetype off "must be off to run pathogen commands
 call pathogen#infect()
 call pathogen#incubate()
 call pathogen#helptags()
-"set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 filetype plugin indent on
 "DISABLED PLUGINS----------------------------------------------------------
 "set runtimepath-=~/.vim/bundle/ansi_esc
-set runtimepath-=~/.vim/bundle/powerline
+"set runtimepath-=~/.vim/bundle/powerline
 
 
 "AUTO SUBSTITUTIONS
@@ -302,9 +302,9 @@ au FileType pandoc set foldtext=CustomFoldText()
 "SAVING NOTES-----------------------------
 "au FileType pandoc nnoremap <leader>m <space><esc>ggwv$hy<esc>:W<c-r>".txt
 "MARKDOWN HEADINGS------------------------
-au FileType pandoc nnoremap <silent> <leader>hh <esc>0i#<esc>:.s/[^\s]{2}$/<space>{2}/<CR>
-au FileType pandoc nnoremap <silent> <leader>HH <esc>:.s/^#//<CR>
-au FileType pandoc set dictionary+=~/Dropbox/Simplenote/note_tags.txt
+"au FileType pandoc nnoremap <silent> <leader>hh <esc>0i#<esc>:.s/[^\s]{2}$/<space>{2}/<CR>
+"au FileType pandoc nnoremap <silent> <leader>HH <esc>:.s/^#//<CR>
+"au FileType pandoc set dictionary+=~/Dropbox/Simplenote/note_tags.txt
 " PANDOC CONVERSION
 ":PandocRegisterExecutor PdcPdf <Leader>pdf pdf markdown2pdf %%
 
