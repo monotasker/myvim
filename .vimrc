@@ -80,7 +80,7 @@ set fenc=utf-8
 "set synmaxcol=228 "don't highlight very long lines past 128 chars
 set ttyfast " u got a fast terminal
 set ttyscroll=3 " redraw instead of scrolling when moving more than 3 lines
-"set lazyredraw " to avoid scrolling problems, don't redraw during macros etc
+set lazyredraw " to avoid scrolling problems, don't redraw during macros etc
 
 "UI APPEARANCE
 "=========================================================================
@@ -274,7 +274,7 @@ nnoremap <leader>y :YRShow<CR>
 syntax on "use syntax highlighting
 set foldlevel=99
 "strip trailing spaces from py and js on save
-au BufWritePre *.py,*.js :call <SID>StripTrailingWhitespaces()
+au BufWritePre *.py,*.js :call StripTrailingWhitespaces()
 
 "VIMRC
 "========================================================================
