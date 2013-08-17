@@ -223,7 +223,7 @@ vnoremap <leader>ey "+y
 nnoremap <leader>ep "+p
 vnoremap <leader>ep "+p
 "STRIP TRAILING SPACES---------------------------------------------------
-nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
+nnoremap <silent> <F5> :call StripTrailingWhitespaces()<CR>
 "ALTERNATE INDENT MAPPING
 nnoremap <S-i> <Esc>>>
 "CLOSE BUFFER WITHOUT CLOSING WINDOW-------------------------------------
@@ -308,6 +308,11 @@ au FileType pandoc set foldtext=CustomFoldText()
 " PANDOC CONVERSION
 ":PandocRegisterExecutor PdcPdf <Leader>pdf pdf markdown2pdf %%
 
+"HTML
+"=======================================================================
+"CODE FOLDING-----------------------------------------------------------
+au FileType html set foldmethod=indent
+
 "PYTHON 
 "=======================================================================
 "CODE FOLDING-----------------------------------------------------------
@@ -372,7 +377,7 @@ au BufNewFile,BufRead *.load set filetype=html
 
 " FUNCTIONS
 "=====================================================================
-function! <SID>StripTrailingWhitespaces()
+function! StripTrailingWhitespaces()
     " Preparation: save last search, and cursor position.
     let _s=@/
     let l = line(".")
