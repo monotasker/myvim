@@ -79,9 +79,15 @@ set fenc=utf-8
 "set ruler
 " AVOID SLOWDOWNS-----------------------------------------------------------
 "set synmaxcol=228 "don't highlight very long lines past 128 chars
+<<<<<<< HEAD
 "set ttyfast " u got a fast terminal
 "set ttyscroll=3 " redraw instead of scrolling when moving more than 3 lines
 "set lazyredraw " to avoid scrolling problems, don't redraw during macros etc
+=======
+set ttyfast " u got a fast terminal
+set ttyscroll=3 " redraw instead of scrolling when moving more than 3 lines
+set lazyredraw " to avoid scrolling problems, don't redraw during macros etc
+>>>>>>> 713a6c54d955aecf0635936123042d1716381490
 
 " UI APPEARANCE
 " =========================================================================
@@ -222,9 +228,15 @@ nnoremap <leader>ey "+y
 vnoremap <leader>ey "+y
 nnoremap <leader>ep "+p
 vnoremap <leader>ep "+p
+<<<<<<< HEAD
 " STRIP TRAILING SPACES---------------------------------------------------
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 " ALTERNATE INDENT MAPPING
+=======
+"STRIP TRAILING SPACES---------------------------------------------------
+nnoremap <silent> <F5> :call StripTrailingWhitespaces()<CR>
+"ALTERNATE INDENT MAPPING
+>>>>>>> 713a6c54d955aecf0635936123042d1716381490
 nnoremap <S-i> <Esc>>>
 " CLOSE BUFFER WITHOUT CLOSING WINDOW-------------------------------------
 nmap <leader>bd :Kwbd<CR>
@@ -274,7 +286,7 @@ nnoremap <leader>y :YRShow<CR>
 syntax on "use syntax highlighting
 set foldlevel=99
 "strip trailing spaces from py and js on save
-au BufWritePre *.py,*.js :call <SID>StripTrailingWhitespaces()
+au BufWritePre *.py,*.js :call StripTrailingWhitespaces()
 
 "VIMRC
 "========================================================================
@@ -307,6 +319,11 @@ au FileType pandoc set foldtext=CustomFoldText()
 "au FileType pandoc set dictionary+=~/Dropbox/Simplenote/note_tags.txt
 " PANDOC CONVERSION
 ":PandocRegisterExecutor PdcPdf <Leader>pdf pdf markdown2pdf %%
+
+"HTML
+"=======================================================================
+"CODE FOLDING-----------------------------------------------------------
+au FileType html set foldmethod=indent
 
 "PYTHON 
 "=======================================================================
@@ -372,7 +389,7 @@ au BufNewFile,BufRead *.load set filetype=html
 
 " FUNCTIONS
 "=====================================================================
-function! <SID>StripTrailingWhitespaces()
+function! StripTrailingWhitespaces()
     " Preparation: save last search, and cursor position.
     let _s=@/
     let l = line(".")
