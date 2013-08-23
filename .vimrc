@@ -427,15 +427,15 @@ EOF
 
 function! BuildLess()
   redir => lessout
-      silent execute ":silent !lessc <afile> <afile>:p:r.css"
+      silent execute ":silent !lessc -x <afile> <afile>:p:r.css"
       let stat = fnamemodify(finddir('static', ';'), ':p')
       let tless = fnamemodify(findfile('css/theme.less', stat), ":p")
       let troot = fnamemodify(tless, ':r')
-      silent execute ":silent !lessc " . tless . " " . troot . ".css"
+      silent execute ":silent !lessc -x " . tless . " " . troot . ".css"
   redir END
   echo lessout
-  "echo tless
   unlet lessout
+  echo 'done'
 endfunction
 
 function! Autosave()
