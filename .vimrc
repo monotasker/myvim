@@ -79,15 +79,9 @@ set fenc=utf-8
 "set ruler
 " AVOID SLOWDOWNS-----------------------------------------------------------
 "set synmaxcol=228 "don't highlight very long lines past 128 chars
-<<<<<<< HEAD
-"set ttyfast " u got a fast terminal
-"set ttyscroll=3 " redraw instead of scrolling when moving more than 3 lines
-"set lazyredraw " to avoid scrolling problems, don't redraw during macros etc
-=======
 set ttyfast " u got a fast terminal
 set ttyscroll=3 " redraw instead of scrolling when moving more than 3 lines
 set lazyredraw " to avoid scrolling problems, don't redraw during macros etc
->>>>>>> 713a6c54d955aecf0635936123042d1716381490
 
 " UI APPEARANCE
 " =========================================================================
@@ -228,15 +222,9 @@ nnoremap <leader>ey "+y
 vnoremap <leader>ey "+y
 nnoremap <leader>ep "+p
 vnoremap <leader>ep "+p
-<<<<<<< HEAD
 " STRIP TRAILING SPACES---------------------------------------------------
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 " ALTERNATE INDENT MAPPING
-=======
-"STRIP TRAILING SPACES---------------------------------------------------
-nnoremap <silent> <F5> :call StripTrailingWhitespaces()<CR>
-"ALTERNATE INDENT MAPPING
->>>>>>> 713a6c54d955aecf0635936123042d1716381490
 nnoremap <S-i> <Esc>>>
 " CLOSE BUFFER WITHOUT CLOSING WINDOW-------------------------------------
 nmap <leader>bd :Kwbd<CR>
