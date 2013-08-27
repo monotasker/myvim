@@ -13,7 +13,7 @@
 
 " automatically re-source this .vimrc file when it is changed
 " nested keeps theme from overriding powerline's colouring
-au! BufWritePost $MYVIMRC nested source $MYVIMRC
+:au! BufWritePost $MYVIMRC nested source $MYVIMRC
 
 
 " PATHOGEN
@@ -57,7 +57,7 @@ let g:autosave_on_focus_change=1
 set undofile "preserves undo history in temp files after recovery
 nnoremap ; :
 " VERSION CONTROL-----------------------------------------------------------
-"au BufWrite :Gwrite<CR>
+au BufWrite :Gwrite<CR>
 " USE X CLIPBOARD (lINUX) INSTEAD OF BUFFER---------------------------------
 set clipboard+=unnamed
 " SEARCHING---------------------------------------
@@ -79,9 +79,9 @@ set fenc=utf-8
 "set ruler
 " AVOID SLOWDOWNS-----------------------------------------------------------
 "set synmaxcol=228 "don't highlight very long lines past 128 chars
-set ttyfast " u got a fast terminal
-set ttyscroll=3 " redraw instead of scrolling when moving more than 3 lines
-set lazyredraw " to avoid scrolling problems, don't redraw during macros etc
+"set ttyfast " u got a fast terminal
+"set ttyscroll=3 " redraw instead of scrolling when moving more than 3 lines
+"set lazyredraw " to avoid scrolling problems, don't redraw during macros etc
 
 " UI APPEARANCE
 " =========================================================================
@@ -123,12 +123,13 @@ endif
 set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 13
 "also nice: Menlo for Powerline 11, Liberation Mono for Powerline 11,
 "Inconsolata for Powerline 12, Inconsolata DZ for Powerline,
-"function! FontChangeOnResize()
-    "if &columns < 70
-        "set guifont=Ubuntu\ Mono\ 15
-    "endif
-"endfunction
-"au VimResized,VimEnter * call FontChangeOnResize()
+function! FontChangeOnResize()
+    if &columns < 70
+        set guifont=Ubuntu\ Mono\ 15
+    endif
+endfunction
+autocmd VimResized * call FontChangeOnResize()
+autocmd VimEnter * call FontChangeOnResize()
 "use powerline symbols
 let g:Powerline_symbols = 'fancy'
 " DEFAULT TAB SIZE-----------------------------------------------------
@@ -286,13 +287,13 @@ au BufRead .vimrc set expandtab
 "LESS CSS
 "========================================================================
 au BufNewFile,BufRead *.less set filetype=less
-" automatically compile to css using lessc
+"automatically compile to css using lessc
 au BufWritePost *.less :call BuildLess()
 
 "PLAIN TEXT & MARKDOWN
 "=============================
-au BufNewFile,BufRead,BufWrite *.txt,*.md set filetype=text.pandoc
-"au BufNewFile,BufRead,BufWrite text,markdown set filetype=text.pandoc
+au BufNewFile,BufRead,BufWrite *.txt set filetype=pandoc
+au BufNewFile,BufRead,BufWrite text,markdown set filetype=pandoc
 "GUTTER-----------------------------------
 au FileType pandoc set colorcolumn=0
 au FileType pandoc set foldmethod=syntax
@@ -308,22 +309,17 @@ au FileType pandoc set foldtext=CustomFoldText()
 " PANDOC CONVERSION
 ":PandocRegisterExecutor PdcPdf <Leader>pdf pdf markdown2pdf %%
 
-"HTML
-"=======================================================================
-"CODE FOLDING-----------------------------------------------------------
-au FileType html set foldmethod=indent
-
 "PYTHON 
 "=======================================================================
 "CODE FOLDING-----------------------------------------------------------
-"au FileType python set foldmethod=indent
+au FileType python set foldmethod=indent
 let g:pymode_folding=1
 let g:pymode_indent=1
 "ROPE MAPPINGS----------------------------------------------------------
 map <leader>rd :RopeGotoDefinition<CR>
 map <leader>rr :RopeRename<CR>
 "ENABLE PYTHON AUTOCOMPLETION-------------------------------------------
-au BufRead *.py set omnifunc=pythoncomplete#Complete
+autocmd BufRead *.py set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
 "HIGHLIGHT ALL OPTIONAL SYNTAX FEATURES---------------------------------
@@ -377,7 +373,7 @@ au BufNewFile,BufRead *.load set filetype=html
 
 " FUNCTIONS
 "=====================================================================
-function! StripTrailingWhitespaces()
+function! <SID>StripTrailingWhitespaces()
     " Preparation: save last search, and cursor position.
     let _s=@/
     let l = line(".")
@@ -427,15 +423,15 @@ EOF
 
 function! BuildLess()
   redir => lessout
-      silent execute ":silent !lessc -x <afile> <afile>:p:r.css"
+      silent execute ":silent !lessc <afile> <afile>:p:r.css"
       let stat = fnamemodify(finddir('static', ';'), ':p')
       let tless = fnamemodify(findfile('css/theme.less', stat), ":p")
       let troot = fnamemodify(tless, ':r')
-      silent execute ":silent !lessc -x " . tless . " " . troot . ".css"
+      silent execute ":silent !lessc " . tless . " " . troot . ".css"
   redir END
   echo lessout
+  "echo tless
   unlet lessout
-  echo 'done'
 endfunction
 
 function! Autosave()
