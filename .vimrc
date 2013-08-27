@@ -79,15 +79,9 @@ set fenc=utf-8
 "set ruler
 " AVOID SLOWDOWNS-----------------------------------------------------------
 "set synmaxcol=228 "don't highlight very long lines past 128 chars
-<<<<<<< HEAD
-"set ttyfast " u got a fast terminal
-"set ttyscroll=3 " redraw instead of scrolling when moving more than 3 lines
-"set lazyredraw " to avoid scrolling problems, don't redraw during macros etc
-=======
 set ttyfast " u got a fast terminal
 set ttyscroll=3 " redraw instead of scrolling when moving more than 3 lines
 set lazyredraw " to avoid scrolling problems, don't redraw during macros etc
->>>>>>> 713a6c54d955aecf0635936123042d1716381490
 
 " UI APPEARANCE
 " =========================================================================
@@ -129,12 +123,12 @@ endif
 set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 13
 "also nice: Menlo for Powerline 11, Liberation Mono for Powerline 11,
 "Inconsolata for Powerline 12, Inconsolata DZ for Powerline,
-function! FontChangeOnResize()
-    if &columns < 70
-        set guifont=Ubuntu\ Mono\ 15
-    endif
-endfunction
-au VimResized,VimEnter * call FontChangeOnResize()
+"function! FontChangeOnResize()
+    "if &columns < 70
+        "set guifont=Ubuntu\ Mono\ 15
+    "endif
+"endfunction
+"au VimResized,VimEnter * call FontChangeOnResize()
 "use powerline symbols
 let g:Powerline_symbols = 'fancy'
 " DEFAULT TAB SIZE-----------------------------------------------------
@@ -228,15 +222,9 @@ nnoremap <leader>ey "+y
 vnoremap <leader>ey "+y
 nnoremap <leader>ep "+p
 vnoremap <leader>ep "+p
-<<<<<<< HEAD
 " STRIP TRAILING SPACES---------------------------------------------------
-nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
-" ALTERNATE INDENT MAPPING
-=======
-"STRIP TRAILING SPACES---------------------------------------------------
 nnoremap <silent> <F5> :call StripTrailingWhitespaces()<CR>
-"ALTERNATE INDENT MAPPING
->>>>>>> 713a6c54d955aecf0635936123042d1716381490
+" ALTERNATE INDENT MAPPING
 nnoremap <S-i> <Esc>>>
 " CLOSE BUFFER WITHOUT CLOSING WINDOW-------------------------------------
 nmap <leader>bd :Kwbd<CR>
@@ -303,8 +291,8 @@ au BufWritePost *.less :call BuildLess()
 
 "PLAIN TEXT & MARKDOWN
 "=============================
-au BufNewFile,BufRead,BufWrite *.txt set filetype=pandoc
-au BufNewFile,BufRead,BufWrite text,markdown set filetype=pandoc
+au BufNewFile,BufRead,BufWrite *.txt,*.md set filetype=text.pandoc
+"au BufNewFile,BufRead,BufWrite text,markdown set filetype=text.pandoc
 "GUTTER-----------------------------------
 au FileType pandoc set colorcolumn=0
 au FileType pandoc set foldmethod=syntax
