@@ -223,7 +223,7 @@ vnoremap <leader>ey "+y
 nnoremap <leader>ep "+p
 vnoremap <leader>ep "+p
 " STRIP TRAILING SPACES---------------------------------------------------
-nnoremap <silent> <F5> :call StripTrailingWhitespaces()<CR>
+nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 " ALTERNATE INDENT MAPPING
 nnoremap <S-i> <Esc>>>
 " CLOSE BUFFER WITHOUT CLOSING WINDOW-------------------------------------
@@ -274,7 +274,7 @@ nnoremap <leader>y :YRShow<CR>
 syntax on "use syntax highlighting
 set foldlevel=99
 "strip trailing spaces from py and js on save
-au BufWritePre *.py,*.js :call StripTrailingWhitespaces()
+au BufWritePre *.py,*.js :call <SID>StripTrailingWhitespaces()
 
 "VIMRC
 "========================================================================
@@ -427,15 +427,15 @@ EOF
 
 function! BuildLess()
   redir => lessout
-      silent execute ":silent !lessc <afile> <afile>:p:r.css"
+      silent execute ":silent !lessc -x <afile> <afile>:p:r.css"
       let stat = fnamemodify(finddir('static', ';'), ':p')
       let tless = fnamemodify(findfile('css/theme.less', stat), ":p")
       let troot = fnamemodify(tless, ':r')
-      silent execute ":silent !lessc " . tless . " " . troot . ".css"
+      silent execute ":silent !lessc -x " . tless . " " . troot . ".css"
   redir END
   echo lessout
-  "echo tless
   unlet lessout
+  echo 'done'
 endfunction
 
 function! Autosave()
