@@ -29,8 +29,7 @@ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 syntax on
 filetype plugin indent on
 " DISABLED PLUGINS----------------------------------------------------------
-" set runtimepath-=~/.vim/bundle/ansi_esc
-" set runtimepath-=~/.vim/bundle/powerline
+ set runtimepath-=~/.vim/bundle/git-gutter
 
 
 " AUTO SUBSTITUTIONS
@@ -53,7 +52,7 @@ set wildmode=list:longest
 nnoremap / /\v
 vnoremap / /\v
 " SAVING--------------------------------------------------------------------
-let g:autosave_on_focus_change=1
+"let g:autosave_on_focus_change=1
 set undofile "preserves undo history in temp files after recovery
 nnoremap ; :
 " VERSION CONTROL-----------------------------------------------------------
@@ -144,7 +143,7 @@ set guioptions-=L  "remove left scrollbar
 set colorcolumn=80
 " LINE NUMBERS---------------------------------------------------------
 set number "turn on line numbers
-set relativenumber "line numbers show distance from cursor line
+"set relativenumber "line numbers show distance from cursor line
 " TOGGLE LINE NUMBERS AND FOLD COLUMN----------------------------------
 nnoremap <F6> :set nonumber!<CR>:set foldcolumn=0<CR>
 " HEIGHT OF COMMAND LINE ----------------------------------------------
@@ -160,7 +159,7 @@ function! SetMinWindowSize()
         endif
     endif
 endfunction
-au BufEnter *.json,*.xml,.vimrc,*.py,*.js,*.txt,*.md,*.css,*.less,*.load,*.html call SetMinWindowSize()
+au BufEnter,BufRead *.json,*.xml,.vimrc,*.py,*.js,*.txt,*.md,*.css,*.less,*.load,*.html call SetMinWindowSize()
 
 " NAVIGATION SHORTCUTS
 " =====================================================================
@@ -440,12 +439,12 @@ function! BuildLess()
   echo 'done'
 endfunction
 
-function! Autosave()
-    if &modified && g:autosave_on_focus_change
-        write
-        echo "Autosaved file while you were absent"
-    endif
-endfunction
+"function! Autosave()
+    "if &modified && g:autosave_on_focus_change
+        "write
+        "echo "Autosaved file while you were absent"
+    "endif
+"endfunction
 
 "output result of any shell command to scratch buffer
 function! s:ExecuteInShell(command)
