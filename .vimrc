@@ -22,14 +22,16 @@ au! BufWritePost $MYVIMRC nested source $MYVIMRC
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 " PATHOGEN TO HANDLE PATHS AND HELPTAGS-------------------------------------
 filetype off "must be off to run pathogen commands
+
+" DISABLED PLUGINS----------------------------------------------------------
+let g:pathogen_disabled=['git-gutter']
+
 call pathogen#infect()
 call pathogen#incubate()
 call pathogen#helptags()
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 syntax on
 filetype plugin indent on
-" DISABLED PLUGINS----------------------------------------------------------
- set runtimepath-=~/.vim/bundle/git-gutter
 
 
 " AUTO SUBSTITUTIONS
