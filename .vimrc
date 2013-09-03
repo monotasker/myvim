@@ -29,8 +29,7 @@ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 syntax on
 filetype plugin indent on
 " DISABLED PLUGINS----------------------------------------------------------
-" set runtimepath-=~/.vim/bundle/ansi_esc
-" set runtimepath-=~/.vim/bundle/powerline
+set runtimepath-=~/.vim/bundle/vim-gitgutter
 
 
 " AUTO SUBSTITUTIONS
@@ -53,7 +52,7 @@ set wildmode=list:longest
 nnoremap / /\v
 vnoremap / /\v
 " SAVING--------------------------------------------------------------------
-let g:autosave_on_focus_change=1
+"let g:autosave_on_focus_change=1
 set undofile "preserves undo history in temp files after recovery
 nnoremap ; :
 " VERSION CONTROL-----------------------------------------------------------
@@ -144,7 +143,7 @@ set guioptions-=L  "remove left scrollbar
 set colorcolumn=80
 " LINE NUMBERS---------------------------------------------------------
 set number "turn on line numbers
-set relativenumber "line numbers show distance from cursor line
+"set relativenumber "line numbers show distance from cursor line
 " TOGGLE LINE NUMBERS AND FOLD COLUMN----------------------------------
 nnoremap <F6> :set nonumber!<CR>:set foldcolumn=0<CR>
 " HEIGHT OF COMMAND LINE ----------------------------------------------
@@ -160,7 +159,7 @@ function! SetMinWindowSize()
         endif
     endif
 endfunction
-au BufEnter *.json,*.xml,.vimrc,*.py,*.js,*.txt,*.md,*.css,*.less,*.load,*.html call SetMinWindowSize()
+au BufEnter,BufRead *.json,*.xml,.vimrc,*.py,*.js,*.txt,*.md,*.css,*.less,*.load,*.html call SetMinWindowSize()
 
 " NAVIGATION SHORTCUTS
 " =====================================================================
@@ -312,10 +311,12 @@ au FileType pandoc set foldtext=CustomFoldText()
 "=======================================================================
 "CODE FOLDING-----------------------------------------------------------
 au FileType html set foldmethod=indent
+au BufNewFile,BufRead,BufWrite *.html, *.load set filetype=html.web2py
 
 "PYTHON 
 "=======================================================================
 "CODE FOLDING-----------------------------------------------------------
+au BufNewFile,BufRead,BufWrite *.py set filetype=python.web2py
 "au FileType python set foldmethod=indent
 let g:pymode_folding=1
 let g:pymode_indent=1
@@ -369,11 +370,11 @@ let g:pymode_rope_guess_project = 1
 let g:pymode_rope_goto_def_newwin = ""
 let g:pymode_rope_always_show_complete_menu = 0
 "USE RELATIVE LINE NUMBERING IN PYTHON FILES TOO--------------------
-au BufNewFile,BufRead *.py set relativenumber
+"au BufNewFile,BufRead *.py set relativenumber
 
 "WEB2PY FILES
 "====================================================================
-au BufNewFile,BufRead *.load set filetype=html
+au BufNewFile,BufRead *.load set filetype=html.web2py
 
 " FUNCTIONS
 "=====================================================================
@@ -438,12 +439,12 @@ function! BuildLess()
   echo 'done'
 endfunction
 
-function! Autosave()
-    if &modified && g:autosave_on_focus_change
-        write
-        echo "Autosaved file while you were absent"
-    endif
-endfunction
+"function! Autosave()
+    "if &modified && g:autosave_on_focus_change
+        "write
+        "echo "Autosaved file while you were absent"
+    "endif
+"endfunction
 
 "output result of any shell command to scratch buffer
 function! s:ExecuteInShell(command)
