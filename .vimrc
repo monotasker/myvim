@@ -377,7 +377,7 @@ au BufNewFile,BufRead *.load set filetype=html
 
 " FUNCTIONS
 "=====================================================================
-function! StripTrailingWhitespaces()
+function! <SID>StripTrailingWhitespaces()
     " Preparation: save last search, and cursor position.
     let _s=@/
     let l = line(".")
