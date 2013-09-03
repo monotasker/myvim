@@ -29,7 +29,7 @@ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 syntax on
 filetype plugin indent on
 " DISABLED PLUGINS----------------------------------------------------------
- set runtimepath-=~/.vim/bundle/git-gutter
+set runtimepath-=~/.vim/bundle/vim-gitgutter
 
 
 " AUTO SUBSTITUTIONS
@@ -370,7 +370,7 @@ let g:pymode_rope_guess_project = 1
 let g:pymode_rope_goto_def_newwin = ""
 let g:pymode_rope_always_show_complete_menu = 0
 "USE RELATIVE LINE NUMBERING IN PYTHON FILES TOO--------------------
-au BufNewFile,BufRead *.py set relativenumber
+"au BufNewFile,BufRead *.py set relativenumber
 
 "WEB2PY FILES
 "====================================================================
