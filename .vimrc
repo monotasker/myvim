@@ -311,12 +311,12 @@ au FileType pandoc set foldtext=CustomFoldText()
 "=======================================================================
 "CODE FOLDING-----------------------------------------------------------
 au FileType html set foldmethod=indent
-au BufNewFile,BufRead,BufWrite *.html, *.load set filetype=html.web2py
+au BufNewFile,BufRead,BufWrite *.html,*.load set filetype=html
 
 "PYTHON 
 "=======================================================================
 "CODE FOLDING-----------------------------------------------------------
-au BufNewFile,BufRead,BufWrite *.py set filetype=python.web2py
+au BufNewFile,BufRead,BufWrite *.py set filetype=python
 "au FileType python set foldmethod=indent
 let g:pymode_folding=1
 let g:pymode_indent=1
