@@ -307,10 +307,16 @@ au FileType pandoc set foldtext=CustomFoldText()
 " PANDOC CONVERSION
 ":PandocRegisterExecutor PdcPdf <Leader>pdf pdf markdown2pdf %%
 
+"XML
+"=======================================================================
+"CODE FOLDING-----------------------------------------------------------
+let g:xml_syntax_folding=1
+au FileType xml,svg setlocal foldmethod=syntax
+
 "HTML
 "=======================================================================
 "CODE FOLDING-----------------------------------------------------------
-au FileType html set foldmethod=indent
+au FileType html set foldmethod=syntax
 au BufNewFile,BufRead,BufWrite *.html,*.load set filetype=html
 
 "PYTHON 
