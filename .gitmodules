@@ -147,3 +147,9 @@
 [submodule "bundle/galaxy.vim"]
 	path = bundle/galaxy.vim
 	url = https://github.com/Rykka/galaxy.vim.git
+[submodule "bundle/XML-Folding"]
+	path = bundle/XML-Folding
+	url = https://github.com/vim-scripts/XML-Folding.git
+[submodule "bundle/SyntaxRange"]
+	path = bundle/SyntaxRange
+	url = https://github.com/vim-scripts/SyntaxRange.git

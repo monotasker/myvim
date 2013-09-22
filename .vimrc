@@ -32,7 +32,8 @@ call pathogen#helptags()
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 syntax on
 filetype plugin indent on
-
+" DISABLED PLUGINS----------------------------------------------------------
+set runtimepath-=~/.vim/bundle/vim-gitgutter
 
 " AUTO SUBSTITUTIONS
 " ==========================================================================
@@ -293,13 +294,13 @@ au BufWritePost *.less :call BuildLess()
 "PLAIN TEXT & MARKDOWN
 "=============================
 au BufNewFile,BufRead,BufWrite *.txt,*.md set filetype=text.pandoc
-"au BufNewFile,BufRead,BufWrite text,markdown set filetype=text.pandoc
-"GUTTER-----------------------------------
 au FileType pandoc set colorcolumn=0
+"FOLDING-----------------------------------
 au FileType pandoc set foldmethod=syntax
+au FileType pandoc set foldtext=CustomFoldText()
+"GUTTER-----------------------------------
 au FileType pandoc set foldcolumn=6
 au FileType pandoc set nonumber
-au FileType pandoc set foldtext=CustomFoldText()
 "SAVING NOTES-----------------------------
 "au FileType pandoc nnoremap <leader>m <space><esc>ggwv$hy<esc>:W<c-r>".txt
 "MARKDOWN HEADINGS------------------------
@@ -309,16 +310,22 @@ au FileType pandoc set foldtext=CustomFoldText()
 " PANDOC CONVERSION
 ":PandocRegisterExecutor PdcPdf <Leader>pdf pdf markdown2pdf %%
 
+"XML
+"=======================================================================
+"CODE FOLDING-----------------------------------------------------------
+let g:xml_syntax_folding=1
+au FileType xml,svg setlocal foldmethod=syntax
+
 "HTML
 "=======================================================================
 "CODE FOLDING-----------------------------------------------------------
 au FileType html set foldmethod=indent
-au BufNewFile,BufRead,BufWrite *.html,*.load set filetype=html.bootstrap.web2py
+au BufNewFile,BufRead,BufWrite *.html,*.load set filetype=html.bootstrap
 
 "PYTHON 
 "=======================================================================
 "CODE FOLDING-----------------------------------------------------------
-au BufNewFile,BufRead,BufWrite *.py set filetype=python.web2py
+au BufNewFile,BufRead,BufWrite *.py set filetype=python
 "au FileType python set foldmethod=indent
 let g:pymode_folding=1
 let g:pymode_indent=1
@@ -372,7 +379,7 @@ let g:pymode_rope_guess_project = 1
 let g:pymode_rope_goto_def_newwin = ""
 let g:pymode_rope_always_show_complete_menu = 0
 "USE RELATIVE LINE NUMBERING IN PYTHON FILES TOO--------------------
-au BufNewFile,BufRead *.py set relativenumber
+"au BufNewFile,BufRead *.py set relativenumber
 
 "WEB2PY FILES
 "====================================================================
