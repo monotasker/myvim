@@ -24,7 +24,7 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 filetype off "must be off to run pathogen commands
 
 " DISABLED PLUGINS----------------------------------------------------------
-let g:pathogen_disabled=['git-gutter']
+let g:pathogen_disabled=['vim-gitgutter']
 
 call pathogen#infect()
 call pathogen#incubate()
@@ -254,9 +254,9 @@ let g:SuperTabMappingBackward='<C-Tab>'
 set tags=./tags,tags,$HOME
 " REBUILD TAGS IN LOCAL DIRECTORY------------------------------------------
 nmap <leader>t :!(cd %:p:h;ctags *)&
-au FileWritePost :!(cd %:p:h;ctags *)&
-let g:ctags_statusline=1 "function name in status bar
-let generate_tags=1
+"au FileWritePost :!(cd %:p:h;ctags *)&
+"let g:ctags_statusline=1 "function name in status bar
+"let generate_tags=1
 let Tlist_Use_Horiz_Window=0 "vertical taglist results
 nnoremap TT :TlistToggle<CR>
 map <F4> :TlistToggle<CR>
@@ -313,7 +313,7 @@ au FileType pandoc set foldtext=CustomFoldText()
 "=======================================================================
 "CODE FOLDING-----------------------------------------------------------
 au FileType html set foldmethod=indent
-au BufNewFile,BufRead,BufWrite *.html, *.load set filetype=html.web2py
+au BufNewFile,BufRead,BufWrite *.html,*.load set filetype=html.bootstrap.web2py
 
 "PYTHON 
 "=======================================================================
