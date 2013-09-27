@@ -22,6 +22,10 @@ au! BufWritePost $MYVIMRC nested source $MYVIMRC
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 " PATHOGEN TO HANDLE PATHS AND HELPTAGS-------------------------------------
 filetype off "must be off to run pathogen commands
+
+" DISABLED PLUGINS----------------------------------------------------------
+let g:pathogen_disabled=['vim-gitgutter']
+
 call pathogen#infect()
 call pathogen#incubate()
 call pathogen#helptags()
@@ -30,7 +34,6 @@ syntax on
 filetype plugin indent on
 " DISABLED PLUGINS----------------------------------------------------------
 set runtimepath-=~/.vim/bundle/vim-gitgutter
-
 
 " AUTO SUBSTITUTIONS
 " ==========================================================================
@@ -252,9 +255,9 @@ let g:SuperTabMappingBackward='<C-Tab>'
 set tags=./tags,tags,$HOME
 " REBUILD TAGS IN LOCAL DIRECTORY------------------------------------------
 nmap <leader>t :!(cd %:p:h;ctags *)&
-au FileWritePost :!(cd %:p:h;ctags *)&
-let g:ctags_statusline=1 "function name in status bar
-let generate_tags=1
+"au FileWritePost :!(cd %:p:h;ctags *)&
+"let g:ctags_statusline=1 "function name in status bar
+"let generate_tags=1
 let Tlist_Use_Horiz_Window=0 "vertical taglist results
 nnoremap TT :TlistToggle<CR>
 map <F4> :TlistToggle<CR>
@@ -291,13 +294,13 @@ au BufWritePost *.less :call BuildLess()
 "PLAIN TEXT & MARKDOWN
 "=============================
 au BufNewFile,BufRead,BufWrite *.txt,*.md set filetype=text.pandoc
-"au BufNewFile,BufRead,BufWrite text,markdown set filetype=text.pandoc
-"GUTTER-----------------------------------
 au FileType pandoc set colorcolumn=0
+"FOLDING-----------------------------------
 au FileType pandoc set foldmethod=syntax
+au FileType pandoc set foldtext=CustomFoldText()
+"GUTTER-----------------------------------
 au FileType pandoc set foldcolumn=6
 au FileType pandoc set nonumber
-au FileType pandoc set foldtext=CustomFoldText()
 "SAVING NOTES-----------------------------
 "au FileType pandoc nnoremap <leader>m <space><esc>ggwv$hy<esc>:W<c-r>".txt
 "MARKDOWN HEADINGS------------------------
@@ -316,8 +319,8 @@ au FileType xml,svg setlocal foldmethod=syntax
 "HTML
 "=======================================================================
 "CODE FOLDING-----------------------------------------------------------
-au FileType html set foldmethod=syntax
-au BufNewFile,BufRead,BufWrite *.html,*.load set filetype=html
+au FileType html set foldmethod=indent
+au BufNewFile,BufRead,BufWrite *.html,*.load set filetype=html.bootstrap
 
 "PYTHON 
 "=======================================================================
