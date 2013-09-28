@@ -348,7 +348,7 @@ let g:pymode_lint = 1
 "SWITCH CODE-CHECKERS---------------------------------------------------
 let g:pymode_lint_checker = "pyflakes,pep8"
 "SKIP ERRORS AND WARNINGS----------------------------------------------
-let g:pymode_lint_ignore = "E501,E126,E701,E128"
+let g:pymode_lint_ignore = "E501,E126,E701,E711,E128"
 "RUN LINTER ON THE FLY-------------------------------------------------
 let g:pymode_lint_onfly = 0
 "PYLINT CONFIGURATION FILE (DEFAULTS TO 'PYLINTRC' IN PYTHON-MODE PLUGIN DIRECTORY
