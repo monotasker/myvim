@@ -153,3 +153,6 @@
 [submodule "bundle/SyntaxRange"]
 	path = bundle/SyntaxRange
 	url = https://github.com/vim-scripts/SyntaxRange.git
+[submodule "bundle/jellybeans"]
+	path = bundle/jellybeans
+	url = https://github.com/nanotech/jellybeans.vim.git
