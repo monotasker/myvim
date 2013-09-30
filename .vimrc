@@ -25,6 +25,7 @@ filetype off "must be off to run pathogen commands
 
 " DISABLED PLUGINS----------------------------------------------------------
 let g:pathogen_disabled=['vim-gitgutter']
+let g:pathogen_disabled=['powerline']
 
 call pathogen#infect()
 call pathogen#incubate()
