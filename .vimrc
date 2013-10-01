@@ -290,6 +290,7 @@ au BufRead .vimrc set expandtab
 "LESS CSS
 "========================================================================
 au BufNewFile,BufRead *.less set filetype=less
+au FileType less set foldmethod=indent
 " automatically compile to css using lessc
 au BufWritePost *.less :call BuildLess()
 
