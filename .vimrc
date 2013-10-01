@@ -25,11 +25,12 @@ filetype off "must be off to run pathogen commands
 
 " DISABLED PLUGINS----------------------------------------------------------
 let g:pathogen_disabled=['vim-gitgutter']
+let g:pathogen_disabled=['powerline']
 
 call pathogen#infect()
 call pathogen#incubate()
 call pathogen#helptags()
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+"set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 syntax on
 filetype plugin indent on
 " DISABLED PLUGINS----------------------------------------------------------
@@ -122,6 +123,7 @@ endif
 
 " FONT FACE AND SIZE ---------------------------------------------
 "using Powerline patched fonts
+let g:airline_powerline_fonts = 1 " for airline
 set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 13
 "also nice: Menlo for Powerline 11, Liberation Mono for Powerline 11,
 "Inconsolata for Powerline 12, Inconsolata DZ for Powerline,
