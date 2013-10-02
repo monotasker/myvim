@@ -380,7 +380,8 @@ let g:pymode_rope_always_show_complete_menu = 0
 
 "WEB2PY FILES
 "====================================================================
-au BufNewFile,BufRead *.load set filetype=html.web2py
+au BufNewFile,BufEnter,BufRead *.load,*.html set filetype=html.web2py
+au BufNewFile,BufEnter,BufRead *.load,*.html call SyntaxRange#Include( "\{\{", "\}\}", 'python')
 
 " FUNCTIONS
 "=====================================================================
