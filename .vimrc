@@ -26,6 +26,7 @@ filetype off "must be off to run pathogen commands
 " DISABLED PLUGINS----------------------------------------------------------
 let g:pathogen_disabled=['vim-gitgutter']
 let g:pathogen_disabled=['powerline']
+let g:pathogen_disabled=['minibufexpl']
 
 call pathogen#infect()
 call pathogen#incubate()
@@ -94,6 +95,7 @@ set lazyredraw " to avoid scrolling problems, don't redraw during macros etc
 "endif
 "
 " COLOUR THEMES ----------------------
+" some good ones: tomorrow; base-16; murmur; jellybeans; molokai; wombat; luna
 let hour = strftime('%H')
 if (g:hour > 19 || g:hour < 6)
     if !has('gui_running')
@@ -235,6 +237,11 @@ nmap <leader>bd :Kwbd<CR>
 
 " PLUGIN SETTINGS AND SHORTCUTS
 " ========================================================================
+" AIRLINE STATUS LINE-----------------------------------------------------
+let g:airline#extensions#tabline#enabled = 1
+"for straight tab separators
+"let g:airline#extensions#tabline#left_sep = ' '
+"let g:airline#extensions#tabline#left_alt_sep = '|'
 " ACK FUZZY TEXT SEARCH---------------------------------------------------
 nmap <leader>a <Esc>:Ack!
 " CTRL-P FUZZY FILE OPENING (BY TITLE)------------------------------------
