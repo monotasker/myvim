@@ -330,7 +330,7 @@ au FileType xml,svg setlocal foldmethod=syntax
 "=======================================================================
 "CODE FOLDING-----------------------------------------------------------
 au FileType html set foldmethod=indent
-au BufNewFile,BufRead,BufWrite *.html,*.load set filetype=html.bootstrap
+au BufNewFile,BufRead,BufWrite *.html,*.load set filetype=html.web2py.bootstrap
 
 "PYTHON 
 "=======================================================================
@@ -393,7 +393,7 @@ let g:pymode_rope_always_show_complete_menu = 0
 
 "WEB2PY FILES
 "====================================================================
-au BufNewFile,BufEnter,BufRead *.load,*.html set filetype=html.web2py
+au BufNewFile,BufEnter,BufRead *.load,*.html set filetype=html.web2py.bootstrap
 au BufNewFile,BufEnter,BufRead *.load,*.html call SyntaxRange#Include( "\{\{", "\}\}", 'python')
 
 " FUNCTIONS
