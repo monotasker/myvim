@@ -305,6 +305,9 @@ au BufWritePost *.less :call BuildLess()
 "=============================
 au BufNewFile,BufRead,BufWrite *.txt,*.md set filetype=text.pandoc
 au FileType pandoc set colorcolumn=0
+"WRAPPING AND FORMATTING---------------------
+let g:pandoc_use_hard_wraps = 1
+"let g:pandoc_auto_format = 1
 "FOLDING-----------------------------------
 au FileType pandoc set foldmethod=syntax
 au FileType pandoc set foldtext=CustomFoldText()
