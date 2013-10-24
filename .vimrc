@@ -6,10 +6,8 @@
 " http://dancingpenguinsoflight.com/2009/02/code-navigation-completion-snippets-in-vim/
 " http://stevelosh.com/blog/2010/09/coming-home-to-vim/#important-vimrc-lines
 " and more Stackoverflow answers than I can count
-" **** checkout: repeat, pastie, lustyjuggler, abolish, ninja, easytags
-" **** :Gwrite each file on save
+" **** checkout: pastie, lustyjuggler, abolish, ninja, easytags
 " **** prompt for :Gstatus and :Git push before program exit
-" **** in notes
 
 " automatically re-source this .vimrc file when it is changed
 " nested keeps theme from overriding powerline's colouring
@@ -307,7 +305,7 @@ au BufNewFile,BufRead,BufWrite *.txt,*.md set filetype=text.pandoc
 au FileType pandoc set colorcolumn=0
 "WRAPPING AND FORMATTING-------------------
 let g:pandoc_use_hard_wraps = 1
-"let g:pandoc_auto_format = 1
+let g:pandoc_auto_format = 1
 "FOLDING-----------------------------------
 au FileType pandoc set foldmethod=syntax
 au FileType pandoc set foldtext=CustomFoldText()
