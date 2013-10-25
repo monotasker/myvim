@@ -82,7 +82,7 @@ set fenc=utf-8
 "set statusline=%f\%m\ %h%r%w%q\%{fugitive#statusline()}\ %=%l,%c\
 "set ruler
 " AVOID SLOWDOWNS-----------------------------------------------------------
-"set synmaxcol=228 "don't highlight very long lines past 128 chars
+set synmaxcol=228 "don't highlight very long lines past 128 chars
 set ttyfast " u got a fast terminal
 set ttyscroll=3 " redraw instead of scrolling when moving more than 3 lines
 set lazyredraw " to avoid scrolling problems, don't redraw during macros etc
@@ -99,11 +99,11 @@ set lazyredraw " to avoid scrolling problems, don't redraw during macros etc
 let hour = strftime('%H')
 if (g:hour > 19 || g:hour < 6)
     if !has('gui_running')
-      set t_Co=256
+      "set t_Co=256
       "runtime! bundle/guicolorscheme/plugin/guicolorscheme.vim
       set background=dark
       "GuiColorScheme base16-default
-      colorscheme base16-default
+      colorscheme jellybeans "base16-default
     else
       set background=dark
       colorscheme base16-default
@@ -120,8 +120,8 @@ else
       colorscheme solarized
     endif
 endif
+"my favorites: SolarizedLight base16-monokai molokai jellybeans
 "base16-tomorrow base16-monokai base16-chalk base16-default base16-mocha
-"my favorites: SolarizedLight base16-monokai molokai
 
 " FONT FACE AND SIZE ---------------------------------------------
 "using Powerline patched fonts
@@ -244,9 +244,17 @@ let g:airline#extensions#tabline#enabled = 1
 "let g:airline#extensions#tabline#left_alt_sep = '|'
 " ACK FUZZY TEXT SEARCH---------------------------------------------------
 nmap <leader>a <Esc>:Ack!
+" UNITE UNIFIED SEARCH INTERFACE--------------------------------------------
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+nnoremap <leader>uf :<C-u>Unite file<CR>
+"nnoremap <leader>f :<C-u>Unite -start-insert file<CR> "start in insert line
+nnoremap <leader>up :<C-u>Unite -start-insert file_rec<CR>
+nnoremap <leader>ur :<C-u>Unite file_mru<CR>
+let g:unite_source_history_yank_enable = 1
+nnoremap <leader>uy :<C-u>Unite history/yank<CR>
 " CTRL-P FUZZY FILE OPENING (BY TITLE)------------------------------------
-let g:ctrlp_working_path_mode = 2
-nmap <leader>p :CtrlP<CR>
+"let g:ctrlp_working_path_mode = 2
+"nmap <leader>p :CtrlP<CR>
 " GUNDO REVISION HISTORY--------------------------------------------------
 map <leader>g :GundoToggle<CR>
 " NERDTree----------------------------------------------------------------
@@ -277,8 +285,8 @@ let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_File_Fold_Auto_Close = 1
 " TASKLIST----------------------------------------------------------------
 nnoremap <leader>tl <Plug>TaskList
-" YANKRING----------------------------------------------------------------
-nnoremap <leader>y :YRShow<CR>
+"YANKRING----------------------------------------------------------------
+nnoremap <leader>y :YRShow<CR> "superceded by unite
 
 " FILETYPE SETTINGS
 " ========================================================================
