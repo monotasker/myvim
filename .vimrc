@@ -101,7 +101,7 @@ if (g:hour > 19 || g:hour < 6)
       "runtime! bundle/guicolorscheme/plugin/guicolorscheme.vim
       set background=dark
       "GuiColorScheme base16-default
-      colorscheme base16-default
+      colorscheme jellybeans
     else
       set background=dark
       colorscheme base16-default
@@ -112,7 +112,7 @@ else
       "runtime! bundle/guicolorscheme/plugin/guicolorscheme.vim
       set background=light
       "GuiColorScheme SolarizedLight
-      colorscheme SolarizedLight
+      colorscheme jellybeans
     else
       set background=light
       colorscheme solarized
@@ -180,7 +180,7 @@ nnoremap <leader><Tab> :bnext<CR>
 nnoremap <leader><S-Tab> :bprevious<CR>
 " ADJUST SPLIT WINDOW HEIGHT-------------------------------------------
 if bufwinnr(1)
-  map + <C-W>+
+  map <c-+> <C-W>+
   map = <C-W>+
   map - <C-W>-
   map 8 <C-W><
@@ -307,16 +307,16 @@ au FileType pandoc set colorcolumn=0
 let g:pandoc_use_hard_wraps = 1
 let g:pandoc_auto_format = 1
 "FOLDING-----------------------------------
-au FileType pandoc set foldmethod=syntax
-au FileType pandoc set foldtext=CustomFoldText()
+au FileType text,pandoc set foldmethod=syntax
+au FileType text,pandoc set foldtext=CustomFoldText()
 "GUTTER-----------------------------------
-au FileType pandoc set foldcolumn=6
-au FileType pandoc set nonumber
+au FileType text,pandoc set foldcolumn=6
+au FileType text,pandoc set nonumber
 "SAVING NOTES-----------------------------
-"au FileType pandoc nnoremap <leader>m <space><esc>ggwv$hy<esc>:W<c-r>".txt
+nnoremap <leader>nn <space><esc>ggwv$hy<esc>:W<space><c-r>".txt
 "MARKDOWN HEADINGS------------------------
-"au FileType pandoc nnoremap <silent> <leader>hh <esc>0i#<esc>:.s/[^\s]{2}$/<space>{2}/<CR>
-"au FileType pandoc nnoremap <silent> <leader>HH <esc>:.s/^#//<CR>
+nnoremap <silent> <leader>hh <esc>0i#<esc> ":.s/[^\s]{2}$/<space>{2}/<CR>
+nnoremap <silent> <leader>HH <esc>:.s/^#//<CR>
 "au FileType pandoc set dictionary+=~/Dropbox/Simplenote/note_tags.txt
 " PANDOC CONVERSION
 ":PandocRegisterExecutor PdcPdf <Leader>pdf pdf markdown2pdf %%
