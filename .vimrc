@@ -253,8 +253,8 @@ nnoremap <leader>ur :<C-u>Unite file_mru<CR>
 let g:unite_source_history_yank_enable = 1
 nnoremap <leader>uy :<C-u>Unite history/yank<CR>
 " CTRL-P FUZZY FILE OPENING (BY TITLE)------------------------------------
-"let g:ctrlp_working_path_mode = 2
-"nmap <leader>p :CtrlP<CR>
+let g:ctrlp_working_path_mode = 'rw'
+nmap <leader>p :CtrlP<CR>
 " GUNDO REVISION HISTORY--------------------------------------------------
 map <leader>g :GundoToggle<CR>
 " NERDTree----------------------------------------------------------------
@@ -307,6 +307,7 @@ au BufRead .vimrc set expandtab
 au BufNewFile,BufRead *.less set filetype=less
 au FileType less set foldmethod=indent
 " automatically compile to css using lessc
+"let g:lesscss_cmd = 'lessc -x'
 au BufWritePost *.less :call BuildLess()
 
 "PLAIN TEXT & MARKDOWN
@@ -357,45 +358,29 @@ map <leader>rr :RopeRename<CR>
 au BufRead *.py set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
-"HIGHLIGHT ALL OPTIONAL SYNTAX FEATURES---------------------------------
 let g:pymode_syntax=1
 let g:python_highlight_all=1
-"RUN PYTHON CODE IN CURRENT BUFFER--------------------------------------
 let g:pymode_run_key='<leader>r'
-"SHOW PYTHON DOCUMENTATION----------------------------------------------
 let g:pymode_doc_key = 'K'
-"LOAD PYLINT CODE PLUGIN-----------------------------------------------
 let g:pymode_lint = 1
-"SWITCH CODE-CHECKERS---------------------------------------------------
-let g:pymode_lint_checker = "pyflakes,pep8"
-"SKIP ERRORS AND WARNINGS----------------------------------------------
+let g:pymode_lint_checker = "pyflakes,pep8,mccabe"
 let g:pymode_lint_ignore = "E501,E126,E701,E711,E128"
-"RUN LINTER ON THE FLY-------------------------------------------------
 let g:pymode_lint_onfly = 0
-"PYLINT CONFIGURATION FILE (DEFAULTS TO 'PYLINTRC' IN PYTHON-MODE PLUGIN DIRECTORY
 let g:pymode_lint_config = "$HOME/.pylintrc"
-"CHECK CODE EVERY SAVE--------------------------------------------------
-let g:pymode_lint_write = 1
-"AUTO OPEN CWINDOW IF ERRORS---------------------------------------------
-let g:pymode_lint_cwindow = 1
-"SHOW ERROR MESSAGE IF CURSOR PLACED AT THE ERROR LINE------------------   
-let g:pymode_lint_message = 1
-"AUTO JUMP ON FIRST ERROR-----------------------------------------------
-let g:pymode_lint_jump = 1
-"PLACE ERROR SIGNS
-let g:pymode_lint_signs = 1
-"MAXIMUM ALLOWED MCCABE COMPLEXITY
-let g:pymode_lint_mccabe_complexity = 8
-"MINIMAL HEIGHT OF PYLINT ERROR WINDOW
+let g:pymode_lint_write = 1  "CHECK CODE EVERY SAVE
+let g:pymode_lint_cwindow = 1  "AUTO OPEN CWINDOW IF ERRORS
+let g:pymode_lint_message = 1  "SHOW ERROR MESSAGE WHEN CURSOR ON ERROR LINE
+let g:pymode_lint_jump = 1  "AUTO JUMP ON FIRST ERROR
+let g:pymode_lint_signs = 1  "PLACE ERROR SIGNS
+let g:pymode_lint_mccabe_complexity = 10
 let g:pymode_lint_minheight = 2
-"MAXIMAL HEIGHT OF PYLINT ERROR WINDOW
 let g:pymode_lint_maxheight = 8
-"PYTHON_MODE ROPE SETTINGS------------------------------------------
+let g:pymode_paths = ["~/web/web2py/gluon/"]
 let g:pymode_rope_autoimport_modules = ["os","shutil","datetime", "pprint", "re", "random"]
 let g:pymode_rope_confirm_saving = 1
 let g:pymode_rope_global_prefix = "<C-x>p"
 let g:pymode_rope_local_prefix = "<C-c>r"
-let g:pymode_rope_vim_completion = 0
+let g:pymode_rope_vim_completion = 1
 let g:pymode_rope_guess_project = 1
 let g:pymode_rope_goto_def_newwin = ""
 let g:pymode_rope_always_show_complete_menu = 0
@@ -459,11 +444,11 @@ EOF
 
 function! BuildLess()
   redir => lessout
-      silent execute ":silent !lessc -x <afile> <afile>:p:r.css"
+      execute ":silent !lessc -x <afile> <afile>:p:r.css"
       let stat = fnamemodify(finddir('static', ';'), ':p')
       let tless = fnamemodify(findfile('css/theme.less', stat), ":p")
       let troot = fnamemodify(tless, ':r')
-      silent execute ":silent !lessc -x " . tless . " " . troot . ".css"
+      execute ":silent !lessc -x " . tless . " " . troot . ".css"
   redir END
   echo lessout
   unlet lessout
@@ -498,3 +483,35 @@ command! -bang -nargs=* W :call W(<q-bang>, <q-args>)
 function! W(bang, filename)
     :exe "w".a:bang." ". substitute(a:filename, ' ', '\\ ', 'g')
 endfu
+
+" Dim inactive windows using 'colorcolumn' setting
+" This tends to slow down redrawing, but is very useful.
+" Based on https://groups.google.com/d/msg/vim_use/IJU-Vk-QLJE/xz4hjPjCRBUJ
+" XXX: this will only work with lines containing text (i.e. not '~')
+" from http://stackoverflow.com/questions/8415828/vim-dim-inactive-split-panes
+"if exists('+colorcolumn')
+  "function! s:DimInactiveWindows()
+    "for i in range(1, tabpagewinnr(tabpagenr(), '$'))
+      "let l:range = ""
+      "if i != winnr()
+        "if &wrap
+         "" HACK: when wrapping lines is enabled, we use the maximum number
+         "" of columns getting highlighted. This might get calculated by
+         "" looking for the longest visible line and using a multiple of
+         "" winwidth().
+         "let l:width=256 " max
+        "else
+         "let l:width=winwidth(i)
+        "endif
+        "let l:range = join(range(1, l:width), ',')
+      "endif
+      "call setwinvar(i, '&colorcolumn', l:range)
+    "endfor
+  "endfunction
+  "augroup DimInactiveWindows
+    "au!
+    "au WinEnter * call s:DimInactiveWindows()
+    "au WinEnter * set cursorline
+    "au WinLeave * set nocursorline
+  "augroup END
+"endif
