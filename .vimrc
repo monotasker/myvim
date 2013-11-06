@@ -245,7 +245,7 @@ let g:airline#extensions#tabline#enabled = 1
 " ACK FUZZY TEXT SEARCH---------------------------------------------------
 nmap <leader>a <Esc>:Ack!
 " CTRL-P FUZZY FILE OPENING (BY TITLE)------------------------------------
-let g:ctrlp_working_path_mode = 2
+let g:ctrlp_working_path_mode = 'rw'
 nmap <leader>p :CtrlP<CR>
 " GUNDO REVISION HISTORY--------------------------------------------------
 map <leader>g :GundoToggle<CR>
