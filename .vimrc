@@ -6,10 +6,8 @@
 " http://dancingpenguinsoflight.com/2009/02/code-navigation-completion-snippets-in-vim/
 " http://stevelosh.com/blog/2010/09/coming-home-to-vim/#important-vimrc-lines
 " and more Stackoverflow answers than I can count
-" **** checkout: repeat, pastie, lustyjuggler, abolish, ninja, easytags
-" **** :Gwrite each file on save
+" **** checkout: pastie, lustyjuggler, abolish, ninja, easytags
 " **** prompt for :Gstatus and :Git push before program exit
-" **** in notes
 
 " automatically re-source this .vimrc file when it is changed
 " nested keeps theme from overriding powerline's colouring
@@ -82,7 +80,7 @@ set fenc=utf-8
 "set statusline=%f\%m\ %h%r%w%q\%{fugitive#statusline()}\ %=%l,%c\
 "set ruler
 " AVOID SLOWDOWNS-----------------------------------------------------------
-"set synmaxcol=228 "don't highlight very long lines past 128 chars
+set synmaxcol=228 "don't highlight very long lines past 128 chars
 set ttyfast " u got a fast terminal
 set ttyscroll=3 " redraw instead of scrolling when moving more than 3 lines
 set lazyredraw " to avoid scrolling problems, don't redraw during macros etc
@@ -99,11 +97,11 @@ set lazyredraw " to avoid scrolling problems, don't redraw during macros etc
 let hour = strftime('%H')
 if (g:hour > 19 || g:hour < 6)
     if !has('gui_running')
-      set t_Co=256
+      "set t_Co=256
       "runtime! bundle/guicolorscheme/plugin/guicolorscheme.vim
       set background=dark
       "GuiColorScheme base16-default
-      colorscheme base16-default
+      colorscheme jellybeans "base16-default
     else
       set background=dark
       colorscheme base16-default
@@ -120,8 +118,8 @@ else
       colorscheme solarized
     endif
 endif
+"my favorites: SolarizedLight base16-monokai molokai jellybeans
 "base16-tomorrow base16-monokai base16-chalk base16-default base16-mocha
-"my favorites: SolarizedLight base16-monokai molokai
 
 " FONT FACE AND SIZE ---------------------------------------------
 "using Powerline patched fonts
@@ -244,6 +242,14 @@ let g:airline#extensions#tabline#enabled = 1
 "let g:airline#extensions#tabline#left_alt_sep = '|'
 " ACK FUZZY TEXT SEARCH---------------------------------------------------
 nmap <leader>a <Esc>:Ack!
+" UNITE UNIFIED SEARCH INTERFACE--------------------------------------------
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+nnoremap <leader>uf :<C-u>Unite file<CR>
+"nnoremap <leader>f :<C-u>Unite -start-insert file<CR> "start in insert line
+nnoremap <leader>up :<C-u>Unite -start-insert file_rec<CR>
+nnoremap <leader>ur :<C-u>Unite file_mru<CR>
+let g:unite_source_history_yank_enable = 1
+nnoremap <leader>uy :<C-u>Unite history/yank<CR>
 " CTRL-P FUZZY FILE OPENING (BY TITLE)------------------------------------
 let g:ctrlp_working_path_mode = 'rw'
 nmap <leader>p :CtrlP<CR>
@@ -277,8 +283,8 @@ let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_File_Fold_Auto_Close = 1
 " TASKLIST----------------------------------------------------------------
 nnoremap <leader>tl <Plug>TaskList
-" YANKRING----------------------------------------------------------------
-nnoremap <leader>y :YRShow<CR>
+"YANKRING----------------------------------------------------------------
+nnoremap <leader>y :YRShow<CR> "superceded by unite
 
 " FILETYPE SETTINGS
 " ========================================================================
@@ -299,6 +305,7 @@ au BufRead .vimrc set expandtab
 au BufNewFile,BufRead *.less set filetype=less
 au FileType less set foldmethod=indent
 " automatically compile to css using lessc
+"let g:lesscss_cmd = 'lessc -x'
 au BufWritePost *.less :call BuildLess()
 
 "PLAIN TEXT & MARKDOWN
@@ -349,45 +356,29 @@ map <leader>rr :RopeRename<CR>
 au BufRead *.py set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
-"HIGHLIGHT ALL OPTIONAL SYNTAX FEATURES---------------------------------
 let g:pymode_syntax=1
 let g:python_highlight_all=1
-"RUN PYTHON CODE IN CURRENT BUFFER--------------------------------------
 let g:pymode_run_key='<leader>r'
-"SHOW PYTHON DOCUMENTATION----------------------------------------------
 let g:pymode_doc_key = 'K'
-"LOAD PYLINT CODE PLUGIN-----------------------------------------------
 let g:pymode_lint = 1
-"SWITCH CODE-CHECKERS---------------------------------------------------
-let g:pymode_lint_checker = "pyflakes,pep8"
-"SKIP ERRORS AND WARNINGS----------------------------------------------
+let g:pymode_lint_checker = "pyflakes,pep8,mccabe"
 let g:pymode_lint_ignore = "E501,E126,E701,E711,E128"
-"RUN LINTER ON THE FLY-------------------------------------------------
 let g:pymode_lint_onfly = 0
-"PYLINT CONFIGURATION FILE (DEFAULTS TO 'PYLINTRC' IN PYTHON-MODE PLUGIN DIRECTORY
 let g:pymode_lint_config = "$HOME/.pylintrc"
-"CHECK CODE EVERY SAVE--------------------------------------------------
-let g:pymode_lint_write = 1
-"AUTO OPEN CWINDOW IF ERRORS---------------------------------------------
-let g:pymode_lint_cwindow = 1
-"SHOW ERROR MESSAGE IF CURSOR PLACED AT THE ERROR LINE------------------   
-let g:pymode_lint_message = 1
-"AUTO JUMP ON FIRST ERROR-----------------------------------------------
-let g:pymode_lint_jump = 1
-"PLACE ERROR SIGNS
-let g:pymode_lint_signs = 1
-"MAXIMUM ALLOWED MCCABE COMPLEXITY
-let g:pymode_lint_mccabe_complexity = 8
-"MINIMAL HEIGHT OF PYLINT ERROR WINDOW
+let g:pymode_lint_write = 1  "CHECK CODE EVERY SAVE
+let g:pymode_lint_cwindow = 1  "AUTO OPEN CWINDOW IF ERRORS
+let g:pymode_lint_message = 1  "SHOW ERROR MESSAGE WHEN CURSOR ON ERROR LINE
+let g:pymode_lint_jump = 1  "AUTO JUMP ON FIRST ERROR
+let g:pymode_lint_signs = 1  "PLACE ERROR SIGNS
+let g:pymode_lint_mccabe_complexity = 10
 let g:pymode_lint_minheight = 2
-"MAXIMAL HEIGHT OF PYLINT ERROR WINDOW
 let g:pymode_lint_maxheight = 8
-"PYTHON_MODE ROPE SETTINGS------------------------------------------
+let g:pymode_paths = ["~/web/web2py/gluon/"]
 let g:pymode_rope_autoimport_modules = ["os","shutil","datetime", "pprint", "re", "random"]
 let g:pymode_rope_confirm_saving = 1
 let g:pymode_rope_global_prefix = "<C-x>p"
 let g:pymode_rope_local_prefix = "<C-c>r"
-let g:pymode_rope_vim_completion = 0
+let g:pymode_rope_vim_completion = 1
 let g:pymode_rope_guess_project = 1
 let g:pymode_rope_goto_def_newwin = ""
 let g:pymode_rope_always_show_complete_menu = 0
@@ -451,11 +442,11 @@ EOF
 
 function! BuildLess()
   redir => lessout
-      silent execute ":silent !lessc -x <afile> <afile>:p:r.css"
+      execute ":silent !lessc -x <afile> <afile>:p:r.css"
       let stat = fnamemodify(finddir('static', ';'), ':p')
       let tless = fnamemodify(findfile('css/theme.less', stat), ":p")
       let troot = fnamemodify(tless, ':r')
-      silent execute ":silent !lessc -x " . tless . " " . troot . ".css"
+      execute ":silent !lessc -x " . tless . " " . troot . ".css"
   redir END
   echo lessout
   unlet lessout
@@ -490,3 +481,35 @@ command! -bang -nargs=* W :call W(<q-bang>, <q-args>)
 function! W(bang, filename)
     :exe "w".a:bang." ". substitute(a:filename, ' ', '\\ ', 'g')
 endfu
+
+" Dim inactive windows using 'colorcolumn' setting
+" This tends to slow down redrawing, but is very useful.
+" Based on https://groups.google.com/d/msg/vim_use/IJU-Vk-QLJE/xz4hjPjCRBUJ
+" XXX: this will only work with lines containing text (i.e. not '~')
+" from http://stackoverflow.com/questions/8415828/vim-dim-inactive-split-panes
+"if exists('+colorcolumn')
+  "function! s:DimInactiveWindows()
+    "for i in range(1, tabpagewinnr(tabpagenr(), '$'))
+      "let l:range = ""
+      "if i != winnr()
+        "if &wrap
+         "" HACK: when wrapping lines is enabled, we use the maximum number
+         "" of columns getting highlighted. This might get calculated by
+         "" looking for the longest visible line and using a multiple of
+         "" winwidth().
+         "let l:width=256 " max
+        "else
+         "let l:width=winwidth(i)
+        "endif
+        "let l:range = join(range(1, l:width), ',')
+      "endif
+      "call setwinvar(i, '&colorcolumn', l:range)
+    "endfor
+  "endfunction
+  "augroup DimInactiveWindows
+    "au!
+    "au WinEnter * call s:DimInactiveWindows()
+    "au WinEnter * set cursorline
+    "au WinLeave * set nocursorline
+  "augroup END
+"endif

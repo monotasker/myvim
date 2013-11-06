@@ -168,3 +168,9 @@
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "bundle/vim-lesscss"]
+	path = bundle/vim-lesscss
+	url = https://github.com/vitalk/vim-lesscss.git
+[submodule "bundle/vim-multiple-cursors"]
+	path = bundle/vim-multiple-cursors
+	url = https://github.com/terryma/vim-multiple-cursors.git
