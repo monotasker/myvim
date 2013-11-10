@@ -316,17 +316,17 @@ au FileType pandoc set colorcolumn=0
 let g:pandoc_use_hard_wraps = 1
 let g:pandoc_auto_format = 1
 "FOLDING-----------------------------------
-au FileType pandoc set foldmethod=syntax
-au FileType pandoc set foldtext=CustomFoldText()
-"GUTTER-----------------------------------
-au FileType pandoc set foldcolumn=6
-au FileType pandoc set nonumber
+au FileType text,pandoc set foldmethod=syntax
+au FileType text,pandoc set foldtext=CustomFoldText()
+"GUTTER-----text,------------------------------
+au FileType text,pandoc set foldcolumn=6
+au FileType text,pandoc set nonumber
 "SAVING NOTES-----------------------------
-"au FileType pandoc nnoremap <leader>m <space><esc>ggwv$hy<esc>:W<c-r>".txt
+nnoremap <leader>mm <space><esc>ggwv$hy<esc>:W<space><c-r>".txt<CR>
 "MARKDOWN HEADINGS------------------------
-"au FileType pandoc nnoremap <silent> <leader>hh <esc>0i#<esc>:.s/[^\s]{2}$/<space>{2}/<CR>
-"au FileType pandoc nnoremap <silent> <leader>HH <esc>:.s/^#//<CR>
-"au FileType pandoc set dictionary+=~/Dropbox/Simplenote/note_tags.txt
+nnoremap <silent> <leader>hh <esc>0i#<esc>:.s/[^\s]{2}$/<space>{2}/<CR>
+nnoremap <silent> <leader>HH <esc>:.s/^#//<CR>
+set dictionary+=~/Dropbox/Simplenote/note_tags.txt
 " PANDOC CONVERSION
 ":PandocRegisterExecutor PdcPdf <Leader>pdf pdf markdown2pdf %%
 
