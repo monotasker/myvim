@@ -63,7 +63,7 @@ nnoremap ; :
 " USE X CLIPBOARD (lINUX) INSTEAD OF BUFFER---------------------------------
 set clipboard+=unnamed
 " SEARCHING---------------------------------------
-set ignorecase 
+set ignorecase
 set smartcase
 set gdefault
 set incsearch
@@ -120,6 +120,9 @@ else
 endif
 "my favorites: SolarizedLight base16-monokai molokai jellybeans
 "base16-tomorrow base16-monokai base16-chalk base16-default base16-mocha
+
+"get rid of | characters in vertical separator 
+set fillchars+=vert:\   " (significant whitespace after the '\' )
 
 " FONT FACE AND SIZE ---------------------------------------------
 "using Powerline patched fonts
@@ -342,7 +345,7 @@ au FileType xml,svg setlocal foldmethod=syntax
 au FileType html set foldmethod=indent
 au BufNewFile,BufEnter,BufRead,BufWrite *.html,*.load set filetype=html.web2py.bootstrap
 
-"PYTHON 
+"PYTHON
 "=======================================================================
 "CODE FOLDING-----------------------------------------------------------
 au BufNewFile,BufRead,BufWrite *.py set filetype=python
@@ -383,7 +386,7 @@ let g:pymode_rope_vim_completion=1
 let g:pymode_rope_guess_project=1
 let g:pymode_rope_goto_def_newwin=""
 let g:pymode_rope_always_show_complete_menu=0
-let g:syntastic_python_checkers = ['pyflakes', 'python'] " pylint 'flake8' 
+let g:syntastic_python_checkers = ['pyflakes', 'python'] " pylint 'flake8'
 "USE RELATIVE LINE NUMBERING IN PYTHON FILES TOO--------------------
 "au BufNewFile,BufRead *.py set relativenumber
 
@@ -427,7 +430,7 @@ fu! CustomFoldText()
     "let expansionString = repeat(".", 70 - strwidth(foldSizeStr.line.foldLevelStr.foldPercentage))
     "return line . expansionString . foldSizeStr . foldPercentage . foldLevelStr
     let expansionString = repeat(".", 70 - strwidth(line))
-    return line . expansionString 
+    return line . expansionString
 endfunction
 
 " Add the virtualenv's site-packages to vim path
@@ -489,29 +492,29 @@ endfu
 " Based on https://groups.google.com/d/msg/vim_use/IJU-Vk-QLJE/xz4hjPjCRBUJ
 " XXX: this will only work with lines containing text (i.e. not '~')
 " from http://stackoverflow.com/questions/8415828/vim-dim-inactive-split-panes
-"if exists('+colorcolumn')
-  "function! s:DimInactiveWindows()
-    "for i in range(1, tabpagewinnr(tabpagenr(), '$'))
-      "let l:range = ""
-      "if i != winnr()
-        "if &wrap
-         "" HACK: when wrapping lines is enabled, we use the maximum number
-         "" of columns getting highlighted. This might get calculated by
-         "" looking for the longest visible line and using a multiple of
-         "" winwidth().
-         "let l:width=256 " max
-        "else
-         "let l:width=winwidth(i)
-        "endif
-        "let l:range = join(range(1, l:width), ',')
-      "endif
-      "call setwinvar(i, '&colorcolumn', l:range)
-    "endfor
-  "endfunction
-  "augroup DimInactiveWindows
-    "au!
-    "au WinEnter * call s:DimInactiveWindows()
-    "au WinEnter * set cursorline
-    "au WinLeave * set nocursorline
-  "augroup END
-"endif
+if exists('+colorcolumn')
+  function! s:DimInactiveWindows()
+    for i in range(1, tabpagewinnr(tabpagenr(), '$'))
+      let l:range = ""
+      if i != winnr()
+        if &wrap
+         " HACK: when wrapping lines is enabled, we use the maximum number
+         " of columns getting highlighted. This might get calculated by
+         " looking for the longest visible line and using a multiple of
+         " winwidth().
+         let l:width=256 " max
+        else
+         let l:width=winwidth(i)
+        endif
+        let l:range = join(range(1, l:width), ',')
+      endif
+      call setwinvar(i, '&colorcolumn', l:range)
+    endfor
+  endfunction
+  augroup DimInactiveWindows
+    au!
+    au WinEnter * call s:DimInactiveWindows()
+    au WinEnter * set cursorline
+    au WinLeave * set nocursorline
+  augroup END
+endif
