@@ -48,9 +48,6 @@
 [submodule "bundle/vim-pandoc"]
 	path = bundle/vim-pandoc
 	url = https://github.com/monotasker/vim-pandoc.git
-[submodule "bundle/vim-pandoc-extras"]
-	path = bundle/vim-pandoc-extras
-	url = https://github.com/vim-pandoc/vim-pandoc-extras.git
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim.git
@@ -174,3 +171,9 @@
 [submodule "bundle/vim-multiple-cursors"]
 	path = bundle/vim-multiple-cursors
 	url = https://github.com/terryma/vim-multiple-cursors.git
+[submodule "bundle/vim-pandoc-after"]
+	path = bundle/vim-pandoc-after
+	url = https://github.com/vim-pandoc/vim-pandoc-after.git
+[submodule "bundle/vim-pandoc-syntax"]
+	path = bundle/vim-pandoc-syntax
+	url = https://github.com/vim-pandoc/vim-pandoc-syntax.git
