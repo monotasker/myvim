@@ -25,6 +25,7 @@ filetype off "must be off to run pathogen commands
 let g:pathogen_disabled=['vim-gitgutter']
 let g:pathogen_disabled=['powerline']
 let g:pathogen_disabled=['minibufexpl']
+let g:pathogen_disabled=['syntastic']
 
 call pathogen#infect()
 call pathogen#incubate()
@@ -365,7 +366,7 @@ let g:pymode_virtualenv=1
 let g:pymode_run_key='<leader>r'
 let g:pymode_doc_key='K'
 let g:pymode_lint=1
-let g:pymode_lint_checker="mccabe,pylint,pyflakes,pep8"
+let g:pymode_lint_checker="pyflakes,pep8" "mccabe,pylint,
 let g:pymode_lint_ignore="E501,E126,E701,E711,E128"
 let g:pymode_lint_onfly=1
 let g:pymode_lint_config="$HOME/.pylintrc"
@@ -386,7 +387,7 @@ let g:pymode_rope_local_prefix="<C-c>r"
 let g:pymode_rope_guess_project=1
 let g:pymode_rope_goto_def_newwin=""
 let g:pymode_rope_always_show_complete_menu=0
-let g:syntastic_python_checkers = ['pyflakes', 'python'] " pylint 'flake8'
+let g:syntastic_python_checkers = [] "['pyflakes', 'python'] pylint 'flake8'
 "USE RELATIVE LINE NUMBERING IN PYTHON FILES TOO--------------------
 "au BufNewFile,BufRead *.py set relativenumber
 
