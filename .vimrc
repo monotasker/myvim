@@ -22,10 +22,7 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 filetype off "must be off to run pathogen commands
 
 " DISABLED PLUGINS----------------------------------------------------------
-let g:pathogen_disabled=['vim-gitgutter']
-let g:pathogen_disabled=['powerline']
-let g:pathogen_disabled=['minibufexpl']
-let g:pathogen_disabled=['syntastic']
+let g:pathogen_disabled=['vim-gitgutter', 'powerline', 'minibufexpl', 'syntastic']
 
 call pathogen#infect()
 call pathogen#incubate()
