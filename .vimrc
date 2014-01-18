@@ -88,7 +88,7 @@ set lazyredraw " to avoid scrolling problems, don't redraw during macros etc
 " =========================================================================
 " CURSOR----------------------------------------
 "if has("gui_running")
-    "set cursorline
+    set cursorline
 "endif
 "
 " COLOUR THEMES ----------------------
@@ -126,7 +126,7 @@ set fillchars+=vert:\   " (significant whitespace after the '\' )
 " FONT FACE AND SIZE ---------------------------------------------
 "using Powerline patched fonts
 let g:airline_powerline_fonts = 1 " for airline
-set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 13
+set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 14
 "also nice: Menlo for Powerline 11, Liberation Mono for Powerline 11,
 "Inconsolata for Powerline 12, Inconsolata DZ for Powerline,
 "function! FontChangeOnResize()
@@ -140,9 +140,14 @@ let g:Powerline_symbols = 'fancy'
 " DEFAULT TAB SIZE-----------------------------------------------------
 set ts=4 softtabstop=4 shiftwidth=4 expandtab
 " TOOLBARS AND SCROLLBARS----------------------------------------------
+set guioptions-=m  "remove menubar
 set guioptions-=T  "remove toolbar
+set guioptions-=r  "remove right scrollbar
 set guioptions-=R  "remove right scrollbar
 set guioptions-=L  "remove left scrollbar
+set guioptions-=b  "remove bottom scrollbar
+" LINE HEIGHT-----------------------------------------------
+set linespace=8
 " SIZE OF INITIAL WINDOW-----------------------------------------------
 "set lines=999
 "set columns=999
@@ -150,11 +155,16 @@ set guioptions-=L  "remove left scrollbar
 set colorcolumn=80
 " LINE NUMBERS---------------------------------------------------------
 set number "turn on line numbers
+"set numberwidth=5
+autocmd ColorScheme * highlight LineNr guibg=#FDF6E3 guifg=#ede5ca
+autocmd ColorScheme * highlight foldcolumn guibg=#FDF6E3 guifg=#FDF6E3
+autocmd ColorScheme * highlight cursorline guibg=#faf2d4
+set foldcolumn=2
 "set relativenumber "line numbers show distance from cursor line
 " TOGGLE LINE NUMBERS AND FOLD COLUMN----------------------------------
 nnoremap <F6> :set nonumber!<CR>:set foldcolumn=0<CR>
 " HEIGHT OF COMMAND LINE ----------------------------------------------
-set cmdheight=2
+set cmdheight=1
 " RESIZE WINDOW WHEN IT RECEIVES FOCUS --------------------------------
 function! SetMinWindowSize()
     if bufwinnr(1)
