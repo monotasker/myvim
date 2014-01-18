@@ -18,12 +18,13 @@ au! BufWritePost $MYVIMRC nested source $MYVIMRC
 " ==========================================================================
 " ADD PATHOGEN TO RUNTIME PATH----------------------------------------------
 runtime bundle/vim-pathogen/autoload/pathogen.vim
-" PATHOGEN TO HANDLE PATHS AND HELPTAGS-------------------------------------
-filetype off "must be off to run pathogen commands
 
 " DISABLED PLUGINS----------------------------------------------------------
-let g:pathogen_disabled=['vim-gitgutter', 'powerline', 'minibufexpl', 'syntastic']
+let g:pathogen_disabled=['syntastic', 'makegreen', 'taglist', 'vim-misc']
+let g:pathogen_disabled+=['vimnotes', 'vim-scratch']
 
+" PATHOGEN TO HANDLE PATHS AND HELPTAGS-------------------------------------
+filetype off "must be off to run pathogen commands
 call pathogen#infect()
 call pathogen#incubate()
 call pathogen#helptags()
@@ -35,8 +36,8 @@ set runtimepath-=~/.vim/bundle/vim-gitgutter
 
 " AUTO SUBSTITUTIONS
 " ==========================================================================
-inoremap --* –
-inoremap ---* —
+inoremap <leader>-- –
+inoremap <leader>--- —
 
 " MISC SETTINGS
 " ==========================================================================
@@ -176,16 +177,17 @@ map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
-" CYCLE THROUGH BUFFERS------------------------------------------------
+" CYCLE THROUGH BUFFERS AND TABS------------------------------------------------
 nnoremap <leader><Tab> :bnext<CR>
 nnoremap <leader><S-Tab> :bprevious<CR>
+nnoremap <leader><C-Tab> :tabnext<CR>
+nnoremap <leader><S-C-Tab> :tabprevious<CR>
 " ADJUST SPLIT WINDOW HEIGHT-------------------------------------------
 if bufwinnr(1)
-  map + <C-W>+
-  map = <C-W>+
-  map - <C-W>-
-  map 8 <C-W><
-  map 9 <C-W>>
+  noremap <A-j> <C-W>+
+  noremap <A-k> <C-W>-
+  noremap <A-l> <C-W><
+  noremap <A-h> <C-W>>
 endif
 " RESIZE WINDOW ON SWITCH----------------------------------------------
 function! SwitchNMax(direction)
@@ -267,21 +269,22 @@ nmap <leader>ss :SaveSession<CR>
 " SUPERTAB----------------------------------------------------------------
 let g:SuperTabMappingForward='<S-Tab>'
 let g:SuperTabMappingBackward='<C-Tab>'
-" TAGLIST-----------------------------------------------------------------
-set tags=./tags,tags,$HOME
 " REBUILD TAGS IN LOCAL DIRECTORY------------------------------------------
 nmap <leader>t :!(cd %:p:h;ctags *)&
+" TAGBAR-----------------------------------------------------------------
+nnoremap TT :TagbarToggle<CR>
+" TAGLIST-----------------------------------------------------------------
+set tags=./tags,tags,$HOME
 "au FileWritePost :!(cd %:p:h;ctags *)&
 "let g:ctags_statusline=1 "function name in status bar
 "let generate_tags=1
-let Tlist_Use_Horiz_Window=0 "vertical taglist results
-nnoremap TT :TlistToggle<CR>
-map <F4> :TlistToggle<CR>
-let Tlist_Use_Right_Window = 1
-let Tlist_Compact_Format = 1
-let Tlist_Exit_OnlyWindow = 1
-let Tlist_GainFocus_On_ToggleOpen = 1
-let Tlist_File_Fold_Auto_Close = 1
+"let Tlist_Use_Horiz_Window=0 "vertical taglist results
+"map <F4> :TlistToggle<CR>
+"let Tlist_Use_Right_Window = 1
+"let Tlist_Compact_Format = 1
+"let Tlist_Exit_OnlyWindow = 1
+"let Tlist_GainFocus_On_ToggleOpen = 1
+"let Tlist_File_Fold_Auto_Close = 1
 " TASKLIST----------------------------------------------------------------
 nnoremap <leader>tl <Plug>TaskList
 "YANKRING----------------------------------------------------------------
