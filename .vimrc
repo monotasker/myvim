@@ -20,7 +20,7 @@ au! BufWritePost $MYVIMRC nested source $MYVIMRC
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 
 " DISABLED PLUGINS----------------------------------------------------------
-let g:pathogen_disabled=['syntastic', 'makegreen', 'taglist', 'vim-misc']
+let g:pathogen_disabled=['syntastic', 'makegreen', 'taglist']
 let g:pathogen_disabled+=['vimnotes', 'vim-scratch']
 
 " PATHOGEN TO HANDLE PATHS AND HELPTAGS-------------------------------------
