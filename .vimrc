@@ -115,7 +115,9 @@ else
       colorscheme SolarizedLight
     else
       set background=light
-      colorscheme solarized
+      colorscheme solarized highlight LineNr guibg=#FDF6E3 guifg=#ede5ca
+      colorscheme solarized highlight foldcolumn guibg=#FDF6E3 guifg=#FDF6E3
+      colorscheme solarized highlight cursorline guibg=#faf2d4
     endif
 endif
 "my favorites: SolarizedLight base16-monokai molokai jellybeans
@@ -148,7 +150,7 @@ set guioptions-=R  "remove right scrollbar
 set guioptions-=L  "remove left scrollbar
 set guioptions-=b  "remove bottom scrollbar
 " LINE HEIGHT-----------------------------------------------
-set linespace=8
+set linespace=6
 " SIZE OF INITIAL WINDOW-----------------------------------------------
 "set lines=999
 "set columns=999
@@ -157,9 +159,6 @@ set colorcolumn=80
 " LINE NUMBERS---------------------------------------------------------
 set number "turn on line numbers
 "set numberwidth=5
-autocmd ColorScheme * highlight LineNr guibg=#FDF6E3 guifg=#ede5ca
-autocmd ColorScheme * highlight foldcolumn guibg=#FDF6E3 guifg=#FDF6E3
-autocmd ColorScheme * highlight cursorline guibg=#faf2d4
 set foldcolumn=2
 "set relativenumber "line numbers show distance from cursor line
 " TOGGLE LINE NUMBERS AND FOLD COLUMN----------------------------------
