@@ -18,14 +18,14 @@ au! BufWritePost $MYVIMRC nested source $MYVIMRC
 " ==========================================================================
 " ADD PATHOGEN TO RUNTIME PATH----------------------------------------------
 runtime bundle/vim-pathogen/autoload/pathogen.vim
-" PATHOGEN TO HANDLE PATHS AND HELPTAGS-------------------------------------
-filetype off "must be off to run pathogen commands
 
 " DISABLED PLUGINS----------------------------------------------------------
-let g:pathogen_disabled=['vim-gitgutter']
-let g:pathogen_disabled=['powerline']
-let g:pathogen_disabled=['minibufexpl']
+let g:pathogen_disabled=['syntastic', 'makegreen', 'taglist']
+let g:pathogen_disabled+=['vimnotes', 'vim-scratch']
+"vim-misc necessary for vim-sessions
 
+" PATHOGEN TO HANDLE PATHS AND HELPTAGS-------------------------------------
+filetype off "must be off to run pathogen commands
 call pathogen#infect()
 call pathogen#incubate()
 call pathogen#helptags()
@@ -37,8 +37,8 @@ set runtimepath-=~/.vim/bundle/vim-gitgutter
 
 " AUTO SUBSTITUTIONS
 " ==========================================================================
-inoremap --* –
-inoremap ---* —
+inoremap <leader>-- –
+inoremap <leader>--- —
 
 " MISC SETTINGS
 " ==========================================================================
@@ -89,7 +89,7 @@ set lazyredraw " to avoid scrolling problems, don't redraw during macros etc
 " =========================================================================
 " CURSOR----------------------------------------
 "if has("gui_running")
-    "set cursorline
+    set cursorline
 "endif
 "
 " COLOUR THEMES ----------------------
@@ -116,6 +116,9 @@ else
     else
       set background=light
       colorscheme solarized
+      highlight LineNr guibg=#FDF6E3 guifg=#ede5ca
+      highlight FoldColumn guibg=#FDF6E3 guifg=#FDF6E3
+      highlight CursorLine guibg=#faf2d4
     endif
 endif
 "my favorites: SolarizedLight base16-monokai molokai jellybeans
@@ -127,7 +130,7 @@ set fillchars+=vert:\   " (significant whitespace after the '\' )
 " FONT FACE AND SIZE ---------------------------------------------
 "using Powerline patched fonts
 let g:airline_powerline_fonts = 1 " for airline
-set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 13
+set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 14
 "also nice: Menlo for Powerline 11, Liberation Mono for Powerline 11,
 "Inconsolata for Powerline 12, Inconsolata DZ for Powerline,
 "function! FontChangeOnResize()
@@ -141,9 +144,14 @@ let g:Powerline_symbols = 'fancy'
 " DEFAULT TAB SIZE-----------------------------------------------------
 set ts=4 softtabstop=4 shiftwidth=4 expandtab
 " TOOLBARS AND SCROLLBARS----------------------------------------------
+set guioptions-=m  "remove menubar
 set guioptions-=T  "remove toolbar
+set guioptions-=r  "remove right scrollbar
 set guioptions-=R  "remove right scrollbar
 set guioptions-=L  "remove left scrollbar
+set guioptions-=b  "remove bottom scrollbar
+" LINE HEIGHT-----------------------------------------------
+set linespace=6
 " SIZE OF INITIAL WINDOW-----------------------------------------------
 "set lines=999
 "set columns=999
@@ -151,11 +159,13 @@ set guioptions-=L  "remove left scrollbar
 set colorcolumn=80
 " LINE NUMBERS---------------------------------------------------------
 set number "turn on line numbers
+"set numberwidth=5
+set foldcolumn=2
 "set relativenumber "line numbers show distance from cursor line
 " TOGGLE LINE NUMBERS AND FOLD COLUMN----------------------------------
 nnoremap <F6> :set nonumber!<CR>:set foldcolumn=0<CR>
 " HEIGHT OF COMMAND LINE ----------------------------------------------
-set cmdheight=2
+set cmdheight=1
 " RESIZE WINDOW WHEN IT RECEIVES FOCUS --------------------------------
 function! SetMinWindowSize()
     if bufwinnr(1)
@@ -178,16 +188,17 @@ map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
-" CYCLE THROUGH BUFFERS------------------------------------------------
+" CYCLE THROUGH BUFFERS AND TABS------------------------------------------------
 nnoremap <leader><Tab> :bnext<CR>
 nnoremap <leader><S-Tab> :bprevious<CR>
+nnoremap <leader><C-Tab> :tabnext<CR>
+nnoremap <leader><S-C-Tab> :tabprevious<CR>
 " ADJUST SPLIT WINDOW HEIGHT-------------------------------------------
 if bufwinnr(1)
-  map + <C-W>+
-  map = <C-W>+
-  map - <C-W>-
-  map 8 <C-W><
-  map 9 <C-W>>
+  noremap <A-j> <C-W>+
+  noremap <A-k> <C-W>-
+  noremap <A-l> <C-W><
+  noremap <A-h> <C-W>>
 endif
 " RESIZE WINDOW ON SWITCH----------------------------------------------
 function! SwitchNMax(direction)
@@ -269,21 +280,22 @@ nmap <leader>ss :SaveSession<CR>
 " SUPERTAB----------------------------------------------------------------
 let g:SuperTabMappingForward='<S-Tab>'
 let g:SuperTabMappingBackward='<C-Tab>'
-" TAGLIST-----------------------------------------------------------------
-set tags=./tags,tags,$HOME
 " REBUILD TAGS IN LOCAL DIRECTORY------------------------------------------
 nmap <leader>t :!(cd %:p:h;ctags *)&
+" TAGBAR-----------------------------------------------------------------
+nnoremap TT :TagbarToggle<CR>
+" TAGLIST-----------------------------------------------------------------
+set tags=./tags,tags,$HOME
 "au FileWritePost :!(cd %:p:h;ctags *)&
 "let g:ctags_statusline=1 "function name in status bar
 "let generate_tags=1
-let Tlist_Use_Horiz_Window=0 "vertical taglist results
-nnoremap TT :TlistToggle<CR>
-map <F4> :TlistToggle<CR>
-let Tlist_Use_Right_Window = 1
-let Tlist_Compact_Format = 1
-let Tlist_Exit_OnlyWindow = 1
-let Tlist_GainFocus_On_ToggleOpen = 1
-let Tlist_File_Fold_Auto_Close = 1
+"let Tlist_Use_Horiz_Window=0 "vertical taglist results
+"map <F4> :TlistToggle<CR>
+"let Tlist_Use_Right_Window = 1
+"let Tlist_Compact_Format = 1
+"let Tlist_Exit_OnlyWindow = 1
+"let Tlist_GainFocus_On_ToggleOpen = 1
+"let Tlist_File_Fold_Auto_Close = 1
 " TASKLIST----------------------------------------------------------------
 nnoremap <leader>tl <Plug>TaskList
 "YANKRING----------------------------------------------------------------
@@ -365,7 +377,7 @@ let g:pymode_virtualenv=1
 let g:pymode_run_key='<leader>r'
 let g:pymode_doc_key='K'
 let g:pymode_lint=1
-let g:pymode_lint_checker="mccabe,pylint,pyflakes,pep8"
+let g:pymode_lint_checker="pyflakes,pep8" "mccabe,pylint,
 let g:pymode_lint_ignore="E501,E126,E701,E711,E128"
 let g:pymode_lint_onfly=1
 let g:pymode_lint_config="$HOME/.pylintrc"
@@ -386,7 +398,7 @@ let g:pymode_rope_local_prefix="<C-c>r"
 let g:pymode_rope_guess_project=1
 let g:pymode_rope_goto_def_newwin=""
 let g:pymode_rope_always_show_complete_menu=0
-let g:syntastic_python_checkers = ['pyflakes', 'python'] " pylint 'flake8'
+let g:syntastic_python_checkers = [] "['pyflakes', 'python'] pylint 'flake8'
 "USE RELATIVE LINE NUMBERING IN PYTHON FILES TOO--------------------
 "au BufNewFile,BufRead *.py set relativenumber
 
