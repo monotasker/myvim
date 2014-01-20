@@ -115,9 +115,10 @@ else
       colorscheme SolarizedLight
     else
       set background=light
-      colorscheme solarized highlight LineNr guibg=#FDF6E3 guifg=#ede5ca
-      colorscheme solarized highlight foldcolumn guibg=#FDF6E3 guifg=#FDF6E3
-      colorscheme solarized highlight cursorline guibg=#faf2d4
+      colorscheme solarized
+      highlight LineNr guibg=#FDF6E3 guifg=#ede5ca
+      highlight FoldColumn guibg=#FDF6E3 guifg=#FDF6E3
+      highlight CursorLine guibg=#faf2d4
     endif
 endif
 "my favorites: SolarizedLight base16-monokai molokai jellybeans
