@@ -105,6 +105,8 @@ if (g:hour > 19 || g:hour < 6)
     else
       set background=dark
       colorscheme base16-default
+      highlight CursorLineNr guifg=DarkGrey
+      highlight FoldColumn guifg=#202020
     endif
 else
     if !has('gui_running')
@@ -115,9 +117,9 @@ else
       colorscheme SolarizedLight
     else
       set background=light
-      colorscheme solarized highlight LineNr guibg=#FDF6E3 guifg=#ede5ca
-      colorscheme solarized highlight foldcolumn guibg=#FDF6E3 guifg=#FDF6E3
-      colorscheme solarized highlight cursorline guibg=#faf2d4
+      colorscheme solarized "highlight LineNr guibg=#FDF6E3 guifg=#ede5ca
+      "colorscheme solarized highlight foldcolumn guibg=#FDF6E3 guifg=#FDF6E3
+      "colorscheme solarized highlight cursorline guibg=#faf2d4
     endif
 endif
 "my favorites: SolarizedLight base16-monokai molokai jellybeans
