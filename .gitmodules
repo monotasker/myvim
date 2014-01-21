@@ -90,9 +90,6 @@
 [submodule "bundle/rename"]
 	path = bundle/rename
 	url = git://github.com/danro/rename.vim.git
-[submodule "bundle/powerline"]
-	path = bundle/powerline
-	url = git://github.com/Lokaltog/powerline.git
 [submodule "bundle/guicolorscheme"]
 	path = bundle/guicolorscheme
 	url = git://github.com/vim-scripts/guicolorscheme.vim.git
