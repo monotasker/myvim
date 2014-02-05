@@ -243,10 +243,11 @@ vnoremap <leader>ey "+y
 nnoremap <leader>ep "+p
 vnoremap <leader>ep "+p
 " STRIP TRAILING SPACES---------------------------------------------------
-au BufWrite :call <SID>StripTrailingWhitespaces()<CR>  
+au BufWrite :call <SID>StripTrailingWhitespaces()<CR>
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 " ALTERNATE INDENT MAPPING
 nnoremap <S-i> <Esc>>>
+vnoremap <S-i> >
 " CLOSE BUFFER WITHOUT CLOSING WINDOW-------------------------------------
 nmap <leader>bd :Kwbd<CR>
 
@@ -255,10 +256,10 @@ nmap <leader>bd :Kwbd<CR>
 " AIRLINE STATUS LINE-----------------------------------------------------
 let g:airline#extensions#tabline#enabled = 1
 "for straight tab separators
-"let g:airline#extensions#tabline#left_sep = ' '
-"let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
 " ACK FUZZY TEXT SEARCH---------------------------------------------------
-nmap <leader>a <Esc>:Ack!
+nnoremap <leader>a <Esc>:Ack!
 " UNITE UNIFIED SEARCH INTERFACE--------------------------------------------
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 nnoremap <leader>uf :<C-u>Unite file<CR>
