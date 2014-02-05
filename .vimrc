@@ -80,10 +80,10 @@ set fenc=utf-8
 "set statusline=%f\%m\ %h%r%w%q\%{fugitive#statusline()}\ %=%l,%c\
 "set ruler
 " AVOID SLOWDOWNS-----------------------------------------------------------
-set synmaxcol=228 "don't highlight very long lines past 128 chars
+"set synmaxcol=428 "don't highlight very long lines past 128 chars
 set ttyfast " u got a fast terminal
-set ttyscroll=3 " redraw instead of scrolling when moving more than 3 lines
-set lazyredraw " to avoid scrolling problems, don't redraw during macros etc
+"set ttyscroll=3 " redraw instead of scrolling when moving more than 3 lines
+"set lazyredraw " to avoid scrolling problems, don't redraw during macros etc
 
 " UI APPEARANCE
 " =========================================================================
@@ -126,13 +126,13 @@ endif
 "my favorites: SolarizedLight base16-monokai molokai jellybeans
 "base16-tomorrow base16-monokai base16-chalk base16-default base16-mocha
 
-"get rid of | characters in vertical separator 
+"get rid of | characters in vertical separator
 set fillchars+=vert:\   " (significant whitespace after the '\' )
 
 " FONT FACE AND SIZE ---------------------------------------------
 "using Powerline patched fonts
 let g:airline_powerline_fonts = 1 " for airline
-set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 14
+set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
 "also nice: Menlo for Powerline 11, Liberation Mono for Powerline 11,
 "Inconsolata for Powerline 12, Inconsolata DZ for Powerline,
 "function! FontChangeOnResize()
@@ -167,7 +167,7 @@ set foldcolumn=2
 " TOGGLE LINE NUMBERS AND FOLD COLUMN----------------------------------
 nnoremap <F6> :set nonumber!<CR>:set foldcolumn=0<CR>
 " HEIGHT OF COMMAND LINE ----------------------------------------------
-set cmdheight=1
+set cmdheight=2
 " RESIZE WINDOW WHEN IT RECEIVES FOCUS --------------------------------
 function! SetMinWindowSize()
     if bufwinnr(1)
@@ -186,10 +186,10 @@ au BufEnter,BufRead *.json,*.xml,.vimrc,*.py,*.js,*.txt,*.md,*.css,*.less,*.load
 " HOME ROW MAPPING TO LEAVE INSERT MODE--------------------------------
 :inoremap jk <esc>
 " MOVE BETWEEN WINDOWS-------------------------------------------------
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-l> <c-w>l
-map <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+nnoremap <c-h> <c-w>h
 " CYCLE THROUGH BUFFERS AND TABS------------------------------------------------
 nnoremap <leader><Tab> :bnext<CR>
 nnoremap <leader><S-Tab> :bprevious<CR>
@@ -243,6 +243,7 @@ vnoremap <leader>ey "+y
 nnoremap <leader>ep "+p
 vnoremap <leader>ep "+p
 " STRIP TRAILING SPACES---------------------------------------------------
+au BufWrite :call <SID>StripTrailingWhitespaces()<CR>  
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 " ALTERNATE INDENT MAPPING
 nnoremap <S-i> <Esc>>>
@@ -478,6 +479,13 @@ endfunction
         "echo "Autosaved file while you were absent"
     "endif
 "endfunction
+
+vnoremap <leader>dl :call ToDictLiteral()
+function! ToDictLiteral()
+  :'<,'>s/(/{/
+  :'<,'>s/)/}/
+  :'<,'>s/=/: /
+endfunction
 
 "output result of any shell command to scratch buffer
 function! s:ExecuteInShell(command)
