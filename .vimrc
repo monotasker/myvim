@@ -75,7 +75,7 @@ Bundle 'vim-jquery'
 " html/xml--------------------------------------------------------
 Bundle 'closetag'
 Bundle 'XML-Folding'
-Bundle 'vim-sparkup'
+"Bundle 'vim-sparkup'
 Bundle 'bootstrap-snippets'
 " css---------------------------------------------------------------
 Bundle 'vim-less'
@@ -87,19 +87,19 @@ Bundle 'svg.vim'
 " colorschemes ---------------------------------------------------
 Bundle 'base16'
 Bundle 'solarized'
-Bundle 'codeschool-vim-theme'  
-Bundle 'jellybeans.vim'        
-Bundle 'vim-colorschemes'   
-Bundle 'Vim-Darkmate'       
+Bundle 'codeschool-vim-theme'
+Bundle 'jellybeans.vim'
+Bundle 'vim-colorschemes'
+Bundle 'Vim-Darkmate'
 Bundle 'vim-vividchalk'
 Bundle 'vim-distinguished'
 " color utilities ---------------------------------------------------
-Bundle 'colorv'                
-Bundle 'galaxy.vim'            
-Bundle 'guicolorscheme'        
+Bundle 'colorv'
+Bundle 'galaxy.vim'
+Bundle 'guicolorscheme'
 " version control ---------------------------------------------------
-Bundle 'git'                   
-Bundle 'fugitive'              
+Bundle 'git'
+Bundle 'fugitive'
 " snippets ----------------------------------------------------------
 Bundle 'web2py-snippets'
 " non-GitHub repos =========================================
@@ -109,7 +109,7 @@ Bundle 'web2py-snippets'
 " NOTE: comments after Bundle commands are not allowed.
 
 syntax on
-filetype plugin indent on     
+filetype plugin indent on
 
 " AUTO SUBSTITUTIONS
 " ==========================================================================
@@ -174,7 +174,7 @@ set ttyfast " u got a fast terminal
 " darkburn; darkspectrum; desert; desert256; desertEx; desertedocean;
 " *distinguished; SolarizedLight; manuscript, moss, *twilight, distinguished,
 " *brg256, vividchalk, ir_black, mustang, darkmate, pychimp, fokus, guardian,
-" *khaki, kolor, 
+" *khaki, kolor,
 let hour = strftime('%H')
 if (g:hour > 19 || g:hour < 6)
     if !has('gui_running')
