@@ -165,3 +165,24 @@
 [submodule "bundle/vim-scratch"]
 	path = bundle/vim-scratch
 	url = https://github.com/kana/vim-scratch.git
+[submodule "bundle/vim-distinguished"]
+	path = bundle/vim-distinguished
+	url = https://github.com/Lokaltog/vim-distinguished.git
+[submodule "bundle/vim-vividchalk"]
+	path = bundle/vim-vividchalk
+	url = https://github.com/tpope/vim-vividchalk.git
+[submodule "bundle/codeschool-vim-theme"]
+	path = bundle/codeschool-vim-theme
+	url = https://github.com/29decibel/codeschool-vim-theme.git
+[submodule "bundle/vim-colorschemes"]
+	path = bundle/vim-colorschemes
+	url = https://github.com/flazz/vim-colorschemes.git
+[submodule "bundle/Vim-Darkmate"]
+	path = bundle/Vim-Darkmate
+	url = https://github.com/yearofmoo/Vim-Darkmate.git
+[submodule "bundle/pychimp"]
+	path = bundle/pychimp
+	url = https://github.com/Pychimp/Pychimp-vim.git
+[submodule "bundle/ag.vim"]
+	path = bundle/ag.vim
+	url = https://github.com/epmatsw/ag.vim.git

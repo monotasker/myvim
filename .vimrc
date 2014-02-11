@@ -13,27 +13,103 @@
 " nested keeps theme from overriding powerline's colouring
 au! BufWritePost $MYVIMRC nested source $MYVIMRC
 
+filetype off                  " required!
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+" original repos on GitHub=========================================
+Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-fugitive'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+"Bundle 'Lokaltog/vim-easymotion'
+"Bundle 'scratch-vim'
+"Bundle 'vimnotes'
+" markdown--------------------------------------------------------
+Bundle 'vim-pandoc/vim-pandoc'
+Bundle 'vim-pandoc/vim-pandoc-after'
+Bundle 'vim-pandoc/vim-markdownfootnotes'
+Bundle 'vim-pandoc/vim-pandoc-syntax'
+" writing --------------------------------------------------------
+Bundle 'dsanson/writer.vim'
+Bundle 'fmoralesc/vim-pad'
+" vim-scripts repos=========================================
+"Bundle 'L9'
+"Bundle 'FuzzyFinder'
+" basic editing functions------------------------------------
+Bundle 'abolish'
+Bundle 'camelcasemotion'
+Bundle 'rename'
+Bundle 'repeat'
+Bundle 'nerdcommenter'
+Bundle 'surround'
+Bundle 'gundo'
+Bundle 'yankring'
+Bundle 'vim-multiple-cursors'
+" gui---------------------------------------------------------
+Bundle 'vim-airline'
+" project management------------------------------------------
+Bundle 'vim-session'
+Bundle 'tasklist'
+" code completion and symbols---------------------------------
+Bundle 'snipmate'
+Bundle 'supertab'
+Bundle 'syntastic'
+Bundle 'tagbar'
+" utilities---------------------------------------------------
+Bundle 'tlib_vim'
+Bundle 'ansi_esc'
+Bundle 'vim-misc'
+Bundle 'webapi-vim'
+" search and navigation---------------------------------------
+Bundle 'unity.vim'
+Bundle 'ag.vim'
+Bundle 'ctrlp'
+Bundle 'nerdtree'
+" filetypes and code hilighting---------------------------------
+Bundle 'SyntaxRange'
+" python---------------------------------------------------------
+Bundle 'pychimp'
+Bundle 'python-mode'
+Bundle 'vim_web2py_syntax'
+" javascript------------------------------------------------------
+Bundle 'vim-jquery'
+" html/xml--------------------------------------------------------
+Bundle 'closetag'
+Bundle 'XML-Folding'
+Bundle 'vim-sparkup'
+Bundle 'bootstrap-snippets'
+" css---------------------------------------------------------------
+Bundle 'vim-less'
+Bundle 'vim-lesscss'
+Bundle 'less-syntax'
+Bundle 'vim-css-color'
+" svg---------------------------------------------------------------
+Bundle 'svg.vim'
+" colorschemes ---------------------------------------------------
+Bundle 'base16'
+Bundle 'solarized'
+Bundle 'codeschool-vim-theme'  
+Bundle 'jellybeans.vim'        
+Bundle 'vim-colorschemes'   
+Bundle 'Vim-Darkmate'       
+Bundle 'vim-vividchalk'
+Bundle 'vim-distinguished'
+" color utilities ---------------------------------------------------
+Bundle 'colorv'                
+Bundle 'galaxy.vim'            
+Bundle 'guicolorscheme'        
+" version control ---------------------------------------------------
+Bundle 'git'                   
+Bundle 'fugitive'              
+" snippets ----------------------------------------------------------
+Bundle 'web2py-snippets'
+" non-GitHub repos =========================================
+"Bundle 'git://git.wincent.com/command-t.git'
+" local Git repos =========================================
+"Bundle 'file:///Users/gmarik/path/to/plugin'
+" NOTE: comments after Bundle commands are not allowed.
 
-" PATHOGEN
-" ==========================================================================
-" ADD PATHOGEN TO RUNTIME PATH----------------------------------------------
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-
-" DISABLED PLUGINS----------------------------------------------------------
-let g:pathogen_disabled=['syntastic', 'makegreen', 'taglist']
-let g:pathogen_disabled+=['vimnotes', 'vim-scratch']
-"vim-misc necessary for vim-sessions
-
-" PATHOGEN TO HANDLE PATHS AND HELPTAGS-------------------------------------
-filetype off "must be off to run pathogen commands
-call pathogen#infect()
-call pathogen#incubate()
-call pathogen#helptags()
-"set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 syntax on
-filetype plugin indent on
-" DISABLED PLUGINS----------------------------------------------------------
-set runtimepath-=~/.vim/bundle/vim-gitgutter
+filetype plugin indent on     
 
 " AUTO SUBSTITUTIONS
 " ==========================================================================
@@ -93,7 +169,12 @@ set ttyfast " u got a fast terminal
 "endif
 "
 " COLOUR THEMES ----------------------
-" some good ones: tomorrow; base-16; murmur; jellybeans; molokai; wombat; luna
+" some good ones: tomorrow; *base16-default; base16-monokai; murmur; *jellybeans; *molokai;
+" wombat; luna; breeze; buzybee; camo; codeschool; cthulian; dante; darkblue2;
+" darkburn; darkspectrum; desert; desert256; desertEx; desertedocean;
+" *distinguished; SolarizedLight; manuscript, moss, *twilight, distinguished,
+" *brg256, vividchalk, ir_black, mustang, darkmate, pychimp, fokus, guardian,
+" *khaki, kolor, 
 let hour = strftime('%H')
 if (g:hour > 19 || g:hour < 6)
     if !has('gui_running')
@@ -105,26 +186,34 @@ if (g:hour > 19 || g:hour < 6)
     else
       set background=dark
       colorscheme base16-default
-      highlight CursorLineNr guifg=DarkGrey
-      highlight FoldColumn guifg=#202020
     endif
 else
     if !has('gui_running')
-      set t_Co=256
+      "set t_Co=256
       "runtime! bundle/guicolorscheme/plugin/guicolorscheme.vim
       set background=light
       "GuiColorScheme SolarizedLight
       colorscheme SolarizedLight
+      highlight CursorLine guibg=#faf2d4
     else
       set background=light
       colorscheme solarized
-      highlight LineNr guibg=#FDF6E3 guifg=#ede5ca
-      highlight FoldColumn guibg=#FDF6E3 guifg=#FDF6E3
-      highlight CursorLine guibg=#faf2d4
     endif
 endif
-"my favorites: SolarizedLight base16-monokai molokai jellybeans
-"base16-tomorrow base16-monokai base16-chalk base16-default base16-mocha
+"conditional overrides based on active colorscheme
+if g:colors_name == 'solarized'
+  "highlight LineNr guibg=#FDF6E3 guifg=#ede5ca
+  "highlight FoldColumn guibg=#FDF6E3 guifg=#FDF6E3
+  "highlight CursorLine guibg=#faf2d4
+elseif g:colors_name == 'SolarizedLight'
+  "highlight LineNr guibg=#FDF6E3 guifg=#ede5ca
+  "highlight FoldColumn guibg=#FDF6E3 guifg=#FDF6E3
+  "highlight CursorLine guibg=#faf2d4
+  "highlight ColorColumn guibg=#faf2d4
+elseif g:colors_name == 'base16-default'
+  "highlight CursorLineNr guifg=DarkGrey
+  "highlight foldcolumn guifg=#202020
+endif
 
 "get rid of | characters in vertical separator
 set fillchars+=vert:\   " (significant whitespace after the '\' )
@@ -253,11 +342,13 @@ nmap <leader>bd :Kwbd<CR>
 
 " PLUGIN SETTINGS AND SHORTCUTS
 " ========================================================================
+" VIM_PAD ----------------------------------------------------------------
+let g:pad_dir='~/Dropbox/Simplenote'
 " AIRLINE STATUS LINE-----------------------------------------------------
 let g:airline#extensions#tabline#enabled = 1
-"for straight tab separators
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#left_sep = ' ' "straight tab separators
+let g:airline#extensions#tabline#left_alt_sep = '|' "straight tab separators
+
 " ACK FUZZY TEXT SEARCH---------------------------------------------------
 nnoremap <leader>a <Esc>:Ack!
 " UNITE UNIFIED SEARCH INTERFACE--------------------------------------------
@@ -296,6 +387,14 @@ nnoremap <leader>tl <Plug>TaskList
 "YANKRING----------------------------------------------------------------
 nnoremap <leader>y :YRShow<CR> "superceded by unite
 
+
+" GENERAL AUTOCOMPLETE SETTINGS
+" ========================================================================
+let g:SuperTabDefaultCompletionType = "context"
+set completeopt=menuone,longest,preview
+"<Enter> selects highlighted menu item (like <C-Y>)
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+"
 " FILETYPE SETTINGS
 " ========================================================================
 syntax on "use syntax highlighting
@@ -364,8 +463,8 @@ map <leader>rd :RopeGotoDefinition<CR>
 map <leader>rr :RopeRename<CR>
 "ENABLE PYTHON AUTOCOMPLETION-------------------------------------------
 au BufRead *.py set omnifunc=pythoncomplete#Complete
-let g:SuperTabDefaultCompletionType = "context"
-set completeopt=menuone,longest,preview
+
+
 let g:pymode_syntax=1
 let g:python_highlight_all=1
 let g:pymode_virtualenv=1
@@ -373,7 +472,7 @@ let g:pymode_run_key='<leader>r'
 let g:pymode_doc_key='K'
 let g:pymode_lint=1
 let g:pymode_lint_checker="pyflakes,pep8" "mccabe,pylint,
-let g:pymode_lint_ignore="E501,E126,E701,E711,E128"
+let g:pymode_lint_ignore="E501,E126,E701,E711,E128,E127"
 let g:pymode_lint_onfly=1
 let g:pymode_lint_config="$HOME/.pylintrc"
 let g:pymode_lint_write=1  "CHECK CODE EVERY SAVE
