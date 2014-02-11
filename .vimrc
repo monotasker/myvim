@@ -243,8 +243,8 @@ vnoremap <leader>ey "+y
 nnoremap <leader>ep "+p
 vnoremap <leader>ep "+p
 " STRIP TRAILING SPACES---------------------------------------------------
-au BufWrite :call <SID>StripTrailingWhitespaces()<CR>
-nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
+au BufWritePost .vimrc,*.py,*.html,*.load,*.css,*.less,*.js :call <SID>StripTrailingWhitespaces()
+nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()
 " ALTERNATE INDENT MAPPING
 nnoremap <S-i> <Esc>>>
 vnoremap <S-i> >
@@ -270,17 +270,17 @@ let g:unite_source_history_yank_enable = 1
 nnoremap <leader>uy :<C-u>Unite history/yank<CR>
 " CTRL-P FUZZY FILE OPENING (BY TITLE)------------------------------------
 let g:ctrlp_working_path_mode = 'rw'
-nmap <leader>p :CtrlP<CR>
+nnoremap <leader>p :CtrlP<CR>
 " GUNDO REVISION HISTORY--------------------------------------------------
-map <leader>g :GundoToggle<CR>
+nnoremap <leader>g :GundoToggle<CR>
 " NERDTree----------------------------------------------------------------
 let NERDTreeShowBookmarks=1
-map <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>n :NERDTreeToggle<CR>
 " SESSIONS----------------------------------------------------------------
 let g:session_autosave='yes'
 let g:session_autoload='no'
-nmap <leader>so :OpenSession<CR>
-nmap <leader>ss :SaveSession<CR>
+nnoremap <leader>so :OpenSession<CR>
+nnoremap <leader>ss :SaveSession<CR>
 " SUPERTAB----------------------------------------------------------------
 let g:SuperTabMappingForward='<S-Tab>'
 let g:SuperTabMappingBackward='<C-Tab>'
@@ -291,15 +291,6 @@ nnoremap TT :TagbarToggle<CR>
 " TAGLIST-----------------------------------------------------------------
 set tags=./tags,tags,$HOME
 "au FileWritePost :!(cd %:p:h;ctags *)&
-"let g:ctags_statusline=1 "function name in status bar
-"let generate_tags=1
-"let Tlist_Use_Horiz_Window=0 "vertical taglist results
-"map <F4> :TlistToggle<CR>
-"let Tlist_Use_Right_Window = 1
-"let Tlist_Compact_Format = 1
-"let Tlist_Exit_OnlyWindow = 1
-"let Tlist_GainFocus_On_ToggleOpen = 1
-"let Tlist_File_Fold_Auto_Close = 1
 " TASKLIST----------------------------------------------------------------
 nnoremap <leader>tl <Plug>TaskList
 "YANKRING----------------------------------------------------------------
@@ -333,7 +324,7 @@ au BufNewFile,BufRead,BufWrite *.txt,*.md set filetype=text.pandoc
 au FileType pandoc set colorcolumn=0
 "WRAPPING AND FORMATTING-------------------
 let g:pandoc_use_hard_wraps = 1
-let g:pandoc_auto_format = 1
+let g:pandoc_auto_format = 0
 "FOLDING-----------------------------------
 au FileType text,pandoc set foldmethod=syntax
 au FileType text,pandoc set foldtext=CustomFoldText()
@@ -410,6 +401,7 @@ let g:syntastic_python_checkers = [] "['pyflakes', 'python'] pylint 'flake8'
 "====================================================================
 au BufNewFile,BufEnter,BufRead,BufWrite *.load,*.html set filetype=html.web2py.bootstrap
 au BufNewFile,BufEnter,BufRead,BufWrite *.load,*.html call SyntaxRange#Include( "\{\{", "\}\}", 'python')
+au BufNewFile,BufEnter,BufRead,BufWrite *.load,*.html call SyntaxRange#Include( "\<script\>", "\<\/script\>", 'javascript')
 
 " FUNCTIONS
 "=====================================================================
