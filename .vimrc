@@ -156,10 +156,10 @@ set fenc=utf-8
 "set statusline=%f\%m\ %h%r%w%q\%{fugitive#statusline()}\ %=%l,%c\
 "set ruler
 " AVOID SLOWDOWNS-----------------------------------------------------------
-"set synmaxcol=428 "don't highlight very long lines past 128 chars
+set synmaxcol=428 "don't highlight very long lines past 128 chars
 set ttyfast " u got a fast terminal
-"set ttyscroll=3 " redraw instead of scrolling when moving more than 3 lines
-"set lazyredraw " to avoid scrolling problems, don't redraw during macros etc
+set ttyscroll=3 " redraw instead of scrolling when moving more than 3 lines
+set lazyredraw " to avoid scrolling problems, don't redraw during macros etc
 
 " UI APPEARANCE
 " =========================================================================
@@ -189,7 +189,7 @@ if (g:hour > 19 || g:hour < 6)
     endif
 else
     if !has('gui_running')
-      "set t_Co=256
+      set t_Co=256
       "runtime! bundle/guicolorscheme/plugin/guicolorscheme.vim
       set background=light
       "GuiColorScheme SolarizedLight
@@ -221,7 +221,7 @@ set fillchars+=vert:\   " (significant whitespace after the '\' )
 " FONT FACE AND SIZE ---------------------------------------------
 "using Powerline patched fonts
 let g:airline_powerline_fonts = 1 " for airline
-set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
+set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 13
 "also nice: Menlo for Powerline 11, Liberation Mono for Powerline 11,
 "Inconsolata for Powerline 12, Inconsolata DZ for Powerline,
 "function! FontChangeOnResize()
@@ -244,8 +244,8 @@ set guioptions-=b  "remove bottom scrollbar
 " LINE HEIGHT-----------------------------------------------
 set linespace=6
 " SIZE OF INITIAL WINDOW-----------------------------------------------
-"set lines=999
-"set columns=999
+set lines=999
+set columns=999
 " VISUAL RIGHT-MARGIN GUIDE--------------------------------------------
 set colorcolumn=80
 " LINE NUMBERS---------------------------------------------------------
@@ -431,7 +431,7 @@ au BufWritePost *.less :call BuildLess()
 au BufNewFile,BufRead,BufWrite *.txt,*.md set filetype=text.pandoc
 au FileType pandoc set colorcolumn=0
 "WRAPPING AND FORMATTING-------------------
-let g:pandoc_use_hard_wraps = 1
+let g:pandoc_use_hard_wraps = 0
 let g:pandoc_auto_format = 1
 "FOLDING-----------------------------------
 au FileType text,pandoc set foldmethod=syntax
