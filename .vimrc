@@ -75,7 +75,7 @@ Bundle 'vim-jquery'
 " html/xml--------------------------------------------------------
 Bundle 'closetag'
 Bundle 'XML-Folding'
-Bundle 'vim-sparkup'
+"Bundle 'vim-sparkup'
 Bundle 'bootstrap-snippets'
 " css---------------------------------------------------------------
 Bundle 'vim-less'
@@ -87,19 +87,19 @@ Bundle 'svg.vim'
 " colorschemes ---------------------------------------------------
 Bundle 'base16'
 Bundle 'solarized'
-Bundle 'codeschool-vim-theme'  
-Bundle 'jellybeans.vim'        
-Bundle 'vim-colorschemes'   
-Bundle 'Vim-Darkmate'       
+Bundle 'codeschool-vim-theme'
+Bundle 'jellybeans.vim'
+Bundle 'vim-colorschemes'
+Bundle 'Vim-Darkmate'
 Bundle 'vim-vividchalk'
 Bundle 'vim-distinguished'
 " color utilities ---------------------------------------------------
-Bundle 'colorv'                
-Bundle 'galaxy.vim'            
-Bundle 'guicolorscheme'        
+Bundle 'colorv'
+Bundle 'galaxy.vim'
+Bundle 'guicolorscheme'
 " version control ---------------------------------------------------
-Bundle 'git'                   
-Bundle 'fugitive'              
+Bundle 'git'
+Bundle 'fugitive'
 " snippets ----------------------------------------------------------
 Bundle 'web2py-snippets'
 " non-GitHub repos =========================================
@@ -109,7 +109,7 @@ Bundle 'web2py-snippets'
 " NOTE: comments after Bundle commands are not allowed.
 
 syntax on
-filetype plugin indent on     
+filetype plugin indent on
 
 " AUTO SUBSTITUTIONS
 " ==========================================================================
@@ -174,7 +174,7 @@ set lazyredraw " to avoid scrolling problems, don't redraw during macros etc
 " darkburn; darkspectrum; desert; desert256; desertEx; desertedocean;
 " *distinguished; SolarizedLight; manuscript, moss, *twilight, distinguished,
 " *brg256, vividchalk, ir_black, mustang, darkmate, pychimp, fokus, guardian,
-" *khaki, kolor, 
+" *khaki, kolor,
 let hour = strftime('%H')
 if (g:hour > 19 || g:hour < 6)
     if !has('gui_running')
@@ -332,8 +332,8 @@ vnoremap <leader>ey "+y
 nnoremap <leader>ep "+p
 vnoremap <leader>ep "+p
 " STRIP TRAILING SPACES---------------------------------------------------
-au BufWrite :call <SID>StripTrailingWhitespaces()<CR>
-nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
+au BufWritePost .vimrc,*.py,*.html,*.load,*.css,*.less,*.js :call <SID>StripTrailingWhitespaces()
+nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()
 " ALTERNATE INDENT MAPPING
 nnoremap <S-i> <Esc>>>
 vnoremap <S-i> >
@@ -361,17 +361,17 @@ let g:unite_source_history_yank_enable = 1
 nnoremap <leader>uy :<C-u>Unite history/yank<CR>
 " CTRL-P FUZZY FILE OPENING (BY TITLE)------------------------------------
 let g:ctrlp_working_path_mode = 'rw'
-nmap <leader>p :CtrlP<CR>
+nnoremap <leader>p :CtrlP<CR>
 " GUNDO REVISION HISTORY--------------------------------------------------
-map <leader>g :GundoToggle<CR>
+nnoremap <leader>g :GundoToggle<CR>
 " NERDTree----------------------------------------------------------------
 let NERDTreeShowBookmarks=1
-map <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>n :NERDTreeToggle<CR>
 " SESSIONS----------------------------------------------------------------
 let g:session_autosave='yes'
 let g:session_autoload='no'
-nmap <leader>so :OpenSession<CR>
-nmap <leader>ss :SaveSession<CR>
+nnoremap <leader>so :OpenSession<CR>
+nnoremap <leader>ss :SaveSession<CR>
 " SUPERTAB----------------------------------------------------------------
 let g:SuperTabMappingForward='<S-Tab>'
 let g:SuperTabMappingBackward='<C-Tab>'
@@ -382,15 +382,6 @@ nnoremap TT :TagbarToggle<CR>
 " TAGLIST-----------------------------------------------------------------
 set tags=./tags,tags,$HOME
 "au FileWritePost :!(cd %:p:h;ctags *)&
-"let g:ctags_statusline=1 "function name in status bar
-"let generate_tags=1
-"let Tlist_Use_Horiz_Window=0 "vertical taglist results
-"map <F4> :TlistToggle<CR>
-"let Tlist_Use_Right_Window = 1
-"let Tlist_Compact_Format = 1
-"let Tlist_Exit_OnlyWindow = 1
-"let Tlist_GainFocus_On_ToggleOpen = 1
-"let Tlist_File_Fold_Auto_Close = 1
 " TASKLIST----------------------------------------------------------------
 nnoremap <leader>tl <Plug>TaskList
 "YANKRING----------------------------------------------------------------
@@ -431,8 +422,8 @@ au BufWritePost *.less :call BuildLess()
 au BufNewFile,BufRead,BufWrite *.txt,*.md set filetype=text.pandoc
 au FileType pandoc set colorcolumn=0
 "WRAPPING AND FORMATTING-------------------
-let g:pandoc_use_hard_wraps = 0
-let g:pandoc_auto_format = 1
+let g:pandoc_use_hard_wraps = 1
+let g:pandoc_auto_format = 0
 "FOLDING-----------------------------------
 au FileType text,pandoc set foldmethod=syntax
 au FileType text,pandoc set foldtext=CustomFoldText()
@@ -509,6 +500,7 @@ let g:syntastic_python_checkers = [] "['pyflakes', 'python'] pylint 'flake8'
 "====================================================================
 au BufNewFile,BufEnter,BufRead,BufWrite *.load,*.html set filetype=html.web2py.bootstrap
 au BufNewFile,BufEnter,BufRead,BufWrite *.load,*.html call SyntaxRange#Include( "\{\{", "\}\}", 'python')
+au BufNewFile,BufEnter,BufRead,BufWrite *.load,*.html call SyntaxRange#Include( "\<script\>", "\<\/script\>", 'javascript')
 
 " FUNCTIONS
 "=====================================================================
