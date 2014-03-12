@@ -30,7 +30,7 @@ Bundle 'vim-pandoc/vim-markdownfootnotes'
 Bundle 'vim-pandoc/vim-pandoc-syntax'
 " writing --------------------------------------------------------
 Bundle 'dsanson/writer.vim'
-Bundle 'fmoralesc/vim-pad'
+" Bundle 'fmoralesc/vim-pad'
 " vim-scripts repos=========================================
 "Bundle 'L9'
 "Bundle 'FuzzyFinder'
@@ -423,7 +423,7 @@ au BufNewFile,BufRead,BufWrite *.txt,*.md set filetype=text.pandoc
 au FileType pandoc set colorcolumn=0
 "WRAPPING AND FORMATTING-------------------
 let g:pandoc_use_hard_wraps = 1
-let g:pandoc_auto_format = 0
+let g:pandoc_auto_format = 1
 "FOLDING-----------------------------------
 au FileType text,pandoc set foldmethod=syntax
 au FileType text,pandoc set foldtext=CustomFoldText()
