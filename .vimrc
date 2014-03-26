@@ -13,11 +13,14 @@
 " nested keeps theme from overriding powerline's colouring
 au! BufWritePost $MYVIMRC nested source $MYVIMRC
 
-filetype off                  " required!
-set rtp+=~/.vim/bundle/vundle/
+set nocompatible
+filetype off                  " required for vundle!
+set rtp+=$VIM/bundle/vundle/
 call vundle#rc()
 " original repos on GitHub=========================================
+"required, so that vundle can manage vundle
 Bundle 'gmarik/vundle'
+
 Bundle 'tpope/vim-fugitive'
 "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 "Bundle 'Lokaltog/vim-easymotion'
@@ -31,6 +34,7 @@ Bundle 'monotasker/vim-pandoc-syntax'
 " writing --------------------------------------------------------
 "Bundle 'dsanson/writer.vim'
 "Bundle 'fmoralesc/vim-pad'
+"
 " vim-scripts repos=========================================
 "Bundle 'L9'
 "Bundle 'FuzzyFinder'
