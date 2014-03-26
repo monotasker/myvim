@@ -19,7 +19,7 @@ call vundle#rc()
 " original repos on GitHub=========================================
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 "Bundle 'Lokaltog/vim-easymotion'
 "Bundle 'scratch-vim'
 "Bundle 'vimnotes'
@@ -27,10 +27,10 @@ Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'vim-pandoc/vim-pandoc'
 Bundle 'vim-pandoc/vim-pandoc-after'
 Bundle 'vim-pandoc/vim-markdownfootnotes'
-Bundle 'vim-pandoc/vim-pandoc-syntax'
+Bundle 'monotasker/vim-pandoc-syntax'
 " writing --------------------------------------------------------
-Bundle 'dsanson/writer.vim'
-Bundle 'fmoralesc/vim-pad'
+"Bundle 'dsanson/writer.vim'
+"Bundle 'fmoralesc/vim-pad'
 " vim-scripts repos=========================================
 "Bundle 'L9'
 "Bundle 'FuzzyFinder'
@@ -51,8 +51,8 @@ Bundle 'vim-session'
 Bundle 'tasklist'
 " code completion and symbols---------------------------------
 Bundle 'snipmate'
-Bundle 'supertab'
-Bundle 'syntastic'
+"Bundle 'supertab'
+"Bundle 'syntastic'
 Bundle 'tagbar'
 " utilities---------------------------------------------------
 Bundle 'tlib_vim'
@@ -67,7 +67,7 @@ Bundle 'nerdtree'
 " filetypes and code hilighting---------------------------------
 Bundle 'SyntaxRange'
 " python---------------------------------------------------------
-Bundle 'pychimp'
+"Bundle 'pychimp'
 Bundle 'python-mode'
 Bundle 'vim_web2py_syntax'
 " javascript------------------------------------------------------
@@ -75,7 +75,7 @@ Bundle 'vim-jquery'
 " html/xml--------------------------------------------------------
 Bundle 'closetag'
 Bundle 'XML-Folding'
-"Bundle 'vim-sparkup'
+Bundle 'tristen/vim-sparkup'
 Bundle 'bootstrap-snippets'
 " css---------------------------------------------------------------
 Bundle 'vim-less'
@@ -87,12 +87,12 @@ Bundle 'svg.vim'
 " colorschemes ---------------------------------------------------
 Bundle 'base16'
 Bundle 'solarized'
-Bundle 'codeschool-vim-theme'
+"Bundle 'codeschool-vim-theme'
 Bundle 'jellybeans.vim'
-Bundle 'vim-colorschemes'
-Bundle 'Vim-Darkmate'
-Bundle 'vim-vividchalk'
-Bundle 'vim-distinguished'
+"Bundle 'vim-colorschemes'
+"Bundle 'Vim-Darkmate'
+"Bundle 'vim-vividchalk'
+"Bundle 'vim-distinguished'
 " color utilities ---------------------------------------------------
 Bundle 'colorv'
 Bundle 'galaxy.vim'
@@ -221,7 +221,7 @@ set fillchars+=vert:\   " (significant whitespace after the '\' )
 " FONT FACE AND SIZE ---------------------------------------------
 "using Powerline patched fonts
 let g:airline_powerline_fonts = 1 " for airline
-set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 13
+set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 14
 "also nice: Menlo for Powerline 11, Liberation Mono for Powerline 11,
 "Inconsolata for Powerline 12, Inconsolata DZ for Powerline,
 "function! FontChangeOnResize()
@@ -242,7 +242,7 @@ set guioptions-=R  "remove right scrollbar
 set guioptions-=L  "remove left scrollbar
 set guioptions-=b  "remove bottom scrollbar
 " LINE HEIGHT-----------------------------------------------
-set linespace=6
+set linespace=2
 " SIZE OF INITIAL WINDOW-----------------------------------------------
 set lines=999
 set columns=999
@@ -268,7 +268,7 @@ function! SetMinWindowSize()
         endif
     endif
 endfunction
-au BufEnter,BufRead *.json,*.xml,.vimrc,*.py,*.js,*.txt,*.md,*.css,*.less,*.load,*.html call SetMinWindowSize()
+au WinEnter,BufEnter,BufRead *.json,*.xml,.vimrc,*.py,*.js,*.txt,*.md,*.css,*.less,*.load,*.html call SetMinWindowSize()
 
 " NAVIGATION SHORTCUTS
 " =====================================================================
@@ -350,7 +350,7 @@ let g:airline#extensions#tabline#left_sep = ' ' "straight tab separators
 let g:airline#extensions#tabline#left_alt_sep = '|' "straight tab separators
 
 " ACK FUZZY TEXT SEARCH---------------------------------------------------
-nnoremap <leader>a <Esc>:Ack!
+nnoremap <leader>a <Esc>:Ag
 " UNITE UNIFIED SEARCH INTERFACE--------------------------------------------
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 nnoremap <leader>uf :<C-u>Unite file<CR>
@@ -423,7 +423,7 @@ au BufNewFile,BufRead,BufWrite *.txt,*.md set filetype=text.pandoc
 au FileType pandoc set colorcolumn=0
 "WRAPPING AND FORMATTING-------------------
 let g:pandoc_use_hard_wraps = 1
-let g:pandoc_auto_format = 0
+let g:pandoc_auto_format = 1
 "FOLDING-----------------------------------
 au FileType text,pandoc set foldmethod=syntax
 au FileType text,pandoc set foldtext=CustomFoldText()
@@ -480,7 +480,7 @@ let g:pymode_lint_cwindow=1  "AUTO OPEN CWINDOW IF ERRORS
 let g:pymode_lint_message=1  "SHOW ERROR MESSAGE WHEN CURSOR ON ERROR LINE
 let g:pymode_lint_jump=1  "AUTO JUMP ON FIRST ERROR
 let g:pymode_lint_signs=1  "PLACE ERROR SIGNS
-let g:pymode_lint_mccabe_complexity=10
+let g:pymode_lint_mccabe_complexity=15
 let g:pymode_lint_minheight=2
 let g:pymode_lint_maxheight=8
 let g:pymode_paths=["$HOME/web/web2py/gluon/"]
@@ -492,7 +492,7 @@ let g:pymode_rope_local_prefix="<C-c>r"
 let g:pymode_rope_guess_project=1
 let g:pymode_rope_goto_def_newwin=""
 let g:pymode_rope_always_show_complete_menu=0
-let g:syntastic_python_checkers = [] "['pyflakes', 'python'] pylint 'flake8'
+"let g:syntastic_python_checkers = [] "['pyflakes', 'python'] pylint 'flake8'
 "USE RELATIVE LINE NUMBERING IN PYTHON FILES TOO--------------------
 "au BufNewFile,BufRead *.py set relativenumber
 
@@ -572,13 +572,6 @@ endfunction
     "endif
 "endfunction
 
-vnoremap <leader>dl :call ToDictLiteral()
-function! ToDictLiteral()
-  :'<,'>s/(/{/
-  :'<,'>s/)/}/
-  :'<,'>s/=/: /
-endfunction
-
 "output result of any shell command to scratch buffer
 function! s:ExecuteInShell(command)
   let command = join(map(split(a:command), 'expand(v:val)'))
@@ -601,34 +594,42 @@ function! W(bang, filename)
     :exe "w".a:bang." ". substitute(a:filename, ' ', '\\ ', 'g')
 endfu
 
-" Dim inactive windows using 'colorcolumn' setting
-" This tends to slow down redrawing, but is very useful.
-" Based on https://groups.google.com/d/msg/vim_use/IJU-Vk-QLJE/xz4hjPjCRBUJ
-" XXX: this will only work with lines containing text (i.e. not '~')
-" from http://stackoverflow.com/questions/8415828/vim-dim-inactive-split-panes
-"if exists('+colorcolumn')
-  "function! s:DimInactiveWindows()
-    "for i in range(1, tabpagewinnr(tabpagenr(), '$'))
-      "let l:range = ""
-      "if i != winnr()
-        "if &wrap
-         "" HACK: when wrapping lines is enabled, we use the maximum number
-         "" of columns getting highlighted. This might get calculated by
-         "" looking for the longest visible line and using a multiple of
-         "" winwidth().
-         "let l:width=256 " max
-        "else
-         "let l:width=winwidth(i)
-        "endif
-        "let l:range = join(range(1, l:width), ',')
-      "endif
-      "call setwinvar(i, '&colorcolumn', l:range)
-    "endfor
-  "endfunction
-  "augroup DimInactiveWindows
-    "au!
-    "au WinEnter * call s:DimInactiveWindows()
-    "au WinEnter * set cursorline
-    "au WinLeave * set nocursorline
-  "augroup END
-"endif
+vnoremap <silent> <leader>d :call Dictize()<CR>
+function! Dictize()
+  let line = s:get_visual_selection()
+  let mycol = getpos("'<")[2] - 1
+  echo mycol
+  let linebits=split(line, "=")
+  let key=linebits[0]
+  echo key
+  let value=linebits[1]
+  let indent=repeat(' ', mycol)
+  let newline=indent . "'" . key . "':" . value . ","
+  call setline(".", newline)
+endfu
+"yank current visual selection to reg x
+   "normal! gvxy
+   "get current column position
+   "let cursor_pos = getpos('.')
+   "subtract 1
+   "let cursor_pos[2] = cursor_pos[2] - 1
+   "put new string value in reg x
+    "would do your processing here in actual script
+   "let @x = @x . 'more'
+   "re-select area and delete
+   "normal gvd
+   "set cursor back one
+   "call setpos('.', cursor_pos)
+   "paste new string value back in
+   "normal xp
+
+" Utility functions =====================================================
+function! s:get_visual_selection()
+  " Why is this not a built-in Vim script function?!
+  let [lnum1, col1] = getpos("'<")[1:2]
+  let [lnum2, col2] = getpos("'>")[1:2]
+  let lines = getline(lnum1, lnum2)
+  let lines[-1] = lines[-1][: col2 - (&selection == 'inclusive' ? 1 : 2)]
+  let lines[0] = lines[0][col1 - 1:]
+  return join(lines, "\n")
+endfunction
